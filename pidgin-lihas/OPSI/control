@@ -1,0 +1,75 @@
+[Package]
+version: 1
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: pidgin-lihas
+name: pidgin-lihas
+description: Multiprotocol Instant Messenger
+advice: 
+version: 2.10.9
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: setup32.ins
+uninstallScript: uninstall.ins
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[Changelog]
+pidgin (2.10.9-1) testing; urgency=low
+
+  * Update to 2.10.9
+
+ -- Stefan Baur <lihas@lihas.de>  Tue, 04 Feb 2014 08:11:00 +0000
+
+pidgin (2.10.8-1) testing; urgency=low
+
+  * Update to 2.10.8
+
+ -- Stefan Baur <lihas@lihas.de>  Thu, 30 Jan 2014 09:59:00 +0000
+
+pidgin (2.10.7-1) testing; urgency=low
+
+  * Initial package
+
+ -- Stefan Baur <lihas@lihas.de>  Tue, 17 Dec 2013 15:46:00 +0000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
