@@ -1,0 +1,86 @@
+[Package]
+version: 1
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: pxe-add-bootoption-xp-lihas
+name: Add PXE bootoption to XP boot menu
+description: This package adds an iPXE loader image to XP's boot menu
+advice: do not set "default" to true unless you really know what you're doing
+version: 1.0
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: setup.ins
+uninstallScript: 
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[ProductProperty]
+type: unicode
+name: wintimeout
+multivalue: False
+editable: True
+description: Timeout for Windows boot menu
+values: ["15"]
+
+[ProductProperty]
+type: unicode
+name: lintimeout
+multivalue: False
+editable: True
+description: Timeout for GRUB/Linux boot menu
+values: ["5"]
+
+[ProductProperty]
+type: unicode
+name: defaultbool
+multivalue: False
+editable: False
+description: Make PXE the default boot option (Warning: requires manual intervention to return to Windows)
+values: ["false", "true"]
+default: ["false"]
+
+[ProductProperty]
+type: unicode
+name: md5password
+multivalue: False
+editable: True
+description: MD5-hashed Password string to lock GRUB. Recommended. Defaults to "password".
+values: ["$1$v4.0xYdG$32uzkKsup9c1RsHZlzfQs1"]
+default: ["$1$v4.0xYdG$32uzkKsup9c1RsHZlzfQs1"]
+
+[Changelog]
+pxe-add-bootoption-xp-lihas (1.0-1) testing; urgency=low
+
+  * Initial package
+
+ -- Stefan Baur <lihas@lihas.de>  Fri, 24 Jan 2014 08:03:00 +0000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
