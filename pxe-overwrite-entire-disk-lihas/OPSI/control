@@ -1,0 +1,68 @@
+[Package]
+version: 5
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: pxe-overwrite-entire-disk-lihas
+name: Overwrite Disk with PXE Loader
+description: This package overwrites the first partition with an iPXE loader image
+advice: DANGEROUS!
+version: 1.0
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: setup.ins
+uninstallScript: 
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[Changelog]
+pxe-overwrite-entire-disk-lihas (1.0-5) testing; urgency=low
+
+  * added source download
+
+ -- Stefan Baur <lihas@lihas.de>  Fri, 24 Jan 2014 08:18:00 +0000
+
+pxe-overwrite-entire-disk-lihas (1.0-4) testing; urgency=low
+
+  * added /files directory, changed setup.ins to match that
+
+ -- Stefan Baur <lihas@lihas.de>  Wed, 22 Jan 2014 17:05:00 +0000
+
+pxe-overwrite-entire-disk-lihas (1.0-3) testing; urgency=low
+
+  * package renamed
+
+ -- Stefan Baur <lihas@lihas.de>  Wed, 22 Jan 2014 16:59:00 +0000
+
+overwritediskwithpxeloader (1.0-2) testing; urgency=low
+
+  * gPXE -> iPXE
+
+ -- Stefan Baur <lihas@lihas.de>  Wed, 21 Aug 2013 12:21:00 +0000
+
+overwritediskwithpxeloader (1.0-1) testing; urgency=low
+
+  * Initial package
+
+ -- Stefan Baur <lihas@lihas.de>  Fri, 19 Apr 2013 13:52:25 +0000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
