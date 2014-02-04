@@ -1,0 +1,167 @@
+; Copyright (c) uib gmbh (www.uib.de)
+; This sourcecode is owned by uib
+; and published under the Terms of the General Public License.
+; credits: http://www.opsi.org/credits/
+
+[Actions]
+requiredWinstVersion >= "4.10.8.6"
+
+DefVar $MsiId$
+DefVar $UninstallProgram$
+DefVar $LogDir$
+DefVar $ProductId$
+DefVar $MinimumSpace$
+DefVar $InstallDir$
+DefVar $ExitCode$
+DefVar $LicenseRequired$
+DefVar $LicenseKey$
+DefVar $LicensePool$
+DefVar $MSVersion$
+DefVar $wintimeout$
+DefVar $lintimeout$
+DefVar $defaultternary$
+DefVar $md5password$
+
+Set $LogDir$ = "%SystemDrive%\tmp"
+Set $wintimeout$ = GetProductProperty("wintimeout","")
+Set $lintimeout$ = GetProductProperty("lintimeout","")
+Set $defaultternary$ = GetProductProperty("defaultternary","")
+Set $md5password$ = GetProductProperty("md5password","$1$v4.0xYdG$32uzkKsup9c1RsHZlzfQs1")
+
+; ----------------------------------------------------------------
+; - Please edit the following values                             -
+; ----------------------------------------------------------------
+;$ProductId$ should be the name of the product in opsi
+; therefore please: only lower letters, no umlauts,
+; no white space use '-' as a seperator
+Set $ProductId$       = "pxe-add-bootoption-winv78-lihas"
+Set $MinimumSpace$    = "1 MB"
+; the path were we find the product after the installation
+Set $LicenseRequired$ = "false"
+Set $LicensePool$     = "p_" + $ProductId$
+; ----------------------------------------------------------------
+
+Set $MSVersion$ = GetMsVersionInfo
+if ($MSVersion$ < "6")
+	LogError "not a supported OS-Version"
+	isFatalError
+endif
+
+if not(HasMinimumSpace ("%SystemDrive%", $MinimumSpace$))
+        LogError "Not enough space on %SystemDrive%, " + $MinimumSpace$ + " on drive %SystemDrive% needed for " + $ProductId$
+        isFatalError
+        ; Stop process and set installation status to failed
+else
+        comment "Show product picture"
+        ShowBitmap "%ScriptPath%\" + $ProductId$ + ".png" $ProductId$
+
+        if FileExists("%ScriptPath%\delsub64.ins")
+                comment "Start uninstall sub section"
+                Sub "%ScriptPath%\delsub64.ins"
+        endif
+
+        Message "Installing " + $ProductId$ + " ..."
+
+        if $LicenseRequired$ = "true"
+                comment "Licensing required, reserve license and get license key"
+                Sub_get_licensekey
+        endif
+
+        comment "Copying loaders"
+        DosInAnIcon_copyloaders
+
+        comment "Adding menu entry"
+	DosInAnIcon_addmenuentry
+	
+        comment "Writing menu.lst"
+	DosInAnIcon_writemenulst
+	
+        comment "Test for installation success"
+        ; Test if software marked as installed in registry
+        ; if (GetRegistryStringValue32("[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX}] DisplayName") = "")
+        ;       logError "Fatal: After Installation 32 bit [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX}] not found"
+        ;       isFatalError
+        ; else
+        ;       comment "Successful Installation"
+        ; endif
+
+endif
+
+
+[DosInAnIcon_copyloaders]
+@echo off
+copy %ScriptPath%\files\ipxe.lkrn %SystemDrive%\ipxe.lkrn
+copy %ScriptPath%\files\grub4dos\grldr %SystemDrive%\grldr
+copy %ScriptPath%\files\grub4dos\grldr.mbr %SystemDrive%\grldr.mbr
+
+[DosInAnIcon_addmenuentry]
+@echo off
+if not exist %SystemDrive%\opsi.org\pxe-add-bootoption-winv78-lihas md %SystemDrive%\opsi.org\pxe-add-bootoption-winv78-lihas
+setlocal
+set BCDEDIT=%SYSTEM%\bcdedit.exe
+if not exist %BCDEDIT% exit 1
+if not exist %SystemDrive%\opsi.org\pxe-add-bootoption-winv78-lihas\grubguid.donotdelete (
+	for /f "tokens=3" %%A in ('%BCDEDIT% /create /d "PXE boot" /application bootsector') do set guid=%%A
+) else (
+	for /f "delims=" %%x in (%SystemDrive%\opsi.org\pxe-add-bootoption-winv78-lihas\grubguid.donotdelete) do set guid=%%x 
+)
+echo %guid% >%SystemDrive%\opsi.org\pxe-add-bootoption-winv78-lihas\grubguid.donotdelete
+%BCDEDIT% /set %guid% device partition=%SystemDrive%
+%BCDEDIT% /set %guid% path \grldr.mbr
+%BCDEDIT% /displayorder %guid% /addlast
+%BCDEDIT% /timeout $wintimeout$
+REM "bootsequence" means only the single, next reboot will default to this
+REM "default" means every reboot will default to this
+if "X$defaultternary$X" == "XonceX" %BCDEDIT% /bootsequence %guid% /addfirst
+if "X$defaultternary$X" == "XalwaysX" %BCDEDIT% /default %guid%
+endlocal
+
+
+[DosInAnIcon_writemenulst]
+@echo off
+echo # menu.lst >%SystemDrive%\menu.lst
+echo default 0 >>%SystemDrive%\menu.lst
+echo timeout $lintimeout$ >>%SystemDrive%\menu.lst
+echo color cyan/blue white/blue >>%SystemDrive%\menu.lst
+echo password --md5 $md5password$ >>%SystemDrive%\menu.lst
+echo title iPXE >>%SystemDrive%\menu.lst
+echo find /ipxe.lkrn >>%SystemDrive%\menu.lst
+echo kernel /ipxe.lkrn >>%SystemDrive%\menu.lst
+
+[Sub_get_licensekey]
+if opsiLicenseManagementEnabled
+        comment "License management is enabled and will be used"
+
+        comment "Trying to get a license key"
+        Set $LicenseKey$ = demandLicenseKey ($LicensePool$)
+        ; If there is an assignment of exactly one licensepool to the product the following call is possible:
+        ; Set $LicenseKey$ = demandLicenseKey ("", $ProductId$)
+        ;
+        ; If there is an assignment of a license pool to a windows software id, it is possible to use:
+        ; DefVar $WindowsSoftwareId$
+        ; $WindowsSoftwareId$ = "..."
+        ; Set $LicenseKey$ = demandLicenseKey ("", "", $WindowsSoftwareId$)
+
+        DefVar $ServiceErrorClass$
+        set $ServiceErrorClass$ = getLastServiceErrorClass
+        comment "Error class: " + $ServiceErrorClass$
+
+        if $ServiceErrorClass$ = "None"
+                comment "Everything fine, we got the license key '" + $LicenseKey$ + "'"
+        else
+                if $ServiceErrorClass$ = "LicenseConfigurationError"
+                        LogError "Fatal: license configuration must be corrected"
+                        LogError getLastServiceErrorMessage
+                        isFatalError
+                else
+                        if $ServiceErrorClass$ = "LicenseMissingError"
+                                LogError "Fatal: required license is not supplied"
+                                isFatalError
+                        endif
+                endif
+        endif
+else
+        LogError "Fatal: license required, but license management not enabled"
+        isFatalError
+endif
+
