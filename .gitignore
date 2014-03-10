@@ -1,0 +1,5 @@
+# do not commit archives to repo
+**/*.opsi
+**/*.opsi.uploaded
+# do not commit work-in-progress directories to repo
+**/*-wip/
