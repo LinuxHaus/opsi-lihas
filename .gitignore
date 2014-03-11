@@ -3,3 +3,5 @@
 **/*.opsi.uploaded
 # do not commit work-in-progress directories to repo
 **/*-wip/
+# do not commit downloaded files
+**/files/
