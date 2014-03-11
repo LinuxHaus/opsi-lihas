@@ -1,0 +1,53 @@
+[Package]
+version: 2
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: allowprinter-patch-lihas
+name: Allow printer driver installation from server
+description: Registry patch to suppress do-you-trust-this-printer popup
+advice: 
+version: 1.0
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: setup.ins
+uninstallScript: 
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[ProductProperty]
+type: unicode
+name: serverlist
+multivalue: False
+editable: True
+description: List of trusted servers
+values: ["samba;samba.contoso.com;cups;cups.contoso.com"]
+default: ["samba;samba.contoso.com;cups;cups.contoso.com"]
+
+[Changelog]
+allowprinter-patch-lihas (1.0-2) testing; urgency=low
+
+  * Changed to sample domain names for public release && lihas
+    naming scheme
+
+ -- Stefan Baur <lihas@lihas.de>  Thu, 27 Apr 2014 20:41:00 +0000
+
+allowprinter-patch (1.0-1) testing; urgency=low
+
+  * Initial package
+
+ -- Stefan Baur <lihas@lihas.de>  Wed, 24 Apr 2013 10:21:18 +0000
+
+
+
+
+
+
+
+
