@@ -1,0 +1,32 @@
+[Initial]
+Message=Terminalserver ON
+SetLogLevel=10
+ExitOnError=false
+ScriptErrorMessages=true
+TraceMode=off
+
+[Actions] 
+DefVar $INST_SystemType$
+Set $INST_SystemType$ = GetSystemType
+
+if $INST_SystemType$ = "64 Bit System"
+                Registry_install /64Bit 
+        else
+                Registry_install /32Bit
+endif
+
+Winbatch_Firewall
+
+[Registry_install]
+; Example of setting some values of an registry key:
+;
+openkey [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server]
+
+set "fDenyTSConnections" = REG_DWORD:00000000
+
+[Winbatch_Firewall]
+; English
+netsh advfirewall firewall set rule name="remote desktop (tcp-in)" new enable=Yes profile=domain,private
+; Deutsch - German
+netsh advfirewall firewall set rule name="Remotedesktop (TCP eingehend)" new enable=Yes profile=domain,private
+

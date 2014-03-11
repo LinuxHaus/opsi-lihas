@@ -1,0 +1,69 @@
+[Package]
+version: 6
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: rdp-enable-openfw-lihas
+name: rdp-enable-openfw-lihas
+description: Aktiviert oder deaktiviert Remote Desktop
+advice: 
+version: 1.0
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: activate.ins
+uninstallScript: deactivate.ins
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[Changelog]
+rdp-enable-openfw-lihas (1.0-6) testing; urgency=low
+
+* renamed to match naming conventions for public release,
+  improved 64-Bit detection
+
+-- Stefan Baur <lihas@lihas.de>  Fri, 28 Feb 2014 09:47:00 +0000
+
+remotedesktop (1.0-5) testing; urgency=low
+
+* Firewall rule fixed and added support for German and English;
+  RDP is only allowed from domain and private (home/work)
+  networks
+
+-- Stefan Baur <lihas@lihas.de>  Tue, 19 Feb 2013 16:26:00 +0000
+
+remotedesktop (1.0-4) testing; urgency=low
+
+* Fixed firewall settings in 1.0-3
+
+-- Stefan Baur <lihas@lihas.de>  Fri, 08 Feb 2013 00:05:00 +0000
+
+remotedesktop (1.0-1) testing; urgency=low
+
+* Initial package
+
+-- Uwe Burger <lihas@lihas.de>  Tue, 17 Jul 2012 09:57:32 +0000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

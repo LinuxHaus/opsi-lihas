@@ -1,0 +1,25 @@
+[Initial]
+Message=Terminalserver OFF 
+SetLogLevel=6
+ExitOnError=false
+ScriptErrorMessages=true
+TraceMode=off
+
+[Actions] 
+DefVar $INST_SystemType$
+Set $INST_SystemType$ = GetSystemType
+
+if $INST_SystemType$ = "64 Bit System"
+                Registry_install /64Bit 
+        else
+                Registry_install /32Bit
+endif
+
+[Registry_install]
+; Example of setting some values of an registry key:
+;
+openkey [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server]
+; set "name1" = "some string value"
+set "fDenyTSConnections" = REG_DWORD:00000001
+; set "name3" = REG_BINARY:00 af 99 cd
+
