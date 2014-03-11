@@ -1,0 +1,52 @@
+[Package]
+version: 2
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: adminaccount-enable-setpw-lihas
+name: Enable Admin account and set password
+description: 
+advice: 
+version: 1.0
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: enableandset.ins
+uninstallScript: 
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[ProductProperty]
+type: unicode
+name: adminpw
+multivalue: False
+editable: True
+description: Admin password
+values: ["moth2Tho"]
+default: ["moth2Tho"]
+
+[Changelog]
+adminaccount-enable-setpw-lihas (1.0-2) testing; urgency=low
+
+  * renamed to match naming conventions for public release
+
+ -- Stefan Baur <lihas@lihas.de>  Fri, 28 Feb 2014 14:33:00 +0000
+
+enableandsetadmin (1.0-1) testing; urgency=low
+
+  * Initial package
+
+ -- Stefan Baur <lihas@lihas.de>  Tue, 21 May 2013 18:47:57 +0000
+
+
+
+
+
+
+
+
