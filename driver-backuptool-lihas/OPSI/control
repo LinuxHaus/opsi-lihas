@@ -1,0 +1,100 @@
+[Package]
+version: 4
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: driver-backuptool-lihas
+name: Double Driver (autobackup)
+description: Double Driver im automatischen Sicherungsmodus
+advice: 
+version: 1.0
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: backup.ins
+uninstallScript: 
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[ProductProperty]
+type: unicode
+name: opsiserver
+multivalue: False
+editable: True
+description: SAMBA/CIFS-Name des OPSI-Servers
+values: ["opsiserver"]
+default: ["opsiserver"]
+
+[ProductProperty]
+type: unicode
+name: opsiworkbench
+multivalue: False
+editable: True
+description: SAMBA/CIFS-Name der workbench-Freigabe
+values: ["opsi_workbench"]
+default: ["opsi_workbench"]
+
+[Changelog]
+driver-backuptool (1.0-4) testing; urgency=low
+
+  * changed name and download dir 2 match styleguide for git repo
+
+ -- Stefan Baur <lihas@lihas.de>  Tue, 28 Feb 2014 15:51:00 +0000
+
+driver-backuptool (1.0-3) testing; urgency=low
+
+  * fixed timestamp (old code was locale-specific)
+
+ -- Stefan Baur <lihas@lihas.de>  Tue, 25 Dec 2013 14:30:00 +0000
+
+driver-backuptool (1.0-2) testing; urgency=low
+
+  * fixed target/save mechanism
+
+ -- Stefan Baur <lihas@lihas.de>  Tue, 13 Aug 2013 19:59:00 +0000
+
+driver-backuptool (1.0-1) testing; urgency=low
+
+  * Initial package
+
+ -- Stefan Baur <lihas@lihas.de>  Sun, 16 Jun 2013 17:01:34 +0000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
