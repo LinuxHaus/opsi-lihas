@@ -1,0 +1,44 @@
+[Package]
+version: 1
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: ms-security-essentials-lihas
+name: Microsoft Security Essentials
+description: Free-as-in-Beer-Virenscanner von Microsoft
+advice: Bitte Firewallregeln nach Installation ggf. neu setzen
+version: 4.4.0304.0
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: setup.ins
+uninstallScript: uninstall.ins
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[Changelog]
+ms-security-essentials-lihas (4.4.0304.0-1) testing; urgency=low
+
+  * Initial package
+
+ -- Stefan Baur <lihas@lihas.de>  Wed, 26 Feb 2014 18:39:00 +0000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
