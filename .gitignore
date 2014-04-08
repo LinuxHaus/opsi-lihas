@@ -1,3 +1,5 @@
+# do not commit License files
+**/license.key
 # do not commit archives to repo
 **/*.opsi
 **/*.opsi.uploaded
