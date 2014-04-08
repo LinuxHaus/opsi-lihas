@@ -1,5 +1,5 @@
 [Package]
-version: 4
+version: 5
 depends: 
 incremental: False
 
@@ -40,6 +40,12 @@ values: ["opsi_workbench"]
 default: ["opsi_workbench"]
 
 [Changelog]
+driver-backuptool (1.0-5) testing; urgency=low
+
+  * new download URL, as ubuntuone is dying (netcraft confirms it)
+
+ -- Stefan Baur <lihas@lihas.de>  Tue, 08 Apr 2014 15:36:00 +0000
+
 driver-backuptool (1.0-4) testing; urgency=low
 
   * changed name and download dir 2 match styleguide for git repo
@@ -63,6 +69,9 @@ driver-backuptool (1.0-1) testing; urgency=low
   * Initial package
 
  -- Stefan Baur <lihas@lihas.de>  Sun, 16 Jun 2013 17:01:34 +0000
+
+
+
 
 
 

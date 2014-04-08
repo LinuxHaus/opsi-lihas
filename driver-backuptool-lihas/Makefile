@@ -2,9 +2,9 @@ WGET_COMMON_OPTIONS  = -q -N
 
 PACKAGE_NAME         = driver-backuptool-lihas
 VERSION              = 1.0
-OPSI_PACKAGE_VERSION = 4
+OPSI_PACKAGE_VERSION = 5
 DOWNLOAD_DIR         = ./CLIENT_DATA/files
-DOWNLOAD_URLS        =  http://ubuntuone.com/p/BY7/?dd.zip
+DOWNLOAD_URLS        = http://download.pcwelt.de/area_release/files/4E/4B/4E4B1F177BBA3A70B39FF4FC7BF7E5B0/double_driver_4.1.0_portable.zip
 DOWNLOAD_FILES       = $(foreach url,$(DOWNLOAD_URLS),$(subst $(dir $(url)),,$(url)))
 DOWNLOAD_TARGETS     = $(addprefix $(DOWNLOAD_DIR)/,$(DOWNLOAD_FILES))
 
