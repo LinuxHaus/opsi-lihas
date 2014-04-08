@@ -1,0 +1,189 @@
+[Package]
+version: 7
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: avira2013-lihas
+name: Avira Professional 2013
+description: Avira Professional 2013
+advice: 
+version: 2013
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: setup64.ins
+uninstallScript: unins64.ins
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[ProductProperty]
+type: unicode
+name: programgroup
+multivalue: False
+editable: True
+description: AntiVir Programmgruppe erstellen
+values: ["0", "1"]
+default: ["1"]
+
+[ProductProperty]
+type: unicode
+name: desktopicon
+multivalue: False
+editable: True
+description: Gibt an, ob ein Desktop Icon für AntiVir erstellt werden soll
+values: ["0", "1"]
+default: ["1"]
+
+[ProductProperty]
+type: unicode
+name: usesystemrestore
+multivalue: False
+editable: True
+description: Gibt an, ob ein Systemwiederherstellungspunkt erzeugt werden soll
+values: ["0", "1"]
+default: ["0"]
+
+[ProductProperty]
+type: unicode
+name: keyfile
+multivalue: False
+editable: True
+description: Pfad und Dateiname einer mit zu installierenden Lizenzdatei.
+values: ["P:\\avira2013-lihas\\license.key"]
+default: ["P:\\avira2013-lihas\\license.key"]
+
+[ProductProperty]
+type: unicode
+name: mailscanner
+multivalue: False
+editable: True
+description: Mit diesem Parameter können Sie angeben, ob der Mailscanner \n installiert werden soll oder nicht. Der Mailscanner \n überwacht ankommende Emails sowie deren Anhänge.
+values: ["0", "1"]
+default: ["1"]
+
+[ProductProperty]
+type: unicode
+name: guard
+multivalue: False
+editable: True
+description: Den Virenwächter AVGuard installieren
+values: ["0", "1"]
+default: ["1"]
+
+[ProductProperty]
+type: unicode
+name: webguard
+multivalue: False
+editable: True
+description: Mit diesem Parameter können Sie angeben, ob der WebGuard, \n installiert werden soll oder nicht. Der WebGuard überwacht \n  die HTTP Verbindungen, z.B. beim Surfen im Internet
+values: ["0", "1"]
+default: ["1"]
+
+[ProductProperty]
+type: unicode
+name: shellextension
+multivalue: False
+editable: True
+description: Die Shell Extension von AntiVir wird in der Registry angemeldet. \n Diese Extension ist nur unter Windows NT 4.0 und höher lauffähig!
+values: ["0", "1"]
+default: ["1"]
+
+[ProductProperty]
+type: unicode
+name: rootkit
+multivalue: False
+editable: True
+description: Mit diesem Parameter können Sie angeben, ob das Anti-Rootkit Modul , \n von AntiVir installiert werden soll oder nicht. Ist dieses Modul nicht \n installiert, kann der Scanner nicht nach Rootkits auf dem System suchen.
+values: ["0", "1"]
+default: ["1"]
+
+[ProductProperty]
+type: unicode
+name: proactiv
+multivalue: False
+editable: True
+description: Mit diesem Parameter können Sie angeben, ob AntiVir ProActiv, ein \n Modul zur Erkennung unbekannter Malware, installiert werden soll \n oder nicht. \n Wenn Sie AntiVir ProActiv aktivieren, wird automatisch auch die \n erweiterte Online Prüfung (Avira ProActiv-Community) aktiviert. \n Sie verbessert den Schutz für Ihr System durch Online-Prüfung von \n verdächtigen Dateien. Sie können die Teilnahme an der \n Avira ProActiv-Community in der Konfiguration unter Guard->ProActiv \n deaktivieren. Weitere Informationen finden Sie unter \n http://www.avira.de/proactiv
+values: ["0", "1"]
+default: ["1"]
+
+[ProductProperty]
+type: unicode
+name: firewall
+multivalue: False
+editable: True
+description: Mit diesem Parameter können Sie angeben, ob die Avira FireWall auf dem System \n installiert wird oder nicht. Die Avira FireWall ermöglicht die regelbasierte \n Kontrolle über ein- und ausgehenden Internetverkehr
+values: ["0", "1"]
+default: ["1"]
+
+[ProductProperty]
+type: unicode
+name: password
+multivalue: False
+editable: True
+description: Diese Option übergibt der Setup-Routine das gesetzte Passwort. Der Eintrag wird von der Setup-Routine nur dann \n geprüft, wenn ein Passwort gesetzt wurde.
+values: [""]
+
+[Changelog]
+avira2013 (2013-7) testing; urgency=low
+
+  * change to Makefile-based build system && lihas naming scheme,
+    added parameters
+
+ -- Stefan Baur <lihas@lihas.de>  Wed, 26 Feb 2014 20:47:00 +0000
+
+avira2013 (2013-6) testing; urgency=low
+
+  * new license.key file
+
+ -- Stefan Baur <lihas@lihas.de>  Tue, 03 Dec 2013 10:21:00 +0000
+
+avira2013 (2013-5) testing; urgency=low
+
+  * Web- and Mailsecurity disabled due to performance issues
+
+ -- Stefan Baur <lihas@lihas.de>  Thu, 26 Sep 2013 14:20:00 +0000
+
+avira2013 (2013-4) testing; urgency=low
+
+  * New Software release from Avira
+
+ -- Stefan Baur <lihas@lihas.de>  Wed, 31 Jul 2013 19:33:00 +0000
+
+avira2013 (2013-3) testing; urgency=low
+
+  * Force Signature update after install, but not afer upgrade
+
+ -- Stefan Baur <lihas@lihas.de>  Sat, 30 Mar 2013 15:27:00 +0000
+
+avira2013 (2013-2) testing; urgency=low
+
+  * Working Uninstaller added
+
+ -- Stefan Baur <lihas@lihas.de>  Sat, 30 Mar 2013 14:35:00 +0000
+
+avira2013 (2013-1) testing; urgency=low
+
+  * Initial package
+
+ -- Stefan Baur <lihas@lihas.de>  Sat, 30 Mar 2013 00:06:00 +0000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,109 @@
+;**********************************************************************
+; Beispiel einer Script Datei für AntiVir Setup
+;
+; Das Setup-Programm muss mit dem Parameter /INF="name" gestartet werden, 
+; wobei "name" der vollqualifizierte Name der Script-Datei ist.
+;
+; Beispiel: PRESETUP /INF="e:\disks\setup.inf"
+;
+;**********************************************************************
+
+[DATA]
+; Zielpfad für die Installation. Bitte beachten Sie, dass Setup automatisch
+; Firmennamen (Avira) und Produktpfad anhängt. 
+; Umgebungsvariablen wie %PROGRAMFILES% können verwendet werden.
+; Z.B. wird aus 
+; DestinationPath=%PROGRAMFILES%
+; im Resultat dann zum Beispiel
+; C:\Programme\Avira\AntiVir Workstation
+DestinationPath=%PROGRAMFILES%
+
+; AntiVir Programmgruppe erstellen
+; 0 = Aus,   1 = An
+ProgramGroup=1
+
+; Gibt an, ob ein Desktop Icon für AntiVir erstellt werden soll
+; 1 = Erstellen, 0 = nicht erstellen.
+DesktopIcon=1
+
+; Gibt an, ob ein Systemwiederherstellungspunkt erzeugt werden soll
+; 1 = Erstellen, 0 = nicht erstellen
+UseSystemRestore=0
+
+; Pfad und Dateiname einer mit zu installierenden Lizenzdatei.
+;KeyFile="C:\Users\Administrator\Downloads\avira_professional_security_de\license.key"
+KeyFile="c:\opsi.org\tmp\avira2013\license.key"
+
+; Pfad und Dateiname einer optionalen, vordefinierten INI-Datei, in der
+; die Konfiguration von AntiVir vordefiniert werden kann.
+;AVWinIni=d:\inst\config\avwin.ini
+
+; Falls nötig wird Windows automatisch neu gestartet. (Empfohlen)
+; 0 = Aus,   1 = An
+; Nicht einschalten, beisst sich mit OPSI
+RestartWindows=0
+
+; Wenn Sie wollen zeigt das Setup vor einem automatischen Neustart
+; eine Information an. 
+; 0 = Information nicht anzeigen,     1 = Information anzeigen
+ShowRestartMessage=0
+
+; Mit diesem Parameter können Sie angeben, ob der Mailscanner  
+; installiert werden soll oder nicht. Der Mailscanner 
+; überwacht ankommende Emails sowie deren Anhänge. 1 = Mailscanner 
+; installieren, 0 = Mailscanner nicht installieren. 
+MailScanner=0
+
+; Den Virenwächter AVGuard installieren
+; 0 = Nicht installieren,   1 = Installieren
+Guard=1
+
+; Mit diesem Parameter können Sie angeben, ob der WebGuard,  
+; installiert werden soll oder nicht. Der WebGuard überwacht 
+; die HTTP Verbindungen, z.B. beim Surfen im Internet
+; 1 = WebGuard installieren, 0 = WebGuard nicht installieren. 
+WebGuard=0
+
+; Die Shell Extension von AntiVir wird in der Registry angemeldet.
+; Diese Extension ist nur unter Windows NT 4.0 und höher lauffähig!
+; 0 = Nicht anmelden,   1 = Anmelden
+ShellExtension=1
+
+; Mit dem folgenden Parameter kann die Art und Weise des Setups 
+; beeinflusst werden.
+; Update = Einstellungen übernehmen und Dateien aktualisieren 
+; (Reparaturinstallation)
+; Modify = Neue Programmfeatures anhand SETUP.INF installieren,
+; Dateien aktualisieren. (Änderungsinstallation)
+; Remove - AntiVir von System deinstallieren
+SetupMode=Modify
+
+; Mit diesem Parameter können Sie angeben, ob das Anti-Rootkit Modul ,  
+; von AntiVir installiert werden soll oder nicht. Ist dieses Modul nicht
+; installiert, kann der Scanner nicht nach Rootkits auf dem System suchen.
+; 1 = Antirootkit installieren, 0 = Antirootkit nicht installieren. 
+RootKit=1
+
+; Mit diesem Parameter können Sie angeben, ob AntiVir ProActiv, ein 
+; Modul zur Erkennung unbekannter Malware, installiert werden soll
+; oder nicht.
+; Wenn Sie AntiVir ProActiv aktivieren, wird automatisch auch die
+; erweiterte Online Prüfung (Avira ProActiv-Community) aktiviert.
+; Sie verbessert den Schutz für Ihr System durch Online-Prüfung von
+; verdächtigen Dateien. Sie können die Teilnahme an der
+; Avira ProActiv-Community in der Konfiguration unter Guard->ProActiv
+; deaktivieren. Weitere Informationen finden Sie unter
+; http://www.avira.de/proactiv
+; 1 = AntiVir ProActiv installieren, 0 = AntiVir ProActiv nicht installieren.
+ProActiv=0
+
+; Mit diesem Parameter können Sie angeben, ob die Avira FireWall auf dem System
+; installiert wird oder nicht. Die Avira FireWall ermöglicht die regelbasierte
+; Kontrolle über ein- und ausgehenden Internetverkehr
+; 1 = Avira FireWall installieren, 0 = Avira FireWall nicht installieren.
+FireWall=1
+
+; Diese Option übergibt der Setup-Routine das gesetzte Passwort. Der Eintrag wird von der Setup-Routine nur dann
+; geprüft, wenn ein Passwort gesetzt wurde.
+; Bsp.:Password=password123
+Password=
