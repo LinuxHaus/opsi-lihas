@@ -1,0 +1,66 @@
+; Copyright (c) uib gmbh (www.uib.de)
+; This sourcecode is owned by uib gmbh
+; and published under the Terms of the General Public License.
+; credits: http://www.opsi.org/credits/
+ 
+ 
+Set $MsiId$ = ''
+Set $UninstallProgram$ = $InstallDir$ + "\uninstall.exe"
+ 
+Message "Uninstalling " + $ProductId$ + " ..."
+
+comment "Delete files"
+Files_uninstall /64Bit
+ 
+comment "Delete program shortcuts"
+LinkFolder_uninstall
+ 
+[Files_uninstall]
+; Example for recursively deleting the installation directory (don't forget the trailing backslash):
+;
+delete -sf "$InstallDir$\"
+ 
+[LinkFolder_uninstall]
+; Example of deleting a folder from AllUsers startmenu:
+;
+; set_basefolder common_programs
+; delete_subfolder $ProductId$
+;
+; Example of deleting a shortcut from AllUsers desktop:
+;
+set_basefolder common_desktopdirectory
+set_subfolder ""
+delete_element SoD
+set_basefolder common_desktopdirectory
+set_subfolder ""
+delete_element "SpeechMagic Initial Training"
+
+ 
+[Sub_check_exitcode]
+comment "Test for installation success via exit code"
+set $ExitCode$ = getLastExitCode
+; informations to exit codes see
+; http://msdn.microsoft.com/en-us/library/aa372835(VS.85).aspx
+; http://msdn.microsoft.com/en-us/library/aa368542.aspx
+if ($ExitCode$ = "0")
+	comment "Looks good: setup program gives exitcode zero"
+else
+	comment "Setup program gives a exitcode unequal zero: " + $ExitCode$
+	if ($ExitCode$ = "1605")
+		comment "ERROR_UNKNOWN_PRODUCT	1605	This action is only valid for products that are currently installed."
+		comment "Uninstall of a not installed product failed - no problem"
+	else
+		if ($ExitCode$ = "1641")
+			comment "looks good: setup program gives exitcode 1641"
+			comment "ERROR_SUCCESS_REBOOT_INITIATED	1641	The installer has initiated a restart. This message is indicative of a success."
+		else
+			if ($ExitCode$ = "3010")
+				comment "looks good: setup program gives exitcode 3010"
+				comment "ERROR_SUCCESS_REBOOT_REQUIRED	3010	A restart is required to complete the install. This message is indicative of a success."
+			else
+				logError "Fatal: Setup program gives an unknown exitcode unequal zero: " + $ExitCode$
+				isFatalError
+			endif
+		endif
+	endif
+endif

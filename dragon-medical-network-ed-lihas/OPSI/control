@@ -1,0 +1,50 @@
+[Package]
+version: 2
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: dragon-medical-network-ed-lihas
+name: dragon-medical-network-ed-lihas
+description: Dragon Medical Network Edition
+advice: 
+version: 1.0
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: setup64.ins
+uninstallScript: uninstall64.ins
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[Changelog]
+dragon-medical-network-ed-lihas (1.0-2) testing; urgency=low
+
+  * change to Makefile-based build system && lihas naming scheme
+
+ -- Stefan Baur <lihas@lihas.de>  Fri, 28 Feb 2014 18:32:00 +0000
+
+dmne (1.0-1) testing; urgency=low
+
+  * Initial package
+
+ -- Stefan Baur <lihas@lihas.de>  Wed, 16 Oct 2013 10:57:37 +0000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,881 @@
+6d016e4721ccde70adb7ba1788892fac  CLIENT_DATA/files/DgnSPServiceLib.dll
+3804af40d20f3eb9df9973deb9b05929  CLIENT_DATA/files/Microsoft.ServiceModel.Web.dll
+39469894262d1f85eac1c6ceeee775ac  CLIENT_DATA/files/NSpeex.dll
+f2be25362fe3be50426fda4d60e67d98  CLIENT_DATA/files/NSpeexLicense.txt
+37bb7cfad267d88f9f1406d129f80382  CLIENT_DATA/files/NUSAAudio.dll
+90f20fb9112b366b6945479e7c030086  CLIENT_DATA/files/Nuance.PowerMic/Nuance.PowerMic.manifest
+40ac9f3dd6c6a2cd62e36633df4570dc  CLIENT_DATA/files/Nuance.PowerMic/hiddev.dll
+1762c6cab602ba02d22489129ac5b47c  CLIENT_DATA/files/Nuance.PowerMic/usbmgr.dll
+773d64248e0c14dae431c2b2c52063fa  CLIENT_DATA/files/Nuance.SpeechAnywhere.Com.manifest
+354619c28d446a6cb367235d14514885  CLIENT_DATA/files/Nuance.SpeechAnywhere.dll
+7b0be6e3246b030f4dbf7e8f2fdb704d  CLIENT_DATA/files/Nuance.pspaudio.manifest
+9ee3a3c81fcd44e13d2fb13449e99d6c  CLIENT_DATA/files/NuanceSpeechAnywhereCom.dll
+f903d75116bd31a45b4e4e9279c87250  CLIENT_DATA/files/NuanceSpeechAnywhereCom.tlb
+a1e4d0823f875464d027dc855b0b4869  CLIENT_DATA/files/PIA.SmXAudWizLib.dll
+5e078f2ea3fd2321fc3162cb89ee5f1a  CLIENT_DATA/files/PIA.SmXAudioLib.dll
+35bf4f41b8512c659dc2402ea15b6a2e  CLIENT_DATA/files/PIA.SoD.UtilityServices.dll
+0537c71b7bde7aa033dd53fbf0a0012c  CLIENT_DATA/files/PIA.SoD.WorkflowBroker.dll
+3c56f8b17e6a17c75a7871eebc61c301  CLIENT_DATA/files/Philips.SpeechMike/Philips.SpeechMike.manifest
+34929adf2904f5e97dbaa05e8c52d40a  CLIENT_DATA/files/Philips.SpeechMike/XPSPLOG.dll
+daf70075e989bffb66093390017bd732  CLIENT_DATA/files/Philips.SpeechMike/PIA.SpMikeCtrl.dll
+73709568034edf7bb9a75272b3fffaa3  CLIENT_DATA/files/Philips.SpeechMike/SpMikeCtrl.dll
+0d246ff961423752d30140acea1d63ea  CLIENT_DATA/files/SoD.CommandParser.dll
+3b647f1b73146e79fea0ab2f05a68183  CLIENT_DATA/files/SoD.Common.dll
+918f1b28afd08bde0c8fe3bf95328e9c  CLIENT_DATA/files/SoD.DDCF.dll
+0a652e892204fa5e149f38af73e8d4be  CLIENT_DATA/files/SoD.IEEditRemote.dll
+b552a474f400522012499487ac8beea7  CLIENT_DATA/files/SoD.IEEditRemote_x64.dll
+c3afc7e7a1c016cc3e560d057724d352  CLIENT_DATA/files/SoD.LogonServices.dll
+e17897715991bfc8cded2615855af145  CLIENT_DATA/files/SoD.Placeholder.dll
+c3a100be5fe4faba0c79e206e52a466d  CLIENT_DATA/files/SoD.RemoteConnect.dll
+694b5473467ee2c9c64cad4b74a7b319  CLIENT_DATA/files/SoD.Selection.dll
+867e295600e08f747b84a374261dd2da  CLIENT_DATA/files/SoD.StdEditRemote.dll
+aace6081f78e539549f75df9ca2de0ab  CLIENT_DATA/files/SoD.StdEditRemote_x64.dll
+da42dd7e1149b6a867b8743917220fbc  CLIENT_DATA/files/SoD.TsfAddin.dll
+2c9b23cd7b9444ad7cc3c0a0d6416818  CLIENT_DATA/files/SoD.TsfAddin_x64.dll
+09168b4c165822747e51929d32c9a0b7  CLIENT_DATA/files/SoD.UIElements.dll
+cfbf1cfa4c8b79139268d3ed5df59fce  CLIENT_DATA/files/SoD.UtilityServices.dll
+2752bc63ad06d7555b8b25e27df3e300  CLIENT_DATA/files/SoD.VUIFormManager.dll
+613f828a20377215f35f95b58d11d344  CLIENT_DATA/files/SoD.VoiceCommands.xml
+6b6352f8c3ee57a7503a3fea6a7d2f66  CLIENT_DATA/files/SoD.WordAddin.dll
+dfbaacea60a5a6cf8eddf9c935e1959b  CLIENT_DATA/files/SoD.WordAddin_x64.dll
+d1a26fbe909a2547a0f5b465addd380c  CLIENT_DATA/files/SoD.WorkflowBroker.dll
+e8c2b40a6592b1865bd038b36b4b8f43  CLIENT_DATA/files/SoD.components.manifest
+3451433104b203057caa6d5c7497196f  CLIENT_DATA/files/SoD.exe
+89aa2afc8f22b3bf1ef11189f89cdf96  CLIENT_DATA/files/SoD.exe.config
+de48aa8471c847201fdf0859bbdc15fa  CLIENT_DATA/files/SoD.exe.manifest
+43a32efa7b92c532a9629cd1496d6f50  CLIENT_DATA/files/SoD.log
+b70d6ff17eb66a03d8f7b364ed930856  CLIENT_DATA/files/SpeechMagic Initial Training/SmIaInitialTraining.exe.config
+076d646c53ed2ceff018e3798cfdc2fd  CLIENT_DATA/files/SpeechMagic Initial Training/SmIaInitialTraining.exe
+fd7e88c968e60f3099f56d3a2a9b4341  CLIENT_DATA/files/SpeechMagic Initial Training/es/SmIaInitialTraining.resources.dll
+71cd5b2dcaa5a610dc4122192f093114  CLIENT_DATA/files/SpeechMagic Initial Training/da/SmIaInitialTraining.resources.dll
+8250de37bb083785ad2921f5a129d2c8  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SmIaWordDocumentFactory.dll
+63a8f08260610f0676371b64b34ba1f5  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/smaudsys.dll
+83af340778e7c353b9a2d2a788c3a13a  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/zip.exe
+c2902ed3d3dd55f2009d0164d7fdc5af  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/AxInterop.Tx4oleLib12.dll
+4947c036b85c07f067b847a9dc2bd799  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/smshrobd.dll
+bacbe6637f5da9654429f1880cb6ae7b  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SmIaRemoteSMAPI.tlb
+d7b6cc1adaf84c1d5765be8496cd9550  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SmIaTxDocument14.dll
+b51b6414b3c1b454844b8ec97c95df41  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SmAudioDrv.dll
+536e70520258113cb1e2ebc0b8cbd0d5  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/license.txt
+d7f2c721dac8450bc50e1b0a18d9c60d  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/pspaudrv.dll
+05fea9ef41c8b7551c75a4a4c0eaa351  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/Tx4oleLib.dll
+20dedfe8aa9fb265f6d21616f11843c6  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/PIA.SmIaDiskCacheManager.dll
+dd8f31ed4cec25462a1bc343184a2583  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/Tx4oleLib12.dll
+15545d38620b6be6b749bde892388f96  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/Tx4oleLib18.dll
+a14f4500aecc5b819417749d39a64ee0  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/PIA.SmIaWordDocumentFactory.dll
+edd069d5b1ec091dd42fc334d196bc6f  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/PIA.SmIaCore.dll
+05aa5fe4891d0d937a3ce5568fd44f5d  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SmXAudioWizard.dut.wav
+e5df8e5afd8403edeff8bd77838e6af7  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SpeechMagic.InterActive.Net.log.ini.template
+c56ec0f4dfaa920a4b59d9bdfef5ca01  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/IaSpDataManager.dll
+dfdb04ac50ffb46423c8ccd064d4afd2  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SmIaTxDocument15.dll
+e080c447b0ecde69db7b7f8955481789  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/PIA.SmIaOnlineSyncServer.dll
+8b9ec9d0c982f15c47545527dc067c79  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/info-zip-LICENSE.txt
+167d20d1685995347d03356d0a212fb8  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/Tx4oleLib16.dll
+736ed5096c819c947e9361a7f505e4fe  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SmDigtaMicPlugin.dll
+0709eae2caf4d4d1c27a05edabfffe7f  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SmXAudioWizard.fin
+bcfae08e9bfa2e838fb1418ef146850e  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/ACE-copying.htm
+650ce4b904baee3b04ee2a8d2e53cc0d  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/IaSpeechDocument.dll
+33fc4e4463fbbbb121a8b308cf1f4186  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SpeechMagic.InterActive.log.ini.template
+64dbf2c333a1aba4f22b6505819fe787  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/IaTdsHandler.dll
+a17ba5cb5ee45c1e7e2d4d49be0338f8  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/IaConfiguration.dll
+5244aa3ed4e808a69f08cc2b608befcc  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SmOlympusMicPlugin.dll
+d0496c6f9e7fdcc6d21304eafd0a5db8  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/WordDocumentAddin.vsto
+6f7998216df4f759b6754f5f79735bf4  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SmIaTxDocument.dll
+d598fdb0322f44fa4ef1b437b7948762  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SpcNew.dll
+8ba715c3c253baeada76186fce04bc5e  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/WordDocumentAddin.dll.manifest
+c865ed2849ed156b6ea3bb17777724b3  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/pspapdrv.dll
+d7eead4e17b7df77822eb2800e1d2765  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SmXAudioWizard.eng.wav
+6d510d40ec4c6ed8b9732542bff068f3  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SmIaDataSyncConfig.xml
+f978d72223048694877358641154ae5b  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/IaAcousticModelAdaptor.dll
+fdafc691aa5fb7f8e2a9e9521fef771b  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/GPL2_COPYING.txt
+bb1558477344c0c83d67f704a65171ab  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SmIaWordDocumentAddin.dll
+deda55b47632694bbaecb043ad126141  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/pspsbext.dll
+4f56da46bafe6db02ecad5746e1d9821  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SourceLibrary_License.txt
+4a5e3c90618d55d358c0e2d75980d885  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/Acknowledgements.htm
+daedc64d1bc40359ac18be1e9870c6f2  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/Tx4oleLib15.dll
+15f5682e4840f2770aef5630f3803826  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SpeechAccuracyTrainer_en-US.html
+773818b012481431d097c6709a4b9e0b  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SmIaInternalTI.dll
+05d395ee99b7144f51321346e4a1f524  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SmIaDiskCacheManager.dll
+bddcfc6b491326eb895bc0cba9c6bb91  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/WordDocumentAddin.dll
+6829d64fae50a7c490c252e27556790c  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/AxInterop.Tx4oleLib19.dll
+d53992009fd4ec0de21459d5dd75fcf2  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/ACE-5.6.1.0.dll
+c5c7f1cb27426e62b82df1e742b69137  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SmIaWordDocument.dll
+88c4c2c851659c29bfff91fc38b1ff91  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/PIA.SmXAudioLib.dll
+b51058fead1aa71840b79527f5bffd3d  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/boost_LICENSE_1_0.txt
+ead420d35fbf91165908f0a8b9142f14  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/PIA.SmIaDataSynchronization.dll
+878a55a31ca75b519c8e10fd5aee48c7  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SmIaDataSyncClient.dll
+4935a89fe9139a4d998607d2ebb7a154  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SmXAudioWizard.dut
+fdffe1f2276da609c5431b62ca6d89bf  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/smashrob.dll
+7849f8db0f0354ce4e6601c94ab9a989  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SmIaDataSyncCommon.dll
+5f98b2558f75abb18515fd70733ee40e  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SmIaInitialTraining.dll
+aa0690ff51a3e22ba0e9b0b60d3011ec  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SmIaEditControlAdapterDotNetAPI.dll
+34df2c74650bc44fbb67694c0b88997c  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SmXAudioWizard.ger.wav
+eb45a30f12357770fa077aae077e2dc3  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/smdatastoragecore.dll
+fb420cab3a3a5063860b48c35ac7c766  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SmXLog.dll
+8d0bfb73b73733cf4aabb7def1c4e3ee  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SmIaTextInterface.dll
+1deb4b04c7fc837b90d957965a0f0276  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/IaDataMapper.dll
+d6995a45ca1b8c4823c0cfed1d602e40  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SmIaRemoteSMAPI.dll
+fbd9c50fdfd31e14eb835b5741f982a8  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SpeechAccuracyTrainer_nl-NL.html
+cdf0e4e10eb2316e8755a0b09e8187ff  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SmIaECADocumentJava.dll
+1a4c5deff29d6f6d5e724ac5daba0478  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SmXAudioWizard.swe.wav
+b21dd79b9a04d417a2172f7168dfb857  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SRSys.dll
+754be5159a609ce505ed1b1cb498f8c7  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SmIaOfflineSyncClient.dll
+9b3aa78ef37b79bc695bfa141d69173c  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/IaTypeConversion.dll
+564dcce5bd38c81a56113c6f8933f4f1  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SmIaTypeConversion.dll
+1ae16fb2b5947172467d56c2b40600d2  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SmIaEditor.dll
+68a0cac7a7468d8a999f14a32cc6f9d8  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SmIaECADocument.dll
+03e3d92a34cfea79dfcb0cc644951b55  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SmIaCommon.dll
+3d85c360983c676210aa0a8d09950beb  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SmIaTxDocument12.dll
+d5b2a986b331daccf28d4630ea0e9640  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SpeechMike_COPYRIGHT.txt
+1b7163fa14f3424c4ccca05d36d307ee  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/Interop.MsWord9.dll
+115fb9761a73c604c3eb6df05a63dd97  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SourceGrid_License.txt
+ebbaccb8d47325233e387b388001051f  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/IaRecognizer.dll
+6c3ce9070a71ecb456ea9656152be83c  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/bccommon.dll
+fbbd64e36cfa7cbfa2ecc31ccf50b930  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/AxInterop.Tx4oleLib.dll
+850e68668e52b88b1593bb9ab22c669a  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/Interop.VBIDE.dll
+8949286664d19a061b3a8825aaf2355e  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/spcapi.dll
+018511cc5fbec8e80837c91fed6bb1fa  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SmIaDocumentConverter.dll
+1e536713e2c5ae8d3326bea358aa50e1  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SmXAudioWizard.fre
+9c213e5ec036384d23f295407733c4e3  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SmIaTxDocument13.dll
+55f940572dc7058430f28c0bf5496524  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/smncapi.dll
+16b6390cb0a3b6b0ea4427d9582847d5  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SmXAudioWizard.Spa
+d7d803ffa31ff106a81c02bd8a20ec34  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SpeechMagic.InterActive.manifest
+de2d86591445a1df9bbd1422bde088ed  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/smshrob.dll
+62ed1d5b146c4d276c05782db63b6fce  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/IaDataManagementBase.dll
+e3a2ed3244c76d7c35853689557963dd  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/IaDocumentManager.dll
+ef331df8dc25ffe48bb47fe03809de59  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SmControlDrv.ini
+ef6a2dfbd914169a3209137ab7b97e05  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/Microsoft.VC90.CRT/Microsoft.VC90.CRT.manifest
+4d03ca609e68f4c90cf66515218017f8  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/Microsoft.VC90.CRT/msvcr90.dll
+7b37f8ec25c9ad853e8126c1d0992201  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/Microsoft.VC90.CRT/msvcm90.dll
+871f979d70414c900b35e56222932daf  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/Microsoft.VC90.CRT/msvcp90.dll
+4c59f4bb6c2d9801ac94b01e26f6cabc  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/IaSyncCommon.dll
+3b02d784e254c879dbf76a6f5108e1e6  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/Interop.Office.dll
+277dba68eead2d91d9ffd6e86ab7e96b  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/PIA.SmIaOnlineSyncClient.dll
+862ca72c1d388cb2c9bf70f8d6c0846b  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SmIaTxDocument18.dll
+7713bef20c369c7a303d343ac7c57b55  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SmIaTextInterface.tlb
+7f781064c8bee592c3083f2a43cb6d9a  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/IaResultConstraintChecker.dll
+61c9fd0c7da22bb944d812552f3cda87  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/Tx4oleLib19.dll
+6101f1bf810fe763db86bd6ac62d1f84  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SmIaOnlineSyncClient.dll
+ee396bf4b140a2ebf5f95f112a178ebd  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SRPar.dll
+456cd7e83bf65ca72560cf98ef135ca1  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SmXAudioWizard.ger
+7c359500407dd393a276010ab778d5af  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/Ionic.Zip.Reduced.dll
+7312403405fb57d570d870a6594b44f2  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/AxInterop.Tx4oleLib13.dll
+52d40805e49281a5ed22933d0f29a60c  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/PIA.SmIaOfflineSyncClient.dll
+ae4b1ab76965717c1554df5dd72bc3c0  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/Interop.tom.dll
+4ea560183f8cd430fffca95ed5cce45f  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/IaSpeechAccuracyTrainerGui.dll
+d41d8cd98f00b204e9800998ecf8427e  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SpeechMagic.InterActive.dat
+d229da563da18fe5d58cd95a6467d584  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/Apache_LICENSE-2_0.txt
+171a46d80c5fd6c9dcc0a0416dc88eeb  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SmIaECADocumentJNI.dll
+57f1c377f9628ec6c38d13d9419f7def  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SmPowerMicPlugin.dll
+f7091c4e04a8f44dede67953e9a8a795  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SmClientWinApiHooks.dll
+827304f2bd4bd371d725e563fb13471b  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/IaTextDocument.dll
+caf211c667ca03c72ff135de1ddc865f  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SmIaTxCommon.dll
+eda93690924fe49d7dc2eda1c45e6fc1  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SpeechAccuracyTrainer_fi-FI.html
+1d65f2e1cad0f2dda4dbe50915a0c4c0  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SmIaTextInterfaceProxy.dll
+766663ed76e3e554e20b049375cf202b  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/smxlog.ini.template
+ac4698cd947dc37ef2068ee49d4924be  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SmInitialTraining.fin
+39d887e073f4c5b0420e7a702fbb107c  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SmIa.dll
+02269734891d046659b30b35a5627c83  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/smdrcg.dll
+d894fdc0aaea177c9f32b5a17676aa46  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/Tx4oleLib14.dll
+5d123f20e3801cd7a70f4aad3d493c59  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SmInitialTraining.Ger
+6e2c9879d98c36d7a45e013fe509a3ef  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/AxInterop.Tx4oleLib15.1.dll
+00bcecdff67c5779180dbc98e13a68ee  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/Tx4oleLib13.dll
+8661355c8945ffae37a9f39724ec983a  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/PIA.SmIa.dll
+75375c22c72f1beb76bea39c22a1ed68  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/unzip.exe
+119773a2e208beaca6aaeb4f1dd00059  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/IaContextAdaptor.dll
+0be914c883471e9f728e9e690d51bdec  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/sqlceer35EN.dll
+7187bb1eff196f3ea314a952816e77c9  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/IaMemoryObjectStorage.dll
+600e3ffdf25fc92c064e5225ff0d3b96  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/sqlceoledb35.dll
+a921dee0d1a6ed907cfa8d7f8b0c45c5  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/PSPFIDRV.dll
+8f95bcbd5f2e3b373d4044be04ea7d00  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/AxInterop.Tx4oleLib17.dll
+b0d181292c99cf9bb2ae9166dd3a0239  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/EasyHook_LICENSE.txt
+88c390812c3c98c33d99a43429404758  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SmIaTxDocument16.dll
+f400387a9f86ca917d89e53d46deb02e  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/sqlcese35.dll
+3a62b4b62bdeba24ea088ff78d98f57a  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SmControlDrv.dll
+42bb0f2d1fc40ef507b8882489a72448  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SmIaOfflineSyncServer.dll
+7926fa142a1ae4854ea3dfe9549f9f72  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SmInitialTraining.Fre
+eb2ead3d0c84e21d96807cf20d35b509  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/PspLog.dll
+766525b733897e2c45c97336775d1e49  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/IaComHelper.dll
+43d8039506574032f750dddd7ee817cf  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SmSpeechMikePlugin.dll
+71ed1741ba3f0d9e727ef653d2b5d322  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/dsoframer-eula.txt
+403ec0aeced271ee1996d421e5c1bb7a  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SmIaCoreInterop.dll
+94f7e3112e27a07c687e4410bb7bf093  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/WordAddinClient.manifest
+5379fb447cdb4b94130c1a0f345e1d25  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SmIaSimpleDocument.dll
+2b95ccdd598e017b60828072c7ef6bcf  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/AxInterop.Tx4oleLib15.dll
+b591d689d4b7bffdf6a85d0bf74bc191  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SmIaTxDocument19.dll
+361a47591fd31ec99a9794b6541360a6  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/Microsoft.VC90.MFC/mfc90.dll
+a76104d8d9aba3670fd3cea603d70ada  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/Microsoft.VC90.MFC/mfc90u.dll
+c38774421c7b64d2c23129a200c60f47  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/Microsoft.VC90.MFC/mfcm90.dll
+db59cce916665d8c9a8a87198daede34  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/Microsoft.VC90.MFC/mfcm90u.dll
+be81faa8d3c3491618651771ab4fa514  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/Microsoft.VC90.MFC/Microsoft.VC90.MFC.manifest
+9de881fc1270ab0b8cd4cbe9304c6cea  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/pspwave.dll
+9a5f478f21c2e20f970e9e5c6f09b5fc  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SharpZipLib_Readme.rtf
+fa6d6e09a0164d290aff1cfaf63ca82c  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/Tx4oleLib17.dll
+f1af39c66d086e8363b4c04eff3b5750  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SmXAudioWizard.fre.wav
+739c88bb6e33979571055825add90e11  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SmInitialTraining.Dut
+975cf36a050779d1bbbd87d1e8e01874  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/PIA.SmIaOfflineSyncServer.dll
+86a7b1535194628a2b5859aed61ef0f8  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/EasyHook32.dll
+5e0eea43dfda0e96ada0cf9884e53af3  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/smcobra.dll
+cbb79dbc55a9ac0fa4a12014185ecf37  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/IaPersistentObjectStorage.dll
+27819135f657fbc9984caf12ec94944d  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/IaSyncCore.dll
+952ffa5c9098e62bd6a5368ee355e096  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SmXAudioWizard.fin.wav
+e3e1f618c35e6d7415fa561237813afc  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SmDbAccess.dll
+30de6fdbc0ef272f5212154219e224c9  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SpeechAccuracyTrainer_fr-FR.html
+ddf3955436e0096cda96a8327cc85444  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/Tx4oleLib15.1.dll
+22cff9cda81c4d6ddf3cdf6c203839fd  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/PIA.SmIaTextInterfaceProxy.dll
+ddd7e26fa2179322fcab02bae79f47fc  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/NcaAudiodev.dll
+bb6b4dbf29c77723a9d8df513429e163  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SmIaRemoteSMAPIConfig.xml
+29ed5c86f7bc763dfe6549297593d4bb  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/IaShido.dll
+0be2cf0906e34e4e1d4a27421015238e  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/smncapid.dll
+fc14ef94200c5e0b55000b558a1d29da  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/smcobrap.dll
+b3307a1b18d6cb69d9e72093d8880da2  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/PIA.SmIaDocumentConverter.dll
+6e7f104c234151bc764ae11a72b6031c  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/IaDocumentConverterCore.dll
+2f6af6d7f0053957e9e06cbd88e35ef0  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/fnsgeneral.dll
+ee9e3e6b50b0017b25ef238d072d338a  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SmIaCore.dll
+ea35cd074085a496a8887abf9c3a4456  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SmIaRtfDocument.dll
+40a17f08c1b7f32ca8d62c1a486ca9f0  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SmIaDataSyncRemotingClient.dll
+cf5e6d2d5fa3181803ab694ba5414f06  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/PIA.SmIaInitialTraining.dll
+2eb93d4fb7b9b758f65b45064dd9fabc  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SmIaDataSynchronization.dll
+30b8190c119ee82a2fea935c82f90bf8  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/sqlceqp35.dll
+27d185d9d2ff7c4f0889a6f2607d2c07  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/AxInterop.Tx4oleLib18.dll
+ef183036f0ab5b842e48b6056ba0fb0f  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/PIA.SmXAudWizLib.dll
+083ebf4eae902788b79243086dafcd54  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/IaIdo.dll
+fc4ee764c55ad33242a80ac074c6f7a4  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/PIA.SmIaInternalTI.dll
+e5c4093e29b914c34c6950bed6a5cb3d  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/vbaccelerator-License.txt
+e70dec3358b93a20cf601fe70c6a98c6  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/smkrnl.dll
+164e84b48704593850b7c2b474b52988  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SpeechAccuracyTrainer_de-DE.html
+d7d7d3380d4ef0f1e76212a019ecf052  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SmXAudio.dll
+b94359c38c9f19d860fd516b111296c4  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/log4net.dll
+0cda0b009f144f5eba29ac31eaed58b3  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/IaSrDataManagement.dll
+19b2ed366b4004af49cb9bd380f1f785  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/EasyHook.dll
+8c092c1d67677e56b77407f46cab07af  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SmXAudioWizard.spa.wav
+e0c3eefa4a30f06fc1352c342da9cc2d  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SmIaTxDocument15.1.dll
+0417b339428940b531d6cb0b965c7fc2  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/PIA.SmIaTypeConversion.dll
+e0511e7650bc9b93e823970635b1c5ea  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SmInitialTraining.dll
+9b5245e7215fa83db357820b5e8cc196  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SmIaTextDocument.dll
+8600c488eadd2ed235fbb03cc199e99d  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SmAudioDrv.ini
+256b723c23eac1fb76398a2e23107ebd  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/IaAudio.dll
+f279040c746798f7005a54a8485175cf  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/PspFoundation.dll
+c3e60ce672eb3fd356edd8bab09c144e  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/AxInterop.Tx4oleLib14.dll
+7011ae942e0d3febc5578c3d94362882  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SmXAudioWizard.dll
+21f8ba2b22ccfd89cd2607b6e69ac989  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/AxInterop.Tx4oleLib16.dll
+48193aa85e8246148be12b99875742de  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/SmIaTxDocument17.dll
+71fcfcdc4b4593df9b31df50b510b042  CLIENT_DATA/files/SpeechMagic Initial Training/SpeechMagic.InterActive/Apache_SW_License_1_1.txt
+503a4c51329ea58259e0e5dd19f14219  CLIENT_DATA/files/SpeechMagic Initial Training/nl/SmIaInitialTraining.resources.dll
+bbcf40d629de7b458ea6cf8475184cef  CLIENT_DATA/files/SpeechMagic Initial Training/de/SmIaInitialTraining.resources.dll
+d4f99384b2066f8badb3dba161bda197  CLIENT_DATA/files/SpeechMagic Initial Training/fr/SmIaInitialTraining.resources.dll
+62ca5c4516d59a3bbacdf6a6f1c2f474  CLIENT_DATA/files/SpeechMagic Initial Training/no/SmIaInitialTraining.resources.dll
+3c56f8b17e6a17c75a7871eebc61c301  CLIENT_DATA/files/SpeechMagic Initial Training/Philips.SpeechMike/Philips.SpeechMike.manifest
+34929adf2904f5e97dbaa05e8c52d40a  CLIENT_DATA/files/SpeechMagic Initial Training/Philips.SpeechMike/XPSPLOG.dll
+daf70075e989bffb66093390017bd732  CLIENT_DATA/files/SpeechMagic Initial Training/Philips.SpeechMike/PIA.SpMikeCtrl.dll
+73709568034edf7bb9a75272b3fffaa3  CLIENT_DATA/files/SpeechMagic Initial Training/Philips.SpeechMike/SpMikeCtrl.dll
+7179a6dd5462c7687430653dead5a2c4  CLIENT_DATA/files/SpeechMagic Initial Training/fi/SmIaInitialTraining.resources.dll
+3e9c176cd73f58f6b9f31feda4cc7255  CLIENT_DATA/files/SpeechMagic Initial Training/sv/SmIaInitialTraining.resources.dll
+5b014dfedc0cebd40ff11fbfad605ea7  CLIENT_DATA/files/SpeechMagic.AudioFull/smaudsys.dll
+57bc9ff1730481630c7bc73ac8ff3e03  CLIENT_DATA/files/SpeechMagic.AudioFull/SmAudioDrv.dll
+df8d003e7040ffbb48f4e58d314d2378  CLIENT_DATA/files/SpeechMagic.AudioFull/pspaudrv.dll
+05aa5fe4891d0d937a3ce5568fd44f5d  CLIENT_DATA/files/SpeechMagic.AudioFull/SmXAudioWizard.dut.wav
+908c2936185833987ea5be9ebd67cc3c  CLIENT_DATA/files/SpeechMagic.AudioFull/SmDigtaMicPlugin.dll
+94254f47b7c2bd24333d37d637f2ef72  CLIENT_DATA/files/SpeechMagic.AudioFull/SmXAudioWizard.fin
+4d7b06384686c86ff98d7e6da740ce11  CLIENT_DATA/files/SpeechMagic.AudioFull/SmOlympusMicPlugin.dll
+23c7b6feb0edcac3c767dbd6817d9333  CLIENT_DATA/files/SpeechMagic.AudioFull/SpcNew.dll
+49b8be5cc563c168ecee57462182bca4  CLIENT_DATA/files/SpeechMagic.AudioFull/pspapdrv.dll
+d7eead4e17b7df77822eb2800e1d2765  CLIENT_DATA/files/SpeechMagic.AudioFull/SmXAudioWizard.eng.wav
+9a12fcbbe601d21aba7216c78907c8d8  CLIENT_DATA/files/SpeechMagic.AudioFull/SmXAudioWizard.ger.chm
+8219ecf075baaf60663a4643350e7fea  CLIENT_DATA/files/SpeechMagic.AudioFull/pspsbext.dll
+5e078f2ea3fd2321fc3162cb89ee5f1a  CLIENT_DATA/files/SpeechMagic.AudioFull/PIA.SmXAudioLib.dll
+5f247230b19e09a0d4fbe08286271283  CLIENT_DATA/files/SpeechMagic.AudioFull/SmXAudioWizard.dut
+2c4149bdbab7d259fb578e44d779f40b  CLIENT_DATA/files/SpeechMagic.AudioFull/smashrob.dll
+291032e77c714aaf54aba760712419bb  CLIENT_DATA/files/SpeechMagic.AudioFull/SmXAudioWizard.dut.chm
+34df2c74650bc44fbb67694c0b88997c  CLIENT_DATA/files/SpeechMagic.AudioFull/SmXAudioWizard.ger.wav
+bc192daf06d2207d18ade18b5b7be1a6  CLIENT_DATA/files/SpeechMagic.AudioFull/SmXLog.dll
+dfd4dad97f086f37fa83153f48c3b732  CLIENT_DATA/files/SpeechMagic.AudioFull/SmXAudioWizard.eng.chm
+1a4c5deff29d6f6d5e724ac5daba0478  CLIENT_DATA/files/SpeechMagic.AudioFull/SmXAudioWizard.swe.wav
+24df4da4ac8181742386e3684345756d  CLIENT_DATA/files/SpeechMagic.AudioFull/bccommon.dll
+3df3fb7ea79ac5fd5705b0b6edee9158  CLIENT_DATA/files/SpeechMagic.AudioFull/SmXAudioWizard.fre
+d7ee7976472c6264fcb54849e2cf116c  CLIENT_DATA/files/SpeechMagic.AudioFull/SmXAudioWizard.Spa
+ef331df8dc25ffe48bb47fe03809de59  CLIENT_DATA/files/SpeechMagic.AudioFull/SmControlDrv.ini
+ef6a2dfbd914169a3209137ab7b97e05  CLIENT_DATA/files/SpeechMagic.AudioFull/Microsoft.VC90.CRT/Microsoft.VC90.CRT.manifest
+4d03ca609e68f4c90cf66515218017f8  CLIENT_DATA/files/SpeechMagic.AudioFull/Microsoft.VC90.CRT/msvcr90.dll
+7b37f8ec25c9ad853e8126c1d0992201  CLIENT_DATA/files/SpeechMagic.AudioFull/Microsoft.VC90.CRT/msvcm90.dll
+871f979d70414c900b35e56222932daf  CLIENT_DATA/files/SpeechMagic.AudioFull/Microsoft.VC90.CRT/msvcp90.dll
+baa0efaf5eb3950dce54fde6f59cf772  CLIENT_DATA/files/SpeechMagic.AudioFull/SmXAudioWizard.fre.chm
+d3b55ade804153835b12dd6db0d54b0f  CLIENT_DATA/files/SpeechMagic.AudioFull/SmXAudioWizard.ger
+6a2558860629e7499669a858f0eae68d  CLIENT_DATA/files/SpeechMagic.AudioFull/SpeechMagic.AudioFull.manifest
+dd0be9ce7ece24194b530267ac16aee9  CLIENT_DATA/files/SpeechMagic.AudioFull/SmPowerMicPlugin.dll
+766663ed76e3e554e20b049375cf202b  CLIENT_DATA/files/SpeechMagic.AudioFull/smxlog.ini.template
+3665cf06585a360daf937e57ec09adcc  CLIENT_DATA/files/SpeechMagic.AudioFull/PSPFIDRV.dll
+24f40464efedb8781d47839fc3c0f624  CLIENT_DATA/files/SpeechMagic.AudioFull/SmControlDrv.dll
+583280f9372dce02aab6b715f4b62ced  CLIENT_DATA/files/SpeechMagic.AudioFull/PspLog.dll
+9336a618f2409819896d2bce20bfc122  CLIENT_DATA/files/SpeechMagic.AudioFull/SmSpeechMikePlugin.dll
+361a47591fd31ec99a9794b6541360a6  CLIENT_DATA/files/SpeechMagic.AudioFull/Microsoft.VC90.MFC/mfc90.dll
+a76104d8d9aba3670fd3cea603d70ada  CLIENT_DATA/files/SpeechMagic.AudioFull/Microsoft.VC90.MFC/mfc90u.dll
+c38774421c7b64d2c23129a200c60f47  CLIENT_DATA/files/SpeechMagic.AudioFull/Microsoft.VC90.MFC/mfcm90.dll
+db59cce916665d8c9a8a87198daede34  CLIENT_DATA/files/SpeechMagic.AudioFull/Microsoft.VC90.MFC/mfcm90u.dll
+be81faa8d3c3491618651771ab4fa514  CLIENT_DATA/files/SpeechMagic.AudioFull/Microsoft.VC90.MFC/Microsoft.VC90.MFC.manifest
+7037732afb307a5a95a8825c7673a6ef  CLIENT_DATA/files/SpeechMagic.AudioFull/pspwave.dll
+f1af39c66d086e8363b4c04eff3b5750  CLIENT_DATA/files/SpeechMagic.AudioFull/SmXAudioWizard.fre.wav
+952ffa5c9098e62bd6a5368ee355e096  CLIENT_DATA/files/SpeechMagic.AudioFull/SmXAudioWizard.fin.wav
+da2db625ae415cbd6dab27703b3ec99e  CLIENT_DATA/files/SpeechMagic.AudioFull/SmXAudioWizard.fin.chm
+7d4c25af1aa8be8c5fdd3c6efc693882  CLIENT_DATA/files/SpeechMagic.AudioFull/NcaAudiodev.dll
+804db86952f465a9a02ccd2a776bd565  CLIENT_DATA/files/SpeechMagic.AudioFull/fnsgeneral.dll
+a1e4d0823f875464d027dc855b0b4869  CLIENT_DATA/files/SpeechMagic.AudioFull/PIA.SmXAudWizLib.dll
+c4a529da6ffa84900dedfc0d1c71a05a  CLIENT_DATA/files/SpeechMagic.AudioFull/smkrnl.dll
+9e7d527c192ab0c306bfc005cefcb87f  CLIENT_DATA/files/SpeechMagic.AudioFull/SmXAudio.dll
+8c092c1d67677e56b77407f46cab07af  CLIENT_DATA/files/SpeechMagic.AudioFull/SmXAudioWizard.spa.wav
+8600c488eadd2ed235fbb03cc199e99d  CLIENT_DATA/files/SpeechMagic.AudioFull/SmAudioDrv.ini
+d57952bba0d3ea75c86dffe832cc2235  CLIENT_DATA/files/SpeechMagic.AudioFull/SmXAudioWizard.dll
+042965c0df5e806121e44bb3dc2746fc  CLIENT_DATA/files/da/Nuance.SpeechAnywhere.resources.dll
+989c90a3e53a6aea3234a9daa71bd98c  CLIENT_DATA/files/de/Nuance.SpeechAnywhere.resources.dll
+092f1456d3d3b9291f19178cebf20abc  CLIENT_DATA/files/doc/pt/SoD.htm
+11e711753bb76d56172fb35977b440c1  CLIENT_DATA/files/doc/pt/Resources/menu.png
+970c7e51de446081d61c0a6611042674  CLIENT_DATA/files/doc/pt/Resources/SoD.css
+229132e844455b0ff7d044ab488b25d8  CLIENT_DATA/files/doc/pt/Resources/SpeechFocusPin_MicOff.png
+d6df55b50e763943d635eca2bafbd889  CLIENT_DATA/files/doc/pt/Resources/hide.png
+939cd8e5c98a68129bb070ba7558f348  CLIENT_DATA/files/doc/pt/Resources/discard.png
+23c04e5b64759e34a7db220a4bbf86af  CLIENT_DATA/files/doc/pt/Resources/specialfeature.png
+3f02d4c709df6412a14a979fe39c24a8  CLIENT_DATA/files/doc/pt/Resources/Stylesheets/MadCapBlaze.css
+e5a1841481141a9558712225920a9ac0  CLIENT_DATA/files/doc/pt/Resources/recall.png
+b2450082071a746c1848a27b9524f2d5  CLIENT_DATA/files/doc/pt/Resources/UnderstandSR.png
+7376f63f6cecdabf865992205a59dfbc  CLIENT_DATA/files/doc/pt/Resources/mic_off.png
+3e877cb9e60d99a273d767c4fbb8ef07  CLIENT_DATA/files/doc/pt/Resources/undo.png
+8396ec4d39cb317f1a36bfbd1eeec55e  CLIENT_DATA/files/doc/pt/Resources/microphone.png
+210dfd9dfd1381a8855ad0cb4c1321c6  CLIENT_DATA/files/doc/pt/Resources/SpeechFocusPin.png
+b542c4589fb2ab22abff6012ac1a55e7  CLIENT_DATA/files/doc/pt/Resources/exclamation.png
+8718fee6d2c00bcbf399adea27cdf98d  CLIENT_DATA/files/doc/pt/Resources/transfer.png
+19fcf4743c2c6b88ec845e2da9e58dc3  CLIENT_DATA/files/doc/pt/Resources/speak.png
+772674c06ca710887aa14ba2c911eaf5  CLIENT_DATA/files/doc/pt/SRFeatures/Resources/UnderstandSR_small.png
+5ee83f54c46659adddf800e046338210  CLIENT_DATA/files/doc/pt/SRFeatures/Resources/Navigate_small.png
+313127adcec1835196252cb5916ce7c2  CLIENT_DATA/files/doc/pt/SRFeatures/Resources/Correct_small.png
+ff927c304d47b45ba7aca26418e2de4a  CLIENT_DATA/files/doc/pt/SRFeatures/Resources/VoiceCommands_small.png
+2c897d7b94a29d3322b25a9120f8d023  CLIENT_DATA/files/doc/pt/SRFeatures/Resources/Symbols.png
+42b6e5df2e500764336aec2bca99cda0  CLIENT_DATA/files/doc/pt/SRFeatures/Resources/Numbers.png
+e25c5f3f24943b3ea674bf1b30572ab3  CLIENT_DATA/files/doc/pt/SRFeatures/Resources/Tips.png
+247c2bf23c7aededc9b6dea3e0896d1b  CLIENT_DATA/files/doc/pt/SRFeatures/Resources/ListenToSound.png
+946caf11c4d325e5692ad6aed82a6a09  CLIENT_DATA/files/doc/pt/SRFeatures/Resources/Marks.png
+23c04e5b64759e34a7db220a4bbf86af  CLIENT_DATA/files/doc/pt/SRFeatures/Resources/SpecialFeature.png
+0f9dee5f3fdfbef6b38257e9129eafd9  CLIENT_DATA/files/doc/pt/SRFeatures/Resources/VoiceCommands.png
+8396ec4d39cb317f1a36bfbd1eeec55e  CLIENT_DATA/files/doc/pt/SRFeatures/Resources/Microphone.png
+da634c180253a7647ec54c92638ee128  CLIENT_DATA/files/doc/pt/SRFeatures/Resources/Mesaruements_Small.png
+927e14742f78c90e5100cc4257a14301  CLIENT_DATA/files/doc/pt/SRFeatures/Resources/SpecialFeature_small.png
+11ec14b99d5a0e50d959c44375337430  CLIENT_DATA/files/doc/pt/SRFeatures/Resources/Dates.png
+cfca0fed4c408ca439babaf377917100  CLIENT_DATA/files/doc/pt/SRFeatures/Resources/Correct.png
+8f78d1810337482c86afc2d77685752a  CLIENT_DATA/files/doc/pt/SRFeatures/Resources/Time.png
+3f02d4c709df6412a14a979fe39c24a8  CLIENT_DATA/files/doc/pt/SRFeatures/Resources/Stylesheets/MadCapBlaze.css
+2c28e83d18d718ed0c06c31b7ef32565  CLIENT_DATA/files/doc/pt/SRFeatures/Resources/autotext.png
+6697f6c697ec8e9fdf5c7e97b9ad6bba  CLIENT_DATA/files/doc/pt/SRFeatures/Resources/Symbols_small.png
+59c9bad64dc502db13d3b443d43d49fb  CLIENT_DATA/files/doc/pt/SRFeatures/Resources/ListenToSound_small.png
+0f612a01583fb22f87425d129d311da5  CLIENT_DATA/files/doc/pt/SRFeatures/Resources/Tips_small.png
+1ff85b089d12cbac36a0f079c39c12e7  CLIENT_DATA/files/doc/pt/SRFeatures/Resources/Navigate.png
+b2450082071a746c1848a27b9524f2d5  CLIENT_DATA/files/doc/pt/SRFeatures/Resources/UnderstandSR.png
+3a78940a3a01f2526188bf8ebdd25d38  CLIENT_DATA/files/doc/pt/SRFeatures/Resources/Example.png
+e659e5e82ffcd8ff1e3f9742e68ee1a8  CLIENT_DATA/files/doc/pt/SRFeatures/Resources/Speak_small.png
+3e2f1f32fe71749052fefa5a2c62b724  CLIENT_DATA/files/doc/pt/SRFeatures/Resources/danubeenduser.css
+19fcf4743c2c6b88ec845e2da9e58dc3  CLIENT_DATA/files/doc/pt/SRFeatures/Resources/Speak.png
+1d3384077fd22360162d9a0d0e36b18a  CLIENT_DATA/files/doc/pt/SRFeatures/Resources/ScratchThat.png
+6c1f1e62db5eb217c8beee83c9d4ce81  CLIENT_DATA/files/doc/pt/SRFeatures/Resources/Dates_small.png
+d71fe9cef9c2061c7d6f59877df955b1  CLIENT_DATA/files/doc/pt/SRFeatures/Resources/Mesaruements.png
+a2e5664d1d84f1666ce139625c9a9569  CLIENT_DATA/files/doc/pt/SRFeatures/Resources/Numbers_small.png
+4f0ddb48d02b3a3c27f106fe4dab2c1b  CLIENT_DATA/files/doc/pt/SRFeatures/Resources/Time_small.png
+719de98ba2cf90c5efe3045288fc6f17  CLIENT_DATA/files/doc/pt/SRFeatures/Resources/Microphone_small.png
+cbf82f489ffa309de4b8645c1bffd471  CLIENT_DATA/files/doc/pt/SRFeatures/Resources/Marks_small.png
+d10659392db0139d43ecf47fa38d4031  CLIENT_DATA/files/doc/pt/SRFeatures/Desktop_XHTML_SoD.htm
+7854b30f2dae91222fc6185e6c156e6f  CLIENT_DATA/files/doc/es/EULA.htm
+b1679a8cee667604607c15a48546921e  CLIENT_DATA/files/doc/es/SoD.htm
+11e711753bb76d56172fb35977b440c1  CLIENT_DATA/files/doc/es/Resources/menu.png
+229132e844455b0ff7d044ab488b25d8  CLIENT_DATA/files/doc/es/Resources/SpeechFocusPin_MicOff.png
+d6df55b50e763943d635eca2bafbd889  CLIENT_DATA/files/doc/es/Resources/hide.png
+939cd8e5c98a68129bb070ba7558f348  CLIENT_DATA/files/doc/es/Resources/discard.png
+23c04e5b64759e34a7db220a4bbf86af  CLIENT_DATA/files/doc/es/Resources/specialfeature.png
+3f02d4c709df6412a14a979fe39c24a8  CLIENT_DATA/files/doc/es/Resources/Stylesheets/MadCapBlaze.css
+e5a1841481141a9558712225920a9ac0  CLIENT_DATA/files/doc/es/Resources/recall.png
+b2450082071a746c1848a27b9524f2d5  CLIENT_DATA/files/doc/es/Resources/UnderstandSR.png
+7376f63f6cecdabf865992205a59dfbc  CLIENT_DATA/files/doc/es/Resources/mic_off.png
+53c414479017b1ed67fe0459e4fd3849  CLIENT_DATA/files/doc/es/Resources/danubeenduser.css
+3e877cb9e60d99a273d767c4fbb8ef07  CLIENT_DATA/files/doc/es/Resources/undo.png
+8396ec4d39cb317f1a36bfbd1eeec55e  CLIENT_DATA/files/doc/es/Resources/microphone.png
+210dfd9dfd1381a8855ad0cb4c1321c6  CLIENT_DATA/files/doc/es/Resources/SpeechFocusPin.png
+386af0d30108012dde99a282be6283fe  CLIENT_DATA/files/doc/es/Resources/exclamation.png
+8718fee6d2c00bcbf399adea27cdf98d  CLIENT_DATA/files/doc/es/Resources/transfer.png
+19fcf4743c2c6b88ec845e2da9e58dc3  CLIENT_DATA/files/doc/es/Resources/speak.png
+772674c06ca710887aa14ba2c911eaf5  CLIENT_DATA/files/doc/es/SRFeatures/Resources/UnderstandSR_small.png
+5ee83f54c46659adddf800e046338210  CLIENT_DATA/files/doc/es/SRFeatures/Resources/Navigate_small.png
+313127adcec1835196252cb5916ce7c2  CLIENT_DATA/files/doc/es/SRFeatures/Resources/Correct_small.png
+ff927c304d47b45ba7aca26418e2de4a  CLIENT_DATA/files/doc/es/SRFeatures/Resources/VoiceCommands_small.png
+2c897d7b94a29d3322b25a9120f8d023  CLIENT_DATA/files/doc/es/SRFeatures/Resources/Symbols.png
+42b6e5df2e500764336aec2bca99cda0  CLIENT_DATA/files/doc/es/SRFeatures/Resources/Numbers.png
+e25c5f3f24943b3ea674bf1b30572ab3  CLIENT_DATA/files/doc/es/SRFeatures/Resources/Tips.png
+247c2bf23c7aededc9b6dea3e0896d1b  CLIENT_DATA/files/doc/es/SRFeatures/Resources/ListenToSound.png
+946caf11c4d325e5692ad6aed82a6a09  CLIENT_DATA/files/doc/es/SRFeatures/Resources/Marks.png
+23c04e5b64759e34a7db220a4bbf86af  CLIENT_DATA/files/doc/es/SRFeatures/Resources/SpecialFeature.png
+0f9dee5f3fdfbef6b38257e9129eafd9  CLIENT_DATA/files/doc/es/SRFeatures/Resources/VoiceCommands.png
+8396ec4d39cb317f1a36bfbd1eeec55e  CLIENT_DATA/files/doc/es/SRFeatures/Resources/Microphone.png
+da634c180253a7647ec54c92638ee128  CLIENT_DATA/files/doc/es/SRFeatures/Resources/Mesaruements_Small.png
+927e14742f78c90e5100cc4257a14301  CLIENT_DATA/files/doc/es/SRFeatures/Resources/SpecialFeature_small.png
+11ec14b99d5a0e50d959c44375337430  CLIENT_DATA/files/doc/es/SRFeatures/Resources/Dates.png
+cfca0fed4c408ca439babaf377917100  CLIENT_DATA/files/doc/es/SRFeatures/Resources/Correct.png
+8f78d1810337482c86afc2d77685752a  CLIENT_DATA/files/doc/es/SRFeatures/Resources/Time.png
+3f02d4c709df6412a14a979fe39c24a8  CLIENT_DATA/files/doc/es/SRFeatures/Resources/Stylesheets/MadCapBlaze.css
+2c28e83d18d718ed0c06c31b7ef32565  CLIENT_DATA/files/doc/es/SRFeatures/Resources/autotext.png
+6697f6c697ec8e9fdf5c7e97b9ad6bba  CLIENT_DATA/files/doc/es/SRFeatures/Resources/Symbols_small.png
+59c9bad64dc502db13d3b443d43d49fb  CLIENT_DATA/files/doc/es/SRFeatures/Resources/ListenToSound_small.png
+0f612a01583fb22f87425d129d311da5  CLIENT_DATA/files/doc/es/SRFeatures/Resources/Tips_small.png
+1ff85b089d12cbac36a0f079c39c12e7  CLIENT_DATA/files/doc/es/SRFeatures/Resources/Navigate.png
+b2450082071a746c1848a27b9524f2d5  CLIENT_DATA/files/doc/es/SRFeatures/Resources/UnderstandSR.png
+3a78940a3a01f2526188bf8ebdd25d38  CLIENT_DATA/files/doc/es/SRFeatures/Resources/Example.png
+e659e5e82ffcd8ff1e3f9742e68ee1a8  CLIENT_DATA/files/doc/es/SRFeatures/Resources/Speak_small.png
+3e2f1f32fe71749052fefa5a2c62b724  CLIENT_DATA/files/doc/es/SRFeatures/Resources/danubeenduser.css
+19fcf4743c2c6b88ec845e2da9e58dc3  CLIENT_DATA/files/doc/es/SRFeatures/Resources/Speak.png
+1d3384077fd22360162d9a0d0e36b18a  CLIENT_DATA/files/doc/es/SRFeatures/Resources/ScratchThat.png
+6c1f1e62db5eb217c8beee83c9d4ce81  CLIENT_DATA/files/doc/es/SRFeatures/Resources/Dates_small.png
+d71fe9cef9c2061c7d6f59877df955b1  CLIENT_DATA/files/doc/es/SRFeatures/Resources/Mesaruements.png
+a2e5664d1d84f1666ce139625c9a9569  CLIENT_DATA/files/doc/es/SRFeatures/Resources/Numbers_small.png
+4f0ddb48d02b3a3c27f106fe4dab2c1b  CLIENT_DATA/files/doc/es/SRFeatures/Resources/Time_small.png
+719de98ba2cf90c5efe3045288fc6f17  CLIENT_DATA/files/doc/es/SRFeatures/Resources/Microphone_small.png
+cbf82f489ffa309de4b8645c1bffd471  CLIENT_DATA/files/doc/es/SRFeatures/Resources/Marks_small.png
+85672f3a4b475f2d4deedb9d8fe732b2  CLIENT_DATA/files/doc/es/SRFeatures/Desktop_XHTML_SoD.htm
+7854b30f2dae91222fc6185e6c156e6f  CLIENT_DATA/files/doc/da/EULA.htm
+1bf5df2025d5f67184d5021d583d613f  CLIENT_DATA/files/doc/da/SoD.htm
+11e711753bb76d56172fb35977b440c1  CLIENT_DATA/files/doc/da/Resources/menu.png
+970c7e51de446081d61c0a6611042674  CLIENT_DATA/files/doc/da/Resources/SoD.css
+229132e844455b0ff7d044ab488b25d8  CLIENT_DATA/files/doc/da/Resources/SpeechFocusPin_MicOff.png
+d6df55b50e763943d635eca2bafbd889  CLIENT_DATA/files/doc/da/Resources/hide.png
+939cd8e5c98a68129bb070ba7558f348  CLIENT_DATA/files/doc/da/Resources/discard.png
+23c04e5b64759e34a7db220a4bbf86af  CLIENT_DATA/files/doc/da/Resources/specialfeature.png
+3f02d4c709df6412a14a979fe39c24a8  CLIENT_DATA/files/doc/da/Resources/Stylesheets/MadCapBlaze.css
+e5a1841481141a9558712225920a9ac0  CLIENT_DATA/files/doc/da/Resources/recall.png
+b2450082071a746c1848a27b9524f2d5  CLIENT_DATA/files/doc/da/Resources/UnderstandSR.png
+7376f63f6cecdabf865992205a59dfbc  CLIENT_DATA/files/doc/da/Resources/mic_off.png
+3e877cb9e60d99a273d767c4fbb8ef07  CLIENT_DATA/files/doc/da/Resources/undo.png
+8396ec4d39cb317f1a36bfbd1eeec55e  CLIENT_DATA/files/doc/da/Resources/microphone.png
+210dfd9dfd1381a8855ad0cb4c1321c6  CLIENT_DATA/files/doc/da/Resources/SpeechFocusPin.png
+386af0d30108012dde99a282be6283fe  CLIENT_DATA/files/doc/da/Resources/exclamation.png
+8718fee6d2c00bcbf399adea27cdf98d  CLIENT_DATA/files/doc/da/Resources/transfer.png
+19fcf4743c2c6b88ec845e2da9e58dc3  CLIENT_DATA/files/doc/da/Resources/speak.png
+772674c06ca710887aa14ba2c911eaf5  CLIENT_DATA/files/doc/da/SRFeatures/Resources/UnderstandSR_small.png
+5ee83f54c46659adddf800e046338210  CLIENT_DATA/files/doc/da/SRFeatures/Resources/Navigate_small.png
+313127adcec1835196252cb5916ce7c2  CLIENT_DATA/files/doc/da/SRFeatures/Resources/Correct_small.png
+ff927c304d47b45ba7aca26418e2de4a  CLIENT_DATA/files/doc/da/SRFeatures/Resources/VoiceCommands_small.png
+2c897d7b94a29d3322b25a9120f8d023  CLIENT_DATA/files/doc/da/SRFeatures/Resources/Symbols.png
+42b6e5df2e500764336aec2bca99cda0  CLIENT_DATA/files/doc/da/SRFeatures/Resources/Numbers.png
+e25c5f3f24943b3ea674bf1b30572ab3  CLIENT_DATA/files/doc/da/SRFeatures/Resources/Tips.png
+247c2bf23c7aededc9b6dea3e0896d1b  CLIENT_DATA/files/doc/da/SRFeatures/Resources/ListenToSound.png
+946caf11c4d325e5692ad6aed82a6a09  CLIENT_DATA/files/doc/da/SRFeatures/Resources/Marks.png
+23c04e5b64759e34a7db220a4bbf86af  CLIENT_DATA/files/doc/da/SRFeatures/Resources/SpecialFeature.png
+0f9dee5f3fdfbef6b38257e9129eafd9  CLIENT_DATA/files/doc/da/SRFeatures/Resources/VoiceCommands.png
+da634c180253a7647ec54c92638ee128  CLIENT_DATA/files/doc/da/SRFeatures/Resources/Mesaruements_Small.png
+927e14742f78c90e5100cc4257a14301  CLIENT_DATA/files/doc/da/SRFeatures/Resources/SpecialFeature_small.png
+f9b8eccbc7da9a92c2e61050049c5929  CLIENT_DATA/files/doc/da/SRFeatures/Resources/Dates.png
+cfca0fed4c408ca439babaf377917100  CLIENT_DATA/files/doc/da/SRFeatures/Resources/Correct.png
+8f78d1810337482c86afc2d77685752a  CLIENT_DATA/files/doc/da/SRFeatures/Resources/Time.png
+3f02d4c709df6412a14a979fe39c24a8  CLIENT_DATA/files/doc/da/SRFeatures/Resources/Stylesheets/MadCapBlaze.css
+2c28e83d18d718ed0c06c31b7ef32565  CLIENT_DATA/files/doc/da/SRFeatures/Resources/autotext.png
+6697f6c697ec8e9fdf5c7e97b9ad6bba  CLIENT_DATA/files/doc/da/SRFeatures/Resources/Symbols_small.png
+59c9bad64dc502db13d3b443d43d49fb  CLIENT_DATA/files/doc/da/SRFeatures/Resources/ListenToSound_small.png
+0f612a01583fb22f87425d129d311da5  CLIENT_DATA/files/doc/da/SRFeatures/Resources/Tips_small.png
+1ff85b089d12cbac36a0f079c39c12e7  CLIENT_DATA/files/doc/da/SRFeatures/Resources/Navigate.png
+b2450082071a746c1848a27b9524f2d5  CLIENT_DATA/files/doc/da/SRFeatures/Resources/UnderstandSR.png
+3a78940a3a01f2526188bf8ebdd25d38  CLIENT_DATA/files/doc/da/SRFeatures/Resources/Example.png
+e659e5e82ffcd8ff1e3f9742e68ee1a8  CLIENT_DATA/files/doc/da/SRFeatures/Resources/Speak_small.png
+3e2f1f32fe71749052fefa5a2c62b724  CLIENT_DATA/files/doc/da/SRFeatures/Resources/danubeenduser.css
+19fcf4743c2c6b88ec845e2da9e58dc3  CLIENT_DATA/files/doc/da/SRFeatures/Resources/Speak.png
+1d3384077fd22360162d9a0d0e36b18a  CLIENT_DATA/files/doc/da/SRFeatures/Resources/ScratchThat.png
+380b2f4a8046d933c02dd30115c082b5  CLIENT_DATA/files/doc/da/SRFeatures/Resources/Dates_small.png
+d71fe9cef9c2061c7d6f59877df955b1  CLIENT_DATA/files/doc/da/SRFeatures/Resources/Mesaruements.png
+a2e5664d1d84f1666ce139625c9a9569  CLIENT_DATA/files/doc/da/SRFeatures/Resources/Numbers_small.png
+4f0ddb48d02b3a3c27f106fe4dab2c1b  CLIENT_DATA/files/doc/da/SRFeatures/Resources/Time_small.png
+719de98ba2cf90c5efe3045288fc6f17  CLIENT_DATA/files/doc/da/SRFeatures/Resources/Microphone_small.png
+cbf82f489ffa309de4b8645c1bffd471  CLIENT_DATA/files/doc/da/SRFeatures/Resources/Marks_small.png
+4f06fd0fa153ac46b73d3d3adca7f826  CLIENT_DATA/files/doc/da/SRFeatures/Desktop_XHTML_SoD.htm
+b7316b49d7fc842056d8795fcea881b4  CLIENT_DATA/files/doc/SoD.asp
+7854b30f2dae91222fc6185e6c156e6f  CLIENT_DATA/files/doc/nl/EULA.htm
+b3349fba26cbbed2148bfd7d1ebc1264  CLIENT_DATA/files/doc/nl/SoD.htm
+11e711753bb76d56172fb35977b440c1  CLIENT_DATA/files/doc/nl/Resources/menu.png
+229132e844455b0ff7d044ab488b25d8  CLIENT_DATA/files/doc/nl/Resources/SpeechFocusPin_MicOff.png
+d6df55b50e763943d635eca2bafbd889  CLIENT_DATA/files/doc/nl/Resources/hide.png
+939cd8e5c98a68129bb070ba7558f348  CLIENT_DATA/files/doc/nl/Resources/discard.png
+23c04e5b64759e34a7db220a4bbf86af  CLIENT_DATA/files/doc/nl/Resources/specialfeature.png
+3f02d4c709df6412a14a979fe39c24a8  CLIENT_DATA/files/doc/nl/Resources/Stylesheets/MadCapBlaze.css
+e5a1841481141a9558712225920a9ac0  CLIENT_DATA/files/doc/nl/Resources/recall.png
+b2450082071a746c1848a27b9524f2d5  CLIENT_DATA/files/doc/nl/Resources/UnderstandSR.png
+7376f63f6cecdabf865992205a59dfbc  CLIENT_DATA/files/doc/nl/Resources/mic_off.png
+53c414479017b1ed67fe0459e4fd3849  CLIENT_DATA/files/doc/nl/Resources/danubeenduser.css
+3e877cb9e60d99a273d767c4fbb8ef07  CLIENT_DATA/files/doc/nl/Resources/undo.png
+8396ec4d39cb317f1a36bfbd1eeec55e  CLIENT_DATA/files/doc/nl/Resources/microphone.png
+210dfd9dfd1381a8855ad0cb4c1321c6  CLIENT_DATA/files/doc/nl/Resources/SpeechFocusPin.png
+386af0d30108012dde99a282be6283fe  CLIENT_DATA/files/doc/nl/Resources/exclamation.png
+8718fee6d2c00bcbf399adea27cdf98d  CLIENT_DATA/files/doc/nl/Resources/transfer.png
+19fcf4743c2c6b88ec845e2da9e58dc3  CLIENT_DATA/files/doc/nl/Resources/speak.png
+772674c06ca710887aa14ba2c911eaf5  CLIENT_DATA/files/doc/nl/SRFeatures/Resources/UnderstandSR_small.png
+5ee83f54c46659adddf800e046338210  CLIENT_DATA/files/doc/nl/SRFeatures/Resources/Navigate_small.png
+313127adcec1835196252cb5916ce7c2  CLIENT_DATA/files/doc/nl/SRFeatures/Resources/Correct_small.png
+ff927c304d47b45ba7aca26418e2de4a  CLIENT_DATA/files/doc/nl/SRFeatures/Resources/VoiceCommands_small.png
+2c897d7b94a29d3322b25a9120f8d023  CLIENT_DATA/files/doc/nl/SRFeatures/Resources/Symbols.png
+42b6e5df2e500764336aec2bca99cda0  CLIENT_DATA/files/doc/nl/SRFeatures/Resources/Numbers.png
+e25c5f3f24943b3ea674bf1b30572ab3  CLIENT_DATA/files/doc/nl/SRFeatures/Resources/Tips.png
+247c2bf23c7aededc9b6dea3e0896d1b  CLIENT_DATA/files/doc/nl/SRFeatures/Resources/ListenToSound.png
+946caf11c4d325e5692ad6aed82a6a09  CLIENT_DATA/files/doc/nl/SRFeatures/Resources/Marks.png
+23c04e5b64759e34a7db220a4bbf86af  CLIENT_DATA/files/doc/nl/SRFeatures/Resources/SpecialFeature.png
+0f9dee5f3fdfbef6b38257e9129eafd9  CLIENT_DATA/files/doc/nl/SRFeatures/Resources/VoiceCommands.png
+8396ec4d39cb317f1a36bfbd1eeec55e  CLIENT_DATA/files/doc/nl/SRFeatures/Resources/Microphone.png
+da634c180253a7647ec54c92638ee128  CLIENT_DATA/files/doc/nl/SRFeatures/Resources/Mesaruements_Small.png
+927e14742f78c90e5100cc4257a14301  CLIENT_DATA/files/doc/nl/SRFeatures/Resources/SpecialFeature_small.png
+11ec14b99d5a0e50d959c44375337430  CLIENT_DATA/files/doc/nl/SRFeatures/Resources/Dates.png
+cfca0fed4c408ca439babaf377917100  CLIENT_DATA/files/doc/nl/SRFeatures/Resources/Correct.png
+8f78d1810337482c86afc2d77685752a  CLIENT_DATA/files/doc/nl/SRFeatures/Resources/Time.png
+3f02d4c709df6412a14a979fe39c24a8  CLIENT_DATA/files/doc/nl/SRFeatures/Resources/Stylesheets/MadCapBlaze.css
+2c28e83d18d718ed0c06c31b7ef32565  CLIENT_DATA/files/doc/nl/SRFeatures/Resources/autotext.png
+6697f6c697ec8e9fdf5c7e97b9ad6bba  CLIENT_DATA/files/doc/nl/SRFeatures/Resources/Symbols_small.png
+59c9bad64dc502db13d3b443d43d49fb  CLIENT_DATA/files/doc/nl/SRFeatures/Resources/ListenToSound_small.png
+0f612a01583fb22f87425d129d311da5  CLIENT_DATA/files/doc/nl/SRFeatures/Resources/Tips_small.png
+1ff85b089d12cbac36a0f079c39c12e7  CLIENT_DATA/files/doc/nl/SRFeatures/Resources/Navigate.png
+b2450082071a746c1848a27b9524f2d5  CLIENT_DATA/files/doc/nl/SRFeatures/Resources/UnderstandSR.png
+3a78940a3a01f2526188bf8ebdd25d38  CLIENT_DATA/files/doc/nl/SRFeatures/Resources/Example.png
+e659e5e82ffcd8ff1e3f9742e68ee1a8  CLIENT_DATA/files/doc/nl/SRFeatures/Resources/Speak_small.png
+3e2f1f32fe71749052fefa5a2c62b724  CLIENT_DATA/files/doc/nl/SRFeatures/Resources/danubeenduser.css
+19fcf4743c2c6b88ec845e2da9e58dc3  CLIENT_DATA/files/doc/nl/SRFeatures/Resources/Speak.png
+1d3384077fd22360162d9a0d0e36b18a  CLIENT_DATA/files/doc/nl/SRFeatures/Resources/ScratchThat.png
+6c1f1e62db5eb217c8beee83c9d4ce81  CLIENT_DATA/files/doc/nl/SRFeatures/Resources/Dates_small.png
+d71fe9cef9c2061c7d6f59877df955b1  CLIENT_DATA/files/doc/nl/SRFeatures/Resources/Mesaruements.png
+a2e5664d1d84f1666ce139625c9a9569  CLIENT_DATA/files/doc/nl/SRFeatures/Resources/Numbers_small.png
+4f0ddb48d02b3a3c27f106fe4dab2c1b  CLIENT_DATA/files/doc/nl/SRFeatures/Resources/Time_small.png
+719de98ba2cf90c5efe3045288fc6f17  CLIENT_DATA/files/doc/nl/SRFeatures/Resources/Microphone_small.png
+cbf82f489ffa309de4b8645c1bffd471  CLIENT_DATA/files/doc/nl/SRFeatures/Resources/Marks_small.png
+ed0d8e16508de274cc76e0f5092bba30  CLIENT_DATA/files/doc/nl/SRFeatures/Desktop_XHTML_SoD.htm
+7854b30f2dae91222fc6185e6c156e6f  CLIENT_DATA/files/doc/de/EULA.htm
+37cc71534476a3b7984af729e3a6bdd7  CLIENT_DATA/files/doc/de/SoD.htm
+11e711753bb76d56172fb35977b440c1  CLIENT_DATA/files/doc/de/Resources/menu.png
+229132e844455b0ff7d044ab488b25d8  CLIENT_DATA/files/doc/de/Resources/SpeechFocusPin_MicOff.png
+d6df55b50e763943d635eca2bafbd889  CLIENT_DATA/files/doc/de/Resources/hide.png
+939cd8e5c98a68129bb070ba7558f348  CLIENT_DATA/files/doc/de/Resources/discard.png
+23c04e5b64759e34a7db220a4bbf86af  CLIENT_DATA/files/doc/de/Resources/specialfeature.png
+3f02d4c709df6412a14a979fe39c24a8  CLIENT_DATA/files/doc/de/Resources/Stylesheets/MadCapBlaze.css
+e5a1841481141a9558712225920a9ac0  CLIENT_DATA/files/doc/de/Resources/recall.png
+b2450082071a746c1848a27b9524f2d5  CLIENT_DATA/files/doc/de/Resources/UnderstandSR.png
+7376f63f6cecdabf865992205a59dfbc  CLIENT_DATA/files/doc/de/Resources/mic_off.png
+53c414479017b1ed67fe0459e4fd3849  CLIENT_DATA/files/doc/de/Resources/danubeenduser.css
+3e877cb9e60d99a273d767c4fbb8ef07  CLIENT_DATA/files/doc/de/Resources/undo.png
+8396ec4d39cb317f1a36bfbd1eeec55e  CLIENT_DATA/files/doc/de/Resources/microphone.png
+210dfd9dfd1381a8855ad0cb4c1321c6  CLIENT_DATA/files/doc/de/Resources/SpeechFocusPin.png
+386af0d30108012dde99a282be6283fe  CLIENT_DATA/files/doc/de/Resources/exclamation.png
+8718fee6d2c00bcbf399adea27cdf98d  CLIENT_DATA/files/doc/de/Resources/transfer.png
+19fcf4743c2c6b88ec845e2da9e58dc3  CLIENT_DATA/files/doc/de/Resources/speak.png
+772674c06ca710887aa14ba2c911eaf5  CLIENT_DATA/files/doc/de/SRFeatures/Resources/UnderstandSR_small.png
+5ee83f54c46659adddf800e046338210  CLIENT_DATA/files/doc/de/SRFeatures/Resources/Navigate_small.png
+313127adcec1835196252cb5916ce7c2  CLIENT_DATA/files/doc/de/SRFeatures/Resources/Correct_small.png
+ff927c304d47b45ba7aca26418e2de4a  CLIENT_DATA/files/doc/de/SRFeatures/Resources/VoiceCommands_small.png
+2c897d7b94a29d3322b25a9120f8d023  CLIENT_DATA/files/doc/de/SRFeatures/Resources/Symbols.png
+42b6e5df2e500764336aec2bca99cda0  CLIENT_DATA/files/doc/de/SRFeatures/Resources/Numbers.png
+e25c5f3f24943b3ea674bf1b30572ab3  CLIENT_DATA/files/doc/de/SRFeatures/Resources/Tips.png
+247c2bf23c7aededc9b6dea3e0896d1b  CLIENT_DATA/files/doc/de/SRFeatures/Resources/ListenToSound.png
+946caf11c4d325e5692ad6aed82a6a09  CLIENT_DATA/files/doc/de/SRFeatures/Resources/Marks.png
+23c04e5b64759e34a7db220a4bbf86af  CLIENT_DATA/files/doc/de/SRFeatures/Resources/SpecialFeature.png
+0f9dee5f3fdfbef6b38257e9129eafd9  CLIENT_DATA/files/doc/de/SRFeatures/Resources/VoiceCommands.png
+8396ec4d39cb317f1a36bfbd1eeec55e  CLIENT_DATA/files/doc/de/SRFeatures/Resources/Microphone.png
+da634c180253a7647ec54c92638ee128  CLIENT_DATA/files/doc/de/SRFeatures/Resources/Mesaruements_Small.png
+927e14742f78c90e5100cc4257a14301  CLIENT_DATA/files/doc/de/SRFeatures/Resources/SpecialFeature_small.png
+11ec14b99d5a0e50d959c44375337430  CLIENT_DATA/files/doc/de/SRFeatures/Resources/Dates.png
+cfca0fed4c408ca439babaf377917100  CLIENT_DATA/files/doc/de/SRFeatures/Resources/Correct.png
+8f78d1810337482c86afc2d77685752a  CLIENT_DATA/files/doc/de/SRFeatures/Resources/Time.png
+3f02d4c709df6412a14a979fe39c24a8  CLIENT_DATA/files/doc/de/SRFeatures/Resources/Stylesheets/MadCapBlaze.css
+2c28e83d18d718ed0c06c31b7ef32565  CLIENT_DATA/files/doc/de/SRFeatures/Resources/autotext.png
+6697f6c697ec8e9fdf5c7e97b9ad6bba  CLIENT_DATA/files/doc/de/SRFeatures/Resources/Symbols_small.png
+59c9bad64dc502db13d3b443d43d49fb  CLIENT_DATA/files/doc/de/SRFeatures/Resources/ListenToSound_small.png
+0f612a01583fb22f87425d129d311da5  CLIENT_DATA/files/doc/de/SRFeatures/Resources/Tips_small.png
+1ff85b089d12cbac36a0f079c39c12e7  CLIENT_DATA/files/doc/de/SRFeatures/Resources/Navigate.png
+b2450082071a746c1848a27b9524f2d5  CLIENT_DATA/files/doc/de/SRFeatures/Resources/UnderstandSR.png
+3a78940a3a01f2526188bf8ebdd25d38  CLIENT_DATA/files/doc/de/SRFeatures/Resources/Example.png
+e659e5e82ffcd8ff1e3f9742e68ee1a8  CLIENT_DATA/files/doc/de/SRFeatures/Resources/Speak_small.png
+3e2f1f32fe71749052fefa5a2c62b724  CLIENT_DATA/files/doc/de/SRFeatures/Resources/danubeenduser.css
+19fcf4743c2c6b88ec845e2da9e58dc3  CLIENT_DATA/files/doc/de/SRFeatures/Resources/Speak.png
+1d3384077fd22360162d9a0d0e36b18a  CLIENT_DATA/files/doc/de/SRFeatures/Resources/ScratchThat.png
+6c1f1e62db5eb217c8beee83c9d4ce81  CLIENT_DATA/files/doc/de/SRFeatures/Resources/Dates_small.png
+d71fe9cef9c2061c7d6f59877df955b1  CLIENT_DATA/files/doc/de/SRFeatures/Resources/Mesaruements.png
+a2e5664d1d84f1666ce139625c9a9569  CLIENT_DATA/files/doc/de/SRFeatures/Resources/Numbers_small.png
+4f0ddb48d02b3a3c27f106fe4dab2c1b  CLIENT_DATA/files/doc/de/SRFeatures/Resources/Time_small.png
+719de98ba2cf90c5efe3045288fc6f17  CLIENT_DATA/files/doc/de/SRFeatures/Resources/Microphone_small.png
+cbf82f489ffa309de4b8645c1bffd471  CLIENT_DATA/files/doc/de/SRFeatures/Resources/Marks_small.png
+fbdfb8de6a6e98d0477591ee9f66aeac  CLIENT_DATA/files/doc/de/SRFeatures/Desktop_XHTML_SoD.htm
+7854b30f2dae91222fc6185e6c156e6f  CLIENT_DATA/files/doc/fr/EULA.htm
+50017da779967c0cf1d457b4617c4781  CLIENT_DATA/files/doc/fr/SoD.htm
+11e711753bb76d56172fb35977b440c1  CLIENT_DATA/files/doc/fr/Resources/menu.png
+229132e844455b0ff7d044ab488b25d8  CLIENT_DATA/files/doc/fr/Resources/SpeechFocusPin_MicOff.png
+d6df55b50e763943d635eca2bafbd889  CLIENT_DATA/files/doc/fr/Resources/hide.png
+939cd8e5c98a68129bb070ba7558f348  CLIENT_DATA/files/doc/fr/Resources/discard.png
+23c04e5b64759e34a7db220a4bbf86af  CLIENT_DATA/files/doc/fr/Resources/specialfeature.png
+3f02d4c709df6412a14a979fe39c24a8  CLIENT_DATA/files/doc/fr/Resources/Stylesheets/MadCapBlaze.css
+e5a1841481141a9558712225920a9ac0  CLIENT_DATA/files/doc/fr/Resources/recall.png
+b2450082071a746c1848a27b9524f2d5  CLIENT_DATA/files/doc/fr/Resources/UnderstandSR.png
+7376f63f6cecdabf865992205a59dfbc  CLIENT_DATA/files/doc/fr/Resources/mic_off.png
+53c414479017b1ed67fe0459e4fd3849  CLIENT_DATA/files/doc/fr/Resources/danubeenduser.css
+3e877cb9e60d99a273d767c4fbb8ef07  CLIENT_DATA/files/doc/fr/Resources/undo.png
+8396ec4d39cb317f1a36bfbd1eeec55e  CLIENT_DATA/files/doc/fr/Resources/microphone.png
+210dfd9dfd1381a8855ad0cb4c1321c6  CLIENT_DATA/files/doc/fr/Resources/SpeechFocusPin.png
+386af0d30108012dde99a282be6283fe  CLIENT_DATA/files/doc/fr/Resources/exclamation.png
+8718fee6d2c00bcbf399adea27cdf98d  CLIENT_DATA/files/doc/fr/Resources/transfer.png
+19fcf4743c2c6b88ec845e2da9e58dc3  CLIENT_DATA/files/doc/fr/Resources/speak.png
+772674c06ca710887aa14ba2c911eaf5  CLIENT_DATA/files/doc/fr/SRFeatures/Resources/UnderstandSR_small.png
+5ee83f54c46659adddf800e046338210  CLIENT_DATA/files/doc/fr/SRFeatures/Resources/Navigate_small.png
+313127adcec1835196252cb5916ce7c2  CLIENT_DATA/files/doc/fr/SRFeatures/Resources/Correct_small.png
+ff927c304d47b45ba7aca26418e2de4a  CLIENT_DATA/files/doc/fr/SRFeatures/Resources/VoiceCommands_small.png
+2c897d7b94a29d3322b25a9120f8d023  CLIENT_DATA/files/doc/fr/SRFeatures/Resources/Symbols.png
+42b6e5df2e500764336aec2bca99cda0  CLIENT_DATA/files/doc/fr/SRFeatures/Resources/Numbers.png
+e25c5f3f24943b3ea674bf1b30572ab3  CLIENT_DATA/files/doc/fr/SRFeatures/Resources/Tips.png
+247c2bf23c7aededc9b6dea3e0896d1b  CLIENT_DATA/files/doc/fr/SRFeatures/Resources/ListenToSound.png
+946caf11c4d325e5692ad6aed82a6a09  CLIENT_DATA/files/doc/fr/SRFeatures/Resources/Marks.png
+23c04e5b64759e34a7db220a4bbf86af  CLIENT_DATA/files/doc/fr/SRFeatures/Resources/SpecialFeature.png
+0f9dee5f3fdfbef6b38257e9129eafd9  CLIENT_DATA/files/doc/fr/SRFeatures/Resources/VoiceCommands.png
+8396ec4d39cb317f1a36bfbd1eeec55e  CLIENT_DATA/files/doc/fr/SRFeatures/Resources/Microphone.png
+da634c180253a7647ec54c92638ee128  CLIENT_DATA/files/doc/fr/SRFeatures/Resources/Mesaruements_Small.png
+927e14742f78c90e5100cc4257a14301  CLIENT_DATA/files/doc/fr/SRFeatures/Resources/SpecialFeature_small.png
+11ec14b99d5a0e50d959c44375337430  CLIENT_DATA/files/doc/fr/SRFeatures/Resources/Dates.png
+cfca0fed4c408ca439babaf377917100  CLIENT_DATA/files/doc/fr/SRFeatures/Resources/Correct.png
+8f78d1810337482c86afc2d77685752a  CLIENT_DATA/files/doc/fr/SRFeatures/Resources/Time.png
+3f02d4c709df6412a14a979fe39c24a8  CLIENT_DATA/files/doc/fr/SRFeatures/Resources/Stylesheets/MadCapBlaze.css
+2c28e83d18d718ed0c06c31b7ef32565  CLIENT_DATA/files/doc/fr/SRFeatures/Resources/autotext.png
+6697f6c697ec8e9fdf5c7e97b9ad6bba  CLIENT_DATA/files/doc/fr/SRFeatures/Resources/Symbols_small.png
+59c9bad64dc502db13d3b443d43d49fb  CLIENT_DATA/files/doc/fr/SRFeatures/Resources/ListenToSound_small.png
+0f612a01583fb22f87425d129d311da5  CLIENT_DATA/files/doc/fr/SRFeatures/Resources/Tips_small.png
+1ff85b089d12cbac36a0f079c39c12e7  CLIENT_DATA/files/doc/fr/SRFeatures/Resources/Navigate.png
+b2450082071a746c1848a27b9524f2d5  CLIENT_DATA/files/doc/fr/SRFeatures/Resources/UnderstandSR.png
+3a78940a3a01f2526188bf8ebdd25d38  CLIENT_DATA/files/doc/fr/SRFeatures/Resources/Example.png
+e659e5e82ffcd8ff1e3f9742e68ee1a8  CLIENT_DATA/files/doc/fr/SRFeatures/Resources/Speak_small.png
+3e2f1f32fe71749052fefa5a2c62b724  CLIENT_DATA/files/doc/fr/SRFeatures/Resources/danubeenduser.css
+19fcf4743c2c6b88ec845e2da9e58dc3  CLIENT_DATA/files/doc/fr/SRFeatures/Resources/Speak.png
+1d3384077fd22360162d9a0d0e36b18a  CLIENT_DATA/files/doc/fr/SRFeatures/Resources/ScratchThat.png
+6c1f1e62db5eb217c8beee83c9d4ce81  CLIENT_DATA/files/doc/fr/SRFeatures/Resources/Dates_small.png
+d71fe9cef9c2061c7d6f59877df955b1  CLIENT_DATA/files/doc/fr/SRFeatures/Resources/Mesaruements.png
+a2e5664d1d84f1666ce139625c9a9569  CLIENT_DATA/files/doc/fr/SRFeatures/Resources/Numbers_small.png
+4f0ddb48d02b3a3c27f106fe4dab2c1b  CLIENT_DATA/files/doc/fr/SRFeatures/Resources/Time_small.png
+719de98ba2cf90c5efe3045288fc6f17  CLIENT_DATA/files/doc/fr/SRFeatures/Resources/Microphone_small.png
+cbf82f489ffa309de4b8645c1bffd471  CLIENT_DATA/files/doc/fr/SRFeatures/Resources/Marks_small.png
+a983a670503d2b1f0b52a5119adb6448  CLIENT_DATA/files/doc/fr/SRFeatures/Desktop_XHTML_SoD.htm
+7854b30f2dae91222fc6185e6c156e6f  CLIENT_DATA/files/doc/nb/EULA.htm
+57cf390d16b1069a4421e340dd10eff0  CLIENT_DATA/files/doc/nb/SoD.htm
+11e711753bb76d56172fb35977b440c1  CLIENT_DATA/files/doc/nb/Resources/menu.png
+229132e844455b0ff7d044ab488b25d8  CLIENT_DATA/files/doc/nb/Resources/SpeechFocusPin_MicOff.png
+d6df55b50e763943d635eca2bafbd889  CLIENT_DATA/files/doc/nb/Resources/hide.png
+939cd8e5c98a68129bb070ba7558f348  CLIENT_DATA/files/doc/nb/Resources/discard.png
+23c04e5b64759e34a7db220a4bbf86af  CLIENT_DATA/files/doc/nb/Resources/specialfeature.png
+3f02d4c709df6412a14a979fe39c24a8  CLIENT_DATA/files/doc/nb/Resources/Stylesheets/MadCapBlaze.css
+e5a1841481141a9558712225920a9ac0  CLIENT_DATA/files/doc/nb/Resources/recall.png
+b2450082071a746c1848a27b9524f2d5  CLIENT_DATA/files/doc/nb/Resources/UnderstandSR.png
+7376f63f6cecdabf865992205a59dfbc  CLIENT_DATA/files/doc/nb/Resources/mic_off.png
+53c414479017b1ed67fe0459e4fd3849  CLIENT_DATA/files/doc/nb/Resources/danubeenduser.css
+3e877cb9e60d99a273d767c4fbb8ef07  CLIENT_DATA/files/doc/nb/Resources/undo.png
+8396ec4d39cb317f1a36bfbd1eeec55e  CLIENT_DATA/files/doc/nb/Resources/microphone.png
+210dfd9dfd1381a8855ad0cb4c1321c6  CLIENT_DATA/files/doc/nb/Resources/SpeechFocusPin.png
+386af0d30108012dde99a282be6283fe  CLIENT_DATA/files/doc/nb/Resources/exclamation.png
+8718fee6d2c00bcbf399adea27cdf98d  CLIENT_DATA/files/doc/nb/Resources/transfer.png
+19fcf4743c2c6b88ec845e2da9e58dc3  CLIENT_DATA/files/doc/nb/Resources/speak.png
+772674c06ca710887aa14ba2c911eaf5  CLIENT_DATA/files/doc/nb/SRFeatures/Resources/UnderstandSR_small.png
+5ee83f54c46659adddf800e046338210  CLIENT_DATA/files/doc/nb/SRFeatures/Resources/Navigate_small.png
+313127adcec1835196252cb5916ce7c2  CLIENT_DATA/files/doc/nb/SRFeatures/Resources/Correct_small.png
+ff927c304d47b45ba7aca26418e2de4a  CLIENT_DATA/files/doc/nb/SRFeatures/Resources/VoiceCommands_small.png
+2c897d7b94a29d3322b25a9120f8d023  CLIENT_DATA/files/doc/nb/SRFeatures/Resources/Symbols.png
+42b6e5df2e500764336aec2bca99cda0  CLIENT_DATA/files/doc/nb/SRFeatures/Resources/Numbers.png
+e25c5f3f24943b3ea674bf1b30572ab3  CLIENT_DATA/files/doc/nb/SRFeatures/Resources/Tips.png
+247c2bf23c7aededc9b6dea3e0896d1b  CLIENT_DATA/files/doc/nb/SRFeatures/Resources/ListenToSound.png
+946caf11c4d325e5692ad6aed82a6a09  CLIENT_DATA/files/doc/nb/SRFeatures/Resources/Marks.png
+23c04e5b64759e34a7db220a4bbf86af  CLIENT_DATA/files/doc/nb/SRFeatures/Resources/SpecialFeature.png
+0f9dee5f3fdfbef6b38257e9129eafd9  CLIENT_DATA/files/doc/nb/SRFeatures/Resources/VoiceCommands.png
+8396ec4d39cb317f1a36bfbd1eeec55e  CLIENT_DATA/files/doc/nb/SRFeatures/Resources/Microphone.png
+da634c180253a7647ec54c92638ee128  CLIENT_DATA/files/doc/nb/SRFeatures/Resources/Mesaruements_Small.png
+927e14742f78c90e5100cc4257a14301  CLIENT_DATA/files/doc/nb/SRFeatures/Resources/SpecialFeature_small.png
+11ec14b99d5a0e50d959c44375337430  CLIENT_DATA/files/doc/nb/SRFeatures/Resources/Dates.png
+cfca0fed4c408ca439babaf377917100  CLIENT_DATA/files/doc/nb/SRFeatures/Resources/Correct.png
+8f78d1810337482c86afc2d77685752a  CLIENT_DATA/files/doc/nb/SRFeatures/Resources/Time.png
+3f02d4c709df6412a14a979fe39c24a8  CLIENT_DATA/files/doc/nb/SRFeatures/Resources/Stylesheets/MadCapBlaze.css
+2c28e83d18d718ed0c06c31b7ef32565  CLIENT_DATA/files/doc/nb/SRFeatures/Resources/autotext.png
+6697f6c697ec8e9fdf5c7e97b9ad6bba  CLIENT_DATA/files/doc/nb/SRFeatures/Resources/Symbols_small.png
+59c9bad64dc502db13d3b443d43d49fb  CLIENT_DATA/files/doc/nb/SRFeatures/Resources/ListenToSound_small.png
+0f612a01583fb22f87425d129d311da5  CLIENT_DATA/files/doc/nb/SRFeatures/Resources/Tips_small.png
+1ff85b089d12cbac36a0f079c39c12e7  CLIENT_DATA/files/doc/nb/SRFeatures/Resources/Navigate.png
+b2450082071a746c1848a27b9524f2d5  CLIENT_DATA/files/doc/nb/SRFeatures/Resources/UnderstandSR.png
+3a78940a3a01f2526188bf8ebdd25d38  CLIENT_DATA/files/doc/nb/SRFeatures/Resources/Example.png
+e659e5e82ffcd8ff1e3f9742e68ee1a8  CLIENT_DATA/files/doc/nb/SRFeatures/Resources/Speak_small.png
+3e2f1f32fe71749052fefa5a2c62b724  CLIENT_DATA/files/doc/nb/SRFeatures/Resources/danubeenduser.css
+19fcf4743c2c6b88ec845e2da9e58dc3  CLIENT_DATA/files/doc/nb/SRFeatures/Resources/Speak.png
+1d3384077fd22360162d9a0d0e36b18a  CLIENT_DATA/files/doc/nb/SRFeatures/Resources/ScratchThat.png
+6c1f1e62db5eb217c8beee83c9d4ce81  CLIENT_DATA/files/doc/nb/SRFeatures/Resources/Dates_small.png
+d71fe9cef9c2061c7d6f59877df955b1  CLIENT_DATA/files/doc/nb/SRFeatures/Resources/Mesaruements.png
+a2e5664d1d84f1666ce139625c9a9569  CLIENT_DATA/files/doc/nb/SRFeatures/Resources/Numbers_small.png
+4f0ddb48d02b3a3c27f106fe4dab2c1b  CLIENT_DATA/files/doc/nb/SRFeatures/Resources/Time_small.png
+719de98ba2cf90c5efe3045288fc6f17  CLIENT_DATA/files/doc/nb/SRFeatures/Resources/Microphone_small.png
+cbf82f489ffa309de4b8645c1bffd471  CLIENT_DATA/files/doc/nb/SRFeatures/Resources/Marks_small.png
+649a80bb08e843585f94082807d6684c  CLIENT_DATA/files/doc/nb/SRFeatures/Desktop_XHTML_SoD.htm
+7854b30f2dae91222fc6185e6c156e6f  CLIENT_DATA/files/doc/en/EULA.htm
+7d9671f5213f935d2131a8b63e6ef768  CLIENT_DATA/files/doc/en/SoD.htm
+11e711753bb76d56172fb35977b440c1  CLIENT_DATA/files/doc/en/Resources/menu.png
+970c7e51de446081d61c0a6611042674  CLIENT_DATA/files/doc/en/Resources/SoD.css
+229132e844455b0ff7d044ab488b25d8  CLIENT_DATA/files/doc/en/Resources/SpeechFocusPin_MicOff.png
+d6df55b50e763943d635eca2bafbd889  CLIENT_DATA/files/doc/en/Resources/hide.png
+939cd8e5c98a68129bb070ba7558f348  CLIENT_DATA/files/doc/en/Resources/discard.png
+23c04e5b64759e34a7db220a4bbf86af  CLIENT_DATA/files/doc/en/Resources/specialfeature.png
+3f02d4c709df6412a14a979fe39c24a8  CLIENT_DATA/files/doc/en/Resources/Stylesheets/MadCapBlaze.css
+e5a1841481141a9558712225920a9ac0  CLIENT_DATA/files/doc/en/Resources/recall.png
+b2450082071a746c1848a27b9524f2d5  CLIENT_DATA/files/doc/en/Resources/UnderstandSR.png
+7376f63f6cecdabf865992205a59dfbc  CLIENT_DATA/files/doc/en/Resources/mic_off.png
+3e877cb9e60d99a273d767c4fbb8ef07  CLIENT_DATA/files/doc/en/Resources/undo.png
+8396ec4d39cb317f1a36bfbd1eeec55e  CLIENT_DATA/files/doc/en/Resources/microphone.png
+210dfd9dfd1381a8855ad0cb4c1321c6  CLIENT_DATA/files/doc/en/Resources/SpeechFocusPin.png
+386af0d30108012dde99a282be6283fe  CLIENT_DATA/files/doc/en/Resources/exclamation.png
+8718fee6d2c00bcbf399adea27cdf98d  CLIENT_DATA/files/doc/en/Resources/transfer.png
+19fcf4743c2c6b88ec845e2da9e58dc3  CLIENT_DATA/files/doc/en/Resources/speak.png
+772674c06ca710887aa14ba2c911eaf5  CLIENT_DATA/files/doc/en/SRFeatures/Resources/UnderstandSR_small.png
+5ee83f54c46659adddf800e046338210  CLIENT_DATA/files/doc/en/SRFeatures/Resources/Navigate_small.png
+313127adcec1835196252cb5916ce7c2  CLIENT_DATA/files/doc/en/SRFeatures/Resources/Correct_small.png
+ff927c304d47b45ba7aca26418e2de4a  CLIENT_DATA/files/doc/en/SRFeatures/Resources/VoiceCommands_small.png
+2c897d7b94a29d3322b25a9120f8d023  CLIENT_DATA/files/doc/en/SRFeatures/Resources/Symbols.png
+42b6e5df2e500764336aec2bca99cda0  CLIENT_DATA/files/doc/en/SRFeatures/Resources/Numbers.png
+e25c5f3f24943b3ea674bf1b30572ab3  CLIENT_DATA/files/doc/en/SRFeatures/Resources/Tips.png
+247c2bf23c7aededc9b6dea3e0896d1b  CLIENT_DATA/files/doc/en/SRFeatures/Resources/ListenToSound.png
+946caf11c4d325e5692ad6aed82a6a09  CLIENT_DATA/files/doc/en/SRFeatures/Resources/Marks.png
+23c04e5b64759e34a7db220a4bbf86af  CLIENT_DATA/files/doc/en/SRFeatures/Resources/SpecialFeature.png
+0f9dee5f3fdfbef6b38257e9129eafd9  CLIENT_DATA/files/doc/en/SRFeatures/Resources/VoiceCommands.png
+8396ec4d39cb317f1a36bfbd1eeec55e  CLIENT_DATA/files/doc/en/SRFeatures/Resources/Microphone.png
+da634c180253a7647ec54c92638ee128  CLIENT_DATA/files/doc/en/SRFeatures/Resources/Mesaruements_Small.png
+927e14742f78c90e5100cc4257a14301  CLIENT_DATA/files/doc/en/SRFeatures/Resources/SpecialFeature_small.png
+11ec14b99d5a0e50d959c44375337430  CLIENT_DATA/files/doc/en/SRFeatures/Resources/Dates.png
+cfca0fed4c408ca439babaf377917100  CLIENT_DATA/files/doc/en/SRFeatures/Resources/Correct.png
+8f78d1810337482c86afc2d77685752a  CLIENT_DATA/files/doc/en/SRFeatures/Resources/Time.png
+3f02d4c709df6412a14a979fe39c24a8  CLIENT_DATA/files/doc/en/SRFeatures/Resources/Stylesheets/MadCapBlaze.css
+2c28e83d18d718ed0c06c31b7ef32565  CLIENT_DATA/files/doc/en/SRFeatures/Resources/autotext.png
+6697f6c697ec8e9fdf5c7e97b9ad6bba  CLIENT_DATA/files/doc/en/SRFeatures/Resources/Symbols_small.png
+59c9bad64dc502db13d3b443d43d49fb  CLIENT_DATA/files/doc/en/SRFeatures/Resources/ListenToSound_small.png
+0f612a01583fb22f87425d129d311da5  CLIENT_DATA/files/doc/en/SRFeatures/Resources/Tips_small.png
+1ff85b089d12cbac36a0f079c39c12e7  CLIENT_DATA/files/doc/en/SRFeatures/Resources/Navigate.png
+b2450082071a746c1848a27b9524f2d5  CLIENT_DATA/files/doc/en/SRFeatures/Resources/UnderstandSR.png
+3a78940a3a01f2526188bf8ebdd25d38  CLIENT_DATA/files/doc/en/SRFeatures/Resources/Example.png
+e659e5e82ffcd8ff1e3f9742e68ee1a8  CLIENT_DATA/files/doc/en/SRFeatures/Resources/Speak_small.png
+3e2f1f32fe71749052fefa5a2c62b724  CLIENT_DATA/files/doc/en/SRFeatures/Resources/danubeenduser.css
+6ae34169802df8550703f1ab3ccdaedc  CLIENT_DATA/files/doc/en/SRFeatures/Resources/360DP_speechanywhere-rgb.jpg
+19fcf4743c2c6b88ec845e2da9e58dc3  CLIENT_DATA/files/doc/en/SRFeatures/Resources/Speak.png
+1d3384077fd22360162d9a0d0e36b18a  CLIENT_DATA/files/doc/en/SRFeatures/Resources/ScratchThat.png
+6c1f1e62db5eb217c8beee83c9d4ce81  CLIENT_DATA/files/doc/en/SRFeatures/Resources/Dates_small.png
+d71fe9cef9c2061c7d6f59877df955b1  CLIENT_DATA/files/doc/en/SRFeatures/Resources/Mesaruements.png
+a2e5664d1d84f1666ce139625c9a9569  CLIENT_DATA/files/doc/en/SRFeatures/Resources/Numbers_small.png
+4f0ddb48d02b3a3c27f106fe4dab2c1b  CLIENT_DATA/files/doc/en/SRFeatures/Resources/Time_small.png
+719de98ba2cf90c5efe3045288fc6f17  CLIENT_DATA/files/doc/en/SRFeatures/Resources/Microphone_small.png
+cbf82f489ffa309de4b8645c1bffd471  CLIENT_DATA/files/doc/en/SRFeatures/Resources/Marks_small.png
+c199945bfe9a0b2d35342f5b53c3a573  CLIENT_DATA/files/doc/en/SRFeatures/Desktop_XHTML_SoD.htm
+7854b30f2dae91222fc6185e6c156e6f  CLIENT_DATA/files/doc/fi/EULA.htm
+19148afefbcd68c7781fb7375461a7b1  CLIENT_DATA/files/doc/fi/SoD.htm
+11e711753bb76d56172fb35977b440c1  CLIENT_DATA/files/doc/fi/Resources/menu.png
+229132e844455b0ff7d044ab488b25d8  CLIENT_DATA/files/doc/fi/Resources/SpeechFocusPin_MicOff.png
+d6df55b50e763943d635eca2bafbd889  CLIENT_DATA/files/doc/fi/Resources/hide.png
+939cd8e5c98a68129bb070ba7558f348  CLIENT_DATA/files/doc/fi/Resources/discard.png
+23c04e5b64759e34a7db220a4bbf86af  CLIENT_DATA/files/doc/fi/Resources/specialfeature.png
+3f02d4c709df6412a14a979fe39c24a8  CLIENT_DATA/files/doc/fi/Resources/Stylesheets/MadCapBlaze.css
+e5a1841481141a9558712225920a9ac0  CLIENT_DATA/files/doc/fi/Resources/recall.png
+b2450082071a746c1848a27b9524f2d5  CLIENT_DATA/files/doc/fi/Resources/UnderstandSR.png
+7376f63f6cecdabf865992205a59dfbc  CLIENT_DATA/files/doc/fi/Resources/mic_off.png
+53c414479017b1ed67fe0459e4fd3849  CLIENT_DATA/files/doc/fi/Resources/danubeenduser.css
+3e877cb9e60d99a273d767c4fbb8ef07  CLIENT_DATA/files/doc/fi/Resources/undo.png
+8396ec4d39cb317f1a36bfbd1eeec55e  CLIENT_DATA/files/doc/fi/Resources/microphone.png
+210dfd9dfd1381a8855ad0cb4c1321c6  CLIENT_DATA/files/doc/fi/Resources/SpeechFocusPin.png
+386af0d30108012dde99a282be6283fe  CLIENT_DATA/files/doc/fi/Resources/exclamation.png
+8718fee6d2c00bcbf399adea27cdf98d  CLIENT_DATA/files/doc/fi/Resources/transfer.png
+19fcf4743c2c6b88ec845e2da9e58dc3  CLIENT_DATA/files/doc/fi/Resources/speak.png
+772674c06ca710887aa14ba2c911eaf5  CLIENT_DATA/files/doc/fi/SRFeatures/Resources/UnderstandSR_small.png
+5ee83f54c46659adddf800e046338210  CLIENT_DATA/files/doc/fi/SRFeatures/Resources/Navigate_small.png
+313127adcec1835196252cb5916ce7c2  CLIENT_DATA/files/doc/fi/SRFeatures/Resources/Correct_small.png
+ff927c304d47b45ba7aca26418e2de4a  CLIENT_DATA/files/doc/fi/SRFeatures/Resources/VoiceCommands_small.png
+2c897d7b94a29d3322b25a9120f8d023  CLIENT_DATA/files/doc/fi/SRFeatures/Resources/Symbols.png
+42b6e5df2e500764336aec2bca99cda0  CLIENT_DATA/files/doc/fi/SRFeatures/Resources/Numbers.png
+e25c5f3f24943b3ea674bf1b30572ab3  CLIENT_DATA/files/doc/fi/SRFeatures/Resources/Tips.png
+247c2bf23c7aededc9b6dea3e0896d1b  CLIENT_DATA/files/doc/fi/SRFeatures/Resources/ListenToSound.png
+946caf11c4d325e5692ad6aed82a6a09  CLIENT_DATA/files/doc/fi/SRFeatures/Resources/Marks.png
+23c04e5b64759e34a7db220a4bbf86af  CLIENT_DATA/files/doc/fi/SRFeatures/Resources/SpecialFeature.png
+0f9dee5f3fdfbef6b38257e9129eafd9  CLIENT_DATA/files/doc/fi/SRFeatures/Resources/VoiceCommands.png
+8396ec4d39cb317f1a36bfbd1eeec55e  CLIENT_DATA/files/doc/fi/SRFeatures/Resources/Microphone.png
+da634c180253a7647ec54c92638ee128  CLIENT_DATA/files/doc/fi/SRFeatures/Resources/Mesaruements_Small.png
+927e14742f78c90e5100cc4257a14301  CLIENT_DATA/files/doc/fi/SRFeatures/Resources/SpecialFeature_small.png
+11ec14b99d5a0e50d959c44375337430  CLIENT_DATA/files/doc/fi/SRFeatures/Resources/Dates.png
+cfca0fed4c408ca439babaf377917100  CLIENT_DATA/files/doc/fi/SRFeatures/Resources/Correct.png
+8f78d1810337482c86afc2d77685752a  CLIENT_DATA/files/doc/fi/SRFeatures/Resources/Time.png
+3f02d4c709df6412a14a979fe39c24a8  CLIENT_DATA/files/doc/fi/SRFeatures/Resources/Stylesheets/MadCapBlaze.css
+2c28e83d18d718ed0c06c31b7ef32565  CLIENT_DATA/files/doc/fi/SRFeatures/Resources/autotext.png
+6697f6c697ec8e9fdf5c7e97b9ad6bba  CLIENT_DATA/files/doc/fi/SRFeatures/Resources/Symbols_small.png
+59c9bad64dc502db13d3b443d43d49fb  CLIENT_DATA/files/doc/fi/SRFeatures/Resources/ListenToSound_small.png
+0f612a01583fb22f87425d129d311da5  CLIENT_DATA/files/doc/fi/SRFeatures/Resources/Tips_small.png
+1ff85b089d12cbac36a0f079c39c12e7  CLIENT_DATA/files/doc/fi/SRFeatures/Resources/Navigate.png
+b2450082071a746c1848a27b9524f2d5  CLIENT_DATA/files/doc/fi/SRFeatures/Resources/UnderstandSR.png
+3a78940a3a01f2526188bf8ebdd25d38  CLIENT_DATA/files/doc/fi/SRFeatures/Resources/Example.png
+e659e5e82ffcd8ff1e3f9742e68ee1a8  CLIENT_DATA/files/doc/fi/SRFeatures/Resources/Speak_small.png
+6d6a5ae31452720f37f346553e8da161  CLIENT_DATA/files/doc/fi/SRFeatures/Resources/danubeenduser.css
+19fcf4743c2c6b88ec845e2da9e58dc3  CLIENT_DATA/files/doc/fi/SRFeatures/Resources/Speak.png
+1d3384077fd22360162d9a0d0e36b18a  CLIENT_DATA/files/doc/fi/SRFeatures/Resources/ScratchThat.png
+6c1f1e62db5eb217c8beee83c9d4ce81  CLIENT_DATA/files/doc/fi/SRFeatures/Resources/Dates_small.png
+d71fe9cef9c2061c7d6f59877df955b1  CLIENT_DATA/files/doc/fi/SRFeatures/Resources/Mesaruements.png
+a2e5664d1d84f1666ce139625c9a9569  CLIENT_DATA/files/doc/fi/SRFeatures/Resources/Numbers_small.png
+4f0ddb48d02b3a3c27f106fe4dab2c1b  CLIENT_DATA/files/doc/fi/SRFeatures/Resources/Time_small.png
+719de98ba2cf90c5efe3045288fc6f17  CLIENT_DATA/files/doc/fi/SRFeatures/Resources/Microphone_small.png
+cbf82f489ffa309de4b8645c1bffd471  CLIENT_DATA/files/doc/fi/SRFeatures/Resources/Marks_small.png
+2e047c0790f5d34b07c83c4f89ad3299  CLIENT_DATA/files/doc/fi/SRFeatures/Desktop_XHTML_SoD.htm
+7854b30f2dae91222fc6185e6c156e6f  CLIENT_DATA/files/doc/sv/EULA.htm
+c993d473fef0d7bcdd783e4479be5321  CLIENT_DATA/files/doc/sv/SoD.htm
+11e711753bb76d56172fb35977b440c1  CLIENT_DATA/files/doc/sv/Resources/menu.png
+229132e844455b0ff7d044ab488b25d8  CLIENT_DATA/files/doc/sv/Resources/SpeechFocusPin_MicOff.png
+d6df55b50e763943d635eca2bafbd889  CLIENT_DATA/files/doc/sv/Resources/hide.png
+939cd8e5c98a68129bb070ba7558f348  CLIENT_DATA/files/doc/sv/Resources/discard.png
+23c04e5b64759e34a7db220a4bbf86af  CLIENT_DATA/files/doc/sv/Resources/specialfeature.png
+3f02d4c709df6412a14a979fe39c24a8  CLIENT_DATA/files/doc/sv/Resources/Stylesheets/MadCapBlaze.css
+e5a1841481141a9558712225920a9ac0  CLIENT_DATA/files/doc/sv/Resources/recall.png
+b2450082071a746c1848a27b9524f2d5  CLIENT_DATA/files/doc/sv/Resources/UnderstandSR.png
+7376f63f6cecdabf865992205a59dfbc  CLIENT_DATA/files/doc/sv/Resources/mic_off.png
+53c414479017b1ed67fe0459e4fd3849  CLIENT_DATA/files/doc/sv/Resources/danubeenduser.css
+3e877cb9e60d99a273d767c4fbb8ef07  CLIENT_DATA/files/doc/sv/Resources/undo.png
+8396ec4d39cb317f1a36bfbd1eeec55e  CLIENT_DATA/files/doc/sv/Resources/microphone.png
+210dfd9dfd1381a8855ad0cb4c1321c6  CLIENT_DATA/files/doc/sv/Resources/SpeechFocusPin.png
+386af0d30108012dde99a282be6283fe  CLIENT_DATA/files/doc/sv/Resources/exclamation.png
+8718fee6d2c00bcbf399adea27cdf98d  CLIENT_DATA/files/doc/sv/Resources/transfer.png
+19fcf4743c2c6b88ec845e2da9e58dc3  CLIENT_DATA/files/doc/sv/Resources/speak.png
+772674c06ca710887aa14ba2c911eaf5  CLIENT_DATA/files/doc/sv/SRFeatures/Resources/UnderstandSR_small.png
+5ee83f54c46659adddf800e046338210  CLIENT_DATA/files/doc/sv/SRFeatures/Resources/Navigate_small.png
+313127adcec1835196252cb5916ce7c2  CLIENT_DATA/files/doc/sv/SRFeatures/Resources/Correct_small.png
+ff927c304d47b45ba7aca26418e2de4a  CLIENT_DATA/files/doc/sv/SRFeatures/Resources/VoiceCommands_small.png
+2c897d7b94a29d3322b25a9120f8d023  CLIENT_DATA/files/doc/sv/SRFeatures/Resources/Symbols.png
+42b6e5df2e500764336aec2bca99cda0  CLIENT_DATA/files/doc/sv/SRFeatures/Resources/Numbers.png
+e25c5f3f24943b3ea674bf1b30572ab3  CLIENT_DATA/files/doc/sv/SRFeatures/Resources/Tips.png
+247c2bf23c7aededc9b6dea3e0896d1b  CLIENT_DATA/files/doc/sv/SRFeatures/Resources/ListenToSound.png
+946caf11c4d325e5692ad6aed82a6a09  CLIENT_DATA/files/doc/sv/SRFeatures/Resources/Marks.png
+23c04e5b64759e34a7db220a4bbf86af  CLIENT_DATA/files/doc/sv/SRFeatures/Resources/SpecialFeature.png
+0f9dee5f3fdfbef6b38257e9129eafd9  CLIENT_DATA/files/doc/sv/SRFeatures/Resources/VoiceCommands.png
+8396ec4d39cb317f1a36bfbd1eeec55e  CLIENT_DATA/files/doc/sv/SRFeatures/Resources/Microphone.png
+da634c180253a7647ec54c92638ee128  CLIENT_DATA/files/doc/sv/SRFeatures/Resources/Mesaruements_Small.png
+927e14742f78c90e5100cc4257a14301  CLIENT_DATA/files/doc/sv/SRFeatures/Resources/SpecialFeature_small.png
+11ec14b99d5a0e50d959c44375337430  CLIENT_DATA/files/doc/sv/SRFeatures/Resources/Dates.png
+cfca0fed4c408ca439babaf377917100  CLIENT_DATA/files/doc/sv/SRFeatures/Resources/Correct.png
+8f78d1810337482c86afc2d77685752a  CLIENT_DATA/files/doc/sv/SRFeatures/Resources/Time.png
+3f02d4c709df6412a14a979fe39c24a8  CLIENT_DATA/files/doc/sv/SRFeatures/Resources/Stylesheets/MadCapBlaze.css
+2c28e83d18d718ed0c06c31b7ef32565  CLIENT_DATA/files/doc/sv/SRFeatures/Resources/autotext.png
+6697f6c697ec8e9fdf5c7e97b9ad6bba  CLIENT_DATA/files/doc/sv/SRFeatures/Resources/Symbols_small.png
+59c9bad64dc502db13d3b443d43d49fb  CLIENT_DATA/files/doc/sv/SRFeatures/Resources/ListenToSound_small.png
+0f612a01583fb22f87425d129d311da5  CLIENT_DATA/files/doc/sv/SRFeatures/Resources/Tips_small.png
+1ff85b089d12cbac36a0f079c39c12e7  CLIENT_DATA/files/doc/sv/SRFeatures/Resources/Navigate.png
+b2450082071a746c1848a27b9524f2d5  CLIENT_DATA/files/doc/sv/SRFeatures/Resources/UnderstandSR.png
+3a78940a3a01f2526188bf8ebdd25d38  CLIENT_DATA/files/doc/sv/SRFeatures/Resources/Example.png
+e659e5e82ffcd8ff1e3f9742e68ee1a8  CLIENT_DATA/files/doc/sv/SRFeatures/Resources/Speak_small.png
+3e2f1f32fe71749052fefa5a2c62b724  CLIENT_DATA/files/doc/sv/SRFeatures/Resources/danubeenduser.css
+19fcf4743c2c6b88ec845e2da9e58dc3  CLIENT_DATA/files/doc/sv/SRFeatures/Resources/Speak.png
+1d3384077fd22360162d9a0d0e36b18a  CLIENT_DATA/files/doc/sv/SRFeatures/Resources/ScratchThat.png
+6c1f1e62db5eb217c8beee83c9d4ce81  CLIENT_DATA/files/doc/sv/SRFeatures/Resources/Dates_small.png
+d71fe9cef9c2061c7d6f59877df955b1  CLIENT_DATA/files/doc/sv/SRFeatures/Resources/Mesaruements.png
+a2e5664d1d84f1666ce139625c9a9569  CLIENT_DATA/files/doc/sv/SRFeatures/Resources/Numbers_small.png
+4f0ddb48d02b3a3c27f106fe4dab2c1b  CLIENT_DATA/files/doc/sv/SRFeatures/Resources/Time_small.png
+719de98ba2cf90c5efe3045288fc6f17  CLIENT_DATA/files/doc/sv/SRFeatures/Resources/Microphone_small.png
+cbf82f489ffa309de4b8645c1bffd471  CLIENT_DATA/files/doc/sv/SRFeatures/Resources/Marks_small.png
+1fd7708d5d5a54f93c344dcb2b4bd275  CLIENT_DATA/files/doc/sv/SRFeatures/Desktop_XHTML_SoD.htm
+44eb64db3348cd2110601016cbab22d9  CLIENT_DATA/files/es/Nuance.SpeechAnywhere.resources.dll
+f8412e9c86ed3a7fc9a808764e5ff099  CLIENT_DATA/files/fi/Nuance.SpeechAnywhere.resources.dll
+1ef7908171f967b46ce947969e8a6afa  CLIENT_DATA/files/fr/Nuance.SpeechAnywhere.resources.dll
+0a7c1c45bae879e6b560f18c41352f0d  CLIENT_DATA/files/hook_x64.dll
+6a8bd155526dc6a14947a1c35970f83a  CLIENT_DATA/files/log4net.dll
+d229da563da18fe5d58cd95a6467d584  CLIENT_DATA/files/log4net_Apache_LICENSE-2_0.txt
+79f9c5fc6a8d532c5661c2b494f4fb0d  CLIENT_DATA/files/log4net_NOTICE.txt
+b7a8c8f512f31c72bd422b5afbbcbac1  CLIENT_DATA/files/nl/Nuance.SpeechAnywhere.resources.dll
+196afe324abd6c24575d8b2fff7b1a7d  CLIENT_DATA/files/no/Nuance.SpeechAnywhere.resources.dll
+2923f1c9ed4743e1e9792166189d2592  CLIENT_DATA/files/pspaudio.dll
+e2e9d23febcfca73caee299499c3f222  CLIENT_DATA/files/sv/Nuance.SpeechAnywhere.resources.dll
+ce3c47d5ecdc226cadf60e4e292b40ec  CLIENT_DATA/files/thunk_x64.exe
