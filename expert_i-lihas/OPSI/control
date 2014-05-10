@@ -1,0 +1,44 @@
+[Package]
+version: 1
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: expert_i-lihas
+name: Expert_i
+description: 
+advice: 
+version: 8.1
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: setup.ins
+uninstallScript: uninstall.ins
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[ProductDependency]
+action: setup
+requiredProduct: vcrun2008sp1kb973552x86-lihas
+requiredStatus: installed
+requirementType: before
+
+[Changelog]
+expert_i-lihas (8.1-1) testing; urgency=low
+
+  * Initial package
+
+ -- Stefan Baur <lihas@lihas.de>  Wed, 07 May 2014 18:12:56 +0000
+
+
+
+
+
+
+
+
+
