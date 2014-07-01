@@ -83,8 +83,8 @@ endif
 endif
 
 [DosInAnIcon_RunUpdate]
-@echo on
-cscript %ScriptPath%\files\WUA_SearchDownloadInstall.vbs $autoaccepteulas$ $performinstall$ >>C:\opsi.org\log\wua.log
+@echo off
+cscript %ScriptPath%\files\WUA_SearchDownloadInstall.vbs $autoaccepteulas$ $performinstall$
 echo %ERRORLEVEL%
 exit %ERRORLEVEL%
 
