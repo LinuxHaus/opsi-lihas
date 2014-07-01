@@ -1,0 +1,82 @@
+[Package]
+version: 1
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: autoupdate-config-lihas
+name: autoupdate-config-lihas
+description: Windows-AutoUpdate-Einstellungen konfigurieren
+advice: 
+version: 1.0
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: config.ins
+uninstallScript: 
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[ProductProperty]
+type: unicode
+name: autoupdateoptions
+multivalue: False
+editable: True
+description: 0=nicht konfiguriert, 1=deaktiviert, 2=nur benachrichtigen, 3=nur herunterladen, 4=herunterladen und installieren
+values: ["0", "1", "2", "3", "4"]
+default: ["0"]
+
+[ProductProperty]
+type: unicode
+name: enablefeaturedsoftware
+multivalue: False
+editable: True
+description: Weitere Updates für MS-Produkte installieren (1=ja)
+values: ["0", "1"]
+default: ["1"]
+
+[ProductProperty]
+type: unicode
+name: includerecommendedupdates
+multivalue: False
+editable: True
+description: Auch empfohlene Updates installieren (1=ja)
+values: ["0", "1"]
+default: ["1"]
+
+[ProductProperty]
+type: unicode
+name: elevatenonadmins
+multivalue: False
+editable: True
+description: Nicht-Administratoren das Installieren von Updates erlauben (1=ja)
+values: ["0", "1"]
+default: ["1"]
+
+[Changelog]
+autoupdate-config-lihas (1.0-1) testing; urgency=low
+
+  * Initial package
+
+ -- Stefan Baur <lihas@lihas.de>  Fri, 27 Jun 2014 21:45:00 +0000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
