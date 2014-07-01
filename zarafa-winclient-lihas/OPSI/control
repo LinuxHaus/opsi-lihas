@@ -1,0 +1,48 @@
+[Package]
+version: 1
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: zarafa-winclient-lihas
+name: Zarafa Windows Client
+description: 
+advice: This package will fail to install unless MS Outlook is installed.
+version: 7.1.9.44888
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: setup32.ins
+uninstallScript: unins32.ins
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[Changelog]
+zarafa-winclient-lihas (7.1.9.44888-1) testing; urgency=low
+
+  * Initial package
+
+-- Stefan Baur <lihas@lihas.de>  Fri, 23 May 2014 20:15:00 +0000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
