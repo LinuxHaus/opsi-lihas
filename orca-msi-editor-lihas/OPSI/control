@@ -1,0 +1,47 @@
+[Package]
+version: 1
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: orca-msi-editor-lihas
+name: ORCA MSI Editor
+description: 
+advice: 
+version: 3.1.4000.1830
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: setup32.ins
+uninstallScript: unins32.ins
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[Changelog]
+orca-msi-editor-lihas (3.1.4000.1830-1) testing; urgency=low
+
+  * Initial package
+
+-- Stefan Baur <lihas@lihas.de>  Fri, 23 May 2014 13:00:00 +0000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
