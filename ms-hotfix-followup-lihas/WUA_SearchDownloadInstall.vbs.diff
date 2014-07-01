@@ -1,0 +1,43 @@
+0a1,6
+> ' This script is based on
+> ' http://msdn.microsoft.com/en-us/library/windows/desktop/aa387102%28v=vs.85%29.aspx
+> ' with the original script copyrighted by Microsoft
+> 
+> strEULAOverride = Wscript.Arguments(0)
+> strINSTOverride = Wscript.Arguments(1)
+20c26,28
+<     WScript.Quit
+---
+>     WScript.Quit 100
+> Else
+> 	WScript.Echo "Updates found."
+22a31
+> 
+38a48
+>             If strEULAOverride <> "true" Then
+39a50,52
+> 			Else
+> 				WScript.Echo vbCRLF & "Override flag is set: Forcing acceptance of all EULAs."
+> 			End If
+41c54
+<             If (strInput = "Y" or strInput = "y") Then
+---
+>             If (strInput = "Y" or strInput = "y" or strEULAOverride = "true") Then
+60c73
+<     WScript.Quit
+---
+>     WScript.Quit 100
+88c101
+<     WScript.Quit
+---
+>     WScript.Quit 100
+94a108
+> If strInstOverride <> "true" Then
+97a112,114
+> Else
+> 	WScript.Echo  vbCRLF & "Override flag is set: Forcing install."
+> End If
+99c116
+< If (strInput = "Y" or strInput = "y") Then
+---
+> If (strInput = "Y" or strInput = "y" or strInstOverride = "true") Then

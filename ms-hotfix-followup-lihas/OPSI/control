@@ -1,0 +1,72 @@
+[Package]
+version: 1
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: ms-hotfix-followup-lihas
+name: ms-hotfix-followup-lihas
+description: Updates installieren, die das UIB-MS-Hotfix-Paket nicht mitbringt
+advice: 
+version: 1.0
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: wuaupdates.ins
+uninstallScript: 
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[ProductProperty]
+type: unicode
+name: autoaccepteulas
+multivalue: False
+editable: True
+description: EULAs automatisch akzeptieren (zwingend für nicht-interaktive Installation)
+values: ["false", "true"]
+default: ["false"]
+
+[ProductProperty]
+type: unicode
+name: performinstall
+multivalue: False
+editable: True
+description: Nach Download auch automatisch installieren (empfohlen)
+values: ["false", "true"]
+default: ["false"]
+
+[Changelog]
+ms-hotfix-followup-lihas (1.0-1) testing; urgency=low
+
+  * Initial package
+
+ -- Stefan Baur <lihas@lihas.de>  Mon, 30 Jun 2014 23:31:00 +0000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
