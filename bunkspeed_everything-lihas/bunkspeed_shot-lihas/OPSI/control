@@ -1,0 +1,53 @@
+[Package]
+version: 1
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: bunkspeed_shot-lihas
+name: Bunkspeed Shot
+description: 
+advice: 
+version: 2014
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: setup64.ins
+uninstallScript: unins64.ins
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[ProductDependency]
+action: setup
+requiredProduct: bunkspeed_prereq-lihas
+requiredStatus: installed
+requirementType: before
+
+[Changelog]
+dotnet-langpack-deu-lihas (2014-1) testing; urgency=low
+
+  * Initial package
+
+-- Stefan Baur <lihas@lihas.de>  Mon, 28 Jul 2014 20:23:00 +0000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
