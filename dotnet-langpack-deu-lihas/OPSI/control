@@ -1,0 +1,51 @@
+[Package]
+version: 1
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: dotnet-langpack-deu-lihas
+name: German Language Pack for DotNet
+description: 
+advice: 
+version: 4.5.2
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: setup64.ins
+uninstallScript: unins64.ins
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[ProductDependency]
+action: setup
+requiredProduct: dotnet-lihas
+requiredStatus: installed
+requirementType: before
+
+[Changelog]
+dotnet-langpack-deu-lihas (4.5.2-1) testing; urgency=low
+
+  * Initial package
+
+-- Stefan Baur <lihas@lihas.de>  Mon, 28 Jul 2014 14:55:00 +0000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
