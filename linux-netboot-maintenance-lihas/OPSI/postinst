@@ -1,0 +1,25 @@
+#! /bin/bash
+#
+# postinst script for ntfs-restore-image
+# This script executes after unpacking files from that archive and registering the product at the server.
+#
+# The following environment variables can be used to obtain information about the current installation:
+#   PRODUCT_ID: id of the current product
+#   CLIENT_DATA_DIR: directory which contains the installed client data
+#
+
+if [ ! -f /etc/opsi/version ]; then
+    # file /etc/opsi/version exists since opsi 3.1
+    echo "Creating bootimage file for $PRODUCT_ID ...."
+    cat /tftpboot/linux/pxelinux.cfg/install | awk '
+    {
+	add="" 
+        if ($1 == "append")
+    	    add=sprintf(" product=%s", ENVIRON["PRODUCT_ID"])
+	printf("%s%s\n", $0, add)
+    }' > "/tftpboot/linux/pxelinux.cfg/$PRODUCT_ID" 
+fi
+
+opsi-admin -d method getPcpatchRSAPrivateKey >/dev/null || true
+
+

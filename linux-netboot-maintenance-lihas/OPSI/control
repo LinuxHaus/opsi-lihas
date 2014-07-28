@@ -1,0 +1,29 @@
+[Package]
+version: 1
+depends: 
+incremental: False
+
+[Product]
+type: netboot
+id: linux-netboot-maintenance-lihas
+name: 
+description: Bootet das OPSI-Installationsimage als Wartungs-Linux vom Netz, ohne eine Installation zu starten.
+advice: 
+version: 1.0
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: bootlinux.py
+uninstallScript: 
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+pxeConfigTemplate: 
+
+[ProductProperty]
+type: bool
+name: askbeforeinst
+description: Soll das Booten des Images am Client bestätigt werden müssen?
+default: True
+
