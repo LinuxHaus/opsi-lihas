@@ -1,21 +1,25 @@
 WGET_COMMON_OPTIONS  = -q -N
 
 PACKAGE_NAME         = zarafa-winclient-lihas
-VERSION              = 7.1.9.44888
+MAINVERSION          = 7.1
+PATCHLEVEL	     = 11
+SUBVERSION	     = 46050
 OPSI_PACKAGE_VERSION = 1
 
 DOWNLOAD_DIR         = ./CLIENT_DATA/files
-DOWNLOAD_URL         = http://download.zarafa.com/community/final/7.1/7.1.9-44333/windows/zarafaclient-7.1.9-44888.msi
+DOWNLOAD_URL         = http://download.zarafa.com/community/final/$(MAINVERSION)/$(MAINVERSION).$(PATCHLEVEL)-$(SUBVERSION)/windows/zarafaclient-$(MAINVERSION).$(PATCHLEVEL)-$(SUBVERSION).msi
 
-TARGET               = $(PACKAGE_NAME)_$(VERSION)-$(OPSI_PACKAGE_VERSION).opsi
+TARGET               = $(PACKAGE_NAME)_$(MAINVERSION).$(PATCHLEVEL).$(SUBVERSION)-$(OPSI_PACKAGE_VERSION).opsi
 
 all: download build install
 
 download:
 	mkdir -p $(DOWNLOAD_DIR)
 	wget $(WGET_COMMON_OPTIONS) -P $(DOWNLOAD_DIR) $(DOWNLOAD_URL)
+	mv $(DOWNLOAD_DIR)/zarafaclient-$(MAINVERSION).$(PATCHLEVEL)-$(SUBVERSION).msi $(DOWNLOAD_DIR)/zarafaclient.msi
 
 $(TARGET):
+	sed s/VERSION/$(VERSION).$(PATCHLEVEL).$(SUBVERSION)/g OPSI/control.template > OPSI/control
 	opsi-makeproductfile
 
 build: $(TARGET)
