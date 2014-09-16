@@ -103,7 +103,7 @@ endif
 ; You may create setup answer file by: setup.exe /SAVEINF="filename"
 ; You may use an answer file by the parameter /LOADINF="filename"
 ; "%ScriptPath%\setup.exe" /sp- /silent /norestart /SUPPRESSMSGBOXES
-msiexec /i "%ScriptPath%\files\zarafaclient-7.1.9-44888.msi" /l* "$LogDir$\$ProductId$.install_log.txt" /qn ALLUSERS=2 REBOOT=ReallySuppress
+msiexec /i "%ScriptPath%\files\zarafaclient.msi" /l* "$LogDir$\$ProductId$.install_log.txt" /qn ALLUSERS=2 REBOOT=ReallySuppress
 
 [Files_install]
 ; Example of recursively copying some files into the installation directory:
