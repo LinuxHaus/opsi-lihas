@@ -20,7 +20,7 @@ download:
 	mv $(DOWNLOAD_DIR)/zarafaclient-$(MAINVERSION).$(PATCHLEVEL)-$(WINVERSION).msi $(DOWNLOAD_DIR)/zarafaclient.msi
 
 $(TARGET):
-	sed s/VERSION/$(VERSION).$(PATCHLEVEL).$(WINVERSION)/g OPSI/control.template > OPSI/control
+	sed s/VERSION/$(MAINVERSION).$(PATCHLEVEL).$(WINVERSION)/g OPSI/control.template > OPSI/control
 	opsi-makeproductfile
 
 build: $(TARGET)
