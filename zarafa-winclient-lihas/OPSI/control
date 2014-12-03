@@ -1,5 +1,5 @@
 [Package]
-version: 2
+version: 1
 depends: 
 incremental: False
 
@@ -9,7 +9,7 @@ id: zarafa-winclient-lihas
 name: Zarafa Windows Client
 description: 
 advice: This package will fail to install unless MS Outlook is installed.
-version: 7.1.11.46050
+version: 7.1.11.46779
 priority: 0
 licenseRequired: False
 productClasses: 
