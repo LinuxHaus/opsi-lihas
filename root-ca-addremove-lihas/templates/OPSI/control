@@ -1,0 +1,29 @@
+[Package]
+version: PACKAGEVERSION
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: root-ca-CERTNAMETRIMMED-lihas
+name: Generic Root CA Installer/Uninstaller by LiHAS
+description: FULLCERTNAME
+advice: Root CA(s) included in this package: ALLCERTNAMES
+version: 1
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: setup32.ins
+uninstallScript: unins32.ins
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[Changelog]
+root-ca-CERTNAMETRIMMED-lihas (1-PACKAGEVERSION) testing; urgency=low
+
+  * Package based on the Template by Stefan Baur <lihas@lihas.de>
+
+-- YOURNAME <YOUREMAIL>  DATE

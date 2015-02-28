@@ -1,0 +1,112 @@
+#!/bin/bash
+
+if [ -z "$YOURNAME" ] || [ -z "$YOUREMAIL" ] ; then
+	echo "Please add your name and your e-mail address in the Makefile,"
+	echo "they are needed for the changelog entry."
+	exit 1
+fi
+
+# initialize some variables
+DATE=$(date -R)
+PACKAGEVERSION=1
+
+# create the main directory under which all package subdirectories will be created
+mkdir -p ./packages
+
+# create the directory under which all certificate subdirectories will be created
+mkdir -p ./certificates
+
+# certificates are stored in subdirectories under ./certificates
+# (the name of the subdirectory determines the package name and description)
+# so we build a list of directory names ...
+CERTDIRS=$(cd ./certificates && find . -mindepth 1 -maxdepth 1 -type d)
+
+if [ -z "$CERTDIRS" ] ; then
+	echo "No subdirectories found in ./certificates. Please place"
+	echo "your certificates in subdirectories, as the names of"
+	echo "these subdirectories will be used for the package names."
+	exit 1
+fi
+
+# and for each certificate directory name, we do this ...
+for CERTDIR in $CERTDIRS ; do
+
+	# we're interested in the directory name only, without path
+	CERTNAME=$(basename "$CERTDIR")
+
+	# now we need to trim the name to conform to OPSI specs:
+	# no whitespace, no underscore, all lowercase, a-z 0-9
+	CERTNAMETRIMMED=$( echo "$CERTNAME" | tr "_ " "--" | tr "[:upper:]" "[:lower:]" | tr -c -d "[:alnum:]" )
+
+	# a further restriction is that we may not have a name longer than 18 characters
+	if [ ${#CERTNAMETRIMMED} -gt 18 ] ; then
+
+		# if we have more than 18, we cut out a piece from the middle and replace it with "...."
+		# (more advanced solutions for avoiding a name space conflict are truly welcome)
+		CERTNAMETRIMMED="${CERTNAMETRIMMED:0:7}....${CERTNAMETRIMMED:(-7)}"
+	fi
+
+	# if the packages directory already contains a package in the name space we just determined,
+	# go there and grab the package version number from the control file, if it exists
+	if [ -d "./packages/$CERTNAMETRIMMED" ] && [ -s "./packages/$CERTNAMETRIMMED/OPSI/control" ]; then
+		OLDPACKAGEVERSION=$(awk -F ':' ' $1=="version" { print $2 }' ./packages/$CERTNAMETRIMMED/OPSI/control | head -n 1)
+
+		# sanity check for OLDPACKAGEVERSION
+		if [ -n "$OLDPACKAGEVERSION" ] && [ $OLDPACKAGEVERSION -gt 0 ] ; then
+			# add 1 to the last package version and set that as the new package version number
+			PACKAGEVERSION=$((OLDPACKAGEVERSION+1))
+		fi
+	fi
+
+	# create the output directory for the package, if it does not already exist
+	mkdir -p "./packages/$CERTNAMETRIMMED"
+
+	# copy all of our templates into the output directory
+	cp -a ./templates/* "./packages/$CERTNAMETRIMMED"
+
+	# copy all the certificates into the output directory
+	cp -a ./certificates/$CERTDIR/*.crt ./packages/$CERTNAMETRIMMED/CLIENT_DATA/
+
+	# make a list of all certificates included in this package
+	ALLCERTNAMES=$( find "./packages/$CERTNAMETRIMMED/CLIENT_DATA/" -name "*.crt" | xargs -n 1 basename | tr '\n' ' ' )
+
+	# record fingerprints of all certificates in this text file (required for uninstall routinea of package)
+	for SINGLECERTNAME in $ALLCERTNAMES ; do
+		openssl x509 -noout -fingerprint -in "./packages/$CERTNAMETRIMMED/CLIENT_DATA/$SINGLECERTNAME" | tr ':' ' ' | awk -F '=' '{ print "\"" $2 "\"" }' >>"./packages/$CERTNAMETRIMMED/CLIENT_DATA/certlist.txt"
+	done
+
+	# elminate duplicates (in case admin added multiple *.crt files with different name but same content)
+	sort -u "./packages/$CERTNAMETRIMMED/CLIENT_DATA/certlist.txt" >"./packages/$CERTNAMETRIMMED/CLIENT_DATA/certlist_sorted.txt"
+	mv "./packages/$CERTNAMETRIMMED/CLIENT_DATA/certlist_sorted.txt" "./packages/$CERTNAMETRIMMED/CLIENT_DATA/certlist.txt"
+
+	# replace placeholders in the local copy of our templates with the real values
+	sed -i	-e "s/CERTNAMETRIMMED/$CERTNAMETRIMMED/g" \
+		-e "s/FULLCERTNAME/$CERTNAME/g" \
+		-e "s/DATE/$DATE/g" \
+		-e "s/YOURNAME/$YOURNAME/g" \
+		-e "s/YOUREMAIL/$YOUREMAIL/g" \
+		-e "s/PACKAGEVERSION/$PACKAGEVERSION/g" \
+		-e "s/ALLCERTNAMES/$ALLCERTNAMES/g" \
+		./packages/$CERTNAMETRIMMED/CLIENT_DATA/*.ins \
+		./packages/$CERTNAMETRIMMED/OPSI/control
+
+	# change into the output directory
+	cd ./packages/$CERTNAMETRIMMED
+
+	# build package
+	opsi-makeproductfile
+
+	# install package on server
+	opsi-package-manager -i root-ca-${CERTNAMETRIMMED}-lihas_1-$PACKAGEVERSION.opsi
+
+	# cleanup job: These files have to go before the next build is started
+	# This is NOT compareable to a "make clean", this deletion would have to happen
+	# duing the "build" step of make, not in the "make clean" step
+	# a "make clean" would have to remove the entire ./packages directory, and possibly
+	# ./certificates as well
+	rm ./CLIENT_DATA/*.crt
+	rm ./CLIENT_DATA/certlist.txt
+	
+	# go back into our main directory for the next iteration of our loop
+	cd ../../
+done
