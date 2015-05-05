@@ -16,7 +16,13 @@ DefVar $ExitCode$
 DefVar $LicenseRequired$
 DefVar $LicenseKey$
 DefVar $LicensePool$
- 
+DefVar $Flag$
+DefVar $WinstRegKey$
+DefVar $RebootRegVar$
+
+Set $WinstRegKey$ = "HKLM\SOFTWARE\opsi.org\winst"
+Set $Flag$ = GetRegistryStringValue32("["+$WinstRegKey$+"] "+"RebootFlag")
+
 Set $LogDir$ = "%SystemDrive%\tmp"
  
 ; ----------------------------------------------------------------
@@ -52,31 +58,58 @@ else
 		comment "Licensing required, reserve license and get license key"
 		Sub_get_licensekey
 	endif
+
+
+	if not ($Flag$ = "1")
+	  ;=========================
+	  ; Irgendwas verhakt sich, wenn man expert_i in einer
+	  ; Reihe von Paketen installieren will, wie das meistens
+	  ; bei einer Erstinstallation der Fall ist.
+	  ; Vermutung: Irgendeine DLL o.ä. ist noch in Gebrauch, und
+	  ; der Installer kommt damit nicht klar.
+	  ; Deswegen erzwingen wir *vor* der Installation von expert_i
+	  ; nun einen Reboot.
+	  ; Reboot initialisieren ...
+	  Set $Flag$ = "1"
+	  Registry_SaveRebootFlag
+	  ExitWindows /ImmediateReboot
+
+	else
+	  ;=========================
+	  ; Anweisungen nach Reboot
+
+	  ; Rebootflag zurücksetzen
+	  Set $Flag$ = "0"
+	  Registry_SaveRebootFlag
+	  comment "Start setup program"
+	  Winbatch_install
+	  Sub_check_exitcode
  
-	comment "Start setup program"
-	Winbatch_install
-	Sub_check_exitcode
+	  comment "Copy files"
+	  Files_install /32Bit
  
-	comment "Copy files"
-	Files_install /32Bit
+    	  comment "Patch Registry"
+	  Registry_install /32Bit
  
-	comment "Patch Registry"
-	Registry_install /32Bit
+	  comment "Create shortcuts"
+	  LinkFolder_install
  
-	comment "Create shortcuts"
-	LinkFolder_install
- 
-	comment "Test for installation success"
-	; Test if software marked as installed in registry
-	; if (GetRegistryStringValue32("[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX}] DisplayName") = "")
-	; 	logError "Fatal: After Installation 32 bit [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX}] not found"
-	; 	isFatalError
-	; else
-	; 	comment "Successful Installation"
-	; endif
- 
+	  comment "Test for installation success"
+	  ; Test if software marked as installed in registry
+	  ; if (GetRegistryStringValue32("[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX}] DisplayName") = "")
+	  ; 	logError "Fatal: After Installation 32 bit [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX}] not found"
+	  ; 	isFatalError
+	  ; else
+	  ; 	comment "Successful Installation"
+	  ; endif
+ 	endif
 endif
- 
+
+
+[Registry_SaveRebootFlag]
+openKey [$WinstRegKey$]
+set "RebootFlag" = "$Flag$"
+
 [Winbatch_install]
 ; Choose one of the following examples as basis for your installation
 ; You can use $LicenseKey$ var to pass a license key to the installer

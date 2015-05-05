@@ -1,5 +1,5 @@
 [Package]
-version: 1
+version: 2
 depends: 
 incremental: False
 
@@ -28,11 +28,18 @@ requiredStatus: installed
 requirementType: before
 
 [Changelog]
+expert_i-lihas (8.1-2) testing; urgency=low
+
+  * Inserted Reboot before install
+
+ -- Stefan Baur <lihas@lihas.de>  Mon, 27 Apr 2015 17:52:00 +0000
+
 expert_i-lihas (8.1-1) testing; urgency=low
 
   * Initial package
 
  -- Stefan Baur <lihas@lihas.de>  Wed, 07 May 2014 18:12:56 +0000
+
 
 
 
