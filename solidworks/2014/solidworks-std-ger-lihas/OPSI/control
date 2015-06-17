@@ -1,0 +1,73 @@
+[Package]
+version: 1
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: solidworks-std-ger-lihas
+name: SolidWorks-Metapaket Standard German/Deutsch
+description: 
+advice: 
+version: 2014
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: setup.ins
+uninstallScript: 
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[ProductDependency]
+action: setup
+requiredProduct: solidworks-prereq-lihas
+requiredStatus: installed
+requirementType: before
+
+[ProductDependency]
+action: setup
+requiredProduct: solidworks-basis-lihas
+requiredStatus: installed
+requirementType: before
+
+[ProductDependency]
+action: setup
+requiredProduct: solidworks-german-lihas
+requiredStatus: installed
+requirementType: before
+
+[ProductDependency]
+action: setup
+requiredProduct: solidworks-vstudioaddins-lihas
+requiredStatus: installed
+requirementType: before
+
+[ProductDependency]
+action: setup
+requiredProduct: solidworks-edrawings-lihas
+requiredStatus: installed
+requirementType: before
+
+[ProductDependency]
+action: setup
+requiredProduct: solidworks-explorer-lihas
+requiredStatus: installed
+requirementType: before
+
+[Changelog]
+solidworks-std-ger-lihas (2014-1) testing; urgency=low
+
+  * Initial package
+
+ -- Stefan Baur <lihas@lihas.de>  Sun, 31 Aug 2014 15:21:00 +0000
+
+
+
+
+
+
+
+

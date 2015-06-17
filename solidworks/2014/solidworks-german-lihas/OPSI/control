@@ -1,0 +1,51 @@
+[Package]
+version: 1
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: solidworks-german-lihas
+name: SolidWorks-Sprachpaket Deutsch
+description: 
+advice: 
+version: 2014
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: setup64.ins
+uninstallScript: unins64.ins
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[ProductDependency]
+action: setup
+requiredProduct: dotnet-langpack-deu-lihas
+requiredStatus: installed
+requirementType: before
+
+[ProductDependency]
+action: setup
+requiredProduct: solidworks-basis-lihas
+requiredStatus: installed
+requirementType: before
+
+[Changelog]
+solidworks-german (2014-1) testing; urgency=low
+
+  * Initial package
+
+ -- Stefan Baur <lihas@lihas.de>  Tue, 29 Jul 2014 14:03:00 +0000
+
+
+
+
+
+
+
+
+
+
