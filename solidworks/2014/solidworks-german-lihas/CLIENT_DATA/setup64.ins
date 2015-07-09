@@ -104,7 +104,7 @@ endif
 ; You may use an answer file by the parameter /LOADINF="filename"
 ; "%ScriptPath%\setup.exe" /sp- /silent /norestart /SUPPRESSMSGBOXES
 ;msiexec.exe /i"%ScriptPath%\*.msi" /l* "$LogDir$\$ProductId$.install_log.txt" /qb
-msiexec /i "%ScriptPath%\files\german.msi" "$LogDir$\$ProductId$.install_log.txt" /qb
+msiexec /i "%ScriptPath%\files\german.msi" /l* "$LogDir$\$ProductId$.install_log.txt" /qb
 
 
 [Files_install]
