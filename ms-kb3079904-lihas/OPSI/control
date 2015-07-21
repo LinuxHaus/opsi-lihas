@@ -1,0 +1,47 @@
+[Package]
+version: 1
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: ms-kb3079904-lihas
+name: Microsoft Update KB 3079904
+description: 
+advice: Warnung - Erzwingt Reboot
+version: 1
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: setup.ins
+uninstallScript: uninstall.ins
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[Changelog]
+ms-kb3079904-lihas (1-1) testing; urgency=low
+
+  * Initial package
+
+ -- Stefan Baur <lihas@lihas.de>  Tue, 21 Jul 2015 12:36:05 +0000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
