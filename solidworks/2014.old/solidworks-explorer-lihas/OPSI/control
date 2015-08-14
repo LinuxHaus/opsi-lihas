@@ -1,0 +1,82 @@
+[Package]
+version: 1
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: solidworks-explorer-lihas
+name: SolidWorks-Explorer
+description: 
+advice: 
+version: 2014
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: setup64.ins
+uninstallScript: unins64.ins
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[ProductDependency]
+action: setup
+requiredProduct: solidworks-basis-lihas
+requiredStatus: installed
+requirementType: before
+
+[ProductProperty]
+type: unicode
+name: explorerorpdm
+multivalue: False
+editable: True
+description: 0:Explorer only, 1:Workgroup PDM features can be installed
+values: ["1"]
+default: ["1"]
+
+[ProductProperty]
+type: unicode
+name: addlocal
+multivalue: False
+editable: True
+description: Components to be installed
+values: ["Client64,VaultAdmin"]
+default: ["Client64,VaultAdmin"]
+
+[ProductProperty]
+type: unicode
+name: activserialnumber
+multivalue: False
+editable: True
+description: SolidWorks Serial Number
+values: [""]
+default: [""]
+
+[ProductProperty]
+type: unicode
+name: license_server
+multivalue: False
+editable: True
+description: SolidWorks License Server
+values: [""]
+default: [""]
+
+[Changelog]
+solidworks-explorer (2014-1) testing; urgency=low
+
+  * Initial package
+
+ -- Stefan Baur <lihas@lihas.de>  Tue, 29 Jul 2014 14:07:00 +0000
+
+
+
+
+
+
+
+
+
+
+
