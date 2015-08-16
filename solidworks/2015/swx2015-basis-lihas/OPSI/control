@@ -1,0 +1,134 @@
+[Package]
+version: 2
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: swx2015-basis-lihas
+name: SolidWorks-Basispaket
+description: 
+advice: 
+version: 2015
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: setup64.ins
+uninstallScript: unins64.ins
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[ProductDependency]
+action: setup
+requiredProduct: swx2015-prereq-lihas
+requiredStatus: installed
+requirementType: before
+
+[ProductProperty]
+type: unicode
+name: installdir
+multivalue: False
+editable: True
+description: SolidWorks Installation Directory
+values: ["C:\\Program Files\\SWX-2015"]
+default: ["C:\\Program Files\\SWX-2015"]
+
+[ProductProperty]
+type: unicode
+name: solidworksserialnumber
+multivalue: False
+editable: True
+description: SolidWorks Serial Number
+values: [""]
+default: [""]
+
+[ProductProperty]
+type: unicode
+name: serverlist
+multivalue: False
+editable: True
+description: List of SolidWorks License Servers
+values: [""]
+default: [""]
+
+[ProductProperty]
+type: unicode
+name: enableperformance
+multivalue: False
+editable: True
+description: Debug value, suggested: 0
+values: ["0"]
+default: ["0"]
+
+[ProductProperty]
+type: unicode
+name: officeoption
+multivalue: False
+editable: True
+description: Type of Solidworks Installation - 0:SolidWorks Client, 1:SolidWorks Office, 2:SolidWorks Professional, 3:SolidWorks Premium
+values: ["0"]
+default: ["0"]
+
+[ProductProperty]
+type: unicode
+name: addlocal
+multivalue: False
+editable: True
+description: List of optional components to be installed
+values: ["SolidWorks,FeatureWorks,PhotoView,SolidWorksRoutedsystems,SolidWorksToolbox,SolidWorksUtilities,ScanTo3D,TolAnalyst,CircuitWorks,SolidWorksCosting,SolidWorksDesignChecker,HelpFiles,Manuals,ExampleFiles"]
+default: ["SolidWorks,FeatureWorks,PhotoView,SolidWorksRoutedsystems,SolidWorksToolbox,SolidWorksUtilities,ScanTo3D,TolAnalyst,CircuitWorks,SolidWorksCosting,SolidWorksDesignChecker,HelpFiles,Manuals,ExampleFiles"]
+
+[ProductProperty]
+type: unicode
+name: toolboxfolder
+multivalue: False
+editable: True
+description: Toolbox Directory
+values: ["C:\\Program Files\\Common Files\\SolidWorks Data 2015"]
+default: ["C:\\Program Files\\Common Files\\SolidWorks Data 2015"]
+
+[Changelog]
+swx2015-basis-lihas (2015-2) testing; urgency=low
+
+  * Toolbox now works
+
+ -- Stefan Baur <lihas@lihas.de>  Fri, 14 Aug 2015 12:38:00 +0000
+
+swx2015-basis-lihas (2015-1) testing; urgency=low
+
+  * Initial package
+
+ -- Stefan Baur <lihas@lihas.de>  Tue, 29 Jul 2015 14:00:00 +0000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

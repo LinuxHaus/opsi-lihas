@@ -1,0 +1,40 @@
+[Package]
+version: 1
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: swx-vba-1033-lihas
+name: Visual Basic for Applications (1033)
+description: 
+advice: 
+version: 7.1
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: setup64.ins
+uninstallScript: unins64.ins
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[ProductDependency]
+action: setup
+requiredProduct: swx2014-vba-lihas
+requiredStatus: installed
+requirementType: before
+
+[Changelog]
+swx-vba-1033-lihas (7.1-1) testing; urgency=low
+
+  * initial release under new naming scheme
+
+ -- Stefan Baur <lihas@lihas.de>  Sat, 10 May 2014 21:08:00 +0000
+
+
+
+
+

@@ -1,0 +1,51 @@
+[Package]
+version: 1
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: swx2014-german-lihas
+name: SolidWorks-Sprachpaket Deutsch
+description: 
+advice: 
+version: 2014
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: setup64.ins
+uninstallScript: unins64.ins
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[ProductDependency]
+action: setup
+requiredProduct: dotnet-langpack-deu-lihas
+requiredStatus: installed
+requirementType: before
+
+[ProductDependency]
+action: setup
+requiredProduct: swx2014-basis-lihas
+requiredStatus: installed
+requirementType: before
+
+[ProductDependency]
+action: setup
+requiredProduct: swx-vba-1031-lihas
+requiredStatus: installed
+requirementType: before
+
+[Changelog]
+swx2014-german-lihas (2014-1) testing; urgency=low
+
+  * initial release under new naming scheme
+
+ -- Stefan Baur <lihas@lihas.de>  Fri, 14 Aug 2014 12:38:00 +0000
+
+
+
+

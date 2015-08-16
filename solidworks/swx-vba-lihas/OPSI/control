@@ -1,0 +1,34 @@
+[Package]
+version: 1
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: swx-vba-lihas
+name: Visual Basic for Applications (main)
+description: 
+advice: 
+version: 7.1
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: setup64.ins
+uninstallScript: unins64.ins
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[Changelog]
+swx-vba-lihas (7.1-1) testing; urgency=low
+
+  * initial release under new naming scheme
+
+ -- Stefan Baur <lihas@lihas.de>  Sat, 10 May 2014 21:08:00 +0000
+
+
+
+
+
