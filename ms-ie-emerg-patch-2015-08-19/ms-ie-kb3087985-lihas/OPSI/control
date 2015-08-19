@@ -1,5 +1,5 @@
 [Package]
-version: 1
+version: 2
 depends: 
 incremental: False
 
@@ -28,37 +28,15 @@ requiredStatus: installed
 requirementType: before
 
 [Changelog]
+ms-ie-kb3087985-lihas (1-2) testing; urgency=low
+
+  * fixed incomplete replacement of KB #
+
+ -- Stefan Baur <lihas@lihas.de>  Wed, 19 Aug 2015 18:14:00 +0000
+
 ms-ie-kb3087985-lihas (1-1) testing; urgency=low
 
   * Initial package
 
  -- Stefan Baur <lihas@lihas.de>  Wed, 19 Aug 2015 15:39:00 +0000
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
