@@ -1,0 +1,13 @@
+; Copyright (c) uib gmbh (www.uib.de)
+; This sourcecode is owned by uib gmbh
+; and published under the Terms of the General Public License.
+; credits: http://www.opsi.org/credits/
+ 
+comment "Starting uninstall"
+DosInAnIcon_uninstall
+
+[DosInAnIcon_uninstall]
+@echo on
+set /p PLUGNAME=<%scriptpath%\files\pluginname
+if %PLUGNAME% == "" goto:eof
+if exist "$InstallDir$\%PLUGNAME%" rd /s /q "$InstallDir$\%PLUGNAME%"

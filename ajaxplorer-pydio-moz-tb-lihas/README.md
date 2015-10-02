@@ -1,0 +1,10 @@
+Note 1:
+When using the option to install the Plugin for all users, it will cause a notification message for each existing user once they start ThunderBird.  They need to manually check the box on that notification page before continuing.  If they don't, then the Plugin won't be installed.  So you really should inform your users before deploying.  For new users, the Plugin will be installed, but deactivated.  They need to manually activate it using the Add-Ons/Extensions menu.
+The only way around this is installing it for new users *only* - in that case, no notification page appears and the Plugin is active right from the start.
+The consequence of a "new user only" installation is that the Plugin will copied to each user's profile directory, so a) users can uninstall their particular copy of the Plugin manually, and b) there is no simple way to uninstall the Plugin via OPSI.  All that an OPSI uninstallation does, in this case, is prevent new users from having the Plugin force-installed upon creation of their profile.
+
+Note 2:
+There is no sane way to determine the path where ThunderBird is installed, so we cannot provide a default that will work in 100% of all use cases.  Please check that the path is set to the proper directory before deploying.  For 32-Bit Windows and the default installation path, that is "C:\Program Files\Mozilla ThunderBird", for 64-Bit Windows and the default installation path, it is "C:\Program Files (x86)\Mozilla ThunderBird".
+
+Note 3:
+There is also no sane way to add a product dependency for ThunderBird, as there is not one single ThunderBird package, but several.  OPSI does not understand "requires package foo OR bar OR ney", as far as we can tell.  Still, even if it could, it would be impossible to list all the ThunderBird OPSI packages out there.  So, sorry, you're on your own.  Either add a dependency for the particular package you're using, or use our default and pay attention you don't deploy it to a machine that doesn't have ThunderBird installed.
