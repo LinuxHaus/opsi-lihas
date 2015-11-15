@@ -1,0 +1,73 @@
+[Package]
+version: 1
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: swx2016-german-lihas
+name: SolidWorks-Sprachpaket Deutsch
+description: 
+advice: 
+version: 2016
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: setup64.ins
+uninstallScript: unins64.ins
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[ProductDependency]
+action: setup
+requiredProduct: dotnet-langpack-deu-lihas
+requiredStatus: installed
+requirementType: before
+
+[ProductDependency]
+action: setup
+requiredProduct: swx2016-basis-lihas
+requiredStatus: installed
+requirementType: before
+
+[ProductDependency]
+action: setup
+requiredProduct: swx-vba-1031-lihas
+requiredStatus: installed
+requirementType: before
+
+[Changelog]
+swx2016-german-lihas (2016-1) testing; urgency=low
+
+  * Initial package
+
+-- Stefan Baur <lihas@lihas.de>  Tue, 13 Oct 2015 14:47:00 +0000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
