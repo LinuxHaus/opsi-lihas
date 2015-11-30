@@ -1,0 +1,59 @@
+[Package]
+version: 1
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: openvpn-mi-gui-lihas
+name: OpenVPN MI GUI
+description: this removes the need for administrative rights to start/stop OpenVPN connections, add/delete routes, etc.
+advice: You MUST install the OpenVPN client first! There are no hard dependencies on this package, as several packages provide openvpn client functionality. This package will NOT work without a fully working OpenVPN client installation present on the machine BEFORE you install this package! Also, read http://openvpn-mi-gui.inside-security.de/, section "Requirements", so you know what you have to add to your configuration files to make this package work!
+version: 20140918
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: setup.ins
+uninstallScript: unins.ins
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[Changelog]
+openvpn-mi-gui-lihas (20140918-1) testing; urgency=low
+
+  * Initial package
+
+-- Stefan Baur <lihas@lihas.de>  Mon, 30 Nov 2015 14:51:00 +0000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

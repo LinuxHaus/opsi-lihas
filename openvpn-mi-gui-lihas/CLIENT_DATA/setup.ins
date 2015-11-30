@@ -1,0 +1,121 @@
+; Copyright (c) uib gmbh (www.uib.de)
+; This sourcecode is owned by uib
+; and published under the Terms of the General Public License.
+; credits: http://www.opsi.org/credits/
+ 
+[Actions]
+requiredWinstVersion >= "4.10.8.6"
+ 
+DefVar $MsiId$
+DefVar $UninstallProgram$
+DefVar $LogDir$
+DefVar $ProductId$  
+DefVar $MinimumSpace$
+DefVar $InstallDir$
+DefVar $ExitCode$
+DefVar $LicenseRequired$
+DefVar $LicenseKey$
+DefVar $LicensePool$
+DefVar $INST_SystemType$
+DefVar $EXE$
+DefVar $EXE_Bittyness$
+DefStringList $languageInfo$
+DefVar $oslanguage$
+
+set $languageInfo$ = getLocaleInfoMap
+set $oslanguage$ = getValue("language_id_2chars", $languageInfo$)
+if  not ($oslanguage$ = "de") and not($oslanguage$ = "cs")
+	Set $oslanguage$ = "en"
+endif
+
+Set $INST_SystemType$ = GetSystemType
+
+if ($INST_SystemType$ = "x86 System")
+	Set $EXE_Bittyness$ = "32"
+endif
+
+if ($INST_SystemType$ = "64 Bit System")
+	Set $EXE_Bittyness$ = "64"
+endif
+
+Set $EXE$="openvpn-mi-gui-20140918-" + lower($oslanguage$) + "-w" + $EXE_Bittyness$ + ".exe"
+
+Set $LogDir$ = "%SystemDrive%\tmp"
+ 
+; ----------------------------------------------------------------
+; - Please edit the following values                             -
+; ----------------------------------------------------------------
+;$ProductId$ should be the name of the product in opsi
+; therefore please: only lower letters, no umlauts, 
+; no white space use '-' as a seperator
+Set $ProductId$       = "openvpn-mi-gui-lihas"
+Set $MinimumSpace$    = "1 MB"
+; the path were we find the product after the installation
+Set $InstallDir$      = "%ProgramFilesSysNativeDir%\OpenVPN"
+Set $LicenseRequired$ = "false"
+Set $LicensePool$     = "p_" + $ProductId$
+; ----------------------------------------------------------------
+ 
+if not(HasMinimumSpace ("%SystemDrive%", $MinimumSpace$))
+	LogError "Not enough space on %SystemDrive%, " + $MinimumSpace$ + " on drive %SystemDrive% needed for " + $ProductId$
+	isFatalError
+	; Stop process and set installation status to failed
+else
+	comment "Show product picture"
+	ShowBitmap "%ScriptPath%\" + $ProductId$ + ".png" $ProductId$
+ 
+	Message "Installing " + $ProductId$ + " ..."
+ 
+	comment "Make sure OpenVPN service is set to start on boot and is running"
+	DosInAnIcon_install
+
+	comment "Copy files"
+	Files_install
+
+	comment "Create shortcuts"
+	LinkFolder_install
+ 
+endif
+ 
+[Files_install]
+copy -s "%ScriptPath%\files\$EXE$" "$InstallDir$"
+
+[DosInAnIcon_install]
+@echo off
+sc config OpenVPNService start= auto
+net start | find "OpenVPN Service" >NUL || net start "OpenVPN Service"
+
+[LinkFolder_install]
+set_basefolder common_programs
+set_subfolder "Startup"
+set_link
+	name: "OpenVPN MI GUI"
+	target: "$InstallDir$\$EXE$"
+	parameters: ""
+	working_dir: "$InstallDir$"
+	icon_file: "$InstallDir$\$EXE$"
+	icon_index: "0"
+end_link
+
+set_basefolder common_programs
+set_subfolder "OpenVPN"
+set_link
+	name: "OpenVPN MI GUI"
+	target: "$InstallDir$\$EXE$"
+	parameters: ""
+	working_dir: "$InstallDir$"
+	icon_file: "$InstallDir$\$EXE$"
+	icon_index: "0"
+end_link
+
+set_basefolder common_desktopdirectory
+set_subfolder ""
+set_link
+	name: "OpenVPN MI GUI"
+	target: "$InstallDir$\$EXE$"
+	parameters: ""
+	working_dir: "$InstallDir$"
+	icon_file: "$InstallDir$\$EXE$"
+	icon_index: "0"
+end_link
+ 
