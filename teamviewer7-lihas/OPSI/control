@@ -1,0 +1,34 @@
+[Package]
+version: 1
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: teamviewer7-lihas
+name: TeamViewer 7
+description: 
+advice: 
+version: 7
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: setup32.ins
+uninstallScript: unins32.ins
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[Changelog]
+teamviewer7-lihas (7-1) testing; urgency=low
+
+  * Initial package under new naming scheme
+
+ -- Stefan Baur <lihas@lihas.de>  Mon, 21 Dec 2015 22:36:00 +0000
+
+
+
+
+
