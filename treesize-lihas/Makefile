@@ -23,5 +23,4 @@ $(TARGET).uploaded:
 install: $(TARGET).uploaded
 
 clean:
-	rm -rf $(DOWNLOAD_DIR)
 	rm -f $(TARGET) $(TARGET).uploaded
