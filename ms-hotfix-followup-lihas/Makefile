@@ -1,7 +1,7 @@
 
 PACKAGE_NAME         = ms-hotfix-followup-lihas
 VERSION              = 1.0
-OPSI_PACKAGE_VERSION = 1
+OPSI_PACKAGE_VERSION = 2
 
 DOWNLOAD_DIR         = ./CLIENT_DATA/files
 DOWNLOAD_URL         = http://msdn.microsoft.com/en-us/library/windows/desktop/aa387102%28v=vs.85%29.aspx 

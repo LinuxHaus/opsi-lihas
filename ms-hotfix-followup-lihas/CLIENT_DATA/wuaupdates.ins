@@ -84,7 +84,7 @@ endif
 
 [DosInAnIcon_RunUpdate]
 @echo off
-cscript %ScriptPath%\files\WUA_SearchDownloadInstall.vbs $autoaccepteulas$ $performinstall$
+cscript %ScriptPath%\files\WUA_SearchDownloadInstall.vbs $autoaccepteulas$ $performinstall$ > "$LogDir$\$ProductId$.install_log.txt"
 echo %ERRORLEVEL%
 exit %ERRORLEVEL%
 
