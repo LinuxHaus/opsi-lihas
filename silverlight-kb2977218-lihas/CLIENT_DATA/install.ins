@@ -1,0 +1,65 @@
+[Initial]
+ 
+;Standard Text, der während der Installation angezeigt wird / Standardtext shown during installation
+Message = Bitte warten, das Produkt wird installiert
+;Loglevel einstellen / set loglevel
+setLogLevel = 6
+;Bei Fehlern abbrechen / Exit on errors
+ExitOnError = false
+;Syntax Fehler werden in einem separaten Fenster angezeigt / Syntax-errors will be shown in a separate window
+ScriptErrorMessages = on
+;Single-Step Mode nicht verwenden / Do not use the single-step-mode
+TraceMode = off
+;Im Batchmode das Winst-Fenster nicht im Vordergrund anzeigen / Don't show the winst-window in foreground during batchmode
+StayOnTop = false
+ 
+ 
+ 
+[Actions]
+;Variable für die Ermittlung des Betriebssystems / What kind of OS do we have?
+DefVar $OS$
+Set $OS$ = GetOS
+;Variable für die Ermittlung der Betriebssystem Unterversion / What kind of subversion?
+DefVar $NTVersion$
+Set $NTVersion$ = GetNTVersion
+;Die Variable zur Auswertung des ExitCodes
+DefVar $ExitCode$
+;Name des Produkts (max. 12 Zeichen) / Name of product (max 12 characters)
+DefVar $ProductName$
+Set $ProductName$ = "Silverlight"
+;Vollständiger Produktname incl. Versionsnummer / complete productname incl. version
+DefVar $ProductNameFull1$
+Set $ProductNameFull1$ = "silverlight"
+;Dateiname des Produktbildes mit Erweiterung / Dilename of productpicture incl. extension
+DefVar $ProductPicture$
+Set $ProductPicture$ = "silverlight.png"
+ 
+;Anzeigen der Installationsbenachrichtigung incl. des vollen Produktnamens / Show installation-message incl. productname
+Message "Installiere "+$ProductNameFull1$
+ 
+;Prüfen der Winst Version / Check the winst-version
+requiredWinstVersion >= "4.11"
+ 
+;$ProductPicture$ und $ProductName$ anzeigen / Show $ProductPicture$ and $ProductName$
+ShowBitmap /3 "%scriptpath%\" + $ProductPicture$ $ProductName$
+ 
+;Freien Speicherplatz ermitteln / Check free space on disk
+if not (HasMinimumSpace ("%SYSTEMDRIVE%", "50 MB"))
+        LogError "Nicht genügend Platz auf %SYSTEMDRIVE%"
+        isFatalError
+endif
+ 
+;OS-Version ermitteln / Get the OS-Version
+if ( $NTVersion$ = "Win2K" OR $NTVersion$ = "WinXP" OR $NTVersion$ = "Win NT 5.2" OR $NTVersion$ = "Windows Vista" )
+	Winbatch_Install
+	sub "%ScriptDrive%\install\check_exitcode\check_innosetup-exitcode.ins"
+else
+	LogError "Kein kompatibles Betriebssystem installiert"
+	isFatalError
+endif
+ 
+ 
+[Winbatch_Install]
+"%SCRIPTPATH%\files\Silverlight_x64.exe" /q
+ 
+ 

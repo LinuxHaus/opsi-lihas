@@ -1,0 +1,29 @@
+[Package]
+version: 1
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: silverlight-kb2977218-lihas
+name: Silverlight KB2977218
+description: 
+advice: 
+version: 5.1.30514.0
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: install.ins
+uninstallScript: unins64.ins
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[Changelog]
+silverlight-kb2977218-lihas (5.1.30514.0-1) testing; urgency=low
+
+  * Initial package
+
+ -- Stefan Baur <lihas@lihas.de>  Tue, 22 Dec 2015 15:07:00 +0000
