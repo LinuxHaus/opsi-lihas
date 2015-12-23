@@ -87,7 +87,7 @@ for CONFDIR in $CONFDIRS ; do
 	opsi-makeproductfile
 
 	# install package on server
-	opsi-package-manager -i root-ca-${CONFNAMETRIMMED}-lihas_1-$PACKAGEVERSION.opsi
+	opsi-package-manager -i openvpn-conf-${CONFNAMETRIMMED}-lihas_1-$PACKAGEVERSION.opsi
 
 	# cleanup job: These files have to go before the next build is started
 	# This is NOT compareable to a "make clean", this deletion would have to happen
