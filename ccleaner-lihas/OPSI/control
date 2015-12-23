@@ -1,0 +1,41 @@
+[Package]
+version: 1
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: ccleaner-lihas
+name: CCleaner
+description: 
+advice: 
+version: 5.13
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: setup64.ins
+uninstallScript: unins64.ins
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[ProductProperty]
+type: unicode
+name: languagecode
+multivalue: False
+editable: True
+description: Language Code, e.g. 1033 for English, 1031 for German, 1036 for French - see http://support.microsoft.com/kb/221435 for full list
+values: ["1033"]
+default: ["1033"]
+
+[Changelog]
+ccleaner-lihas (5.13-1) testing; urgency=low
+
+  * Initial package
+
+-- Stefan Baur <lihas@lihas.de>  Wed, 23 Dec 2015 19:38:00 +0000
+
+
+
