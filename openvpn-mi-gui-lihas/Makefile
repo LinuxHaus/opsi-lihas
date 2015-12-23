@@ -2,7 +2,7 @@ WGET_COMMON_OPTIONS  = -q -N
 
 PACKAGE_NAME         = openvpn-mi-gui-lihas
 VERSION              = 20140918
-OPSI_PACKAGE_VERSION = 1
+OPSI_PACKAGE_VERSION = 2
 
 DOWNLOAD_DIR         = ./CLIENT_DATA/files
 DOWNLOAD_URL         = http://openvpn-mi-gui.inside-security.de/sw/openvpn-mi-gui-20140918-de-w32.exe http://openvpn-mi-gui.inside-security.de/sw/openvpn-mi-gui-20140918-de-w64.exe http://openvpn-mi-gui.inside-security.de/sw/openvpn-mi-gui-20140918-en-w32.exe http://openvpn-mi-gui.inside-security.de/sw/openvpn-mi-gui-20140918-en-w64.exe http://openvpn-mi-gui.inside-security.de/sw/openvpn-mi-gui-20140918-cs-w32.exe http://openvpn-mi-gui.inside-security.de/sw/openvpn-mi-gui-20140918-cs-w64.exe

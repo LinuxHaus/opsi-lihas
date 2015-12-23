@@ -21,6 +21,8 @@ DefVar $EXE$
 DefVar $EXE_Bittyness$
 DefStringList $languageInfo$
 DefVar $oslanguage$
+DefVar $WINDIR$
+set $WINDIR$ = EnvVar ("WINDIR")
 
 set $languageInfo$ = getLocaleInfoMap
 set $oslanguage$ = getValue("language_id_2chars", $languageInfo$)
@@ -74,7 +76,16 @@ else
 
 	comment "Create shortcuts"
 	LinkFolder_install
- 
+
+	comment "Patch Registry"
+	if ($INST_SystemType$ = "x86 System")
+		Registry_install /32Bit
+	endif
+
+	if ($INST_SystemType$ = "64 Bit System")
+		Registry_install /64Bit
+	endif
+
 endif
  
 [Files_install]
@@ -118,4 +129,24 @@ set_link
 	icon_file: "$InstallDir$\$EXE$"
 	icon_index: "0"
 end_link
- 
+
+[Registry_install]
+openkey [HKLM\SOFTWARE\OpenVPN-MI-GUI]
+; set "name1" = "some string value"
+; set "name2" = REG_DWORD:0001
+; set "name3" = REG_BINARY:00 af 99 cd
+set "config_dir" = "$InstallDir$\config"
+set "config_ext" = "ovpn"
+set "exe_path" = "$InstallDir$\bin\openvpn.exe"
+set "log_dir" = "$InstallDir$\log"
+set "log_viewer" = "$WINDIR$\notepad.exe"
+set "editor" = "$WINDIR$\notepad.exe"
+set "allow_edit" = "1"
+set "allow_service" = "0"
+set "show_balloon" = "1"
+set "silent_connection" = "0"
+set "stop_on_exit" = "1"
+set "show_script_window" = "1"
+set "connectscript_timeout" = "15"
+set "disconnectscript_timeout" = "10"
+set "preconnectscript_timeout" = "10" 

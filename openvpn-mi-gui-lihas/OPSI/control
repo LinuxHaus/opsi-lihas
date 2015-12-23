@@ -1,5 +1,5 @@
 [Package]
-version: 1
+version: 2
 depends: 
 incremental: False
 
@@ -22,11 +22,32 @@ customScript:
 userLoginScript: 
 
 [Changelog]
+openvpn-mi-gui-lihas (20140918-2) testing; urgency=low
+
+  * Added RegKey Install/Uninstall, Added taskkill in Uninstall
+
+-- Stefan Baur <lihas@lihas.de>  Wed, 23 Dec 2015 23:10:00 +0000
+
 openvpn-mi-gui-lihas (20140918-1) testing; urgency=low
 
   * Initial package
 
 -- Stefan Baur <lihas@lihas.de>  Mon, 30 Nov 2015 14:51:00 +0000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
