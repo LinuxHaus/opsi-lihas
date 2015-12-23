@@ -1,0 +1,29 @@
+[Package]
+version: PACKAGEVERSION
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: openvpn-conf-CONFNAMETRIMMED-lihas
+name: Generic OpenVPN Config Installer/Uninstaller by LiHAS
+description: FULLCONFNAME
+advice: 
+version: 1
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: setup32.ins
+uninstallScript: unins32.ins
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[Changelog]
+openvpn-conf-CONFNAMETRIMMED-lihas (1-PACKAGEVERSION) testing; urgency=low
+
+  * Package based on the Template by Stefan Baur <lihas@lihas.de>
+
+-- YOURNAME <YOUREMAIL>  DATE

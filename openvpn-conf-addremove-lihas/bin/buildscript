@@ -1,0 +1,101 @@
+#!/bin/bash
+
+if [ -z "$YOURNAME" ] || [ -z "$YOUREMAIL" ] ; then
+	echo "Please add your name and your e-mail address in the Makefile,"
+	echo "they are needed for the changelog entry."
+	exit 1
+fi
+
+# initialize some variables
+DATE=$(date -R)
+PACKAGEVERSION=1
+
+# create the main directory under which all package subdirectories will be created
+mkdir -p ./packages
+
+# create the directory under which all config subdirectories will be created
+mkdir -p ./configs
+
+# configs are stored in subdirectories under ./configs
+# (the name of the subdirectory determines the package name and description)
+# so we build a list of directory names ...
+CONFDIRS=$(cd ./configs && find . -mindepth 1 -maxdepth 1 -type d)
+
+if [ -z "$CONFDIRS" ] ; then
+	echo "No subdirectories found in ./configs. Please place"
+	echo "your configs in subdirectories, as the names of"
+	echo "these subdirectories will be used for the package names."
+	exit 1
+fi
+
+# and for each config directory name, we do this ...
+for CONFDIR in $CONFDIRS ; do
+
+	# we're interested in the directory name only, without path
+	CONFNAME=$(basename "$CONFDIR")
+
+	# now we need to trim the name to conform to OPSI specs:
+	# no whitespace, no underscore, all lowercase, a-z 0-9
+	CONFNAMETRIMMED=$( echo "$CONFNAME" | tr "_ " "--" | tr "[:upper:]" "[:lower:]" | tr -c -d "[:alnum:]" )
+
+	# a further restriction is that we may not have a name longer than 13 characters
+	if [ ${#CONFNAMETRIMMED} -gt 13 ] ; then
+
+		# if we have more than 13, we cut out a piece from the middle and replace it with "...."
+		# (more advanced solutions for avoiding a name space conflict are truly welcome)
+		CONFNAMETRIMMED="${CONFNAMETRIMMED:0:7}....${CONFNAMETRIMMED:(-7)}"
+	fi
+
+	# if the packages directory already contains a package in the name space we just determined,
+	# go there and grab the package version number from the control file, if it exists
+	if [ -d "./packages/$CONFNAMETRIMMED" ] && [ -s "./packages/$CONFNAMETRIMMED/OPSI/control" ]; then
+		OLDPACKAGEVERSION=$(awk -F ':' ' $1=="version" { print $2 }' ./packages/$CONFNAMETRIMMED/OPSI/control | head -n 1)
+
+		# sanity check for OLDPACKAGEVERSION
+		if [ -n "$OLDPACKAGEVERSION" ] && [ $OLDPACKAGEVERSION -gt 0 ] ; then
+			# add 1 to the last package version and set that as the new package version number
+			PACKAGEVERSION=$((OLDPACKAGEVERSION+1))
+		fi
+	fi
+
+	# create the output directory for the package, if it does not already exist
+	mkdir -p "./packages/$CONFNAMETRIMMED"
+
+	# copy all of our templates into the output directory
+	cp -a ./templates/* "./packages/$CONFNAMETRIMMED"
+
+	# create output directory, if it doesn't exist
+	mkdir -p ./packages/$CONFNAMETRIMMED/CLIENT_DATA/conf/
+
+	# copy all the configs into the output directory
+	cp -a ./configs/$CONFDIR/* ./packages/$CONFNAMETRIMMED/CLIENT_DATA/conf/
+
+	# replace placeholders in the local copy of our templates with the real values
+	sed -i	-e "s/CONFNAMETRIMMED/$CONFNAMETRIMMED/g" \
+		-e "s/FULLCONFNAME/$CONFNAME/g" \
+		-e "s/DATE/$DATE/g" \
+		-e "s/YOURNAME/$YOURNAME/g" \
+		-e "s/YOUREMAIL/$YOUREMAIL/g" \
+		-e "s/PACKAGEVERSION/$PACKAGEVERSION/g" \
+		./packages/$CONFNAMETRIMMED/CLIENT_DATA/*.ins \
+		./packages/$CONFNAMETRIMMED/OPSI/control
+
+	# change into the output directory
+	cd ./packages/$CONFNAMETRIMMED
+
+	# build package
+	opsi-makeproductfile
+
+	# install package on server
+	opsi-package-manager -i root-ca-${CONFNAMETRIMMED}-lihas_1-$PACKAGEVERSION.opsi
+
+	# cleanup job: These files have to go before the next build is started
+	# This is NOT compareable to a "make clean", this deletion would have to happen
+	# duing the "build" step of make, not in the "make clean" step
+	# a "make clean" would have to remove the entire ./packages directory, and possibly
+	# ./configs as well
+	rm ./CLIENT_DATA/conf/*
+	
+	# go back into our main directory for the next iteration of our loop
+	cd ../../
+done
