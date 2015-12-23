@@ -1,0 +1,31 @@
+[Package]
+version: 1
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: silverlight-kb3106614-lihas
+name: Silverlight KB3106614
+description: 
+advice: 
+version: 5.1.41105.00
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: setup64.ins
+uninstallScript: unins64.ins
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[Changelog]
+silverlight-kb3106614-lihas (5.1.41105.00) testing; urgency=low
+
+  * Initial package
+
+ -- Stefan Baur <lihas@lihas.de>  Tue, 22 Dec 2015 15:42:00 +0000
+
+
