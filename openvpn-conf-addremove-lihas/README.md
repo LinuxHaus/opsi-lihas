@@ -5,4 +5,4 @@ in a subdirectory under ./configs/
 If you want a "one package to rule them all" approach,
 create a single subdirectory
 ./configs/YOURORGANIZATION/
-and place all your *.crts in that subdirectory
+and place all your files in that subdirectory
