@@ -11,8 +11,7 @@ sub_check_exitcode
 
 [DosInAnIcon_uninstall]
 @echo off
-cd /d %ScriptPath%
-for /f %%f in ('dir /b %ScriptPath%\conf\*.*') do (del $InstallDir$\%%f)
+for /f %%f in ('dir /b %ScriptPath%\conf\*.*') do (if exist "$InstallDir$\%%f" del "$InstallDir$\%%f")
 
 
 [Sub_check_exitcode]
