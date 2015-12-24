@@ -21,6 +21,12 @@ onceScript:
 customScript: 
 userLoginScript: 
 
+[ProductDependency]
+action: setup
+requiredProduct: OPENVPNPACKAGE
+requiredStatus: installed
+requirementType: before
+
 [Changelog]
 openvpn-conf-CONFNAMETRIMMED-lihas (1-PACKAGEVERSION) testing; urgency=low
 

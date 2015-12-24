@@ -1,8 +1,9 @@
 #!/bin/bash
 
-if [ -z "$YOURNAME" ] || [ -z "$YOUREMAIL" ] ; then
+if [ -z "$YOURNAME" ] || [ -z "$YOUREMAIL" ] || [ -z "$OPENVPNPACKAGE" ] ; then
 	echo "Please add your name and your e-mail address in the Makefile,"
-	echo "they are needed for the changelog entry."
+	echo "as well as the openvpn package name, they are needed for the"
+	echo "changelog entry."
 	exit 1
 fi
 
@@ -77,6 +78,7 @@ for CONFDIR in $CONFDIRS ; do
 		-e "s/YOURNAME/$YOURNAME/g" \
 		-e "s/YOUREMAIL/$YOUREMAIL/g" \
 		-e "s/PACKAGEVERSION/$PACKAGEVERSION/g" \
+		-e "s/OPENVPNPACKAGE/$OPENVPNPACKAGE/g" \
 		./packages/$CONFNAMETRIMMED/CLIENT_DATA/*.ins \
 		./packages/$CONFNAMETRIMMED/OPSI/control
 

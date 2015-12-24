@@ -1,9 +1,10 @@
 OWNERNAME  = 
 OWNEREMAIL = 
+OPENVPNPACKAGE = 
 
 all: build
 build:
-	YOURNAME="$(OWNERNAME)" YOUREMAIL="$(OWNEREMAIL)" /bin/bash ./bin/buildscript
+	YOURNAME="$(OWNERNAME)" YOUREMAIL="$(OWNEREMAIL)" OPENVPNPACKAGE="$(OPENVPNPACKAGE)" /bin/bash ./bin/buildscript
 clean:
 	## Do not run make clean unless you really know what you are doing.
 	## See the Makefile for details.
