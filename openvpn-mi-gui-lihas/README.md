@@ -1,0 +1,1 @@
+ You MUST install the OpenVPN client first! There are no hard dependencies on this package, as several packages provide openvpn client functionality. This package will NOT work without a fully working OpenVPN client installation present on the machine BEFORE you install this package!
