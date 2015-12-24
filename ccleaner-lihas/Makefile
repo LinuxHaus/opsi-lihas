@@ -2,7 +2,7 @@ WGET_COMMON_OPTIONS  = -q -N
 
 PACKAGE_NAME         = ccleaner-lihas
 VERSION              = 5.13
-OPSI_PACKAGE_VERSION = 1
+OPSI_PACKAGE_VERSION = 2
 
 DOWNLOAD_DIR         = ./CLIENT_DATA/files
 DOWNLOAD_URL         = http://download.piriform.com/ccsetup513.exe

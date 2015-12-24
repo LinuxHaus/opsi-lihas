@@ -1,5 +1,5 @@
 [Package]
-version: 1
+version: 2
 depends: 
 incremental: False
 
@@ -31,11 +31,14 @@ values: ["1033"]
 default: ["1033"]
 
 [Changelog]
+ccleaner-lihas (5.13-2) testing; urgency=low
+
+  * Bugfix: setup64.ins would not detect successful installation
+
+-- Stefan Baur <lihas@lihas.de>  Thu, 24 Dec 2015 20:43:00 +0000
+
 ccleaner-lihas (5.13-1) testing; urgency=low
 
   * Initial package
 
 -- Stefan Baur <lihas@lihas.de>  Wed, 23 Dec 2015 19:38:00 +0000
-
-
-

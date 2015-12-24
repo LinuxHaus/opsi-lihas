@@ -58,7 +58,7 @@ else
 
 	comment "Test for installation success"
 	; Test if software marked as installed in registry
-	if (GetRegistryStringValue32("[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\CCleaner] DisplayName") = "")
+	if (GetRegistryStringValue64("[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\CCleaner] DisplayName") = "")
 	 	logError "Fatal: After Installation 32 bit [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\CCleaner] not found"
 		isFatalError
 	else
