@@ -1,11 +1,24 @@
 #!/bin/bash
 
+# whitespace trimming function
+trim() {
+    local var="$*"
+    var="${var#"${var%%[![:space:]]*}"}"   # remove leading whitespace characters
+    var="${var%"${var##*[![:space:]]}"}"   # remove trailing whitespace characters
+    echo -n "$var"
+}
+
 if [ -z "$YOURNAME" ] || [ -z "$YOUREMAIL" ] || [ -z "$OPENVPNPACKAGE" ] ; then
 	echo "Please add your name and your e-mail address in the Makefile,"
 	echo "as well as the openvpn package name, they are needed for the"
 	echo "changelog entry."
 	exit 1
 fi
+
+# trim user input
+YOURNAME=$(trim $YOURNAME)
+YOUREMAIL=$(trim $YOUREMAIL)
+OPENVPNPACKAGE=$(trim $OPENVPNPACKAGE)
 
 # initialize some variables
 DATE=$(date -R)
