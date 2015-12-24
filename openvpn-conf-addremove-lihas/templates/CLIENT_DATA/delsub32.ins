@@ -12,6 +12,11 @@ sub_check_exitcode
 [DosInAnIcon_uninstall]
 @echo off
 for /f %%f in ('dir /b %ScriptPath%\conf\*.*') do (if exist "$InstallDir$\%%f" del "$InstallDir$\%%f")
+net stop openvpnservice
+REM official Microsoft way of implementing "sleep 10"
+ping -n 10 127.0.0.1 >NUL || ping -n 10 ::1 >NUL
+net start openvpnservice
+
 
 
 [Sub_check_exitcode]

@@ -51,6 +51,9 @@ else
 	comment "Start certificate installation"
 	Files_install
 
+	comment "Restarting OpenVPN service to notify it of our changes"
+	DosInAnIcon_install
+
 	comment "Test for installation success"
 	Sub_check_exitcode
 
@@ -60,6 +63,12 @@ endif
 [Files_install]
 copy -s "%ScriptPath%\conf\*.*" "$InstallDir$"
 
+[DosInAnIcon_install]
+@echo off
+net stop openvpnservice
+REM official Microsoft way of implementing "sleep 10"
+ping -n 10 127.0.0.1 >NUL || ping -n 10 ::1 >NUL
+net start openvpnservice
 
 [Sub_check_exitcode]
 comment "Test for installation success via exit code"
