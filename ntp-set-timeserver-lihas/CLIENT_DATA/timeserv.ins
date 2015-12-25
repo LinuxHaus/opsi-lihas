@@ -1,0 +1,50 @@
+; Copyright (c) uib gmbh (www.uib.de)
+; This sourcecode is owned by uib
+; and published under the Terms of the General Public License.
+; credits: http://www.opsi.org/credits/
+
+[Actions]
+requiredWinstVersion >= "4.10.8.6"
+
+DefVar $MsiId$
+DefVar $UninstallProgram$
+DefVar $LogDir$
+DefVar $ProductId$
+DefVar $MinimumSpace$
+DefVar $InstallDir$
+DefVar $ExitCode$
+DefVar $timeservers$
+Set $timeservers$ = GetProductProperty("timeservers","time.windows.com")
+Set $ProductId$       = "ntp-set-timeserver-lihas"
+comment "Show product picture"
+ShowBitmap "%ScriptPath%\" + $ProductId$ + ".png" $ProductId$
+comment "Set timeserver(s)"
+DosInAnIcon_stopservice
+Registry_timeservers /64Bit
+DosInAnIcon_startandautostartservice
+ExitWindows /Reboot
+
+[DosInAnIcon_stopservice]
+@echo off
+setlocal
+REM check if service is running, if yes, stop it
+for /f "tokens=3 eol=[" %%i in ('sc GetDisplayName w32time') do set SVCNAME=%%i
+net start | find /i "%SVCNAME%" && sc stop w32time
+REM wait for service shutdown
+ping 127.0.0.1 >NUL || ping ::1 >NUL
+
+[Registry_timeservers]
+openkey [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\W32Time\Parameters]
+set "NtpServer" = "$timeservers$"
+
+[DosInAnIcon_startandautostartservice]
+@echo off
+setlocal
+REM set service to autostart
+sc config w32time start= auto
+REM start service
+sc start w32time
+REM wait for service startup
+ping 127.0.0.1 >NUL || ping ::1 >NUL
+REM trigger config update
+w32tm /config /update
