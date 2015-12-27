@@ -1,0 +1,24 @@
+; Copyright (c) uib gmbh (www.uib.de)
+; This sourcecode is owned by uib gmbh
+; and published under the Terms of the General Public License.
+; credits: http://www.opsi.org/credits/
+ 
+ 
+Message "Uninstalling " + $ProductId$ + " ..."
+ 
+comment "Starting uninstall"
+Files_uninstall /SysNative
+
+comment "Delete program shortcuts"
+LinkFolder_uninstall
+
+[Files_uninstall]
+delete -sf "$InstallDir$\"
+ 
+[LinkFolder_uninstall]
+set_basefolder common_desktopdirectory
+set_subfolder ""
+delete_element Regshot-x64-ANSI.exe
+delete_element Regshot-x86-ANSI.exe
+delete_element Regshot-x64-Unicode.exe
+delete_element Regshot-x86-Unicode.exe
