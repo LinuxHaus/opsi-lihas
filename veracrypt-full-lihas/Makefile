@@ -6,7 +6,10 @@ OPSI_PACKAGE_VERSION = 1
 
 TARGET               = $(PACKAGE_NAME)_$(VERSION)-$(OPSI_PACKAGE_VERSION).opsi
 
-all: build install
+all: checkpresence build install
+
+checkpresence: md5sums.txt 
+	md5deep -r -n -l -X md5sums.txt CLIENT_DATA/files/*
 
 $(TARGET):
 	opsi-makeproductfile
@@ -14,7 +17,7 @@ $(TARGET):
 build: $(TARGET)
 
 $(TARGET).uploaded:
-	opsi-package-manager -i $(TARGET)
+	opsi-package-manager -i -p ask $(TARGET)
 	touch $(TARGET).uploaded
 
 install: $(TARGET).uploaded
