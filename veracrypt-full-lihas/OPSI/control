@@ -1,0 +1,41 @@
+[Package]
+version: 1
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: veracrypt-full-lihas
+name: VeraCrypt
+description: Full version of VeraCrypt (not the portable one) - suitable for system partition/full disk encryption and preboot authentication
+advice: 
+version: 1.16
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: setup.ins
+uninstallScript: uninstall.ins
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[ProductProperty]
+type: bool
+name: licenseaccepted
+description: Please review the license files LICENSE, NOTICE and license.txt, and indicate whether or not you accept all these licenses. Must be set to "true" to allow installation.
+default: False
+
+[ProductProperty]
+type: bool
+name: uninstallok
+description: Please verify manually that there are no encrypted system volumes on the particular client before uninstalling. Confirm this by setting this property to "True".
+default: False
+
+[Changelog]
+veracrypt-full-lihas (1.16-1) testing; urgency=low
+
+  * Initial package
+
+ -- Stefan Baur <lihas@lihas.de>  Mon, 28 Dec 2015 14:24:00 +0000

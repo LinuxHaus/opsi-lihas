@@ -1,0 +1,83 @@
+; Copyright (c) uib gmbh (www.uib.de)
+; This sourcecode is owned by uib gmbh
+; and published under the Terms of the General Public License.
+; credits: http://www.opsi.org/credits/
+ 
+DefVar $UninstallOK$
+Set $UninstallOK$ = GetProductProperty("uninstallok","False") 
+
+if not($UninstallOK$ = "True")
+	LogError "You did not confirm that you manually verified that there are no encrypted system volumes on this client, exiting."
+	isFatalError
+endif 
+
+
+Message "Uninstalling " + $ProductId$ + " ..."
+ 
+comment "Starting uninstall"
+
+comment "Stop and uninstall service"
+DosInAnIcon_uninstall
+ 
+comment "Delete files"
+Files_uninstall /SysNative
+ 
+comment "Cleanup registry"
+Registry_uninstall /SysNative
+ 
+comment "Delete program shortcuts"
+LinkFolder_uninstall
+
+[DosInAnIcon_uninstall]
+net stop veracrypt
+"%WINDIR%\System32\sc.exe" delete veracrypt
+
+[Files_uninstall]
+delete -sf "$InstallDir$\"
+delete -f "%System%\Drivers\veracrypt.sys"
+
+[Registry_uninstall]
+deletekey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\AppID\VeraCrypt Format.exe]
+deletekey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\AppID\VeraCrypt.exe]
+deletekey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\AppID\{A96D3797-9F31-49f4-A0CE-9657392CF789}]
+deletekey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\AppID\{FE8B3B95-C80C-41f7-830F-FBA271C26F7E}]
+deletekey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Interface\{7AB357D9-A17F-466E-BCD6-F49E97C218D8}]
+deletekey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Interface\{C786E27C-2801-482C-B45D-D4357B270A29}]
+deletekey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\TypeLib\{56327DDA-F1A7-4E13-B128-520D129BDEF6}]
+deletekey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\TypeLib\{9ACF6176-5FC4-4690-A025-B3306A50EB6A}]
+deletekey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Wow6432Node\CLSID\{A96D3797-9F31-49f4-A0CE-9657392CF789}]
+deletekey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Wow6432Node\CLSID\{FE8B3B95-C80C-41f7-830F-FBA271C26F7E}]
+deletekey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Wow6432Node\Interface\{7AB357D9-A17F-466E-BCD6-F49E97C218D8}]
+deletekey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Wow6432Node\Interface\{C786E27C-2801-482C-B45D-D4357B270A29}]
+deletekey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Wow6432Node\AppID\VeraCrypt Format.exe]
+deletekey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Wow6432Node\AppID\VeraCrypt.exe]
+deletekey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Wow6432Node\AppID\{A96D3797-9F31-49f4-A0CE-9657392CF789}]
+deletekey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Wow6432Node\AppID\{FE8B3B95-C80C-41f7-830F-FBA271C26F7E}]
+deletekey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Wow6432Node\TypeLib\{56327DDA-F1A7-4E13-B128-520D129BDEF6}]
+deletekey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Wow6432Node\TypeLib\{9ACF6176-5FC4-4690-A025-B3306A50EB6A}]
+deletekey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\.hc]
+deletekey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\VeraCrypt]
+deletekey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\VeraCrypt.1]
+deletekey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\VeraCryptFormat]
+deletekey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\VeraCryptFormat.1]
+deletekey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\VeraCryptVolume]
+deletekey [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\VeraCrypt]
+deletekey [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Classes\CLSID\{A96D3797-9F31-49f4-A0CE-9657392CF789}]
+deletekey [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Classes\CLSID\{FE8B3B95-C80C-41f7-830F-FBA271C26F7E}]
+deletekey [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Classes\Interface\{7AB357D9-A17F-466E-BCD6-F49E97C218D8}]
+deletekey [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Classes\Interface\{C786E27C-2801-482C-B45D-D4357B270A29}]
+deletekey [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Classes\AppID\VeraCrypt Format.exe]
+deletekey [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Classes\AppID\VeraCrypt.exe]
+deletekey [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Classes\AppID\{A96D3797-9F31-49f4-A0CE-9657392CF789}]
+deletekey [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Classes\AppID\{FE8B3B95-C80C-41f7-830F-FBA271C26F7E}]
+deletekey [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Classes\TypeLib\{56327DDA-F1A7-4E13-B128-520D129BDEF6}]
+deletekey [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Classes\TypeLib\{9ACF6176-5FC4-4690-A025-B3306A50EB6A}]
+
+ 
+[LinkFolder_uninstall]
+set_basefolder common_programs
+delete_subfolder VeraCrypt
+
+set_basefolder common_desktopdirectory
+set_subfolder ""
+delete_element VeraCrypt
