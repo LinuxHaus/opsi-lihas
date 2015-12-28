@@ -1,5 +1,7 @@
 # do not commit License files
+**/**/license.key
 **/license.key
+**/**/hbedv.key
 **/hbedv.key
 # do not commit archives to repo
 **/*.opsi
