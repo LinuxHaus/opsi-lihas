@@ -4,6 +4,11 @@
 ; credits: http://www.opsi.org/credits/
  
 DefVar $UninstallOK$
+DefVar $Flag$
+DefVar $WinstRegKey$
+
+Set $WinstRegKey$ = "HKLM\SOFTWARE\opsi.org\winst"
+Set $Flag$ = GetRegistryStringValue32("["+$WinstRegKey$+"] "+"RebootFlag")
 Set $UninstallOK$ = GetProductProperty("uninstallok","False") 
 
 if not($UninstallOK$ = "True")
@@ -14,19 +19,29 @@ endif
 
 Message "Uninstalling " + $ProductId$ + " ..."
  
-comment "Starting uninstall"
+if not ($Flag$ = "1")
+	Set $Flag$ = "1"
+	Registry_SaveRebootFlag
+	comment "Starting uninstall"
+	comment "Uninstall service"
+	DosInAnIcon_uninstall
+        ExitWindows /ImmediateReboot
 
-comment "Stop and uninstall service"
-DosInAnIcon_uninstall
- 
-comment "Delete files"
-Files_uninstall /SysNative
- 
-comment "Cleanup registry"
-Registry_uninstall /SysNative
- 
-comment "Delete program shortcuts"
-LinkFolder_uninstall
+else
+	Set $Flag$ = "0"
+	Registry_SaveRebootFlag
+
+	comment "Continuing uninstall" 
+	comment "Delete files"
+	Files_uninstall /SysNative
+	 
+	comment "Cleanup registry"
+	Registry_uninstall /SysNative
+	 
+	comment "Delete program shortcuts"
+	LinkFolder_uninstall
+
+endif
 
 [DosInAnIcon_uninstall]
 "%WINDIR%\System32\sc.exe" delete veracrypt
