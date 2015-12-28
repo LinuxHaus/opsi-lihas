@@ -43,6 +43,10 @@ else
 
 endif
 
+[Registry_SaveRebootFlag]
+openKey [$WinstRegKey$]
+set "RebootFlag" = "$Flag$"
+
 [DosInAnIcon_uninstall]
 "%WINDIR%\System32\sc.exe" delete veracrypt
 
