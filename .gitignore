@@ -8,6 +8,8 @@
 **/*.opsi.uploaded
 # do not commit work-in-progress directories to repo
 **/*-wip/
+*/*-wip/
+*-wip/
 # do not commit Local and/or Test-Makefiles to repo
 **/Makefile.test
 **/Makefile.local
