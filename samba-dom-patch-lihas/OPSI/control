@@ -1,0 +1,31 @@
+[Package]
+version: 1
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: samba-dom-patch-lihas
+name: samba-dom-patch-lihas
+description: 
+advice: 
+version: 1.0
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: patch.ins
+uninstallScript: 
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[Changelog]
+samba-dom-patch-lihas (1.0-1) testing; urgency=low
+
+  * Initial package (based on samba-dom-patch)
+
+ -- Stefan Baur <lihas@lihas.de>  Wed, 30 Dec 2015 11:100:00 +0000
+
+
