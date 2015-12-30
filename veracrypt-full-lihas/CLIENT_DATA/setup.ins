@@ -55,8 +55,11 @@ else
 	DosInAnIcon_set_architecture /SysNative
 
 	comment "Install Driver"
-	Files_driver_install /SysNative
-
+        if $INST_SystemType$ = "64 Bit System"
+		Files_driver_install_64 /64Bit
+	else
+		Files_driver_install_32 /32Bit
+	endif
 
 	comment "Patch Registry"
 	Registry_install_SN /SysNative
@@ -80,23 +83,42 @@ endif
 @echo on
 cd /d "$InstallDir$"
 if "$INST_SystemType$" == "64 Bit System" (
-	if EXIST "VeraCrypt Format-x64.exe" move "VeraCrypt Format-x64.exe" "VeraCrypt Format.exe"
-	if EXIST "VeraCryptExpander-x64.exe" move "VeraCryptExpander-x64.exe" "VeraCryptExpander.exe"
-	if EXIST "VeraCrypt-x64.exe" move "VeraCrypt-x64.exe" "VeraCrypt.exe"
-	if EXIST "VeraCrypt-x64.sys" move "VeraCrypt-x64.sys" "VeraCrypt.sys"
+	if EXIST "VeraCrypt Format-x64.exe" (
+		if EXIST "VeraCrypt Format.exe" move "VeraCrypt Format.exe" "VeraCrypt Format-x86.exe"
+		move "VeraCrypt Format-x64.exe" "VeraCrypt Format.exe"
+	)
+	if EXIST "VeraCryptExpander-x64.exe" (
+		if EXIST "VeraCryptExpander.exe" move "VeraCryptExpander.exe" "VeraCryptExpander-x86.exe"
+		move "VeraCryptExpander-x64.exe" "VeraCryptExpander.exe"
+	)
+	if EXIST "VeraCrypt-x64.exe" (
+		if EXIST "VeraCrypt.exe" move "VeraCrypt.exe" "VeraCrypt-x86.exe"
+		move "VeraCrypt-x64.exe" "VeraCrypt.exe"
+	)
 ) else (
-	if EXIST "VeraCrypt Format-x86.exe" move "VeraCrypt Format-x86.exe" "VeraCrypt Format.exe"
-	if EXIST "VeraCryptExpander-x86.exe" move "VeraCryptExpander-x86.exe" "VeraCryptExpander.exe"
-	if EXIST "VeraCrypt-x86.exe" move "VeraCrypt-x86.exe" "VeraCrypt.exe"
-	if EXIST "VeraCrypt-x86.sys" move "VeraCrypt-x86.sys" "VeraCrypt.sys"
-
+	if EXIST "VeraCrypt Format-x86.exe" (
+		if EXIST "VeraCrypt Format.exe" move "VeraCrypt Format.exe" "VeraCrypt Format-x64.exe"
+		move "VeraCrypt Format-x86.exe" "VeraCrypt Format.exe"
+	)
+	if EXIST "VeraCryptExpander-x86.exe" (
+		if EXIST "VeraCryptExpander.exe" move "VeraCryptExpander.exe" "VeraCryptExpander-x64.exe"
+		move "VeraCryptExpander-x86.exe" "VeraCryptExpander.exe"
+	)
+	if EXIST "VeraCrypt-x86.exe" (
+		if EXIST "VeraCrypt.exe" move "VeraCrypt.exe" "VeraCrypt-x64.exe"
+		move "VeraCrypt-x86.exe" "VeraCrypt.exe"
+	)
 )
 
 [Files_install]
 copy -s "%ScriptPath%\files\*.*" "$InstallDir$"
 
-[Files_driver_install]
+[Files_driver_install_32]
 copy "%ScriptPath%\files\veracrypt.sys" "%System%\Drivers\"
+
+[Files_driver_install_64]
+copy "%ScriptPath%\files\veracrypt-x64.sys" "%System%\Drivers\"
+move "%System%\Drivers\veracrypt-x64.sys" "%System%\Drivers\veracrypt.sys"
 
 [Registry_install_SN]
 openkey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\.hc]
