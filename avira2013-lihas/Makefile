@@ -2,7 +2,7 @@ WGET_COMMON_OPTIONS  = -q -N
 
 PACKAGE_NAME         = avira2013-lihas
 VERSION              = 2013
-OPSI_PACKAGE_VERSION = 7
+OPSI_PACKAGE_VERSION = 8
 
 DOWNLOAD_DIR         = ./CLIENT_DATA/files
 DOWNLOAD_URLS        = http://professional.avira-update.com/package/wks_avira13/win32/de/prof/avira_professional_security_de.exe

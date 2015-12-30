@@ -1,10 +1,17 @@
 # do not commit License files
+**/**/license.key
 **/license.key
+**/**/hbedv.key
 **/hbedv.key
 # do not commit archives to repo
 **/*.opsi
 **/*.opsi.uploaded
 # do not commit work-in-progress directories to repo
 **/*-wip/
+*/*-wip/
+*-wip/
+# do not commit Local and/or Test-Makefiles to repo
+**/Makefile.test
+**/Makefile.local
 # do not commit downloaded files
 **/files/

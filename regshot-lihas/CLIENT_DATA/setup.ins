@@ -1,0 +1,87 @@
+; Copyright (c) uib gmbh (www.uib.de)
+; This sourcecode is owned by uib
+; and published under the Terms of the General Public License.
+; credits: http://www.opsi.org/credits/
+ 
+[Actions]
+requiredWinstVersion >= "4.10.8.6"
+ 
+DefVar $MsiId$
+DefVar $UninstallProgram$
+DefVar $LogDir$
+DefVar $ProductId$  
+DefVar $MinimumSpace$
+DefVar $InstallDir$
+DefVar $ExitCode$
+ 
+Set $LogDir$ = "%SystemDrive%\tmp"
+ 
+; ----------------------------------------------------------------
+; - Please edit the following values                             -
+; ----------------------------------------------------------------
+;$ProductId$ should be the name of the product in opsi
+; therefore please: only lower letters, no umlauts, 
+; no white space use '-' as a seperator
+Set $ProductId$       = "regshot-lihas"
+Set $MinimumSpace$    = "1 MB"
+; the path were we find the product after the installation
+Set $InstallDir$      = "%ProgramFilesSysNativeDir%\RegShot"
+; ----------------------------------------------------------------
+ 
+if not(HasMinimumSpace ("%SystemDrive%", $MinimumSpace$))
+	LogError "Not enough space on %SystemDrive%, " + $MinimumSpace$ + " on drive %SystemDrive% needed for " + $ProductId$
+	isFatalError
+	; Stop process and set installation status to failed
+else
+	comment "Show product picture"
+	ShowBitmap "%ScriptPath%\" + $ProductId$ + ".png" $ProductId$
+ 
+	if FileExists("%ScriptPath%\delsub.ins")
+		comment "Start uninstall sub section"
+		Sub "%ScriptPath%\delsub.ins"
+	endif
+ 
+	Message "Installing " + $ProductId$ + " ..."
+ 
+	comment "Copy files"
+	Files_install /SysNative
+ 
+	comment "Create shortcuts"
+	LinkFolder_install
+ 
+endif
+ 
+[Files_install]
+copy -s "%ScriptPath%\files\unpacked\*.*" "$InstallDir$"
+ 
+[LinkFolder_install]
+set_basefolder common_desktopdirectory
+set_subfolder ""
+
+set_link
+        name: Regshot-x64-ANSI.exe
+        target: $InstallDir$\Regshot-x64-ANSI.exe
+        parameters:
+        working_dir: $InstallDir$
+end_link
+
+set_link
+        name: Regshot-x86-ANSI.exe
+        target: $InstallDir$\Regshot-x86-ANSI.exe
+        parameters:
+        working_dir: $InstallDir$
+end_link
+
+set_link
+ 	name: Regshot-x64-Unicode.exe
+ 	target: $InstallDir$\Regshot-x64-Unicode.exe
+ 	parameters:
+ 	working_dir: $InstallDir$
+end_link
+
+set_link
+ 	name: Regshot-x86-Unicode.exe
+ 	target: $InstallDir$\Regshot-x86-Unicode.exe
+ 	parameters:
+ 	working_dir: $InstallDir$
+end_link
