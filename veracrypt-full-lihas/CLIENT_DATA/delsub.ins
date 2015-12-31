@@ -31,7 +31,7 @@ if not ($Flag$ = "1")
 	set $exitcodeServiceUninstall$ = getLastExitCode
 
 	if not ($exitcodeServiceUninstall$ = "0")
-		LogError "Exitcode unequal zero: "+$exitcodeUninstall$+" - please review log for possible causes!"
+		LogError "Exitcode unequal zero: " + $exitcodeServiceUninstall$ + " - please review log for possible causes!"
 		Set $Flag$ = "0"
 		Registry_SaveRebootFlag
 		isFatalError "Service Uninstall failed"
