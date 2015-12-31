@@ -8,8 +8,8 @@ TARGET               = $(PACKAGE_NAME)_$(VERSION)-$(OPSI_PACKAGE_VERSION).opsi
 
 all: checkpresence build install
 
-checkpresence: md5sums.txt 
-	md5deep -r -n -l -X md5sums.txt CLIENT_DATA/files/*
+checkpresence: md5sumsx86.txt md5sumsx64.txt 
+	md5deep -r -n -l -X md5sumsx86.txt CLIENT_DATA/files/* || md5deep -r -n -l -X md5sumsx64.txt CLIENT_DATA/files/*
 
 $(TARGET):
 	opsi-makeproductfile
