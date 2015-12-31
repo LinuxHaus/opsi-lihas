@@ -7,6 +7,7 @@ DefVar $UninstallOK$
 DefVar $Flag$
 DefVar $WinstRegKey$
 DefVar $INST_SystemType$
+DefVar $exitcodeServiceUninstall$
 
 Set $WinstRegKey$ = "HKLM\SOFTWARE\opsi.org\winst"
 Set $Flag$ = GetRegistryStringValue32("["+$WinstRegKey$+"] "+"RebootFlag")
@@ -26,7 +27,17 @@ if not ($Flag$ = "1")
 	comment "Starting uninstall"
 	comment "Uninstall service"
 	DosInAnIcon_uninstall
-        ExitWindows /ImmediateReboot
+
+	set $exitcodeServiceUninstall$ = getLastExitCode
+
+	if not ($exitcodeServiceUninstall$ = "0")
+		LogError "Exitcode unequal zero: "+$exitcodeUninstall$+" - please review log for possible causes!"
+		Set $Flag$ = "0"
+		Registry_SaveRebootFlag
+		isFatalError "Service Uninstall failed"
+	else
+		ExitWindows /ImmediateReboot
+	endif
 
 else
 	Set $Flag$ = "0"
@@ -56,7 +67,15 @@ openKey [$WinstRegKey$]
 set "RebootFlag" = "$Flag$"
 
 [DosInAnIcon_uninstall]
+@echo off
+"%WINDIR%\System32\sc.exe" stop veracrypt
+if NOT "%ERRORLEVEL%" == "0" (
+	if "%ERRORLEVEL%" == "1052" echo System drive is still encrypted. Run: "$InstallDir$\VeraCrypt Format.exe" /dsysenc
+	if "%ERRORLEVEL%" == "1061" echo Unable to stop Veracrypt Service. Try performing a reboot before attempting uninstall again.
+	exit %ERRORLEVEL%
+)
 "%WINDIR%\System32\sc.exe" delete veracrypt
+exit %ERRORLEVEL%
 
 [Files_uninstall]
 delete -sf "$InstallDir$\"
