@@ -23,8 +23,12 @@ if not ($Flag$ = "1")
 	set $exitcodeServiceUninstall$ = getLastExitCode
 
 	if not ($exitcodeServiceUninstall$ = "0")
-		LogError "Exitcode unequal zero: " + $exitcodeServiceUninstall$ + " - please review log for possible causes!"
-		isFatalError "Service Uninstall failed"
+		if ($exitcodeServiceUninstall$ = "9999")
+			ExitWindows /ImmediateReboot
+		else
+			LogError "Exitcode unequal zero: " + $exitcodeServiceUninstall$ + " - please review log for possible causes!"
+			isFatalError "Service Uninstall failed"
+		endif
 	else
 		Set $Flag$ = "1"
 		Registry_SaveRebootFlag
@@ -60,19 +64,42 @@ set "RebootFlag" = "$Flag$"
 
 [DosInAnIcon_uninstall]
 @echo off
+
+REM attempt to stop the service - will work if system drive encryption isn't active
 "%WINDIR%\System32\sc.exe" stop veracrypt
+
 if NOT "%ERRORLEVEL%" == "0" (
-	if "%ERRORLEVEL%" == "1052" (
-		if "$InteractiveUninstallOK$" == "True" (
-			start /wait "decrypt" "$InstallDir$\VeraCrypt Format.exe" /dsysenc
-			start /wait "forcedreboot" shutdown -r -t 0
-		) else (
-			echo System drive is still encrypted. Run: "$InstallDir$\VeraCrypt Format.exe" /dsysenc
+
+	REM Errorlevel isn't zero, so we were unable to stop the service
+
+	if NOT "%ERRORLEVEL%" == "1060" (
+
+		REM The reason wasn't that the service doesn't exist
+
+		if "%ERRORLEVEL%" == "1052" (
+
+			REM The reason was that the system drive is still encrypted
+
+			if "$InteractiveUninstallOK$" == "True" (
+
+				REM Start decryption process, reboot afterwards
+				start /wait "decrypt" "$InstallDir$\VeraCrypt Format.exe" /dsysenc
+				exit 9999
+			) else (
+
+				REM Admin prefers to fail at uninstalling if system drive is encrypted
+				echo System drive is still encrypted. Run: "$InstallDir$\VeraCrypt Format.exe" /dsysenc
+			)
 		)
+
+		REM This error code stands for a veracrypt driver that is in shutdown state and in need of a reboot
+		if "%ERRORLEVEL%" == "1061" echo Unable to stop Veracrypt Service. Try performing a reboot before attempting uninstall again.
+		exit %ERRORLEVEL%
 	)
-	if "%ERRORLEVEL%" == "1061" echo Unable to stop Veracrypt Service. Try performing a reboot before attempting uninstall again.
-	exit %ERRORLEVEL%
 )
+
+REM Delete stopped driver so it won't return after a reboot
+
 "%WINDIR%\System32\sc.exe" delete veracrypt
 exit %ERRORLEVEL%
 
