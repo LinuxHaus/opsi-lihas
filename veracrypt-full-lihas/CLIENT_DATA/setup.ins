@@ -80,33 +80,63 @@ else
 endif
 
 [DosInAnIcon_set_architecture]
-@echo on
+@echo off
 cd /d "$InstallDir$"
 if "$INST_SystemType$" == "64 Bit System" (
 	if EXIST "VeraCrypt Format-x64.exe" (
-		if EXIST "VeraCrypt Format.exe" move "VeraCrypt Format.exe" "VeraCrypt Format-x86.exe"
-		move "VeraCrypt Format-x64.exe" "VeraCrypt Format.exe"
+		echo "VeraCrypt Format-x64.exe" found.
+		if EXIST "VeraCrypt Format.exe" (
+			echo Moving "VeraCrypt Format.exe" to "VeraCrypt Format-x86.exe" ...
+			move "VeraCrypt Format.exe" "VeraCrypt Format-x86.exe" && echo move successful.
+		)
+		echo Moving "VeraCrypt Format-x64.exe" to "VeraCrypt Format.exe" ...
+		move "VeraCrypt Format-x64.exe" "VeraCrypt Format.exe" && echo move successful.
 	)
 	if EXIST "VeraCryptExpander-x64.exe" (
-		if EXIST "VeraCryptExpander.exe" move "VeraCryptExpander.exe" "VeraCryptExpander-x86.exe"
-		move "VeraCryptExpander-x64.exe" "VeraCryptExpander.exe"
+		echo "VeraCryptExpander-x64.exe" found.
+		if EXIST "VeraCryptExpander.exe" (
+			echo Moving "VeraCryptExpander.exe" to "VeraCryptExpander-x86.exe" ...
+			move "VeraCryptExpander.exe" "VeraCryptExpander-x86.exe" && echo move successful.
+		)
+		echo Moving "VeraCryptExpander-x64.exe" to "VeraCryptExpander.exe" ...
+		move "VeraCryptExpander-x64.exe" "VeraCryptExpander.exe" && echo move successful.
 	)
 	if EXIST "VeraCrypt-x64.exe" (
-		if EXIST "VeraCrypt.exe" move "VeraCrypt.exe" "VeraCrypt-x86.exe"
-		move "VeraCrypt-x64.exe" "VeraCrypt.exe"
+		echo "VeraCrypt-x64.exe" found.
+		if EXIST "VeraCrypt.exe" (
+			echo Moving "VeraCrypt.exe" to "VeraCrypt-x86.exe" ...
+			move "VeraCrypt.exe" "VeraCrypt-x86.exe" && echo move successful.
+		)
+		echo Moving "VeraCrypt-x64.exe" to "VeraCrypt.exe" ...
+		move "VeraCrypt-x64.exe" "VeraCrypt.exe" && echo move successful.
 	)
 ) else (
 	if EXIST "VeraCrypt Format-x86.exe" (
-		if EXIST "VeraCrypt Format.exe" move "VeraCrypt Format.exe" "VeraCrypt Format-x64.exe"
-		move "VeraCrypt Format-x86.exe" "VeraCrypt Format.exe"
+		echo "VeraCrypt Format.exe" found.
+		if EXIST "VeraCrypt Format.exe" (
+			echo Moving "VeraCrypt Format.exe" to "VeraCrypt Format-x64.exe" ...
+			move "VeraCrypt Format.exe" "VeraCrypt Format-x64.exe" && echo move successful.
+		)
+		echo Moving "VeraCrypt Format-x86.exe" to "VeraCrypt Format.exe" ..
+		move "VeraCrypt Format-x86.exe" "VeraCrypt Format.exe" && echo move successful.
 	)
 	if EXIST "VeraCryptExpander-x86.exe" (
-		if EXIST "VeraCryptExpander.exe" move "VeraCryptExpander.exe" "VeraCryptExpander-x64.exe"
-		move "VeraCryptExpander-x86.exe" "VeraCryptExpander.exe"
+		echo "VeraCryptExpander-x86.exe" found.
+		if EXIST "VeraCryptExpander.exe" (
+			echo Moving "VeraCryptExpander.exe" to "VeraCryptExpander-x64.exe" ...
+			move "VeraCryptExpander.exe" "VeraCryptExpander-x64.exe" && echo move successful.
+		)
+		echo Moving "VeraCryptExpander-x86.exe" to "VeraCryptExpander.exe" ..
+		move "VeraCryptExpander-x86.exe" "VeraCryptExpander.exe" && echo move successful.
 	)
 	if EXIST "VeraCrypt-x86.exe" (
-		if EXIST "VeraCrypt.exe" move "VeraCrypt.exe" "VeraCrypt-x64.exe"
-		move "VeraCrypt-x86.exe" "VeraCrypt.exe"
+		echo "VeraCrypt-x86.exe" found.
+		if EXIST "VeraCrypt.exe" (
+			echo Moving "VeraCrypt.exe" to "VeraCrypt-x64.exe" ...
+			move "VeraCrypt.exe" "VeraCrypt-x64.exe" && echo move successful.
+		)
+		echo Moving "VeraCrypt-x86.exe" to "VeraCrypt.exe" ...
+		move "VeraCrypt-x86.exe" "VeraCrypt.exe" && echo move successful.
 	)
 )
 
