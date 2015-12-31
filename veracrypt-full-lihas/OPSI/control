@@ -29,8 +29,8 @@ default: False
 
 [ProductProperty]
 type: bool
-name: uninstallok
-description: Please verify manually that there are no encrypted system volumes on the particular client before uninstalling. Confirm this by setting this property to "True".
+name: interactiveuninstallok
+description: When an encrypted system volume is detected during uninstall, do not abort but rather start the decryption process.  Warning: This is an interactive task; once the decryption is complete, some buttons need to be clicked!
 default: False
 
 [Changelog]
