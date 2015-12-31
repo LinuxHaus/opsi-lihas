@@ -3,7 +3,7 @@
 ; and published under the Terms of the General Public License.
 ; credits: http://www.opsi.org/credits/
  
-DefVar $UninstallOK$
+DefVar $InteractiveUninstallOK$
 DefVar $Flag$
 DefVar $WinstRegKey$
 DefVar $INST_SystemType$
@@ -11,19 +11,11 @@ DefVar $exitcodeServiceUninstall$
 
 Set $WinstRegKey$ = "HKLM\SOFTWARE\opsi.org\winst"
 Set $Flag$ = GetRegistryStringValue32("["+$WinstRegKey$+"] "+"RebootFlag")
-Set $UninstallOK$ = GetProductProperty("uninstallok","False") 
-
-if not($UninstallOK$ = "True")
-	LogError "You did not confirm that you manually verified that there are no encrypted system volumes on this client, exiting."
-	isFatalError
-endif 
-
+Set $InteractiveUninstallOK$ = GetProductProperty("interactiveuninstallok","False") 
 
 Message "Uninstalling " + $ProductId$ + " ..."
  
 if not ($Flag$ = "1")
-	Set $Flag$ = "1"
-	Registry_SaveRebootFlag
 	comment "Starting uninstall"
 	comment "Uninstall service"
 	DosInAnIcon_uninstall
@@ -32,10 +24,10 @@ if not ($Flag$ = "1")
 
 	if not ($exitcodeServiceUninstall$ = "0")
 		LogError "Exitcode unequal zero: " + $exitcodeServiceUninstall$ + " - please review log for possible causes!"
-		Set $Flag$ = "0"
-		Registry_SaveRebootFlag
 		isFatalError "Service Uninstall failed"
 	else
+		Set $Flag$ = "1"
+		Registry_SaveRebootFlag
 		ExitWindows /ImmediateReboot
 	endif
 
@@ -70,7 +62,14 @@ set "RebootFlag" = "$Flag$"
 @echo off
 "%WINDIR%\System32\sc.exe" stop veracrypt
 if NOT "%ERRORLEVEL%" == "0" (
-	if "%ERRORLEVEL%" == "1052" echo System drive is still encrypted. Run: "$InstallDir$\VeraCrypt Format.exe" /dsysenc
+	if "%ERRORLEVEL%" == "1052" (
+		if "$InteractiveUninstallOK$" == "True" (
+			start /wait "decrypt" "$InstallDir$\VeraCrypt Format.exe" /dsysenc
+			start /wait "forcedreboot" shutdown -r -t 0
+		) else (
+			echo System drive is still encrypted. Run: "$InstallDir$\VeraCrypt Format.exe" /dsysenc
+		)
+	)
 	if "%ERRORLEVEL%" == "1061" echo Unable to stop Veracrypt Service. Try performing a reboot before attempting uninstall again.
 	exit %ERRORLEVEL%
 )
