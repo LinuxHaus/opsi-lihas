@@ -1,5 +1,5 @@
 [Package]
-version: 1
+version: 2
 depends: 
 incremental: False
 
@@ -34,6 +34,13 @@ description: When an encrypted system volume is detected during uninstall, do no
 default: False
 
 [Changelog]
+veracrypt-full-lihas (1.16-2) testing; urgency=low
+
+  * added explicit REG_SZ to one key that would be turned into an
+    REG_EXPAND_SZ due to a % sign in the string
+
+ -- Stefan Baur <lihas@lihas.de>  Sat, 09 Jan 2016 02:17:00 +0000
+
 veracrypt-full-lihas (1.16-1) testing; urgency=low
 
   * Initial package
