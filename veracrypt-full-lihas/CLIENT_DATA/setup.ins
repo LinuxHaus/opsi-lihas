@@ -196,7 +196,7 @@ openkey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\VeraCryptVolume\Shell]
 openkey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\VeraCryptVolume\Shell\open]
 
 openkey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\VeraCryptVolume\Shell\open\command]
-set "" = '"$InstallDir$\VeraCrypt.exe\" /v \"%1"'
+set "" = REG_SZ:'"$InstallDir$\VeraCrypt.exe\" /v \"%1"'
 
 openkey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\AppID\VeraCrypt Format.exe]
 set "AppId" = "{A96D3797-9F31-49f4-A0CE-9657392CF789}"
