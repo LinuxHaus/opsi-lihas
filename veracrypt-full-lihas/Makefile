@@ -2,7 +2,7 @@ WGET_COMMON_OPTIONS  = -q -N
 
 PACKAGE_NAME         = veracrypt-full-lihas
 VERSION              = 1.16
-OPSI_PACKAGE_VERSION = 1
+OPSI_PACKAGE_VERSION = 2
 
 TARGET               = $(PACKAGE_NAME)_$(VERSION)-$(OPSI_PACKAGE_VERSION).opsi
 
