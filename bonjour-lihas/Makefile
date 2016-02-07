@@ -13,7 +13,7 @@ TARGET               = $(PACKAGE_NAME)_$(VERSION)-$(OPSI_PACKAGE_VERSION).opsi
 
 all: checkpresence download unpack build install
 
-checkpresence: /usr/lib/p7zip/Codecs/Rar29.so ./CLIENT_DATA/license.key
+checkpresence: /usr/lib/p7zip/Codecs/Rar29.so
 
 $(DOWNLOAD_TARGETS):
 	mkdir -p $(DOWNLOAD_DIR)
