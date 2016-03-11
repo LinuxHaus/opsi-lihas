@@ -1,5 +1,5 @@
 [Package]
-version: 6
+version: 7
 depends: 
 incremental: False
 
@@ -21,7 +21,21 @@ onceScript:
 customScript: 
 userLoginScript: 
 
+[ProductProperty]
+type: unicode
+name: domaingroup
+multivalue: False
+editable: True
+description: Enter DOMAIN\Group here, to add a Domain Group that is granted RDP Access to the local group. Leave this empty if you do not want to make any changes.
+values: [""]
+
 [Changelog]
+rdp-enable-openfw-lihas (1.0-7) testing; urgency=low
+
+* added option to add a Domain Group, added WinXP Firewall Support
+
+-- Stefan Baur <lihas@lihas.de>  Sat, 12 Mar 2016 00:29:00 +0000
+
 rdp-enable-openfw-lihas (1.0-6) testing; urgency=low
 
 * renamed to match naming conventions for public release,
@@ -48,6 +62,13 @@ remotedesktop (1.0-1) testing; urgency=low
 * Initial package
 
 -- Uwe Burger <lihas@lihas.de>  Tue, 17 Jul 2012 09:57:32 +0000
+
+
+
+
+
+
+
 
 
 

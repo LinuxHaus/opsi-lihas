@@ -6,7 +6,12 @@ ScriptErrorMessages=true
 TraceMode=off
 
 [Actions] 
+DefVar $ADDME$
+
 DefVar $INST_SystemType$
+
+Set $ADDME$= GetProductProperty("DomainGroup","")
+
 Set $INST_SystemType$ = GetSystemType
 
 if $INST_SystemType$ = "64 Bit System"
@@ -15,7 +20,9 @@ if $INST_SystemType$ = "64 Bit System"
                 Registry_install /32Bit
 endif
 
-Winbatch_Firewall
+DosInAnIcon_install
+
+DosInAnIcon_Firewall
 
 [Registry_install]
 ; Example of setting some values of an registry key:
@@ -24,9 +31,22 @@ openkey [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server]
 
 set "fDenyTSConnections" = REG_DWORD:00000000
 
-[Winbatch_Firewall]
-; English
+[DosInAnIcon_Firewall]
+@echo off
+REM English
 netsh advfirewall firewall set rule name="remote desktop (tcp-in)" new enable=Yes profile=domain,private
-; Deutsch - German
+REM Deutsch - German
 netsh advfirewall firewall set rule name="Remotedesktop (TCP eingehend)" new enable=Yes profile=domain,private
+ver | findstr "XP" >NUL || goto:eof
+REM WinXP
+netsh firewall add portopening TCP 3389 "Remotedesktop"
+exit /b 0
 
+[DosInAnIcon_install]
+@echo off
+if "$ADDME$" == "" exit /b 0
+REM English
+net localgroup "Remote Desktop Users" "$ADDME$" /add
+REM Deutsch - German
+net localgroup "RemoteDesktopBenutzer" "$ADDME$" /add
+exit /b 0

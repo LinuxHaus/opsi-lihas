@@ -2,7 +2,7 @@ WGET_COMMON_OPTIONS  = -q -N
 
 PACKAGE_NAME         = rdp-enable-openfw-lihas
 VERSION              = 1.0
-OPSI_PACKAGE_VERSION = 6
+OPSI_PACKAGE_VERSION = 7
 
 TARGET               = $(PACKAGE_NAME)_$(VERSION)-$(OPSI_PACKAGE_VERSION).opsi
 
