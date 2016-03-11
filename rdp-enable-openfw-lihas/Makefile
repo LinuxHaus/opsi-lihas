@@ -14,7 +14,7 @@ $(TARGET):
 build: $(TARGET)
 
 $(TARGET).uploaded:
-	opsi-package-manager -i $(TARGET)
+	opsi-package-manager -i -p ask $(TARGET)
 	touch $(TARGET).uploaded
 
 install: $(TARGET).uploaded
