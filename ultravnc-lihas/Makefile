@@ -1,10 +1,10 @@
 WGET_COMMON_OPTIONS  = -q -N
 
 PACKAGE_NAME         = ultravnc-lihas
-VERSION              = 1.2.0.6
-UVNC_VERSION         = 1206
-UVNC_VERSION_LONG    = 1_2_06
-OPSI_PACKAGE_VERSION = 2
+VERSION              = 1.2.1.0
+UVNC_VERSION         = 1210
+UVNC_VERSION_LONG    = 1_2_10
+OPSI_PACKAGE_VERSION = 1
 
 DOWNLOAD_DIR         = ./CLIENT_DATA/files
 DOWNLOAD_URLS        = http://www.uvnc.eu/download/$(UVNC_VERSION)/UltraVNC_$(UVNC_VERSION_LONG)_X86_Setup.exe \

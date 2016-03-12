@@ -1,5 +1,5 @@
 [Package]
-version: 2
+version: 1
 depends: 
 incremental: False
 
@@ -7,9 +7,9 @@ incremental: False
 type: localboot
 id: ultravnc-lihas
 name: UltraVNC
-description: UltraVNC 1.2.0.6
+description: UltraVNC 1.2.1.0
 advice: 
-version: 1.2.0.6
+version: 1.2.1.0
 priority: 0
 licenseRequired: False
 productClasses: 
@@ -121,6 +121,12 @@ values: [""]
 default: [""]
 
 [Changelog]
+ultravnc (1.2.1.0-1) stable; urgency=low
+
+	* Latest UVNC executables
+
+-- Stefan Baur <lihas@lihas.de>  Sat, 12 Mar 2016 12:40:00 +0000
+
 ultravnc (1.2.0.6-2) stable; urgency=low
 
 	* a lot of cleanup and bugfixing work
@@ -132,4 +138,5 @@ ultravnc (1.2.0.6-1) stable; urgency=low
 	* initial: created by opsi-setup-detector
 
 -- opsisetupdetector.exe <info@uib.de>  11.06.2015 15:46:10
+
 
