@@ -1,0 +1,174 @@
+; Copyright (c) uib gmbh (www.uib.de)
+; This sourcecode is owned by uib
+; and published under the Terms of the General Public License.
+; credits: http://www.opsi.org/credits/
+ 
+[Actions]
+requiredWinstVersion >= "4.10.8.6"
+ 
+DefVar $MsiId$
+DefVar $UninstallProgram$
+DefVar $LogDir$
+DefVar $ProductId$  
+DefVar $MinimumSpace$
+DefVar $InstallDir$
+DefVar $ExitCode$
+ 
+DefVar $vncfullpass$
+DefVar $vncviewpass$
+DefVar $SetupType$
+DefVar $Components$
+DefVar $Tasks$
+DefVar $HTTPConnect$
+DefVar $QuerySetting$
+DefVar $QueryTimeout$
+DefVar $RemoveWallpaper$
+DefVar $RemoveAero$
+DefVar $ConnectPriority$
+DefVar $INST_SystemType$
+
+; setpasswd.exe crashes if passwords are longer than 8 chars
+; and VNCServer is limited to 8 chars anyways, everything longer gets 
+; truncated to the first 8 chars.
+; So, truncate here, too, without warning.
+; DISABLED until OPSI 4.11.3 becomes stable
+;Set $vncfullpass$ = strPart(GetProductProperty("vncfullpass",""),1,8)
+;Set $vncviewpass$ = strPart(GetProductProperty("vncviewpass",""),1,8)
+Set $vncfullpass$ = GetProductProperty("vncfullpass","")
+Set $vncviewpass$ = GetProductProperty("vncviewpass","")
+
+Set $Components$ = GetProductProperty("Components","")
+Set $Tasks$ = GetProductProperty("Tasks","")
+Set $SetupType$ = GetProductProperty("SetupType","")
+Set $HTTPConnect$ = GetProductProperty("HTTPConnect","")
+Set $QuerySetting$ = GetProductProperty("QuerySetting","")
+Set $QueryTimeout$ = GetProductProperty("QueryTimeout","")
+Set $RemoveWallpaper$ = GetProductProperty("RemoveWallpaper","")
+Set $RemoveAero$ = GetProductProperty("RemoveAero","")
+Set $ConnectPriority$ = GetProductProperty("ConnectPriority","")
+Set $INST_SystemType$ = GetSystemType
+
+Set $LogDir$ = "%SystemDrive%\tmp"
+ 
+; ----------------------------------------------------------------
+; - Please edit the following values                             -
+; ----------------------------------------------------------------
+;$ProductId$ should be the name of the product in opsi
+; therefore please: only lower letters, no umlauts, 
+; no white space use '-' as a seperator
+Set $ProductId$       = "ultravnc-lihas"
+Set $MinimumSpace$    = "5 MB"
+; the path were we find the product after the installation
+Set $InstallDir$      = "%ProgramFilesSysNativeDir%\UltraVNC"
+; ----------------------------------------------------------------
+ 
+if not(HasMinimumSpace ("%SystemDrive%", $MinimumSpace$))
+	LogError "Not enough space on %SystemDrive%, " + $MinimumSpace$ + " on drive %SystemDrive% needed for " + $ProductId$
+	isFatalError
+	; Stop process and set installation status to failed
+else
+	comment "Show product picture"
+	ShowBitmap "%ScriptPath%\" + $ProductId$ + ".png" $ProductId$
+ 
+	if FileExists($InstallDir$ + "\winvnc.exe")
+		comment "Start uninstall sub section"
+		Sub "%ScriptPath%\delsub32.ins"
+	endif
+ 
+	Message "Installing " + $ProductId$ + " ..."
+ 
+	comment "Copy files"
+	Files_install /SysNative
+
+	comment "Pre-Setup patches"
+	Patches_presetup $InstallDir$ + "\ultravncinstall.inf"
+
+	comment "Start setup program"
+        if $INST_SystemType$ = "64 Bit System"
+                Winbatch_install_64 /64Bit
+        else
+                Winbatch_install_32 /32Bit
+        endif
+	Sub_check_exitcode
+
+	comment "Stop UVNC Service to apply patches"
+	DosInAnIcon_stopservice
+
+	comment "Patch config"
+	Patches_uvncini $InstallDir$ + "\ultravnc.ini"
+
+	comment "Set Password(s)"
+	Winbatch_setpw
+
+	comment "Restart UVNC Service"
+	DosInAnIcon_startservice
+
+endif
+ 
+[Files_install]
+copy "%ScriptPath%\ultravnc.ini" "$InstallDir$"
+copy "%ScriptPath%\ultravncinstall.inf" "$InstallDir$"
+
+[Patches_presetup]
+set [Setup] Components=$Components$
+set [Setup] Tasks=$Tasks$
+set [Setup] SetupType=$SetupType$
+set [Setup] Dir=$InstallDir$
+
+[Winbatch_install_32]
+"%ScriptPath%\files\UltraVNC_1_2_06_X86_Setup.exe" /verysilent /LOADINF="$InstallDir$\ultravncinstall.inf" /log /norestart
+
+[Winbatch_install_64]
+"%ScriptPath%\files\UltraVNC_1_2_06_X64_Setup.exe" /verysilent /LOADINF="$InstallDir$\ultravncinstall.inf" /log /norestart
+
+
+[DosInAnIcon_stopservice]
+@echo off
+net stop uvnc_service
+
+[Patches_uvncini]
+set [admin] Path=$InstallDir$
+set [admin] HTTPConnect=$HTTPConnect$
+set [admin] QuerySetting=$QuerySetting$
+set [admin] QueryTimeout=$QueryTimeout$
+set [admin] RemoveWallpaper=$RemoveWallpaper$
+set [admin] RemoveAero=$RemoveAero$
+set [admin] ConnectPriority=$ConnectPriority$
+
+[Winbatch_setpw]
+"$InstallDir$\setpasswd.exe" $vncfullpass$ $vncviewpass$
+
+[DosInAnIcon_startservice]
+@echo off
+net start uvnc_service
+
+
+[Sub_check_exitcode]
+comment "Test for installation success via exit code"
+set $ExitCode$ = getLastExitCode
+; informations to exit codes see
+; http://msdn.microsoft.com/en-us/library/aa372835(VS.85).aspx
+; http://msdn.microsoft.com/en-us/library/aa368542.aspx
+if ($ExitCode$ = "0")
+	comment "Looks good: setup program gives exitcode zero"
+else
+	comment "Setup program gives a exitcode unequal zero: " + $ExitCode$
+	if ($ExitCode$ = "1605")
+		comment "ERROR_UNKNOWN_PRODUCT	1605	This action is only valid for products that are currently installed."
+		comment "Uninstall of a not installed product failed - no problem"
+	else
+		if ($ExitCode$ = "1641")
+			comment "looks good: setup program gives exitcode 1641"
+			comment "ERROR_SUCCESS_REBOOT_INITIATED	1641	The installer has initiated a restart. This message is indicative of a success."
+		else
+			if ($ExitCode$ = "3010")
+				comment "looks good: setup program gives exitcode 3010"
+				comment "ERROR_SUCCESS_REBOOT_REQUIRED	3010	A restart is required to complete the install. This message is indicative of a success."
+			else
+				logError "Fatal: Setup program gives an unknown exitcode unequal zero: " + $ExitCode$
+				isFatalError
+			endif
+		endif
+	endif
+endif
+
