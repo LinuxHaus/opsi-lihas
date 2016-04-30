@@ -7,17 +7,29 @@ TraceMode=off
 
 [Actions] 
 DefVar $ADDME$
+DefVar $RDPSEC$
 
 DefVar $INST_SystemType$
 
-Set $ADDME$= GetProductProperty("DomainGroup","")
+Set $ADDME$  = GetProductProperty("DomainGroup","")
+Set $RDPSEC$ = GetProductProperty("RDPSEC","NLA")
 
 Set $INST_SystemType$ = GetSystemType
 
 if $INST_SystemType$ = "64 Bit System"
                 Registry_install /64Bit 
+		if $RDPSEC$ = "NLA"
+			Registry_install_RDPSEC_nla /64Bit
+		else
+			Registry_install_RDPSEC_any /64Bit
+		endif
         else
                 Registry_install /32Bit
+		if $RDPSEC$ = "NLA"
+			Registry_install_RDPSEC_nla /32Bit
+		else
+			Registry_install_RDPSEC_any /32Bit
+		endif
 endif
 
 DosInAnIcon_install
@@ -25,10 +37,20 @@ DosInAnIcon_install
 DosInAnIcon_Firewall
 
 [Registry_install]
-; Example of setting some values of an registry key:
-;
 openkey [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server]
+set "fDenyTSConnections" = REG_DWORD:00000000
 
+[Registry_install_RDPSEC_any]
+openkey [HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp]
+set "UserAuthentication"  = REG_DWORD:00000000 
+set "SecurityLayer" = REG_DWORD:00000001
+
+[Registry_install_RDPSEC_nla]
+openkey [HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp]
+set "UserAuthentication"  = REG_DWORD:00000001
+set "SecurityLayer" = REG_DWORD:00000001
+
+openkey [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server]
 set "fDenyTSConnections" = REG_DWORD:00000000
 
 [DosInAnIcon_Firewall]

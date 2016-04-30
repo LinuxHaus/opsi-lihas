@@ -1,5 +1,5 @@
 [Package]
-version: 7
+version: 8
 depends: 
 incremental: False
 
@@ -29,7 +29,22 @@ editable: True
 description: Enter DOMAIN\Group here, to add a Domain Group that is granted RDP Access to the local group. Leave this empty if you do not want to make any changes.
 values: [""]
 
+[ProductProperty]
+type: unicode
+name: rdpsec
+multivalue: False
+editable: False
+description: Enable/disable Network Layer Authentication
+values: ["any", "nla"]
+default: ["any"]
+
 [Changelog]
+rdp-enable-openfw-lihas (1.0-8) testing; urgency=low
+
+* added option to turn NLA on/off
+
+-- Stefan Baur <lihas@lihas.de>  Sat, 30 Apr 2016 07:14:00 +0000
+
 rdp-enable-openfw-lihas (1.0-7) testing; urgency=low
 
 * added option to add a Domain Group, added WinXP Firewall Support
@@ -62,6 +77,9 @@ remotedesktop (1.0-1) testing; urgency=low
 * Initial package
 
 -- Uwe Burger <lihas@lihas.de>  Tue, 17 Jul 2012 09:57:32 +0000
+
+
+
 
 
 
