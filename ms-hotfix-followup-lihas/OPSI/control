@@ -1,5 +1,5 @@
 [Package]
-version: 3
+version: 4
 depends: 
 incremental: False
 
@@ -40,6 +40,12 @@ values: ["false", "true"]
 default: ["false"]
 
 [Changelog]
+ms-hotfix-followup-lihas (1.0-4) testing; urgency=low
+
+  * Fixed infinite loop caused by timestamp
+
+ -- Stefan Baur <lihas@lihas.de>  Sun, 08 May 2016 18:59:00 +0000
+
 ms-hotfix-followup-lihas (1.0-3) testing; urgency=low
 
   * Added timestamp to log
@@ -57,33 +63,5 @@ ms-hotfix-followup-lihas (1.0-1) testing; urgency=low
   * Initial package
 
  -- Stefan Baur <lihas@lihas.de>  Mon, 30 Jun 2014 23:31:00 +0000
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
