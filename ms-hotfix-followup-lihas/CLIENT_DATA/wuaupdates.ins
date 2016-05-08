@@ -62,7 +62,8 @@ endif
 date /t >> "$LogDir$\$ProductId$.install_log.txt"
 time /t >> "$LogDir$\$ProductId$.install_log.txt"
 cscript %ScriptPath%\files\WUA_SearchDownloadInstall.vbs $autoaccepteulas$ $performinstall$ >> "$LogDir$\$ProductId$.install_log.txt"
+set CUSTOMERRORLEVEL=%ERRORLEVEL%
+echo Errorlevel: %CUSTOMERRORLEVEL% >> "$LogDir$\$ProductId$.install_log.txt"
 date /t >> "$LogDir$\$ProductId$.install_log.txt"
 time /t >> "$LogDir$\$ProductId$.install_log.txt"
-echo %ERRORLEVEL%
-exit %ERRORLEVEL%
+exit %CUSTOMERRORLEVEL%
