@@ -1,0 +1,1 @@
+672705c7488948158a2177de895861a4  CLIENT_DATA/files/zarafaclient-7.2.3-52117.msi
