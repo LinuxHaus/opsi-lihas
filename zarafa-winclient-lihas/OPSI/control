@@ -1,5 +1,5 @@
 [Package]
-version: 1
+version: 2
 depends: 
 incremental: False
 
@@ -9,12 +9,12 @@ id: zarafa-winclient-lihas
 name: Zarafa Windows Client
 description: 
 advice: This package will fail to install unless MS Outlook is installed.
-version: 7.1.11.46779
+version: 7.2.3.52117
 priority: 0
 licenseRequired: False
 productClasses: 
 setupScript: setup32.ins
-uninstallScript: unins32.ins
+uninstallScript: 
 updateScript: 
 alwaysScript: 
 onceScript: 
@@ -22,35 +22,14 @@ customScript:
 userLoginScript: 
 
 [Changelog]
+zarafa-winclient-lihas (7.2.3.52117-2) testing; urgency=low
 
+  * File name fixed in setup32.ins
 
-  * Initial package
+-- Stefan Baur <lihas@lihas.de>  Thu, 12 May 2016 12:08:00 +0000
 
--- Stefan Baur <lihas@lihas.de>  Fri, 23 May 2014 20:15:00 +0000
+zarafa-winclient-lihas (7.2.3.52117-1) testing; urgency=low
 
+  * Initial package after switch from download model to subscr.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+-- Stefan Baur <lihas@lihas.de>  Thu, 12 May 2016 11:36:00 +0000
