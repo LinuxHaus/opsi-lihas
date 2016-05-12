@@ -1,0 +1,129 @@
+[Package]
+version: 2
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: swx2015-prereq-lihas
+name: SolidWorks-Metapaket-Installationsvoraussetzungen
+description: 
+advice: 
+version: 2015
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: setup.ins
+uninstallScript: 
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[ProductDependency]
+action: setup
+requiredProduct: bonjour-lihas
+requiredStatus: installed
+requirementType: before
+
+[ProductDependency]
+action: setup
+requiredProduct: owc-lihas
+requiredStatus: installed
+requirementType: before
+
+[ProductDependency]
+action: setup
+requiredProduct: swx-vba-lihas
+requiredStatus: installed
+requirementType: before
+
+[ProductDependency]
+action: setup
+requiredProduct: swx-vba-1033-lihas
+requiredStatus: installed
+requirementType: before
+
+[ProductDependency]
+action: setup
+requiredProduct: dotnet-lihas
+requiredStatus: installed
+requirementType: before
+
+[ProductDependency]
+action: setup
+requiredProduct: vcrun2005sp1kb2538242x86-lihas
+requiredStatus: installed
+requirementType: before
+
+[ProductDependency]
+action: setup
+requiredProduct: vcrun2008sp1kb2538243x86-lihas
+requiredStatus: installed
+requirementType: before
+
+[ProductDependency]
+action: setup
+requiredProduct: vcrun2010sp1kb2565063x86-lihas
+requiredStatus: installed
+requirementType: before
+
+[ProductDependency]
+action: setup
+requiredProduct: vcrun2005sp1kb2538242x64-lihas
+requiredStatus: installed
+requirementType: before
+
+[ProductDependency]
+action: setup
+requiredProduct: vcrun2008sp1kb2538243x64-lihas
+requiredStatus: installed
+requirementType: before
+
+[ProductDependency]
+action: setup
+requiredProduct: vcrun2010sp1kb2565063x64-lihas
+requiredStatus: installed
+requirementType: before
+
+[ProductDependency]
+action: setup
+requiredProduct: vcrun2012x86-lihas
+requiredStatus: installed
+requirementType: before
+
+[ProductDependency]
+action: setup
+requiredProduct: vcrun2012x64-lihas
+requiredStatus: installed
+requirementType: before
+
+[ProductDependency]
+action: setup
+requiredProduct: swx-vsta-lihas
+requiredStatus: installed
+requirementType: before
+
+[Changelog]
+swx2015-prereq-lihas (2015-2) testing; urgency=low
+
+  * Version Bump due to changes in swx2015-basis-lihas
+  * Change dep: swx-vsta-lihas (rename)
+
+ -- Stefan Baur <lihas@lihas.de>  Fri, 14 Aug 2015 12:38:00 +0000
+
+swx2015-prereq-lihas (2015-1) testing; urgency=low
+
+  * Initial package
+
+ -- Stefan Baur <lihas@lihas.de>  Tue, 29 Jul 2015 13:58:00 +0000
+
+
+
+
+
+
+
+
+

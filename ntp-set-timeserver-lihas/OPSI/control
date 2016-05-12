@@ -1,0 +1,39 @@
+[Package]
+version: 1
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: ntp-set-timeserver-lihas
+name: Set NTP Timeserver(s)
+description: Allows you to specify a blank-separated list of timeserver FQDNs or IPs
+advice: 
+version: 1.0
+priority: 100
+licenseRequired: False
+productClasses: 
+setupScript: timeserv.ins
+uninstallScript: 
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[ProductProperty]
+type: unicode
+name: timeservers
+multivalue: False
+editable: True
+description: blank-delimited list of timeserver FQDNs or IPs
+values: ["ptbtime1.ptb.de ptbtime2.ptb.de"]
+default: ["ptbtime1.ptb.de ptbtime2.ptb.de"]
+
+[Changelog]
+ntp-set-timeserver-lihas (1.0-1) testing; urgency=low
+
+  * Initial package
+
+ -- Stefan Baur <lihas@lihas.de>  Fri, 25 Dec 2015 16:52:44 +0000
+

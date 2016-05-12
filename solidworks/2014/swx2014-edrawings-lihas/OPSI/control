@@ -1,0 +1,56 @@
+[Package]
+version: 1
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: swx2014-edrawings-lihas
+name: SolidWorks-EDrawings
+description: 
+advice: 
+version: 2014
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: setup64.ins
+uninstallScript: unins64.ins
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[ProductDependency]
+action: setup
+requiredProduct: swx2014-basis-lihas
+requiredStatus: installed
+requirementType: before
+
+[ProductProperty]
+type: unicode
+name: addlocal
+multivalue: False
+editable: True
+description: Components to be installed
+values: ["All"]
+default: ["All"]
+
+[ProductProperty]
+type: unicode
+name: snlserver
+multivalue: False
+editable: True
+description: SolidWorks License Server
+values: [""]
+default: [""]
+
+[Changelog]
+swx2014-edrawings-lihas (2014-2) testing; urgency=low
+
+  * initial release under new naming scheme
+
+ -- Stefan Baur <lihas@lihas.de>  Fri, 14 Aug 2014 12:38:00 +0000
+
+
+

@@ -1,0 +1,47 @@
+[Package]
+version: 1
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: filezilla-lihas
+name: Filezilla x64 installer
+description: 
+advice: 
+version: 3.14.1
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: setup64.ins
+uninstallScript: unins64.ins
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[Changelog]
+filezilla-lihas (3.14.1-1) testing; urgency=low
+
+  * Initial package
+
+-- Stefan Baur <lihas@lihas.de>  Mon, 21 Dec 2015 20:21:00 +0000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

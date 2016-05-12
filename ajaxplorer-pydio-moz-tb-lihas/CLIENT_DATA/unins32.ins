@@ -1,0 +1,48 @@
+; Copyright (c) uib gmbh (www.uib.de)
+; This sourcecode is owned by uib gmbh
+; and published under the Terms of the General Public License.
+; credits: http://www.opsi.org/credits/
+ 
+[Actions]
+requiredWinstVersion >= "4.10.8.6"
+ 
+DefVar $MsiId$
+DefVar $UninstallProgram$
+DefVar $LogDir$
+DefVar $ExitCode$
+DefVar $ProductId$
+DefVar $InstallDir$
+DefVar $LicenseRequired$
+DefVar $LicensePool$
+DefVar $ThunderBirdInstallPath$
+Set $ThunderBirdInstallPath$=GetProductProperty("thunderbirdinstallpath","")
+DefVar $AllOrNewUsers$
+Set $AllOrNewUsers$=GetProductProperty("allornewusers","")
+DefVar $NewUsersDir$
+if $AllOrNewUsers$ = "all"
+	Set $NewUsersDir$ = ""
+else
+	Set $NewUsersDir$ = "\distribution"
+endif
+
+Set $LogDir$ = "%SystemDrive%\tmp"
+ 
+; ----------------------------------------------------------------
+; - Please edit the following values                             -
+; ----------------------------------------------------------------
+Set $ProductId$       = "ajaxplorer-pydio-moz-tb-lihas"
+Set $InstallDir$      = $ThunderBirdInstallPath$ + $NewUsersDir$ + "\extensions"
+Set $LicenseRequired$ = "false"
+Set $LicensePool$     = "p_" + $ProductId$
+; ----------------------------------------------------------------
+ 
+ 
+comment "Show product picture"
+ShowBitmap "%ScriptPath%\" + $ProductId$ + ".png" $ProductId$
+ 
+Message "Uninstalling " + $ProductId$ + " ..."
+ 
+if FileExists("%ScriptPath%\delsub32.ins")
+	comment "Start uninstall sub section"
+	Sub "%ScriptPath%\delsub32.ins"
+endif

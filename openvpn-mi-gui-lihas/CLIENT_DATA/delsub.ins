@@ -1,0 +1,44 @@
+; Copyright (c) uib gmbh (www.uib.de)
+; This sourcecode is owned by uib gmbh
+; and published under the Terms of the General Public License.
+; credits: http://www.opsi.org/credits/
+ 
+comment "Stop running task " + $EXE$
+killtask $EXE$
+
+comment "Delete files"
+Files_uninstall
+ 
+comment "Delete program shortcuts"
+LinkFolder_uninstall
+
+comment "Cleanup registry"
+if ($INST_SystemType$ = "x86 System")
+	Registry_uninstall /32Bit
+endif
+
+if ($INST_SystemType$ = "64 Bit System")
+	Registry_uninstall /64Bit
+endif
+
+[Files_uninstall]
+delete -f "$InstallDir$\openvpn-mi-gui-20140918-*.exe"
+ 
+ 
+[LinkFolder_uninstall]
+set_basefolder common_programs
+set_subfolder "Startup"
+delete_element "OpenVPN MI GUI"
+
+set_basefolder common_programs
+set_subfolder "OpenVPN"
+delete_element "OpenVPN MI GUI"
+
+set_basefolder common_desktopdirectory
+set_subfolder ""
+delete_element "OpenVPN MI GUI"
+
+[Registry_uninstall]
+deletekey [HKLM\SOFTWARE\OpenVPN-MI-GUI]
+ 
+

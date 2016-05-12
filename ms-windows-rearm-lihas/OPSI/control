@@ -1,0 +1,35 @@
+[Package]
+version: 1
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: ms-windows-rearm-lihas
+name: slmgr -rearm
+description: Rearms Windows, if possible
+advice: 
+version: 1.0
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: rearm.ins
+uninstallScript: 
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[Changelog]
+ms-windows-rearm-lihas (1.0-1) testing; urgency=low
+
+  * Initial package
+
+ -- Stefan Baur <lihas@lihas.de>  Fri, 25 Dec 2015 14:33:37 +0000
+
+
+
+
+
+

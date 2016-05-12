@@ -6,27 +6,69 @@ ScriptErrorMessages=true
 TraceMode=off
 
 [Actions] 
+DefVar $ADDME$
+DefVar $RDPSEC$
+
 DefVar $INST_SystemType$
+
+Set $ADDME$  = GetProductProperty("DomainGroup","")
+Set $RDPSEC$ = GetProductProperty("RDPSEC","NLA")
+
 Set $INST_SystemType$ = GetSystemType
 
 if $INST_SystemType$ = "64 Bit System"
                 Registry_install /64Bit 
+		if $RDPSEC$ = "NLA"
+			Registry_install_RDPSEC_nla /64Bit
+		else
+			Registry_install_RDPSEC_any /64Bit
+		endif
         else
                 Registry_install /32Bit
+		if $RDPSEC$ = "NLA"
+			Registry_install_RDPSEC_nla /32Bit
+		else
+			Registry_install_RDPSEC_any /32Bit
+		endif
 endif
 
-Winbatch_Firewall
+DosInAnIcon_install
+
+DosInAnIcon_Firewall
 
 [Registry_install]
-; Example of setting some values of an registry key:
-;
 openkey [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server]
-
 set "fDenyTSConnections" = REG_DWORD:00000000
 
-[Winbatch_Firewall]
-; English
-netsh advfirewall firewall set rule name="remote desktop (tcp-in)" new enable=Yes profile=domain,private
-; Deutsch - German
-netsh advfirewall firewall set rule name="Remotedesktop (TCP eingehend)" new enable=Yes profile=domain,private
+[Registry_install_RDPSEC_any]
+openkey [HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp]
+set "UserAuthentication"  = REG_DWORD:00000000 
+set "SecurityLayer" = REG_DWORD:00000001
 
+[Registry_install_RDPSEC_nla]
+openkey [HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp]
+set "UserAuthentication"  = REG_DWORD:00000001
+set "SecurityLayer" = REG_DWORD:00000001
+
+openkey [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server]
+set "fDenyTSConnections" = REG_DWORD:00000000
+
+[DosInAnIcon_Firewall]
+@echo off
+REM English
+netsh advfirewall firewall set rule name="remote desktop (tcp-in)" new enable=Yes profile=domain,private
+REM Deutsch - German
+netsh advfirewall firewall set rule name="Remotedesktop (TCP eingehend)" new enable=Yes profile=domain,private
+ver | findstr "XP" >NUL || goto:eof
+REM WinXP
+netsh firewall add portopening TCP 3389 "Remotedesktop"
+exit /b 0
+
+[DosInAnIcon_install]
+@echo off
+if "$ADDME$" == "" exit /b 0
+REM English
+net localgroup "Remote Desktop Users" "$ADDME$" /add
+REM Deutsch - German
+net localgroup "RemoteDesktopBenutzer" "$ADDME$" /add
+exit /b 0

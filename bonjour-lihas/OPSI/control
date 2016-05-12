@@ -1,0 +1,51 @@
+[Package]
+version: 1
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: bonjour-lihas
+name: Apple Bonjour
+description: Apple Bonjour
+advice: 
+version: 1
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: setup64.ins
+uninstallScript: unins64.ins
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[Changelog]
+bonjour-lihas (1-1) testing; urgency=low
+
+  * Initial package
+
+ -- Stefan Baur <lihas@lihas.de>  Sat, 15 Aug 2015 22:27:00 +0000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

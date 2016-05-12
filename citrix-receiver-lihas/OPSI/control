@@ -1,0 +1,37 @@
+[Package]
+version: 1
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: citrix-receiver-lihas
+name: Citrix Receiver
+description: 
+advice: 
+version: latestorlegacy
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: setup32.ins
+uninstallScript: unins32.ins
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[ProductProperty]
+type: unicode
+name: receiverversion
+multivalue: False
+editable: False
+description: Select version number here
+default: ["Latest"]
+
+[Changelog]
+citrix-receiver-lihas (latestorlegacy-1) testing; urgency=low
+
+  * Initial package
+
+-- Stefan Baur <lihas@lihas.de>  Mon, 09 May 2016 12:16:00 +0000

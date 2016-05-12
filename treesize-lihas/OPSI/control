@@ -1,0 +1,44 @@
+[Package]
+version: 2
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: treesize-lihas
+name: Treesize 3 Pro
+description: 
+advice: 
+version: 3.0
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: setup32.ins
+uninstallScript: unins32.ins
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[ProductProperty]
+type: unicode
+name: installpassword
+multivalue: False
+editable: True
+description: License Key, also known as Install Password
+values: ["xxxx-xxxx-xxxx-xxxx"]
+default: ["xxxx-xxxx-xxxx-xxxx"]
+
+[Changelog]
+treesize-lihas (3.0-2) testing; urgency=low
+
+  * Package name fixed in install/uninstall files
+
+ -- Stefan Baur <lihas@lihas.de>  Mon, 21 Dec 2015 22:22:00 +0000
+
+treesize-lihas (3.0-1) testing; urgency=low
+
+  * Initial package under new naming scheme
+
+ -- Stefan Baur <lihas@lihas.de>  Mon, 21 Dec 2015 21:50:00 +0000

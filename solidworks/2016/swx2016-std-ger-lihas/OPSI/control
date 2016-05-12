@@ -1,0 +1,78 @@
+[Package]
+version: 1
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: swx2016-std-ger-lihas
+name: SolidWorks-Metapaket Standard German/Deutsch
+description: 
+advice: 
+version: 2016
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: setup.ins
+uninstallScript: 
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[ProductDependency]
+action: setup
+requiredProduct: swx2016-prereq-lihas
+requiredStatus: installed
+requirementType: before
+
+[ProductDependency]
+action: setup
+requiredProduct: swx2016-basis-lihas
+requiredStatus: installed
+requirementType: before
+
+[ProductDependency]
+action: setup
+requiredProduct: swx2016-german-lihas
+requiredStatus: installed
+requirementType: before
+
+[ProductDependency]
+action: setup
+requiredProduct: swx2016-edrawings-lihas
+requiredStatus: installed
+requirementType: before
+
+[ProductDependency]
+action: setup
+requiredProduct: swx2016-explorer-lihas
+requiredStatus: installed
+requirementType: before
+
+[Changelog]
+swx2016-std-ger-lihas (2016-1) testing; urgency=low
+
+  * Initial package
+
+-- Stefan Baur <lihas@lihas.de>  Tue, 13 Oct 2015 14:47:00 +0000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

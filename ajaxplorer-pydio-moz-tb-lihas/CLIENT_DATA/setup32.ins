@@ -1,0 +1,68 @@
+; Copyright (c) uib gmbh (www.uib.de)
+; This sourcecode is owned by uib
+; and published under the Terms of the General Public License.
+; credits: http://www.opsi.org/credits/
+ 
+[Actions]
+requiredWinstVersion >= "4.10.8.6"
+ 
+DefVar $MsiId$
+DefVar $UninstallProgram$
+DefVar $LogDir$
+DefVar $ProductId$  
+DefVar $MinimumSpace$
+DefVar $InstallDir$
+DefVar $ExitCode$
+DefVar $LicenseRequired$
+DefVar $LicenseKey$
+DefVar $LicensePool$
+DefVar $ThunderBirdInstallPath$
+Set $ThunderBirdInstallPath$=GetProductProperty("thunderbirdinstallpath","")
+DefVar $AllOrNewUsers$
+Set $AllOrNewUsers$=GetProductProperty("allornewusers","")
+DefVar $NewUsersDir$
+if $AllOrNewUsers$ = "all"
+	Set $NewUsersDir$ = ""
+else
+	Set $NewUsersDir$ = "\distribution"
+endif
+
+Set $LogDir$ = "%SystemDrive%\tmp"
+ 
+; ----------------------------------------------------------------
+; - Please edit the following values                             -
+; ----------------------------------------------------------------
+;$ProductId$ should be the name of the product in opsi
+; therefore please: only lower letters, no umlauts, 
+; no white space use '-' as a seperator
+Set $ProductId$       = "ajaxplorer-pydio-moz-tb-lihas"
+Set $MinimumSpace$    = "1 MB"
+; the path were we find the product after the installation
+Set $InstallDir$      = $ThunderBirdInstallPath$ + $NewUsersDir$ + "\extensions"
+Set $LicenseRequired$ = "false"
+Set $LicensePool$     = "p_" + $ProductId$
+; ----------------------------------------------------------------
+ 
+if not(HasMinimumSpace ("%SystemDrive%", $MinimumSpace$))
+	LogError "Not enough space on %SystemDrive%, " + $MinimumSpace$ + " on drive %SystemDrive% needed for " + $ProductId$
+	isFatalError
+	; Stop process and set installation status to failed
+else
+	comment "Show product picture"
+	ShowBitmap "%ScriptPath%\" + $ProductId$ + ".png" $ProductId$
+ 
+	if FileExists("%ScriptPath%\delsub32.ins")
+		comment "Start uninstall sub section"
+		Sub "%ScriptPath%\delsub32.ins"
+	endif
+ 
+	Message "Installing " + $ProductId$ + " ..."
+ 
+	comment "Copy files"
+	Files_install /32Bit
+ 
+endif
+
+[Files_install]
+copy -s "%ScriptPath%\files\target\*.*" $InstallDir$
+ 

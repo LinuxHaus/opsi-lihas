@@ -1,5 +1,5 @@
 [Package]
-version: 7
+version: 8
 depends: 
 incremental: False
 
@@ -129,6 +129,12 @@ description: Diese Option übergibt der Setup-Routine das gesetzte Passwort. Der
 values: [""]
 
 [Changelog]
+avira2013 (2013-8) testing; urgency=low
+
+  * new license key
+
+ -- Stefan Baur <lihas@lihas.de>  Tue, 14 Jul 2015 12:02:00 +0000
+
 avira2013 (2013-7) testing; urgency=low
 
   * change to Makefile-based build system && lihas naming scheme,

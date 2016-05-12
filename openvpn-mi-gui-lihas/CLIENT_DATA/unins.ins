@@ -1,0 +1,61 @@
+; Copyright (c) uib gmbh (www.uib.de)
+; This sourcecode is owned by uib gmbh
+; and published under the Terms of the General Public License.
+; credits: http://www.opsi.org/credits/
+ 
+[Actions]
+requiredWinstVersion >= "4.10.8.6"
+ 
+DefVar $MsiId$
+DefVar $UninstallProgram$
+DefVar $LogDir$
+DefVar $ExitCode$
+DefVar $ProductId$
+DefVar $InstallDir$
+DefVar $LicenseRequired$
+DefVar $LicensePool$
+DefVar $INST_SystemType$
+DefVar $EXE$
+DefVar $EXE_Bittyness$
+DefStringList $languageInfo$
+DefVar $oslanguage$
+
+set $languageInfo$ = getLocaleInfoMap
+set $oslanguage$ = getValue("language_id_2chars", $languageInfo$)
+if  not ($oslanguage$ = "de") and not($oslanguage$ = "cs")
+	Set $oslanguage$ = "en"
+endif
+
+Set $INST_SystemType$ = GetSystemType
+
+if ($INST_SystemType$ = "x86 System")
+	Set $EXE_Bittyness$ = "32"
+endif
+
+if ($INST_SystemType$ = "64 Bit System")
+	Set $EXE_Bittyness$ = "64"
+endif
+
+Set $EXE$="openvpn-mi-gui-20140918-" + lower($oslanguage$) + "-w" + $EXE_Bittyness$ + ".exe"
+
+ 
+Set $LogDir$ = "%SystemDrive%\tmp"
+ 
+; ----------------------------------------------------------------
+; - Please edit the following values                             -
+; ----------------------------------------------------------------
+Set $ProductId$       = "openvpn-mi-gui-lihas"
+Set $InstallDir$      = "%ProgramFilesSysNativeDir%\OpenVPN"
+Set $LicenseRequired$ = "false"
+Set $LicensePool$     = "p_" + $ProductId$
+; ----------------------------------------------------------------
+ 
+comment "Show product picture"
+ShowBitmap "%ScriptPath%\" + $ProductId$ + ".png" $ProductId$
+ 
+Message "Uninstalling " + $ProductId$ + " ..."
+ 
+if FileExists("%ScriptPath%\delsub.ins")
+	comment "Start uninstall sub section"
+	Sub "%ScriptPath%\delsub.ins"
+endif

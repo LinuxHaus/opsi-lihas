@@ -1,0 +1,48 @@
+[Package]
+version: 2
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: veracrypt-full-lihas
+name: VeraCrypt
+description: Full version of VeraCrypt (not the portable one) - suitable for system partition/full disk encryption and preboot authentication
+advice: 
+version: 1.16
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: setup.ins
+uninstallScript: uninstall.ins
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[ProductProperty]
+type: bool
+name: licenseaccepted
+description: Please review the license files LICENSE, NOTICE and license.txt, and indicate whether or not you accept all these licenses. Must be set to "true" to allow installation.
+default: False
+
+[ProductProperty]
+type: bool
+name: interactiveuninstallok
+description: When an encrypted system volume is detected during uninstall, do not abort but rather start the decryption process.  Warning: This is an interactive task; once the decryption is complete, some buttons need to be clicked!
+default: False
+
+[Changelog]
+veracrypt-full-lihas (1.16-2) testing; urgency=low
+
+  * added explicit REG_SZ to one key that would be turned into an
+    REG_EXPAND_SZ due to a % sign in the string
+
+ -- Stefan Baur <lihas@lihas.de>  Sat, 09 Jan 2016 02:17:00 +0000
+
+veracrypt-full-lihas (1.16-1) testing; urgency=low
+
+  * Initial package
+
+ -- Stefan Baur <lihas@lihas.de>  Mon, 28 Dec 2015 14:24:00 +0000

@@ -1,0 +1,154 @@
+; Copyright (c) uib gmbh (www.uib.de)
+; This sourcecode is owned by uib
+; and published under the Terms of the General Public License.
+; credits: http://www.opsi.org/credits/
+ 
+[Actions]
+requiredWinstVersion >= "4.10.8.6"
+ 
+DefVar $MsiId$
+DefVar $UninstallProgram$
+DefVar $LogDir$
+DefVar $ProductId$  
+DefVar $MinimumSpace$
+DefVar $InstallDir$
+DefVar $ExitCode$
+
+DefVar $ProgramGroup$
+DefVar $DesktopIcon$
+DefVar $UseSystemRestore$
+DefVar $KeyFile$
+DefVar $MailScanner$
+DefVar $Guard$
+DefVar $WebGuard$
+DefVar $ShellExtension$
+DefVar $RootKit$
+DefVar $ProActiv$
+DefVar $FireWall$
+DefVar $Password$
+DefVar $TEMP$
+DefVar $ist$
+DefVar $INST_SystemType$
+Set $INST_SystemType$ = GetSystemType
+Set $ist$ = GetRegistryStringValueSysnative("[HKLM\SOFTWARE\Microsoft\Internet Explorer] svcVersion")
+
+Set $LogDir$ = "%SystemDrive%\tmp"
+ 
+; ----------------------------------------------------------------
+; - Please edit the following values                             -
+; ----------------------------------------------------------------
+;$ProductId$ should be the name of the product in opsi
+; therefore please: only lower letters, no umlauts, 
+; no white space use '-' as a seperator
+Set $ProductId$       = "ms-ie-kb3087985-lihas"
+Set $MinimumSpace$    = "200 MB"
+; the path were we find the product after the installation
+Set $InstallDir$      = "%ProgramFilesSysNativeDir%\Internet Explorer"
+; ----------------------------------------------------------------
+ 
+if not(HasMinimumSpace ("%SystemDrive%", $MinimumSpace$))
+	LogError "Not enough space on %SystemDrive%, " + $MinimumSpace$ + " on drive %SystemDrive% needed for " + $ProductId$
+	isFatalError
+	; Stop process and set installation status to failed
+else
+	comment "Show product picture"
+	ShowBitmap "%ScriptPath%\" + $ProductId$ + ".png" $ProductId$
+ 
+	Message "Installing " + $ProductId$ + " ..."
+ 
+	comment "Start setup program"
+
+	if $INST_SystemType$ = "64 Bit System"
+		if CompareDotSeparatedNumbers("11.1.0.0",$ist$) INT >= "0"
+			Winbatch_install_eleven_x64
+		else 
+			if CompareDotSeparatedNumbers("10.1.0.0",$ist$) INT >= "0"
+				Winbatch_install_ten_x64
+			else 
+				if CompareDotSeparatedNumbers("9.1.0.0",$ist$) INT >= "0"
+					Winbatch_install_nine_x64
+				else 
+					if CompareDotSeparatedNumbers("8.1.0.0",$ist$) INT >= "0"
+						Winbatch_install_eight_x64
+					endif
+				endif
+			endif
+		endif
+	else
+		if CompareDotSeparatedNumbers("11.1.0.0",$ist$) INT >= "0"
+			Winbatch_install_eleven_x86
+		else 
+			if CompareDotSeparatedNumbers("10.1.0.0",$ist$) INT >= "0"
+				Winbatch_install_ten_x86
+			else 
+				if CompareDotSeparatedNumbers("9.1.0.0",$ist$) INT >= "0"
+					Winbatch_install_nine_x86
+				else 
+					if CompareDotSeparatedNumbers("8.1.0.0",$ist$) INT >= "0"
+						Winbatch_install_eight_x86
+					endif
+				endif
+			endif
+		endif
+	endif
+
+	Sub_check_exitcode
+ 
+	comment "Test for installation success"
+	ExitWindows /Reboot
+
+endif
+ 
+[Winbatch_install_eleven_x64]
+wusa.exe "%ScriptPath%\files\IE11-Windows6.1-KB3087985-x64.msu" /quiet /norestart
+
+[Winbatch_install_eleven_x86]
+wusa.exe "%ScriptPath%\files\IE11-Windows6.1-KB3087985-x86.msu" /quiet /norestart
+
+[Winbatch_install_ten_x64]
+wusa.exe "%ScriptPath%\files\IE10-Windows6.1-KB3087985-x64.msu" /quiet /norestart
+
+[Winbatch_install_ten_x86]
+wusa.exe "%ScriptPath%\files\IE10-Windows6.1-KB3087985-x86.msu" /quiet /norestart
+
+[Winbatch_install_nine_x64]
+wusa.exe "%ScriptPath%\files\IE9-Windows6.1-KB3087985-x64.msu" /quiet /norestart
+
+[Winbatch_install_nine_x86]
+wusa.exe "%ScriptPath%\files\IE9-Windows6.1-KB3087985-x86.msu" /quiet /norestart
+
+[Winbatch_install_eight_x64]
+wusa.exe "%ScriptPath%\files\Windows6.1-KB3087985-x64.msu" /quiet /norestart
+
+[Winbatch_install_eight_x86]
+wusa.exe "%ScriptPath%\files\Windows6.1-KB3087985-x86.msu" /quiet /norestart
+
+
+[Sub_check_exitcode]
+comment "Test for installation success via exit code"
+set $ExitCode$ = getLastExitCode
+; informations to exit codes see
+; http://msdn.microsoft.com/en-us/library/aa372835(VS.85).aspx
+; http://msdn.microsoft.com/en-us/library/aa368542.aspx
+if ($ExitCode$ = "0")
+	comment "Looks good: setup program gives exitcode zero"
+else
+	comment "Setup program gives a exitcode unequal zero: " + $ExitCode$
+	if ($ExitCode$ = "1605")
+		comment "ERROR_UNKNOWN_PRODUCT	1605	This action is only valid for products that are currently installed."
+		comment "Uninstall of a not installed product failed - no problem"
+	else
+		if ($ExitCode$ = "1641")
+			comment "looks good: setup program gives exitcode 1641"
+			comment "ERROR_SUCCESS_REBOOT_INITIATED	1641	The installer has initiated a restart. This message is indicative of a success."
+		else
+			if ($ExitCode$ = "3010")
+				comment "looks good: setup program gives exitcode 3010"
+				comment "ERROR_SUCCESS_REBOOT_REQUIRED	3010	A restart is required to complete the install. This message is indicative of a success."
+			else
+				logError "Fatal: Setup program gives an unknown exitcode unequal zero: " + $ExitCode$
+				isFatalError
+			endif
+		endif
+	endif
+endif

@@ -2,7 +2,7 @@ WGET_COMMON_OPTIONS  = -q -N
 
 PACKAGE_NAME         = rdp-enable-openfw-lihas
 VERSION              = 1.0
-OPSI_PACKAGE_VERSION = 6
+OPSI_PACKAGE_VERSION = 8
 
 TARGET               = $(PACKAGE_NAME)_$(VERSION)-$(OPSI_PACKAGE_VERSION).opsi
 
@@ -14,7 +14,7 @@ $(TARGET):
 build: $(TARGET)
 
 $(TARGET).uploaded:
-	opsi-package-manager -i $(TARGET)
+	opsi-package-manager -i -p ask $(TARGET)
 	touch $(TARGET).uploaded
 
 install: $(TARGET).uploaded

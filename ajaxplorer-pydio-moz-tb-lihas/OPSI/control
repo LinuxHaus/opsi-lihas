@@ -1,0 +1,74 @@
+[Package]
+version: 1
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: ajaxplorer-pydio-moz-tb-lihas
+name: AjaXplorer/Pydio-Plugin for Thunderbird
+description: Plugin to turn file attachments into pydio links
+advice: requires that Thunderbird is already installed
+version: 1.4.0
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: setup32.ins
+uninstallScript: unins32.ins
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[ProductProperty]
+type: unicode
+name: thunderbirdinstallpath
+multivalue: False
+editable: True
+description: Path to Thunderbird installation directory
+values: ["C:\\Program Files (x86)\\mozilla thunderbird"]
+default: ["C:\\Program Files (x86)\\mozilla thunderbird"]
+
+[ProductProperty]
+type: unicode
+name: allornewusers
+multivalue: False
+editable: True
+description: Install for all users or only for new users
+values: ["all", "new"]
+default: ["all"]
+
+[Changelog]
+ajaxplorer-pydio-moz-tb-lihas (1.0-1) testing; urgency=low
+
+  * Initial package
+
+ -- Stefan Baur <lihas@lihas.de>  Fri, 02 Oct 2015 09:31:05 +0000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,66 @@
+[Package]
+version: 1
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: rhino5sr2-lihas
+name: Rhinoceros 5SR2
+description: Rhinoceros 5SR2 64-Bit
+advice: 
+version: 5.2
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: setup64.ins
+uninstallScript: unins64.ins
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[ProductDependency]
+action: setup
+requiredProduct: dotnet-lihas
+requiredStatus: installed
+requirementType: before
+
+[ProductProperty]
+type: unicode
+name: rma_cdkey
+multivalue: False
+editable: True
+description: Key string when using standalone mode, else empty
+values: [""]
+default: [""]
+
+[ProductProperty]
+type: unicode
+name: zooserver
+multivalue: False
+editable: True
+description: DNS name or IP when using a zoo server, else empty
+values: [""]
+default: [""]
+
+[ProductProperty]
+type: unicode
+name: install_lang
+multivalue: False
+editable: True
+description: 2-character language shorthand
+values: ["DE"]
+default: ["DE"]
+
+[Changelog]
+rhino5sr2 (5.2-1) testing; urgency=low
+
+  * Initial package
+
+ -- Stefan Baur <lihas@lihas.de>  Mon, 21 Dec 2015 17:06:00 +0000
+
+
+
+

@@ -1,0 +1,486 @@
+3f4ad5aed23e96e7daa589b9351a2917  CLIENT_DATA/files/Common/i386/SolidWorks Shared/lang/german/sldwinshellextresu.dll
+8efa31e196455ade8ad0825f19561a14  CLIENT_DATA/files/program files/SolidWorks/FloXpress/lang/german/lidanimation.gif
+0e8d3d6579752aed898a99aa8c7aabc2  CLIENT_DATA/files/program files/SolidWorks/FloXpress/lang/german/ViewerRes.dll
+c3855a1293c5e713342296de510fe095  CLIENT_DATA/files/program files/SolidWorks/FloXpress/lang/german/units_conv_res_sn.dll
+ff27abb46750a7ac0248b4b891a543e5  CLIENT_DATA/files/program files/SolidWorks/FloXpress/lang/german/chemres.dll
+d78bb74e32631289037e2c35820c5989  CLIENT_DATA/files/program files/SolidWorks/FloXpress/lang/german/nikpmres.dll
+708ce1166acb462864e2e8c8f5cc2825  CLIENT_DATA/files/program files/SolidWorks/FloXpress/lang/german/fwconvergenceres.dll
+041088c8765681020d833331a6d961e3  CLIENT_DATA/files/program files/SolidWorks/FloXpress/lang/german/ngp_ui_res.dll
+b0e53ea1e39943bf29a9deccdc1c6467  CLIENT_DATA/files/program files/SolidWorks/FloXpress/lang/german/units_conv_res.dll
+964e75be2ff80d51a29f2a7cd9f8000a  CLIENT_DATA/files/program files/SolidWorks/FloXpress/lang/german/post_res.dll
+415cea6c493e24bcb4514e420f9ea912  CLIENT_DATA/files/program files/SolidWorks/FloXpress/lang/german/fwpostcontrols_res.dll
+d2def4b065329bbaa4147820c042dca4  CLIENT_DATA/files/program files/SolidWorks/FloXpress/lang/german/report_res.dll
+422894ad4146bcb031ffa861ee3915f7  CLIENT_DATA/files/program files/SolidWorks/FloXpress/lang/german/units_conv_res_ln.dll
+120c90dcde9dd321ecce2aa927f369c1  CLIENT_DATA/files/program files/SolidWorks/FloXpress/lang/german/animationfloworks.gif
+5c8e825fa4efe54d147c55a1c5429b59  CLIENT_DATA/files/program files/SolidWorks/FloXpress/lang/german/floxpress_res.dll
+71cc98b564cff1e8c374542d321e379e  CLIENT_DATA/files/program files/SolidWorks/sldutils/lang/german/thickchkswresu.dll
+5370cf1ac8104f735ea689167b9ac1cc  CLIENT_DATA/files/program files/SolidWorks/sldutils/lang/german/GtReportManagerRes.dll
+4c523fce9d7cdfb668ad042d5ddf1bef  CLIENT_DATA/files/program files/SolidWorks/FloXpress/lang/german/chembase.xml
+b8f1d1b539757ae6d4e742f40aced942  CLIENT_DATA/files/program files/SolidWorks/FloXpress/lang/german/fw03_res.dll
+4df203f31301c42c9b948251f7a1954e  CLIENT_DATA/files/program files/SolidWorks/sldutils/lang/german/CompBOMsSwResu.dll
+7b4f72b239402a378f1a853d6e3abb5a  CLIENT_DATA/files/program files/SolidWorks/sldutils/lang/german/BendSequenceSwResu.dll
+a3904d8118dca804aeb81b08a190e7da  CLIENT_DATA/files/program files/SolidWorks/sldutils/lang/german/SymCheckSwResu.Dll
+e0f5260cf6b0060529b82e90f3dcdbce  CLIENT_DATA/files/program files/SolidWorks/sldutils/lang/german/FindReplaceAnnotationSwResu.dll
+413c22b58d9486ec7a946acb7e969476  CLIENT_DATA/files/program files/SolidWorks/sldutils/lang/german/SwLoaderSwResu.dll
+1cc59bff56a7212414df9be769991d01  CLIENT_DATA/files/program files/SolidWorks/sldutils/lang/german/PowerSelectSwResu.dll
+3160841aaca7b618f3d311d789055466  CLIENT_DATA/files/program files/SolidWorks/sldutils/lang/german/GeomDiffSwResu.dll
+8cd179f82bffbffa29715812c02a61a5  CLIENT_DATA/files/program files/SolidWorks/sldutils/lang/german/FeatFrsSwResu.dll
+6022fb2e67898de379b99959bff8928b  CLIENT_DATA/files/program files/SolidWorks/sldutils/lang/german/FeatDiffSwResu.dll
+0a865abc01a6a20d46cfc2289cfdf260  CLIENT_DATA/files/program files/SolidWorks/sldutils/lang/german/GeomChkSwResu.dll
+a88993fca32b0f5b9ebc4a4c3e95799f  CLIENT_DATA/files/program files/SolidWorks/sldutils/lang/german/compdocsswresu.dll
+d0c6cbe56f700118a60d2b4afa25b007  CLIENT_DATA/files/program files/SolidWorks/sldutils/lang/german/FeatPaintSwResu.dll
+1c955ef789638a148683ee50c510ed8a  CLIENT_DATA/files/program files/SolidWorks/Simulation/CWLang/german/eulaeducational.htm
+caaeed3b4788472df8c767dbc8245ab1  CLIENT_DATA/files/program files/SolidWorks/Simulation/CWLang/german/response spectra curves.cwcur
+042642a262e539555ebbe933a171c4a0  CLIENT_DATA/files/program files/SolidWorks/Simulation/CWLang/german/eula.htm
+1400a03436b8f173b85e6ff1d4fa0dd0  CLIENT_DATA/files/program files/SolidWorks/Simulation/License/setup/i386/german/swactwizres.dll
+46d438618f89cbd159c6bd4ccae70756  CLIENT_DATA/files/program files/SolidWorks/Simulation/CWLang/german/anlmsg.rc
+58bcd66d3e0653b31d9f38ead110e2eb  CLIENT_DATA/files/program files/SolidWorks/Simulation/CWLang/german/cwResources.dll
+9d692e5ff1908bf81c48521c6a53a988  CLIENT_DATA/files/program files/SolidWorks/Simulation/CWLang/german/DgxPostRes.Dll
+a67e37b54d7c88502219f031fe0ed558  CLIENT_DATA/files/program files/SolidWorks/Simulation/CWLang/german/cosawres.dll
+08b107623a5ef1f8c55d0ad4f0139900  CLIENT_DATA/files/program files/SolidWorks/Simulation/setup/i386/german/swactwizres.dll
+ee7196e288047912fbec65088dde2033  CLIENT_DATA/files/program files/SolidWorks/Simulation/CWLang/german/sample sae curves.cwcur
+8d3543a0dc38916a0bf62f80103acb39  CLIENT_DATA/files/program files/SolidWorks/Simulation/CWLang/german/eulastudent.htm
+bb1c58fd7c660d61a2a77ae0267deb76  CLIENT_DATA/files/program files/SolidWorks/Simulation/CWLang/german/cosmosworks curves.cwcur
+6f8cb69cc5588ac87dab8d25c9529583  CLIENT_DATA/files/program files/SolidWorks/Simulation/CWLang/german/cwPostDlgRes.dll
+80ae02bf5b2bd4665d360ec72a621b81  CLIENT_DATA/files/program files/SolidWorks/Simulation/CWLang/german/cwquicktipres.dll
+54bdef77fb4e34ac25e83510b461c28e  CLIENT_DATA/files/program files/SolidWorks/Simulation/CWLang/german/Cosreportres.Dll
+16bbd90e0a37643e0f77d8e6aecc176a  CLIENT_DATA/files/program files/SolidWorks/lang/german/vcwlineardynamics.chm
+88c65d3b483cf32376517e1b517516d8  CLIENT_DATA/files/program files/SolidWorks/lang/german/ot3dsketchingplanes.chm
+e7e0d82d92fc77c43e74c011227c8917  CLIENT_DATA/files/program files/SolidWorks/lang/german/Piping BOM Template.xls
+0a99ed5692eddb814da6708cdb86c2ab  CLIENT_DATA/files/program files/SolidWorks/lang/german/otdriveworksxpress.chm
+6705b6cf80eefe6885645789c2a3e74a  CLIENT_DATA/files/program files/SolidWorks/lang/german/sustainability_assembly_report.dot
+5c07d8f2a9f5aa5bf311b33b6a6e3ddb  CLIENT_DATA/files/program files/SolidWorks/lang/german/materials_english.txt
+45d65b0174358b2c513c8fb55b576efe  CLIENT_DATA/files/program files/SolidWorks/sldrx/lang/german/sldrxresu.dll
+aa0ac0b635e2c705314b86e4ef9e5f56  CLIENT_DATA/files/program files/SolidWorks/lang/german/punchtable-standard.sldpuntbt
+f99e4cb9c7621d9f7e1320619c77f9bb  CLIENT_DATA/files/program files/SolidWorks/lang/german/bom-costing.sldbomtbt
+2c36f3b932edaba6cd1a48708233d59c  CLIENT_DATA/files/program files/SolidWorks/lang/german/otdimxperttutorials.chm
+4603bc1caf94f58af77ceac5c24fc32e  CLIENT_DATA/files/program files/SolidWorks/lang/german/bom-vendor.sldbomtbt
+927b66411b39900cc140f3d8d8dadebd  CLIENT_DATA/files/program files/SolidWorks/lang/german/onlinehelp-dita.css
+fce0b62db7139d6b513e97f617ac535f  CLIENT_DATA/files/program files/SolidWorks/lang/german/otuimousegestures.chm
+7060112fe54c5dc027b1e9b4c2f34309  CLIENT_DATA/files/program files/SolidWorks/lang/german/swutilities.chm
+1d31b847df7e6f3d3b068a549c396451  CLIENT_DATA/files/program files/SolidWorks/lang/german/sldseresu.dll
+b8d42c379b0ad5a9a8428cb74f8b25cf  CLIENT_DATA/files/program files/SolidWorks/lang/german/otwhatsnewtutorials.chm
+a9fb97bd606ed12f2d2cd6895121acce  CLIENT_DATA/files/program files/SolidWorks/lang/german/OTfeatureworks.chm
+df572f210c9e9d7e5b64d883e0e06cbb  CLIENT_DATA/files/program files/SolidWorks/lang/german/eulape.htm
+9218c7f444d2dd3f980c72b3752726ea  CLIENT_DATA/files/program files/SolidWorks/lang/german/eula3dcc.htm
+645d2777717415316d0ab2c6dd52bbd5  CLIENT_DATA/files/program files/SolidWorks/lang/german/weldmentprofiles.txt
+9d825e9ca28c120d3332e542b2dd574c  CLIENT_DATA/files/program files/SolidWorks/lang/german/otadvancedapi.chm
+76bda8b23c5cb3578aebe92e04a34e85  CLIENT_DATA/files/program files/SolidWorks/lang/german/OTAutoCADOvw.Chm
+712f5c4b7261b88d616f08e4910cea0d  CLIENT_DATA/files/program files/SolidWorks/lang/german/bom-stock size.sldbomtbt
+7e665213a240b849b8ad7e38b433c077  CLIENT_DATA/files/program files/SolidWorks/lang/german/bom-standard.sldbomtbt
+fca2a0c16e14c88c938afc15192ecbff  CLIENT_DATA/files/program files/SolidWorks/lang/german/trans.xml
+509ea6fb56364cdf3c0c64f906258ab6  CLIENT_DATA/files/program files/SolidWorks/lang/german/Holewzd.idx
+a8d894487496a38927af5063463b5a9c  CLIENT_DATA/files/program files/SolidWorks/lang/german/RTCSResourcesLib.dll
+992178918928a5e732aa618f8c2df18f  CLIENT_DATA/files/program files/SolidWorks/lang/german/copyrights.htm
+70bdcd092636d87396cdef77cbbbe823  CLIENT_DATA/files/program files/SolidWorks/lang/german/bom-weldment cut list.sldbomtbt
+d810891817014ddfea0ad32196ccc45d  CLIENT_DATA/files/program files/SolidWorks/lang/german/sldassybomres.dll
+602f05a6c4e4b87180e1449ef5f09fb4  CLIENT_DATA/files/program files/SolidWorks/lang/german/otformingtools.chm
+9a3540e056ea266eaf2d2a30f5a5b825  CLIENT_DATA/files/program files/SolidWorks/lang/german/OTAdvDesign.chm
+24dacabd5b2c06da68732086ca93399e  CLIENT_DATA/files/program files/SolidWorks/lang/german/swmotiondefaults.ini
+78936991af4123952e77850107c130ba  CLIENT_DATA/files/program files/SolidWorks/lang/german/otweldments.chm
+1c955ef789638a148683ee50c510ed8a  CLIENT_DATA/files/program files/SolidWorks/lang/german/eulaeducational.htm
+5e866f9142b4eb9a7e90081e1e030675  CLIENT_DATA/files/program files/SolidWorks/lang/german/sldresu.dll
+008f8fb0d03e6742907651f42c26c862  CLIENT_DATA/files/program files/SolidWorks/lang/german/sldxltrresu.dll
+0f88104b8d61867276d19fc2f5ea0056  CLIENT_DATA/files/program files/SolidWorks/lang/german/swtutorial.chm
+d99c2b2296db2b921a1108aedb7015b9  CLIENT_DATA/files/program files/SolidWorks/lang/german/TolAnalyst.chm
+895a5f6cd8e9ead84f1a93b2eb5449e7  CLIENT_DATA/files/program files/SolidWorks/lang/german/otapicsharp.chm
+7eca1ddb696d479b6d711b793c3d1d7c  CLIENT_DATA/files/program files/SolidWorks/lang/german/swshellfilelauncherresu.dll
+c0c0a842914cacb2ee43417a6045c3f6  CLIENT_DATA/files/program files/SolidWorks/lang/german/eulape.txt
+d1a830b6474a535d7ca77a410c4dc7e6  CLIENT_DATA/files/program files/SolidWorks/lang/german/lca_chart_low_final.jpg
+eef4691784491536599ba6dfd27be707  CLIENT_DATA/files/program files/SolidWorks/lang/german/bom-circuit-summary.sldbomtbt
+c08f56c993832e463d77c254cf09c92b  CLIENT_DATA/files/program files/SolidWorks/lang/german/sldautotraceru.dll
+905041261071e45b02ddf8134b5824d2  CLIENT_DATA/files/program files/SolidWorks/lang/german/MaterialInteraction.txt
+ea380534a610da9153837d2aaf600920  CLIENT_DATA/files/program files/SolidWorks/lang/german/otassemblyvisualization.chm
+c591e7b53df11fa9d05ada33520c9a5d  CLIENT_DATA/files/program files/SolidWorks/lang/german/floxpress.chm
+f2afc599e6531666103793b5c3060d85  CLIENT_DATA/files/program files/SolidWorks/lang/german/sustainability_report.dot
+b78df58c6621e586e602330e4a59906f  CLIENT_DATA/files/program files/SolidWorks/lang/german/OTAssemblyMates.chm
+90eb795344e9b2bff3ad0998ac15475d  CLIENT_DATA/files/program files/SolidWorks/lang/german/vpsim.chm
+6d92f5de7ffe932b817c9bbbcb3a5d19  CLIENT_DATA/files/program files/SolidWorks/lang/german/google_copyright.htm
+d4ce2b8d943440981dfe24021fdd277b  CLIENT_DATA/files/program files/SolidWorks/lang/german/otdesignchecker.chm
+5b4162e2e49960b8527a1ab33f063ee8  CLIENT_DATA/files/program files/SolidWorks/lang/german/OTDesignTable.chm
+46045cedf1b7ff6bc7c8d23d84245714  CLIENT_DATA/files/program files/SolidWorks/lang/german/Sldphotoshopresu.Dll
+06fc31a8f2ce0589179d057946086a23  CLIENT_DATA/files/program files/SolidWorks/lang/german/materialinteraction_metric.txt
+13a948519f19896d225a2927502a51fa  CLIENT_DATA/files/program files/SolidWorks/lang/german/Sldwks.ptn
+58c820b98529b96518582c1316c0cfbb  CLIENT_DATA/files/program files/SolidWorks/lang/german/metmat.mdb
+0e3c1f12c549b78d6e69df58669a2942  CLIENT_DATA/files/program files/SolidWorks/lang/german/eulaprint3d.htm
+0a9c67ac68880a919631180486ac8f92  CLIENT_DATA/files/program files/SolidWorks/lang/german/bomtemp-all.xls
+439bec641b35a8f54c2b924a409d8808  CLIENT_DATA/files/program files/SolidWorks/lang/german/OTPatternFeatures.chm
+e8355a9947d63717f2a646fe89564b12  CLIENT_DATA/files/program files/SolidWorks/lang/german/logo.gif
+2764cc049e09ad778f783f85d0345caa  CLIENT_DATA/files/program files/SolidWorks/lang/german/eulaeducational.txt
+d32045a00f26959585f407d9a990dae4  CLIENT_DATA/files/program files/SolidWorks/lang/german/otassemblymotion.chm
+98746438025993b2f9697c4bc5aae631  CLIENT_DATA/files/program files/SolidWorks/lang/german/eulastudent.txt
+6b39e01ccf463b56527ed9db117ec42c  CLIENT_DATA/files/program files/SolidWorks/lang/german/sldCostingTemplateEditorResU.dll
+905041261071e45b02ddf8134b5824d2  CLIENT_DATA/files/program files/SolidWorks/lang/german/materialinteraction_english.txt
+693fbf8559f79188ba3f7564e6448362  CLIENT_DATA/files/program files/SolidWorks/lang/german/sldpdfresu.dll
+16c4e7511a440910d66175baa5cf5acf  CLIENT_DATA/files/program files/SolidWorks/lang/german/OTedraw.chm
+40ca93205e0b9e7b6a34cd0e7c6d2937  CLIENT_DATA/files/program files/SolidWorks/lang/german/sldjpegresu.dll
+067e370dfc37d0e82014244196848646  CLIENT_DATA/files/program files/SolidWorks/lang/german/adobe copyright.htm
+7e20acc5efc419efe45b8c2a5fec5108  CLIENT_DATA/files/program files/SolidWorks/lang/german/eulaxw.txt
+6319ad2fe3ae027c00fb362d4c0f1166  CLIENT_DATA/files/program files/SolidWorks/lang/german/mfresu.dll
+82014ce009efceb50819e16bfd236803  CLIENT_DATA/files/program files/SolidWorks/lang/german/materials_metric.txt
+cce289519b9815b71d1e71564cbeb85e  CLIENT_DATA/files/program files/SolidWorks/lang/german/install_guide.pdf
+daba9d077706ace776e4c0ca80b46542  CLIENT_DATA/files/program files/SolidWorks/lang/german/costingreport_sheetmetal.dot
+e2d9f4a39437c516e47e6b4f61eb70e8  CLIENT_DATA/files/program files/SolidWorks/lang/german/introsw.pdf
+f6a896de25ee767223926f7c02acbf54  CLIENT_DATA/files/program files/SolidWorks/lang/german/bomtemp-weight.xls
+e6c4becde15fd54ef63b2bc2b34ba2ec  CLIENT_DATA/files/program files/SolidWorks/lang/german/vcwlinear.chm
+4857ce3e4c7047dadc76973b476f649c  CLIENT_DATA/files/program files/SolidWorks/lang/german/calloutformat.txt
+2270bdf952578a358bae071120cd5f41  CLIENT_DATA/files/program files/SolidWorks/lang/german/hole table--sizes combined--letters.sldholtbt
+c7ebdafff59fc78f746a81d5f5bb953c  CLIENT_DATA/files/program files/SolidWorks/lang/german/pmdictionary.xaml
+967f454846104d3d4fc176537d5598ca  CLIENT_DATA/files/program files/SolidWorks/lang/german/sldwks2003.ptn
+a4affdc90c5d51655780647ab007a10f  CLIENT_DATA/files/program files/SolidWorks/lang/german/fworks.chm
+c1d2b2b42e67df0bdf40a3bab498c0c7  CLIENT_DATA/files/program files/SolidWorks/lang/german/journal.docx
+92890810af028822ca6235b4b0ff0d0b  CLIENT_DATA/files/program files/SolidWorks/lang/german/cworks.chm
+8b185c86e2875eb7af3b3c34341d341f  CLIENT_DATA/files/program files/SolidWorks/lang/german/OTAPIVBA.chm
+c70368d44104c878e3cb71aabb9b717f  CLIENT_DATA/files/program files/SolidWorks/lang/german/eulaeval.txt
+042642a262e539555ebbe933a171c4a0  CLIENT_DATA/files/program files/SolidWorks/lang/german/eula.htm
+30ab6d7278d4c0c63479695ef802061e  CLIENT_DATA/files/program files/SolidWorks/lang/german/otmoldedproductdesignadvanced.chm
+43177794ba9858e683fe6891ef4b6e8d  CLIENT_DATA/files/program files/SolidWorks/lang/german/motionstudies.chm
+d43e18aa7c7a54e0f028aecf3d5abbac  CLIENT_DATA/files/program files/SolidWorks/lang/german/OTfillets.chm
+ffb2baf42359879b7022debe8677e160  CLIENT_DATA/files/program files/SolidWorks/lang/german/otsustainability.chm
+e385e95aee95a89dacf81b2cb2053440  CLIENT_DATA/files/program files/SolidWorks/lang/german/Swlines.lin
+7d83398623acc71f2282f2a980ac9850  CLIENT_DATA/files/program files/SolidWorks/lang/german/otroutingelectrical.chm
+122178170f89b99d9536612619d2fd82  CLIENT_DATA/files/program files/SolidWorks/lang/german/install_guide.chm
+b53b4d17ed64ba0c83e5eacd7d734750  CLIENT_DATA/files/program files/SolidWorks/lang/german/sldfltrresu.dll
+0053fac06f2f6ef57381360f428760e2  CLIENT_DATA/files/program files/SolidWorks/lang/german/otfloxpress.chm
+6f421edad9bdac5c34a304ca3fa92567  CLIENT_DATA/files/program files/SolidWorks/lang/german/graphics/mapping/decals.dat
+c918326bc8bf97c82db5cb87e2c1ad57  CLIENT_DATA/files/program files/SolidWorks/lang/german/graphics/mapping/scenes.dat
+59d878efd16c1e728612b55a5ef75269  CLIENT_DATA/files/program files/SolidWorks/lang/german/graphics/mapping/templates.dat
+5e78f6a81b816352214a72304bf8e3ca  CLIENT_DATA/files/program files/SolidWorks/lang/german/graphics/mapping/materials.dat
+02751a24a2b5c70093afb46850ce2a30  CLIENT_DATA/files/program files/SolidWorks/lang/german/graphics/mapping/pw_materials.xml
+975073835ca6f7f56040726550e46257  CLIENT_DATA/files/program files/SolidWorks/lang/german/graphics/mapping/zebraenvironment.dat
+48a13d5de49c3aa0ce33fc7941df433a  CLIENT_DATA/files/program files/SolidWorks/lang/german/OTLesson1.chm
+58c820b98529b96518582c1316c0cfbb  CLIENT_DATA/files/program files/SolidWorks/lang/german/ddmmat.mdb
+be3499b31289e593b98467a1d1fba8cd  CLIENT_DATA/files/program files/SolidWorks/lang/german/cwlineardynamics.chm
+c45dc82853d212e8440db1c96bb1e587  CLIENT_DATA/files/program files/SolidWorks/lang/german/onlinehelp.css
+5b04f5507232d918ef5baeca74671007  CLIENT_DATA/files/program files/SolidWorks/lang/german/gifford_copyright.htm
+fcf0b0fe14ed380d97fd025ff8f10c8e  CLIENT_DATA/files/program files/SolidWorks/lang/german/OTMoldDesign.chm
+a9185d5c97f902f14b48b1891dc7ccff  CLIENT_DATA/files/program files/SolidWorks/lang/german/Sheetmetal Bend Tables/kfactor base bend table.xls
+1889eeef2e79be0c8d884ce1923e3640  CLIENT_DATA/files/program files/SolidWorks/lang/german/Sheetmetal Bend Tables/base bend table.xls
+a53c27ee30445a3b617e08c31f21bb93  CLIENT_DATA/files/program files/SolidWorks/lang/german/Sheetmetal Bend Tables/metric base bend table.xls
+17aa240d4095361b6fa1dece8da85dc7  CLIENT_DATA/files/program files/SolidWorks/lang/german/Sheetmetal Bend Tables/bend deduction/table1 - bend deduction.xls
+144f1aa9ae79e3c4c8ed4aab8f9d4c1d  CLIENT_DATA/files/program files/SolidWorks/Simulation/CWLang/german/Coswres.Dll
+389900cb78ddaa832284dc27a10db28f  CLIENT_DATA/files/program files/SolidWorks/lang/german/Sheetmetal Bend Tables/bend deduction/table3 - bend deduction.xls
+8996f2ffd8eadd56d292845771f4a2b9  CLIENT_DATA/files/program files/SolidWorks/lang/german/Sheetmetal Bend Tables/bend allowance/table1 - bend allowance.xls
+0cb8d2eb5b9ead6c4844ddc802c5ab3f  CLIENT_DATA/files/program files/SolidWorks/lang/german/Sheetmetal Bend Tables/bend allowance/table3 - bend allowance.xls
+fd108f7a82d3599b66eb271550523cf7  CLIENT_DATA/files/program files/SolidWorks/lang/german/Sheetmetal Bend Tables/bend deduction/table2 - bend deduction.xls
+04aeb6e8c855c7db83edf6df08ff805d  CLIENT_DATA/files/program files/SolidWorks/lang/german/Sheetmetal Bend Tables/bend_calculation.xls
+3cd78f5cf11e6ebe9cdf652601b6006d  CLIENT_DATA/files/program files/SolidWorks/lang/german/Sheetmetal Bend Tables/bend allowance/table2 - bend allowance.xls
+8b01aff1869d1b0f0fb5e22d29843739  CLIENT_DATA/files/program files/SolidWorks/lang/german/Sheetmetal Bend Tables/bend allowance/table4 - metric bend allowance.xls
+1f135c189741722a320067dd9cecbc17  CLIENT_DATA/files/program files/SolidWorks/lang/german/otapivbnet.chm
+2a7da0588201951e5cad8a7cc41268ff  CLIENT_DATA/files/program files/SolidWorks/lang/german/material.chm
+9869cd012ab1e317dbae40ff80803532  CLIENT_DATA/files/program files/SolidWorks/lang/german/costingreport_multibody.dot
+f2e625de302832c11eeb9acde8e44425  CLIENT_DATA/files/program files/SolidWorks/lang/german/Sheetmetal Bend Tables/sample.btl
+a2c770c00896f21242a9e7eaa48767db  CLIENT_DATA/files/program files/SolidWorks/lang/german/sldairesu.dll
+281eb71f36f54ce984610f3ff64fce60  CLIENT_DATA/files/program files/SolidWorks/lang/german/Sldtagspropscommonres.dll
+838f3231afb3444e2d4e752f19096bff  CLIENT_DATA/files/program files/SolidWorks/lang/german/otsimmixedmeshdesigncheck.chm
+24dacabd5b2c06da68732086ca93399e  CLIENT_DATA/files/program files/SolidWorks/lang/german/dyndes.ini
+0c53f7a80b8b677d014af6c4b4ee87dc  CLIENT_DATA/files/program files/SolidWorks/lang/german/bomtemp-stocksize.xls
+cfff173b3af9f09ec972bd48fc7d0a5f  CLIENT_DATA/files/program files/SolidWorks/lang/german/swengineering.dic
+a720a3f21509460f40c4783cf92326ac  CLIENT_DATA/files/program files/SolidWorks/lang/german/Tutorial/assem.asmdot
+1c2b7e6b029616c4b82ef2f9651e577a  CLIENT_DATA/files/program files/SolidWorks/lang/german/Tutorial/part.prtdot
+9fdfdf71bf3f4af44b4020034f71988e  CLIENT_DATA/files/program files/SolidWorks/lang/german/Tutorial/draw.drwdot
+f34734ac24be297e7d6c860181722919  CLIENT_DATA/files/program files/SolidWorks/lang/german/swGreenMatResU.dll
+04a75a4c46ca46ef743ce09e5d5b81aa  CLIENT_DATA/files/program files/SolidWorks/lang/german/cut list.sldwldtbt
+476c6d3ce32d1677eb1c5391d813fe94  CLIENT_DATA/files/program files/SolidWorks/lang/german/quicktips.chm
+2d3ae3ef7eca5f854d5c003c2530b33f  CLIENT_DATA/files/program files/SolidWorks/lang/german/DsgnChkRptViewResu.dll
+6a86ff3364ee6f045d710cd8a0d9528f  CLIENT_DATA/files/program files/SolidWorks/lang/german/otsimfatiguecheckplot.chm
+aa1f13258fccad836567f144a2ee3717  CLIENT_DATA/files/program files/SolidWorks/lang/german/cwfatigue.chm
+6f5ae5baea19ae99bcde6a63006fe522  CLIENT_DATA/files/program files/SolidWorks/lang/german/eulaxw.htm
+ab78b15d589c86ad7b6cd71257df40cd  CLIENT_DATA/files/program files/SolidWorks/lang/german/swinstres.dll
+ef5b06220972f8a4c9092317aa84720d  CLIENT_DATA/files/program files/SolidWorks/lang/german/CostingReport_Machining.dot
+43e779fd0b64c4d445c0f3e3051a777c  CLIENT_DATA/files/program files/SolidWorks/lang/german/bom-connector.sldbomtbt
+ede899a5a5ee220f8f9b8a1c4d079f2e  CLIENT_DATA/files/program files/SolidWorks/lang/german/oemresu.dll
+54b58614e57f4eeabc1df6a4259cf7d4  CLIENT_DATA/files/program files/SolidWorks/lang/german/sldmaterials/shader_mapping.dat
+60bfdb59b9316fa808a768a79273a7bb  CLIENT_DATA/files/program files/SolidWorks/lang/german/sldmaterials/sustainability extras.sldmat
+f79bb2599ecebf8efd07e7a82aad6195  CLIENT_DATA/files/program files/SolidWorks/lang/german/sldmaterials/SolidWorks DIN Materials.sldmat
+a16d67aad20fc92186d63e80ca745f3b  CLIENT_DATA/files/program files/SolidWorks/lang/german/sldmaterials/solidworks materials.sldmat
+ad81be57fddc2f6c7d84a8d0d6adea37  CLIENT_DATA/files/program files/SolidWorks/lang/german/sldmdtresu.dll
+4f0c5a7103efd956e317735d1e563f7a  CLIENT_DATA/files/program files/SolidWorks/lang/german/OTLesson2.chm
+bd947a3a3e5b259079e154d34ee9d367  CLIENT_DATA/files/program files/SolidWorks/lang/german/ottolanalysttutorials.chm
+c6b10b6b3f808eef53c8f63cbdfdc5da  CLIENT_DATA/files/program files/SolidWorks/lang/german/bendtable-standard.sldbndtbt
+b5b9ef83ce1d5d6def8c5ea97fd62a39  CLIENT_DATA/files/program files/SolidWorks/lang/german/hole table--tags combined--letters.sldholtbt
+f283597e6de96be5f61dcec75790dfb3  CLIENT_DATA/files/program files/SolidWorks/lang/german/sldWeldmentTreeViewResU.dll
+d4e5363f0558a83d619114f31a7485cb  CLIENT_DATA/files/program files/SolidWorks/lang/german/sldrulesresu.dll
+958ac63b863de701fca3fe9cbd15c873  CLIENT_DATA/files/program files/SolidWorks/lang/german/otcosmosmotion.chm
+6a5edda7a5704736033009733393d3eb  CLIENT_DATA/files/program files/SolidWorks/lang/german/compare_configurations_report.dot
+0c5727d6daccf09a967491451158ee5d  CLIENT_DATA/files/program files/SolidWorks/lang/german/weldment profiles/ansi inch/angle iron/2 x 2 x 0.125.sldlfp
+a47b72e703c67bb6812af3fcba8629b8  CLIENT_DATA/files/program files/SolidWorks/lang/german/weldment profiles/ansi inch/angle iron/1 x 1 x 0.125.sldlfp
+9a8b6954d8c2efaddba37ef811302c81  CLIENT_DATA/files/program files/SolidWorks/lang/german/weldment profiles/ansi inch/angle iron/3 x 2 x 0.25.sldlfp
+410283c5b34f1e43c0cbf010aaf24974  CLIENT_DATA/files/program files/SolidWorks/lang/german/weldment profiles/ansi inch/square tube/4 x 4 x 0.25.sldlfp
+694909023102fd31bdab3862cb86eb0c  CLIENT_DATA/files/program files/SolidWorks/lang/german/weldment profiles/ansi inch/square tube/2 x 2 x 0.25.sldlfp
+c8c8a9aac71ad46c5e432a57a09c9e2d  CLIENT_DATA/files/program files/SolidWorks/lang/german/weldment profiles/ansi inch/square tube/3 x 3 x 0.25.sldlfp
+bfb943f9539da6546670f3e8bf68ae14  CLIENT_DATA/files/program files/SolidWorks/lang/german/weldment profiles/ansi inch/pipe/0.5 sch 40.sldlfp
+976ef041725900c350f590264f82c364  CLIENT_DATA/files/program files/SolidWorks/lang/german/weldment profiles/ansi inch/pipe/1.0 sch 40.sldlfp
+59d1a36edd3edded781c1758771f13fe  CLIENT_DATA/files/program files/SolidWorks/lang/german/weldment profiles/ansi inch/pipe/1.5 sch 40.sldlfp
+eb2ffa604cf885444a02b311147c8451  CLIENT_DATA/files/program files/SolidWorks/lang/german/weldment profiles/ansi inch/rectangular tube/4 x 2 x 0.25.sldlfp
+ea68fb459b13098d72e6b355002bbc20  CLIENT_DATA/files/program files/SolidWorks/lang/german/weldment profiles/ansi inch/rectangular tube/4 x 3 x 0.25.sldlfp
+d9b742d6bd573a1f54c08c788b908014  CLIENT_DATA/files/program files/SolidWorks/lang/german/weldment profiles/ansi inch/rectangular tube/3 x 2 x 0.25.sldlfp
+b531a999497cb4787da3edb9f97f8d3c  CLIENT_DATA/files/program files/SolidWorks/lang/german/weldment profiles/ansi inch/c channel/3 x 5.sldlfp
+a415445bde2ec728b109c30772c7373d  CLIENT_DATA/files/program files/SolidWorks/lang/german/weldment profiles/ansi inch/c channel/4 x 5.4.sldlfp
+35664b583e786d3e8a4fd2c3d77b9e97  CLIENT_DATA/files/program files/SolidWorks/lang/german/weldment profiles/ansi inch/c channel/5 x 6.7.sldlfp
+e03f812ca1c45c999c9c8fb715a733e4  CLIENT_DATA/files/program files/SolidWorks/lang/german/weldment profiles/ansi inch/s section/5 x 10.sldlfp
+b378e6cba77041d3ab574f4ef59be79b  CLIENT_DATA/files/program files/SolidWorks/lang/german/weldment profiles/ansi inch/s section/4 x 7.7.sldlfp
+c1bbb16bc609b8d4f7703d5e26af40b3  CLIENT_DATA/files/program files/SolidWorks/lang/german/weldment profiles/ansi inch/s section/3 x 5.7.sldlfp
+83df8f00d30abfe6406391d190a9b051  CLIENT_DATA/files/program files/SolidWorks/lang/german/weldment profiles/iso/angle iron/35 x 35 x 5.sldlfp
+4efdabf70b0df1a9fcc64e1beb882d26  CLIENT_DATA/files/program files/SolidWorks/lang/german/weldment profiles/iso/angle iron/25 x 25 x 4.sldlfp
+2444565ffa59dda6863547b7a26006c7  CLIENT_DATA/files/program files/SolidWorks/lang/german/weldment profiles/iso/angle iron/20 x 20 x 3.sldlfp
+5715c0c10863cfeffde45b1215366c74  CLIENT_DATA/files/program files/SolidWorks/lang/german/weldment profiles/iso/sb beam/100 x 8.sldlfp
+eb75678f277bb45b7d73b00d9fcdd37e  CLIENT_DATA/files/program files/SolidWorks/lang/german/weldment profiles/iso/sb beam/80 x 6.sldlfp
+7c6c69d74cb9e8b7bc68861cc7eef83c  CLIENT_DATA/files/program files/SolidWorks/lang/german/weldment profiles/iso/sb beam/120 x 12.sldlfp
+7228b4591b89c155599a8abec29785c1  CLIENT_DATA/files/program files/SolidWorks/lang/german/weldment profiles/iso/square tube/40 x 40 x 4.sldlfp
+48fe7744bc791101faf389e05ade630b  CLIENT_DATA/files/program files/SolidWorks/lang/german/weldment profiles/iso/square tube/80 x 80 x 5.sldlfp
+ae5e1b6bb9b0aca749c70da3b31cb032  CLIENT_DATA/files/program files/SolidWorks/lang/german/weldment profiles/iso/square tube/20 x 20 x 2.sldlfp
+80caa220d791c8b54acc1cec2660e86b  CLIENT_DATA/files/program files/SolidWorks/lang/german/weldment profiles/iso/pipe/26.9 x 3.2.sldlfp
+61afffb27658061d62efb7ac53968fa4  CLIENT_DATA/files/program files/SolidWorks/lang/german/weldment profiles/iso/pipe/33.7 x 4.0.sldlfp
+3e6c2d67524580e2627b0140761d3d0c  CLIENT_DATA/files/program files/SolidWorks/lang/german/weldment profiles/iso/square tube/30 x 30 x 2.6.sldlfp
+72bf500a138a4967c4596c68b4d7467c  CLIENT_DATA/files/program files/SolidWorks/lang/german/weldment profiles/iso/rectangular tube/60 x 40 x 3.2.sldlfp
+e7fe20e893ee2412b9bad47467778957  CLIENT_DATA/files/program files/SolidWorks/lang/german/weldment profiles/iso/rectangular tube/120 x 80 x 8.sldlfp
+ef8fbb2fae9b68910be16c2a6907cd3d  CLIENT_DATA/files/program files/SolidWorks/lang/german/weldment profiles/iso/pipe/21.3 x 2.3.sldlfp
+20d317dd91e8a1c8666e1a4a9b25f145  CLIENT_DATA/files/program files/SolidWorks/lang/german/weldment profiles/iso/rectangular tube/70 x 40 x 5.sldlfp
+3ae173a0ee175be8c23970114954d285  CLIENT_DATA/files/program files/SolidWorks/lang/german/weldment profiles/iso/c channel/120 x 12.sldlfp
+d3e9462e3654acd5b32e753061841e1a  CLIENT_DATA/files/program files/SolidWorks/lang/german/weldment profiles/iso/c channel/100 x 10.sldlfp
+e6da35de64005b08881e49a3c0e7b34a  CLIENT_DATA/files/program files/SolidWorks/lang/german/slddwgresu.dll
+559544d5c664862647ea4d052c4838fc  CLIENT_DATA/files/program files/SolidWorks/lang/german/acadhelp.chm
+480f619e4837d9b8d5273369370cf926  CLIENT_DATA/files/program files/SolidWorks/lang/german/title block.sldtbt
+27433ed04c96c6f2351d144368babf78  CLIENT_DATA/files/program files/SolidWorks/lang/german/weldment profiles/iso/rectangular tube/50 x 30 x 2.6.sldlfp
+d8c5405263cf463881bb1bea7d03f3bb  CLIENT_DATA/files/program files/SolidWorks/lang/german/OTAdvancedDrawings.chm
+1799e505c596ca9c66724627a644bbf1  CLIENT_DATA/files/program files/SolidWorks/lang/german/otcustomization.chm
+fde083a6dfdb2870f0efa1bf1f762d89  CLIENT_DATA/files/program files/SolidWorks/lang/german/standard hole table--letters.sldholtbt
+8ff9588460602c438195288ef0304e47  CLIENT_DATA/files/program files/SolidWorks/lang/german/swGreenTPResU.dll
+477be6e9a92400bd9bd8081336da6b23  CLIENT_DATA/files/program files/SolidWorks/lang/german/sldinventorresu.dll
+727e36a5000f5ba222057144b05a0569  CLIENT_DATA/files/program files/SolidWorks/lang/german/no zone column.sldrevtbt
+6d82ecd9c6e3a5106f09a384f8eaf2d7  CLIENT_DATA/files/program files/SolidWorks/lang/german/sldsearchcommonres.dll
+6f02ed8aabd415aeea2fe09b65241f85  CLIENT_DATA/files/program files/SolidWorks/lang/german/sustainability.chm
+7b0838ef8fe8d8dc98b087a223368717  CLIENT_DATA/files/program files/SolidWorks/lang/german/slderrresu.dll
+a8f8e8eb769bc8dc3f17ee347599181c  CLIENT_DATA/files/program files/SolidWorks/lang/german/UtlReportViewerSwResu.dll
+b0f37d1129bd90b9d2c49a8da24c4ffa  CLIENT_DATA/files/program files/SolidWorks/lang/german/relnotes.htm
+254022cff8a4eeb4eb36d3a6c9652e94  CLIENT_DATA/files/program files/SolidWorks/lang/german/otphotoview360.chm
+6adac7a4e0d6a0ec77f862dfb5cd67c1  CLIENT_DATA/files/program files/SolidWorks/lang/german/sldWeldmentTaskpaneResU.dll
+9af02079877b2018c4c4a86577fa7f39  CLIENT_DATA/files/program files/SolidWorks/lang/german/otsurfaces.chm
+1cb28a7b44214353e2e2af474c44c981  CLIENT_DATA/files/program files/SolidWorks/lang/german/sldprocmonresu.dll
+baf5862f120dc2136a186df095a65c66  CLIENT_DATA/files/program files/SolidWorks/lang/german/otsimbikedesignevaluation.chm
+60c8ee4c2ed72c82d4d9679d6ae62873  CLIENT_DATA/files/program files/SolidWorks/lang/german/cosmosxpresshelp.chm
+9e8291951c9634288221951d9fe0d4c2  CLIENT_DATA/files/program files/SolidWorks/lang/german/bomtemp.xls
+a303d01d8b15c0bdd76ff01c790a9b25  CLIENT_DATA/files/program files/SolidWorks/lang/german/sldsatresu.dll
+91b9227557e6a10861da8dcd7d1aee81  CLIENT_DATA/files/program files/SolidWorks/lang/german/Costing templates/sheetmetaltemplate_default(metric).sldcts
+72a2029dc725ed81bc0816edb113d2b7  CLIENT_DATA/files/program files/SolidWorks/lang/german/Costing templates/machiningtemplate_default(metric).sldctm
+672823a9114db099e30004851e699a4d  CLIENT_DATA/files/program files/SolidWorks/lang/german/Costing templates/multibodytemplate_default(metric).sldctc
+55397a29f30c60b1501b96b926ed81ec  CLIENT_DATA/files/program files/SolidWorks/lang/german/weldment profiles/iso/c channel/80 x 8.sldlfp
+0a154d63fc1252ca221c5ed9a53de309  CLIENT_DATA/files/program files/SolidWorks/lang/german/Costing templates/machiningtemplate_default(englishstandard).sldctm
+e540661f190c2ac147e12bb8abe94354  CLIENT_DATA/files/program files/SolidWorks/lang/german/Costing templates/multibodytemplate_default(englishstandard).sldctc
+aadb028bd3c99632bff82e7cd407aaa9  CLIENT_DATA/files/program files/SolidWorks/lang/german/Costing templates/sheetmetaltemplate_default(englishstandard).sldcts
+83d8d760c0d38ff6e0cd01f82d9ed7e1  CLIENT_DATA/files/program files/SolidWorks/lang/german/eulastudentdk.htm
+917a4aa4b3bcfc8b2bdc89e783045d45  CLIENT_DATA/files/program files/SolidWorks/lang/german/otmotionpath.chm
+d5b4ac2c2c89239d65258f1ad78309b0  CLIENT_DATA/files/program files/SolidWorks/lang/german/eula.txt
+59db38910e912bf477ad1952c12124cd  CLIENT_DATA/files/program files/SolidWorks/lang/german/sldxlutresu.dll
+e2ba3899448b85691add94e9e571e98e  CLIENT_DATA/files/program files/SolidWorks/lang/german/slddxf.chm
+c938f964ce272780d3b17b721c98c086  CLIENT_DATA/files/program files/SolidWorks/lang/german/OTSheetMetal.chm
+8d3543a0dc38916a0bf62f80103acb39  CLIENT_DATA/files/program files/SolidWorks/lang/german/eulastudent.htm
+fbb60e5ed154a340f36932a6047ce434  CLIENT_DATA/files/program files/SolidWorks/lang/german/bomtemp-material.xls
+456db1c1fc5f8eeaf0a3d7771322d6f5  CLIENT_DATA/files/program files/SolidWorks/lang/german/RhinoSWRes.dll
+1864d0de907e92363453f47dbc551503  CLIENT_DATA/files/program files/SolidWorks/lang/german/scanto3d.chm
+7e3fe862fbf6487effb4195efe19b954  CLIENT_DATA/files/program files/SolidWorks/lang/german/RTResource.dll
+e8105e101f06d49246e55c6304a5de3b  CLIENT_DATA/files/program files/SolidWorks/lang/german/cmotionswres.dll
+ca068a11d11f8bbde529e5bac2005964  CLIENT_DATA/files/program files/SolidWorks/lang/german/manual.pdf
+b9d740cab9ca526764d119a60e94dc04  CLIENT_DATA/files/program files/SolidWorks/lang/german/reldocs.css
+ced7e19171efc10c4c7095b1175fa7f2  CLIENT_DATA/files/program files/SolidWorks/lang/german/journal.doc
+a5d3e198374a474df9bad717d1dee639  CLIENT_DATA/files/program files/SolidWorks/lang/german/sldexitappresu.dll
+a8c9158e0cc2b5fc033d3566716b74f3  CLIENT_DATA/files/program files/SolidWorks/lang/german/eulaprint3d.txt
+d8663e212bbac5bb8fa9eb234a334e78  CLIENT_DATA/files/program files/SolidWorks/lang/german/vcwnafems.chm
+a6626b8e913284d4d70f0cd6a6a50ea2  CLIENT_DATA/files/program files/SolidWorks/lang/german/slddialogresu.dll
+06fc31a8f2ce0589179d057946086a23  CLIENT_DATA/files/program files/SolidWorks/lang/german/Material/Metric/MaterialInteraction.txt
+82014ce009efceb50819e16bfd236803  CLIENT_DATA/files/program files/SolidWorks/lang/german/Material/Metric/Materials.txt
+e34f912f3962caa3a7a351a975c28777  CLIENT_DATA/files/program files/SolidWorks/lang/german/sldworks.chm
+905041261071e45b02ddf8134b5824d2  CLIENT_DATA/files/program files/SolidWorks/lang/german/Material/English/MaterialInteraction.txt
+5c07d8f2a9f5aa5bf311b33b6a6e3ddb  CLIENT_DATA/files/program files/SolidWorks/lang/german/Material/English/Materials.txt
+6f31e3fc7306227e76c7749436cbe6b0  CLIENT_DATA/files/program files/SolidWorks/lang/german/Material/Metric/ddmmat.mdb
+f02ff746430cc0d4ec5688325c279f3a  CLIENT_DATA/files/program files/SolidWorks/lang/german/colorswatches/shiny.sldclr
+49441609b638b6d4c1c238f65e5d5bb4  CLIENT_DATA/files/program files/SolidWorks/lang/german/colorswatches/transparent.sldclr
+e8b051fe60f2f0bd92c2cbb64ccb431c  CLIENT_DATA/files/program files/SolidWorks/lang/german/colorswatches/dull.sldclr
+1c705f6388a9f2257209278eca349792  CLIENT_DATA/files/program files/SolidWorks/lang/german/colorswatches/standard.sldclr
+58c820b98529b96518582c1316c0cfbb  CLIENT_DATA/files/program files/SolidWorks/lang/german/Material/English/ddmmat.mdb
+9c391fd2c619486592701ca9992fc062  CLIENT_DATA/files/program files/SolidWorks/lang/german/swGreenResU.dll
+a93bda2c53e17e86fafc436f214b6d22  CLIENT_DATA/files/program files/SolidWorks/lang/german/txcalloutformat.txt
+7307d5543f0a49d634ba9a44b066b764  CLIENT_DATA/files/program files/SolidWorks/lang/german/otmotionredundancy.chm
+5d73799f11ea7cdd5bd1c653225c90b2  CLIENT_DATA/files/program files/SolidWorks/lang/german/dfmxpress.chm
+3a3543033e0b1cb543648435353708a7  CLIENT_DATA/files/program files/SolidWorks/lang/german/solidworks_design_checker.chm
+29e4d1991f991d6226c99a4e603759b5  CLIENT_DATA/files/program files/SolidWorks/lang/german/sldanalysistoolsresu.dll
+638fecb52bb85b06f16f0ded6fa07623  CLIENT_DATA/files/program files/SolidWorks/lang/german/hole table--tags combined--numbers.sldholtbt
+e5d5e3d4ba7dce278eab485381c9e874  CLIENT_DATA/files/program files/SolidWorks/lang/german/standard hole table--numbers.sldholtbt
+9ec1d4a4292a888602ea755ece6f7c0a  CLIENT_DATA/files/program files/SolidWorks/lang/german/vcwonlinetutorial.chm
+f2176920eb44367bc165e2ccb70b791c  CLIENT_DATA/files/program files/SolidWorks/lang/german/otequations.chm
+d4e8c18995f376aa1ec532c297777477  CLIENT_DATA/files/program files/SolidWorks/lang/german/SldTransResu.dll
+8608e07ec93606740d5c1110008efe49  CLIENT_DATA/files/program files/SolidWorks/lang/german/swactwiz.chm
+201f5574adb1168605a41f8e5d976b0f  CLIENT_DATA/files/program files/SolidWorks/lang/german/eula3dcc.txt
+5777610e4481e33a29c0800e026ab64f  CLIENT_DATA/files/program files/SolidWorks/lang/german/simulation_theory_manual.pdf
+85270a69c93cdd3e549ba3bce2345619  CLIENT_DATA/files/program files/SolidWorks/lang/german/art/back.jpg
+d578bbf53e140fb75542b368dbd4354b  CLIENT_DATA/files/program files/SolidWorks/lang/german/art/h1titlebar.gif
+6da6fcc20ad6e4b7dfdd5ff16b0b30d9  CLIENT_DATA/files/program files/SolidWorks/lang/german/vcwnonlinear.chm
+b72fbdc6c660ea96a4798602f8b5e5df  CLIENT_DATA/files/program files/SolidWorks/lang/german/otpdmworks.chm
+a82eec8e279dfe36cd3ec2cbc0ac7abb  CLIENT_DATA/files/program files/SolidWorks/lang/german/OTLesson3.chm
+6b824a0197533f7ac99246cc68986511  CLIENT_DATA/files/program files/SolidWorks/lang/german/sldigesresu.dll
+9ce0f26b9500b68b7e5c863279962fd5  CLIENT_DATA/files/program files/SolidWorks/lang/german/OTLoft.chm
+6101ffe45939b84c8ab9cc40e414ea88  CLIENT_DATA/files/program files/SolidWorks/lang/german/circuitworks.chm
+9aed5bf9bafe591e46ce60faef917f25  CLIENT_DATA/files/program files/SolidWorks/lang/german/driveworksxpress.chm
+1bec3a393200736589a41ce28d9870d0  CLIENT_DATA/files/program files/SolidWorks/lang/german/sldCostingAppBridgeResU.dll
+33a613c78d4567e2133e311e810ae77b  CLIENT_DATA/files/program files/SolidWorks/lang/german/otapi.chm
+2bd58da9cacc51b4b85ac36577afa2f2  CLIENT_DATA/files/program files/SolidWorks/lang/german/Fwresu.dll
+8c4ebef7ee3a1dbdb83ebfccd2adaa38  CLIENT_DATA/files/program files/SolidWorks/lang/german/bomtemp-vendor.xls
+7f6e16bb2985a68e6fd60bcf68d3cf10  CLIENT_DATA/files/program files/SolidWorks/lang/german/OTImportExport.chm
+a0c4cfb9e44da2e1727145322408a16f  CLIENT_DATA/files/program files/SolidWorks/lang/german/us_gov_restricted_rights.htm
+e3317c13863ff460c758d2a33873f7aa  CLIENT_DATA/files/program files/SolidWorks/lang/german/sldcadkeyresu.dll
+ad4baa15f9a78e2102a2b38ba4cd04b4  CLIENT_DATA/files/program files/SolidWorks/lang/german/weldtable-standard.sldwldtbt
+a956561cadba5fa82fda1b8e5f632fe4  CLIENT_DATA/files/program files/SolidWorks/lang/german/cwbasics.chm
+6f31e3fc7306227e76c7749436cbe6b0  CLIENT_DATA/files/program files/SolidWorks/lang/german/engmat.mdb
+b8b85630cee09856ae5c55af1cf988aa  CLIENT_DATA/files/program files/SolidWorks/lang/german/bom-all.sldbomtbt
+cd0c73f9cfd8a49849276495b0a3f9c8  CLIENT_DATA/files/program files/SolidWorks/lang/german/otcosting.chm
+ccdcbd4398a4384d0b990ebc9733bdc5  CLIENT_DATA/files/program files/SolidWorks/lang/german/bom-material.sldbomtbt
+b43cbf8a0fb13a4e9eea1037b2f39078  CLIENT_DATA/files/program files/SolidWorks/lang/german/OT3DSketching.chm
+b642e8821f4557064153fbe36d205dfe  CLIENT_DATA/files/program files/SolidWorks/lang/german/clpnoteformat.txt
+d8c7fd56b34a2640c0c2cc91fbf93399  CLIENT_DATA/files/program files/SolidWorks/lang/german/calloutformat_2.txt
+0f350622bddd4b2dc636370d94aff4b3  CLIENT_DATA/files/program files/SolidWorks/lang/german/routingquicktips.chm
+1b3a00a3bf76dd0834749b95a197958d  CLIENT_DATA/files/program files/SolidWorks/lang/german/sldshellutils.chm
+d28ae762c55a971f9e6e8689730281a9  CLIENT_DATA/files/program files/SolidWorks/lang/german/connector-table.sldtbt
+ed95b9c9cbf4773b37c826a8fabee145  CLIENT_DATA/files/program files/SolidWorks/lang/german/sldsmuresu.dll
+ae392e21f96dc7aca45a642f093e5081  CLIENT_DATA/files/program files/SolidWorks/lang/german/OTSWUtilities.chm
+532268f1077cb9795886183a274a9577  CLIENT_DATA/files/program files/SolidWorks/lang/german/eulaeval.htm
+cdf752ca3c30169498a350fc10a8e683  CLIENT_DATA/files/program files/SolidWorks/lang/german/otcircuitworks.chm
+f0e59a5c392a13c1e0d3e570b5850ff1  CLIENT_DATA/files/program files/SolidWorks/lang/german/Sheet Metal Gauge Tables/bend deduction inches sample.xls
+4eaa2f21128f7d77b0657f892f5c38a4  CLIENT_DATA/files/program files/SolidWorks/lang/german/Sheet Metal Gauge Tables/bend deduction mm sample.xls
+cb4150a70d091365390707ab4435163c  CLIENT_DATA/files/program files/SolidWorks/lang/german/Sheet Metal Gauge Tables/bend allowance inches sample.xls
+1652bcf292e3f41022b72d4dfe812b9b  CLIENT_DATA/files/program files/SolidWorks/lang/german/Sheet Metal Gauge Tables/k-factor inches sample.xls
+3ddf0eb2877b7270e4ee67b223ca6dba  CLIENT_DATA/files/program files/SolidWorks/lang/german/cwnonlinear.chm
+6912ad370569534726140f93f3c8a37f  CLIENT_DATA/files/program files/SolidWorks/lang/german/Sheet Metal Gauge Tables/k-factor mm sample.xls
+34b28fef9d19fa2ed8b7ded615d1bbfc  CLIENT_DATA/files/program files/SolidWorks/lang/german/Sheet Metal Gauge Tables/sample table - aluminum - metric units.xls
+417b306e82f7ceb94f7c7c595547be05  CLIENT_DATA/files/program files/SolidWorks/lang/german/Sheet Metal Gauge Tables/sample table - steel - english units.xls
+87bb80e004b1857ba168bfe8b5ccb830  CLIENT_DATA/files/program files/SolidWorks/lang/german/slddxf3dres.dll
+87cc2a3a52d02fdcfce577cccb4daaca  CLIENT_DATA/files/program files/SolidWorks/lang/german/dfmconfigresu.dll
+4b45f66de86e46e0564036ccd7822292  CLIENT_DATA/files/program files/SolidWorks/lang/german/otmotioneventbased.chm
+53c3803c47c2c41f3a98a7cf480a890f  CLIENT_DATA/files/program files/SolidWorks/lang/german/bom-weight.sldbomtbt
+3b1d88c4cd529c71c1e4326a65118b9c  CLIENT_DATA/files/program files/SolidWorks/lang/german/OTToolbox.chm
+7ddecb39c492e09deddf8a45476bdd03  CLIENT_DATA/files/program files/SolidWorks/lang/german/slddxru.dll
+9bf229b0bc6521660535708d712b38c1  CLIENT_DATA/files/program files/SolidWorks/lang/german/otroutingpipes.chm
+283c72477fa2664df02842e66dbdd7be  CLIENT_DATA/files/program files/SolidWorks/lang/german/Toolbox.chm
+9e5cde10010e5d5f14e0a1b890379a56  CLIENT_DATA/files/program files/SolidWorks/lang/german/sldproeresu.dll
+5a375bcf28c42f5ee12783c7c4514b33  CLIENT_DATA/files/program files/SolidWorks/lang/german/oh_propertytabbuilder.chm
+cf454c69534f3e27987abd0df4991e79  CLIENT_DATA/files/program files/SolidWorks/lang/german/SldVdaFSresu.dll
+80d9f5a98e76db05980907ae201c1bb0  CLIENT_DATA/files/program files/SolidWorks/lang/german/eula.rtf
+e404d31e80d2c732472137a86fd37c3b  CLIENT_DATA/files/program files/SolidWorks/lang/german/standard revision block.sldrevtbt
+fa13fc02c454bf18ae51759e36f32736  CLIENT_DATA/files/program files/SolidWorks/lang/german/sldautotraceguiru.dll
+d1eee572abd193425982e1d6caa7f003  CLIENT_DATA/files/program files/SolidWorks/lang/german/sldtodu.dll
+84a963225b612597ac29613da33a8596  CLIENT_DATA/files/program files/SolidWorks/lang/german/otcosmosxpress.chm
+be4cf0db10edca28524f66127194f295  CLIENT_DATA/files/program files/SolidWorks/lang/german/Sheet Metal Gauge Tables/bend allowance mm sample.xls
+170813114cb17740bd1e9da030859d79  CLIENT_DATA/files/program files/SolidWorks/lang/german/sheetformats.txt
+ec20db3c1bf6d5df6215f48e9d7b0cad  CLIENT_DATA/files/program files/SolidWorks/lang/german/sldfuncfeatres.dll
+dc15b97911df85192a41d756d9eb009a  CLIENT_DATA/files/program files/SolidWorks/lang/german/sld2demu.chm
+4c9176a91833b1620b46aae7904f5cae  CLIENT_DATA/files/program files/SolidWorks/lang/german/gtol97.sym
+4112cf36a397f4e1d933eabbbdee22e4  CLIENT_DATA/files/program files/SolidWorks/lang/german/hole table--sizes combined--numbers.sldholtbt
+f3f106117bccabe42303d64d05887737  CLIENT_DATA/files/program files/SolidWorks/lang/german/sldWeldmentResU.dll
+22dcb6671e8059451f922c6cfbd7f275  CLIENT_DATA/files/program files/SolidWorks/lang/german/otsustainabilityxpress.chm
+6d6afbcd7a0e8f0b76be74fdc30c04eb  CLIENT_DATA/files/program files/SolidWorks/lang/german/sldugresu.dll
+98c485ff1f19878a09ab98b31854d560  CLIENT_DATA/files/program files/SolidWorks/lang/german/eulastudentdk.txt
+f684b8b37b3790f2b69d5560d7a4a519  CLIENT_DATA/files/program files/SolidWorks/lang/german/dgconvres.dll
+59748b5f413539e809dd0324d6770e0d  CLIENT_DATA/files/program files/SolidWorks/lang/german/otintrotosw.chm
+a73ebb319fbc8f482491e339bd9b284f  CLIENT_DATA/files/program files/SolidWorks/lang/german/bendnoteformat.txt
+e82f9d9f52d4fb42e48fc7554f344016  CLIENT_DATA/files/program files/SolidWorks/lang/german/otsmartcomponents.chm
+ff171afe53cb711b16ed4d3aa55ce19f  CLIENT_DATA/files/program files/SolidWorks/lang/german/whatsnew.chm
+08239e2c59edb3d33190df8e3dac19d0  CLIENT_DATA/files/program files/SolidWorks/lang/german/otsimknobdesignstudy.chm
+9d69fd2e2722957dfe018c824dc689c4  CLIENT_DATA/files/program files/SolidWorks/lang/german/sldpiping.chm
+5c07d8f2a9f5aa5bf311b33b6a6e3ddb  CLIENT_DATA/files/program files/SolidWorks/lang/german/Materials.txt
+1c3e8e5acaba7f3e7831964957321a82  CLIENT_DATA/files/program files/SolidWorks/lang/german/otmultibody.chm
+dc584ba838c01c552d7d5fbd6aa65381  CLIENT_DATA/files/program files/SolidWorks/lang/german/DveDictionary.xaml
+6b001ac12c8e5ce8542b60934b291224  CLIENT_DATA/files/program files/SolidWorks/lang/german/OTRevolveSweep.chm
+fb108cb5f2be1adfa17a980d5391e83d  CLIENT_DATA/files/program files/SolidWorks/lang/german/cwonlinetutorial.chm
+1e2458d616b546525aa19d77c2c8e288  CLIENT_DATA/files/program files/SolidWorks/lang/german/otsimconnectorsdesigncheck.chm
+548af2305cb81ea4974ba2860a47f0ca  CLIENT_DATA/files/program files/SolidWorks/lang/german/cwquicktips.chm
+7534bd0bcf749e841d8259bfb1119a05  CLIENT_DATA/files/program files/SolidWorks/lang/german/sldstepresu.dll
+e1e3906e52217a4148549a4444377af1  CLIENT_DATA/files/program files/SolidWorks/lang/german/IFC/OmniClassTaxonomy.txt
+e27c35ee2bb532e3caf516c641a597cd  CLIENT_DATA/files/program files/SolidWorks/lang/german/manuals/WhatsNew.pdf
+8608e07ec93606740d5c1110008efe49  CLIENT_DATA/files/program files/SolidWorks/setup/i386/german/swactwiz.chm
+3b42d893e854d4b397464ca68b9b76c3  CLIENT_DATA/files/program files/SolidWorks/lang/german/otblockstoassembly.chm
+08b107623a5ef1f8c55d0ad4f0139900  CLIENT_DATA/files/program files/SolidWorks/setup/i386/german/swactwizres.dll
+fb7514cf76b64109883e19b6ba245dd4  CLIENT_DATA/files/program files/SolidWorks/setup/i386/german/swlmwizres.dll
+97b4e51d2db0f2de85664c9e39abf9f6  CLIENT_DATA/files/program files/SolidWorks/setup/i386/german/swcopyoptres.dll
+1d23eb42c33beff29ef7f078a156b439  CLIENT_DATA/files/program files/SolidWorks/sld3DViaUploader/lang/german/viaresu.dll
+57bb73deed03c26ca8fd968a1eb30d31  CLIENT_DATA/files/program files/SolidWorks/Toolbox/lang/german/cam.mdb
+4d64f1a08249321b037ae83dde0f0c48  CLIENT_DATA/files/program files/SolidWorks/Toolbox/lang/german/peminch.mdb
+65d6b37f0a7bd7299ebc7c821f892db2  CLIENT_DATA/files/program files/SolidWorks/Toolbox/lang/german/truarc.mdb
+87da01ac93039e04f7305793d4de962e  CLIENT_DATA/files/program files/SolidWorks/Toolbox/lang/german/cisc.mdb
+f8a6ea0146f8be322fa41818b922e15f  CLIENT_DATA/files/program files/SolidWorks/Toolbox/lang/german/ansiinch.mdb
+c87461b7a0ab32095a646dbf1fa69154  CLIENT_DATA/files/program files/SolidWorks/Toolbox/lang/german/superior.mdb
+6cbeb704fd57cfcd0b865b37700404fa  CLIENT_DATA/files/program files/SolidWorks/Toolbox/lang/german/bsi.mdb
+5d963150347bfa6a15a8c6367deb77b7  CLIENT_DATA/files/program files/SolidWorks/Toolbox/lang/german/progressive.mdb
+0e4a82af8ef5165840249bf8a5f446f5  CLIENT_DATA/files/program files/SolidWorks/Toolbox/lang/german/hasco-metric.mdb
+17c51225607f641181b41319034a3887  CLIENT_DATA/files/program files/SolidWorks/Toolbox/lang/german/ansimtrc.mdb
+fbd9f072c27697ed77b6f35393287934  CLIENT_DATA/files/program files/SolidWorks/Toolbox/lang/german/ToolboxResu.dll
+eddd3c7baa0981f6ec1bf32b96bd0488  CLIENT_DATA/files/program files/SolidWorks/Toolbox/lang/german/pcs.mdb
+b9d7d9ed9db6daa75c67c2b2819e457d  CLIENT_DATA/files/program files/SolidWorks/Toolbox/lang/german/pemmtrc.mdb
+fb99266da2e56ba3dbc40db3abec1077  CLIENT_DATA/files/program files/SolidWorks/Toolbox/lang/german/iso.mdb
+5c3930758e89b2ffee11b9e09b2833c3  CLIENT_DATA/files/program files/SolidWorks/Toolbox/lang/german/din.mdb
+68e644fc386656d3324997f7267e1818  CLIENT_DATA/files/program files/SolidWorks/Toolbox/lang/german/skf.mdb
+d1fb91fc131812b52c867f7a0141ca43  CLIENT_DATA/files/program files/SolidWorks/Toolbox/Data Utilities/lang/german/updatebrowserdataresu.dll
+c6701b9b62f78b8b3e14e30e3781f869  CLIENT_DATA/files/program files/SolidWorks/Toolbox/lang/german/jis.mdb
+4473ccb8f68e9e05a496b0ef3136ae90  CLIENT_DATA/files/program files/SolidWorks/Toolbox/lang/german/dme.mdb
+ce54def3f7274d25192daa982a60eb59  CLIENT_DATA/files/program files/SolidWorks/DriveWorksXpress/de-de/DriveWorksXpressCore.resources.dll
+68a1e4c04a587fd284139c637e611a8d  CLIENT_DATA/files/program files/SolidWorks/sldBenchmarking/lang/german/sldbenchmarkresu.dll
+a9190c1d23a32075e988e890e3e8c117  CLIENT_DATA/files/program files/SolidWorks/swVBAServer/lang/german/drawcompareres.dll
+e51309f3dac44fdf7aa382f80008a77a  CLIENT_DATA/files/program files/SolidWorks/sldSoundApp/lang/de-de/sldsoundres.dll.mui
+3f3787c8b5e7203c028650d1c7fd6691  CLIENT_DATA/files/program files/SolidWorks/ScanTo3D/Addin/lang/german/swngreres.dll
+386e98b7316f4ea2a02946c06a4c09fe  CLIENT_DATA/files/program files/SolidWorks/swScheduler/lang/german/swBoEngineresu.dll
+80a1eba44ae758700160bb1fb75fd65b  CLIENT_DATA/files/program files/SolidWorks/swScheduler/lang/german/swtaskscheduler.chm
+239027fbbe82017e003d2e9e4e253697  CLIENT_DATA/files/program files/SolidWorks/swScheduler/lang/german/swbackofficeresu.dll
+ec3590090222908feb2af61079fa6185  CLIENT_DATA/files/program files/SolidWorks/swScheduler/de-de/DTSMonitor.resources.dll
+2fb98fd26558de798af175c233c4b16f  CLIENT_DATA/files/program files/SolidWorks/dsgnchk/lang/german/Dsgnchkresu.dll
+4b68defc097b30557d1a48d78f5234bd  CLIENT_DATA/files/program files/SolidWorks/photoview/lang/german/460msg.cfg
+963a960e30326ba48bafadf7fb28f934  CLIENT_DATA/files/Common64/SolidWorks Shared/lang/german/sldwinshellextresu.dll
+7a254260011b0ab71749d9263989898f  CLIENT_DATA/files/CommonAppData/SolidWorks/SolidWorks/lang/german/properties.txt
+342f3a9f76f093a8d93548ef284c5de2  CLIENT_DATA/files/CommonAppData/SolidWorks/SolidWorks/lang/german/weldments/weldmentproperties.txt
+3f6394f0457a4b6ebb9561fb5547a13c  CLIENT_DATA/files/Common64/SolidWorks Shared/lang/german/sldshellutils10resu.dll
+a6342c9234234795a4e1e1813058cb95  CLIENT_DATA/files/CommonAppData/SolidWorks/SolidWorks/lang/german/sheetformat/a4 - bsi.slddrt
+a8ccddb2b688b02057fbe4320a7bff17  CLIENT_DATA/files/CommonAppData/SolidWorks/SolidWorks/lang/german/sheetformat/a3 - gost_sh2.slddrt
+54ef6d61bd8f6f6b475beef8da9de89c  CLIENT_DATA/files/CommonAppData/SolidWorks/SolidWorks/lang/german/sheetformat/a1 - gb.slddrt
+a0af0a119066b9ec3d03dd2767ce00c8  CLIENT_DATA/files/CommonAppData/SolidWorks/SolidWorks/lang/german/sheetformat/c - landscape.slddrt
+94023a5093c4f4ab6611f01f7a4cdc3c  CLIENT_DATA/files/CommonAppData/SolidWorks/SolidWorks/lang/german/sheetformat/e - landscape.slddrt
+14ba54f4408dc7c2e4b2a1c6b4a6c501  CLIENT_DATA/files/CommonAppData/SolidWorks/SolidWorks/lang/german/sheetformat/a0 - gost_sh1.slddrt
+32ebe68c6817064a7f660d801203187f  CLIENT_DATA/files/CommonAppData/SolidWorks/SolidWorks/lang/german/sheetformat/a4 - landscape.slddrt
+7de1f97ee9c3d1dc35df8983de391bc6  CLIENT_DATA/files/CommonAppData/SolidWorks/SolidWorks/lang/german/sheetformat/a2 - jis.slddrt
+39905b687cd2c4cde2f92217b2c583cb  CLIENT_DATA/files/CommonAppData/SolidWorks/SolidWorks/lang/german/sheetformat/a4 - din.slddrt
+f58aece131dc98392c9b4dbd2d1ad99f  CLIENT_DATA/files/CommonAppData/SolidWorks/SolidWorks/lang/german/sheetformat/d - landscape.slddrt
+4139c6305f975d26e4db1fefe0d81ac4  CLIENT_DATA/files/CommonAppData/SolidWorks/SolidWorks/lang/german/sheetformat/a1 - iso.slddrt
+f50b93eff1691c96577234710b5eea70  CLIENT_DATA/files/CommonAppData/SolidWorks/SolidWorks/lang/german/sheetformat/a2 - bsi.slddrt
+5b186e4c446cca10fbd1782dd3a54c1b  CLIENT_DATA/files/CommonAppData/SolidWorks/SolidWorks/lang/german/sheetformat/a4 - gost_sh1.slddrt
+df686c7b34d0f19fc3522a7b3f5e5b25  CLIENT_DATA/files/CommonAppData/SolidWorks/SolidWorks/lang/german/sheetformat/a3 - gost_sh1.slddrt
+34cfc801848b99f8453e61d103445368  CLIENT_DATA/files/CommonAppData/SolidWorks/SolidWorks/lang/german/sheetformat/a4 - gb.slddrt
+e9e35ea24820f6548177b86082f49c5b  CLIENT_DATA/files/CommonAppData/SolidWorks/SolidWorks/lang/german/sheetformat/a0 - landscape.slddrt
+7cd0de29a1a06cc00518d69d14a60eda  CLIENT_DATA/files/CommonAppData/SolidWorks/SolidWorks/lang/german/sheetformat/a - portrait.slddrt
+5494724af3d8f9ea231db7bd76553c62  CLIENT_DATA/files/CommonAppData/SolidWorks/SolidWorks/lang/german/sheetformat/a4 - jis.slddrt
+9d9a6f817d847a8b84edfe549e7e3b86  CLIENT_DATA/files/CommonAppData/SolidWorks/SolidWorks/lang/german/sheetformat/a4 - portrait.slddrt
+4b09e45e0f72731e3f042d8532e27084  CLIENT_DATA/files/CommonAppData/SolidWorks/SolidWorks/lang/german/sheetformat/a2 - gost_sh2.slddrt
+d60f043d6c4bf6508f48530936027dcb  CLIENT_DATA/files/CommonAppData/SolidWorks/SolidWorks/lang/german/sheetformat/a0 - iso.slddrt
+40f1a4211aa7ac77e314c3991d4d8dcf  CLIENT_DATA/files/CommonAppData/SolidWorks/SolidWorks/lang/german/sheetformat/a0 - jis.slddrt
+ecc4c7c4882232264ff22dc2591b9bee  CLIENT_DATA/files/CommonAppData/SolidWorks/SolidWorks/lang/german/sheetformat/a1 - bsi.slddrt
+a2108a7a318e72c599762803fdcfa7ce  CLIENT_DATA/files/CommonAppData/SolidWorks/SolidWorks/lang/german/sheetformat/a1 - jis.slddrt
+8df51a4c85bfbf64baafe338e1107252  CLIENT_DATA/files/CommonAppData/SolidWorks/SolidWorks/lang/german/sheetformat/a0 - din.slddrt
+5a99f15e406839f36fa1ea7fb9a89177  CLIENT_DATA/files/CommonAppData/SolidWorks/SolidWorks/lang/german/sheetformat/a4 - iso.slddrt
+4d2a25af15f915c96be94e7d7b37ae78  CLIENT_DATA/files/CommonAppData/SolidWorks/SolidWorks/lang/german/sheetformat/a1 - gost_sh2.slddrt
+219442b56b3004091a92cb623eec5eab  CLIENT_DATA/files/CommonAppData/SolidWorks/SolidWorks/lang/german/sheetformat/b - landscape.slddrt
+bb488092d31d23f70364a04f09ccde6b  CLIENT_DATA/files/CommonAppData/SolidWorks/SolidWorks/lang/german/sheetformat/a2 - gost_sh1.slddrt
+7a3ec43acac4202685e05aad81b6f156  CLIENT_DATA/files/program files/SolidWorks/swVBAServer/lang/german/sldresu.dll
+1da0dcd3df4aa7ae726f7c151b998562  CLIENT_DATA/files/CommonAppData/SolidWorks/SolidWorks/lang/german/sheetformat/a3 - gb.slddrt
+0f92f930ec9c9c7c6e3f8587cc98c8e6  CLIENT_DATA/files/CommonAppData/SolidWorks/SolidWorks/lang/german/sheetformat/a1 - gost_sh1.slddrt
+61ec2d72c1922f8c57216b0bc23155e8  CLIENT_DATA/files/CommonAppData/SolidWorks/SolidWorks/lang/german/sheetformat/a3 - din.slddrt
+e5084ffa886d41e04e0cf003efb3e3ce  CLIENT_DATA/files/CommonAppData/SolidWorks/SolidWorks/lang/german/sheetformat/a3 - jis.slddrt
+3297151d87f6189784d60afea21d3d49  CLIENT_DATA/files/CommonAppData/SolidWorks/SolidWorks/lang/german/sheetformat/a2 - landscape.slddrt
+95e56aa2f5cfdf7ac0d3be7897e13e6f  CLIENT_DATA/files/CommonAppData/SolidWorks/SolidWorks/lang/german/sheetformat/a3 - landscape.slddrt
+3f3231ae5f308fd7cf94aa517b137761  CLIENT_DATA/files/CommonAppData/SolidWorks/SolidWorks/lang/german/sheetformat/a0 - gost_sh2.slddrt
+5e303874d2e9014245e7a285be35b320  CLIENT_DATA/files/CommonAppData/SolidWorks/SolidWorks/lang/german/sheetformat/a2 - iso.slddrt
+97bcfd7643bac09316f577a1cba03caf  CLIENT_DATA/files/CommonAppData/SolidWorks/SolidWorks/lang/german/sheetformat/a2 - gb.slddrt
+506bab9e9571cfc3d79863687d69d345  CLIENT_DATA/files/CommonAppData/SolidWorks/SolidWorks/lang/german/sheetformat/a4 - gost_sh2.slddrt
+404c86d6ef0bc7cdef9acc369c85baff  CLIENT_DATA/files/CommonAppData/SolidWorks/SolidWorks/lang/german/sheetformat/a3 - iso.slddrt
+ef63728297651d968954a8fab1b9c05a  CLIENT_DATA/files/CommonAppData/SolidWorks/SolidWorks/lang/german/sheetformat/a2 - din.slddrt
+c025f809b48330633947a361fda93e10  CLIENT_DATA/files/CommonAppData/SolidWorks/SolidWorks/lang/german/sheetformat/a3 - bsi.slddrt
+51fe448a7b735fcbaedc58807b280c2e  CLIENT_DATA/files/CommonAppData/SolidWorks/SolidWorks/lang/german/sheetformat/a1 - landscape.slddrt
+28c82908576fef1e2afc35bd722607d8  CLIENT_DATA/files/CommonAppData/SolidWorks/SolidWorks/lang/german/sheetformat/a - landscape.slddrt
+f069873c94675c7a92cbcba0272515d0  CLIENT_DATA/files/CommonAppData/SolidWorks/SolidWorks/lang/german/sheetformat/a1 - din.slddrt
+297cbbf61fc0909b84e40e111daab426  CLIENT_DATA/files/CommonAppData/SolidWorks/SolidWorks/lang/german/gtol.sym
+63ff353c52983d75e52ece1028327fc7  CLIENT_DATA/files/german.msi

@@ -1,0 +1,81 @@
+[Package]
+version: 1
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: swx2016-edrawings-lihas
+name: SolidWorks-EDrawings
+description: 
+advice: 
+version: 2016
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: setup64.ins
+uninstallScript: unins64.ins
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[ProductDependency]
+action: setup
+requiredProduct: swx2016-basis-lihas
+requiredStatus: installed
+requirementType: before
+
+[ProductProperty]
+type: unicode
+name: addlocal
+multivalue: False
+editable: True
+description: Components to be installed
+values: ["All"]
+default: ["All"]
+
+[ProductProperty]
+type: unicode
+name: snlserver
+multivalue: False
+editable: True
+description: SolidWorks License Server
+values: [""]
+default: [""]
+
+[Changelog]
+swx2016-edrawings-lihas (2016-1) testing; urgency=low
+
+  * Initial package
+
+-- Stefan Baur <lihas@lihas.de>  Tue, 13 Oct 2015 14:47:00 +0000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

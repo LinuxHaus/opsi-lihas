@@ -1,0 +1,29 @@
+[Package]
+version: 1
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: phonesuite-lihas
+name: PhoneSuite Windows Client
+description: 
+advice: 
+version: 3.0.028beta11
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: setup32.ins
+uninstallScript: unins32.ins
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[Changelog]
+phonesuite-lihas (3.0.028beta11-1) testing; urgency=low
+
+  * Initial package
+
+-- Stefan Baur <lihas@lihas.de>  Fri, 22 Jan 2016 10:43:00 +0000

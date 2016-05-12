@@ -1,0 +1,48 @@
+[Package]
+version: 3
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: openvpn-mi-gui-lihas
+name: OpenVPN MI GUI
+description: this removes the need for administrative rights to start/stop OpenVPN connections, add/delete routes, etc.
+advice: Read http://openvpn-mi-gui.inside-security.de/, section "Requirements", so you know what you have to add to your configuration files to make this package work!
+version: 20140918
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: setup.ins
+uninstallScript: unins.ins
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[ProductDependency]
+action: setup
+requiredProduct: openvpn.openvpn
+requiredStatus: installed
+requirementType: before
+
+[Changelog]
+openvpn-mi-gui-lihas (20140918-3) testing; urgency=low
+
+  * Added openvpn package enforcement
+
+-- Stefan Baur <lihas@lihas.de>  Thu, 24 Dec 2015 12:34:00 +0000
+
+openvpn-mi-gui-lihas (20140918-2) testing; urgency=low
+
+  * Added RegKey Install/Uninstall, Added taskkill in Uninstall
+
+-- Stefan Baur <lihas@lihas.de>  Wed, 23 Dec 2015 23:10:00 +0000
+
+openvpn-mi-gui-lihas (20140918-1) testing; urgency=low
+
+  * Initial package
+
+-- Stefan Baur <lihas@lihas.de>  Mon, 30 Nov 2015 14:51:00 +0000
+

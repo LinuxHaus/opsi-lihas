@@ -1,0 +1,100 @@
+[Package]
+version: 2
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: swx2015-explorer-lihas
+name: SolidWorks-Explorer
+description: 
+advice: 
+version: 2015
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: setup64.ins
+uninstallScript: unins64.ins
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[ProductDependency]
+action: setup
+requiredProduct: swx2015-basis-lihas
+requiredStatus: installed
+requirementType: before
+
+[ProductProperty]
+type: unicode
+name: explorerorpdm
+multivalue: False
+editable: True
+description: 0:Explorer only, 1:Workgroup PDM features can be installed
+values: ["1"]
+default: ["1"]
+
+[ProductProperty]
+type: unicode
+name: addlocal
+multivalue: False
+editable: True
+description: Components to be installed
+values: ["Client64,VaultAdmin"]
+default: ["Client64,VaultAdmin"]
+
+[ProductProperty]
+type: unicode
+name: activserialnumber
+multivalue: False
+editable: True
+description: SolidWorks Serial Number
+values: [""]
+default: [""]
+
+[ProductProperty]
+type: unicode
+name: license_server
+multivalue: False
+editable: True
+description: SolidWorks License Server
+values: [""]
+default: [""]
+
+[Changelog]
+swx2015-explorer-lihas (2015-2) testing; urgency=low
+
+  * Version Bump due to changes in swx2015-basis-lihas
+
+ -- Stefan Baur <lihas@lihas.de>  Fri, 14 Aug 2015 12:38:00 +0000
+
+swx2015-explorer-lihas (2015-1) testing; urgency=low
+
+  * Initial package
+
+ -- Stefan Baur <lihas@lihas.de>  Tue, 29 Jul 2015 14:07:00 +0000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

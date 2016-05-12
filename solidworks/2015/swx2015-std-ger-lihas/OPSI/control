@@ -1,0 +1,83 @@
+[Package]
+version: 2
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: swx2015-std-ger-lihas
+name: SolidWorks-Metapaket Standard German/Deutsch
+description: 
+advice: 
+version: 2015
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: setup.ins
+uninstallScript: 
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[ProductDependency]
+action: setup
+requiredProduct: swx2015-prereq-lihas
+requiredStatus: installed
+requirementType: before
+
+[ProductDependency]
+action: setup
+requiredProduct: swx2015-basis-lihas
+requiredStatus: installed
+requirementType: before
+
+[ProductDependency]
+action: setup
+requiredProduct: swx2015-german-lihas
+requiredStatus: installed
+requirementType: before
+
+[ProductDependency]
+action: setup
+requiredProduct: swx2015-edrawings-lihas
+requiredStatus: installed
+requirementType: before
+
+[ProductDependency]
+action: setup
+requiredProduct: swx2015-explorer-lihas
+requiredStatus: installed
+requirementType: before
+
+[Changelog]
+swx2015-std-ger-lihas (2015-2) testing; urgency=low
+
+  * Version Bump due to changes in swx2015-basis-lihas
+
+ -- Stefan Baur <lihas@lihas.de>  Fri, 14 Aug 2015 12:38:00 +0000
+
+swx2015-std-ger-lihas (2015-1) testing; urgency=low
+
+  * Initial package
+
+ -- Stefan Baur <lihas@lihas.de>  Sun, 31 Aug 2015 15:21:00 +0000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

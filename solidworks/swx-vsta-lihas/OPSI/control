@@ -1,0 +1,34 @@
+[Package]
+version: 1
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: swx-vsta-lihas
+name: SolidWorks-Microsoft VSTA
+description: 
+advice: 
+version: 1
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: setup64.ins
+uninstallScript: unins64.ins
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[Changelog]
+swx-vsta-lihas (1-1) testing; urgency=low
+
+  * initial release under new naming scheme
+
+ -- Stefan Baur <lihas@lihas.de>  Fri, 14 Aug 2014 12:38:00 +0000
+
+
+
+
+

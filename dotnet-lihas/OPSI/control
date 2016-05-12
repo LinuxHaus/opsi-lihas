@@ -1,5 +1,5 @@
 [Package]
-version: 1
+version: 2
 depends: 
 incremental: False
 
@@ -22,11 +22,18 @@ customScript:
 userLoginScript: 
 
 [Changelog]
+dotnet-lihas (4.5.2-2) testing; urgency=low
+
+  * Windows-Reboot forced after install
+
+-- Stefan Baur <lihas@lihas.de>  Sun, 16 Aug 2015 01:53:00 +0000
+
 dotnet-lihas (4.5.2-1) testing; urgency=low
 
   * Initial package
 
 -- Stefan Baur <lihas@lihas.de>  Mon, 28 Jul 2014 12:31:00 +0000
+
 
 
 

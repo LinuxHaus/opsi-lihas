@@ -1,0 +1,47 @@
+[Package]
+version: 1
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: samba-pointandprint-lihas
+name: Samba Point and Print GPO
+description: Allow Point and Print Printer Driver Installation from a SAMBA Server without prompting by faking a GPO
+advice: 
+version: 1.0
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: setup.ins
+uninstallScript: 
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[ProductProperty]
+type: unicode
+name: serverlist
+multivalue: False
+editable: True
+description: Semicolon-separated list of trusted SAMBA servers with their FQDNs
+values: ["server1.example.com;server2.example.com"]
+default: ["server1.example.com;server2.example.com"]
+
+[Changelog]
+samba-pointandprint-lihas (1.0-1) testing; urgency=low
+
+  * Initial package
+
+ -- Stefan Baur <lihas@lihas.de>  Wed, 04 Nov 2015 12:00:37 +0000
+
+
+
+
+
+
+
+
+

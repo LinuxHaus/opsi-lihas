@@ -1,0 +1,101 @@
+[Package]
+version: 1
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: powercfg-win78-lihas
+name: Configure Power Saving Options
+description: 
+advice: 
+version: 1.0
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: configure.ins
+uninstallScript: 
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[ProductProperty]
+type: unicode
+name: monitortimeoutac
+multivalue: False
+editable: True
+description: Time in minutes until monitor goes blank when on AC power
+values: ["0"]
+default: ["0"]
+
+[ProductProperty]
+type: unicode
+name: monitortimeoutdc
+multivalue: False
+editable: True
+description: Time in minutes until monitor goes blank when on DC (Battery) power
+values: ["0"]
+default: ["0"]
+
+[ProductProperty]
+type: unicode
+name: disktimeoutac
+multivalue: False
+editable: True
+description: Time in minutes until disk spins down when on AC power
+values: ["0"]
+default: ["0"]
+
+[ProductProperty]
+type: unicode
+name: disktimeoutdc
+multivalue: False
+editable: True
+description: Time in minutes until disk spins down when on DC (Battery) power
+values: ["0"]
+default: ["0"]
+
+[ProductProperty]
+type: unicode
+name: standbytimeoutac
+multivalue: False
+editable: True
+description: Time in minutes until system goes into standby mode when on AC power
+values: ["0"]
+default: ["0"]
+
+[ProductProperty]
+type: unicode
+name: standbytimeoutdc
+multivalue: False
+editable: True
+description: Time in minutes until system goes into standby mode when on DC (Battery) power
+values: ["0"]
+default: ["0"]
+
+[ProductProperty]
+type: unicode
+name: hibernatetimeoutac
+multivalue: False
+editable: True
+description: Time in minutes until system goes into hibernation when on AC power
+values: ["0"]
+default: ["0"]
+
+[ProductProperty]
+type: unicode
+name: hibernatetimeoutdc
+multivalue: False
+editable: True
+description: Time in minutes until system goes into hibernation when on DC (Battery) power
+values: ["0"]
+default: ["0"]
+
+[Changelog]
+powercfg-win78-lihas (1.0-1) testing; urgency=low
+
+  * Initial package
+
+ -- Stefan Baur <lihas@lihas.de>  Mon, 09 May 2016 16:08:00 +0000

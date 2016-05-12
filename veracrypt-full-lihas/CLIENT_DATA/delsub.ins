@@ -1,0 +1,140 @@
+; Copyright (c) uib gmbh (www.uib.de)
+; This sourcecode is owned by uib gmbh
+; and published under the Terms of the General Public License.
+; credits: http://www.opsi.org/credits/
+ 
+DefVar $InteractiveUninstallOK$
+DefVar $Flag$
+DefVar $WinstRegKey$
+DefVar $INST_SystemType$
+DefVar $exitcodeServiceUninstall$
+
+Set $WinstRegKey$ = "HKLM\SOFTWARE\opsi.org\winst"
+Set $Flag$ = GetRegistryStringValue32("["+$WinstRegKey$+"] "+"RebootFlag")
+Set $InteractiveUninstallOK$ = GetProductProperty("interactiveuninstallok","False") 
+
+Message "Uninstalling " + $ProductId$ + " ..."
+ 
+if not ($Flag$ = "1")
+	comment "Starting uninstall"
+	comment "Uninstall service"
+	DosInAnIcon_uninstall
+
+	set $exitcodeServiceUninstall$ = getLastExitCode
+
+	if not ($exitcodeServiceUninstall$ = "0")
+		if ($exitcodeServiceUninstall$ = "9999")
+			ExitWindows /ImmediateReboot
+		else
+			LogError "Exitcode unequal zero: " + $exitcodeServiceUninstall$ + " - please review log for possible causes!"
+			isFatalError "Service Uninstall failed"
+		endif
+	else
+		Set $Flag$ = "1"
+		Registry_SaveRebootFlag
+		ExitWindows /ImmediateReboot
+	endif
+
+else
+	Set $Flag$ = "0"
+	Registry_SaveRebootFlag
+
+	comment "Continuing uninstall" 
+	comment "Delete files"
+	Files_uninstall /SysNative
+	 
+	comment "Cleanup registry"
+	Registry_uninstall_SN /SysNative
+	Registry_uninstall_both /32Bit
+	Registry_uninstall_32 /32Bit
+
+	comment "Patch Registry (additional patches for 64Bit)"
+        if $INST_SystemType$ = "64 Bit System"
+		Registry_uninstall_both /64Bit
+	endif
+
+	comment "Delete program shortcuts"
+	LinkFolder_uninstall
+
+endif
+
+[Registry_SaveRebootFlag]
+openKey [$WinstRegKey$]
+set "RebootFlag" = "$Flag$"
+
+[DosInAnIcon_uninstall]
+@echo off
+
+REM attempt to stop the service - will work if system drive encryption isn't active
+"%WINDIR%\System32\sc.exe" stop veracrypt
+
+if NOT "%ERRORLEVEL%" == "0" (
+
+	REM Errorlevel isn't zero, so we were unable to stop the service
+
+	if NOT "%ERRORLEVEL%" == "1060" (
+
+		REM The reason wasn't that the service doesn't exist
+
+		if "%ERRORLEVEL%" == "1052" (
+
+			REM The reason was that the system drive is still encrypted
+
+			if "$InteractiveUninstallOK$" == "True" (
+
+				REM Start decryption process, reboot afterwards
+				start /wait "decrypt" "$InstallDir$\VeraCrypt Format.exe" /dsysenc
+				exit 9999
+			) else (
+
+				REM Admin prefers to fail at uninstalling if system drive is encrypted
+				echo System drive is still encrypted. Run: "$InstallDir$\VeraCrypt Format.exe" /dsysenc
+			)
+		)
+
+		REM This error code stands for a veracrypt driver that is in shutdown state and in need of a reboot
+		if "%ERRORLEVEL%" == "1061" echo Unable to stop Veracrypt Service. Try performing a reboot before attempting uninstall again.
+		exit %ERRORLEVEL%
+	)
+)
+
+REM Delete stopped driver so it won't return after a reboot
+
+"%WINDIR%\System32\sc.exe" delete veracrypt
+exit %ERRORLEVEL%
+
+[Files_uninstall]
+delete -sf "$InstallDir$\"
+delete -f "%System%\Drivers\veracrypt.sys"
+
+[Registry_uninstall_SN]
+deletekey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\.hc]
+deletekey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\VeraCrypt]
+deletekey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\VeraCrypt.1]
+deletekey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\VeraCryptFormat]
+deletekey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\VeraCryptFormat.1]
+deletekey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\VeraCryptVolume]
+deletekey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\AppID\VeraCrypt Format.exe]
+deletekey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\AppID\VeraCrypt.exe]
+deletekey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\AppID\{A96D3797-9F31-49f4-A0CE-9657392CF789}]
+deletekey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\AppID\{FE8B3B95-C80C-41f7-830F-FBA271C26F7E}]
+deletekey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\TypeLib\{56327DDA-F1A7-4E13-B128-520D129BDEF6}]
+deletekey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\TypeLib\{9ACF6176-5FC4-4690-A025-B3306A50EB6A}]
+
+[Registry_uninstall_both]
+deletekey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Interface\{7AB357D9-A17F-466E-BCD6-F49E97C218D8}]
+deletekey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Interface\{C786E27C-2801-482C-B45D-D4357B270A29}]
+
+
+[Registry_uninstall_32]
+deletekey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID\{A96D3797-9F31-49f4-A0CE-9657392CF789}]
+deletekey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID\{FE8B3B95-C80C-41f7-830F-FBA271C26F7E}]
+deletekey [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\VeraCrypt]
+
+[LinkFolder_uninstall]
+set_basefolder common_programs
+delete_subfolder VeraCrypt
+
+set_basefolder common_desktopdirectory
+set_subfolder ""
+delete_element VeraCrypt

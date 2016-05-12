@@ -1,0 +1,59 @@
+; Copyright (c) uib gmbh (www.uib.de)
+; This sourcecode is owned by uib
+; and published under the Terms of the General Public License.
+; credits: http://www.opsi.org/credits/
+ 
+[Actions]
+requiredWinstVersion >= "4.10.8.6"
+ 
+DefVar $MsiId$
+DefVar $UninstallProgram$
+DefVar $LogDir$
+DefVar $ProductId$  
+DefVar $MinimumSpace$
+DefVar $InstallDir$
+DefVar $ExitCode$
+
+Set $LogDir$ = "%SystemDrive%\tmp"
+ 
+; ----------------------------------------------------------------
+; - Please edit the following values                             -
+; ----------------------------------------------------------------
+;$ProductId$ should be the name of the product in opsi
+; therefore please: only lower letters, no umlauts, 
+; no white space use '-' as a seperator
+Set $ProductId$       = "ms-gwx-blocker-lihas"
+Set $MinimumSpace$    = "1 MB"
+; the path were we find the product after the installation
+Set $InstallDir$      = "%ProgramFilesSysNativeDir%\"
+; ----------------------------------------------------------------
+
+if not(HasMinimumSpace ("%SystemDrive%", $MinimumSpace$))
+	LogError "Not enough space on %SystemDrive%, " + $MinimumSpace$ + " on drive %SystemDrive% needed for " + $ProductId$
+	isFatalError
+	; Stop process and set installation status to failed
+else
+	comment "Show product picture"
+	ShowBitmap "%ScriptPath%\" + $ProductId$ + ".png" $ProductId$
+ 
+	Message "Installing " + $ProductId$ + " ..."
+ 
+	comment "Patch Registry"
+	Registry_install /SysNative
+
+	comment "Kill GWX Task"
+	DosInAnIcon_KillGWX
+endif
+
+[Registry_install]
+openkey [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows]
+
+openkey [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Gwx]
+set "DisableGwx"=REG_DWORD:00000001
+
+openkey [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate]
+set "DisableOSUpgrade"=REG_DWORD:00000001
+
+[DosInAnIcon_KillGWX]
+@echo off
+tasklist | find "GWX.exe" && taskkill /IM GWX.exe /F

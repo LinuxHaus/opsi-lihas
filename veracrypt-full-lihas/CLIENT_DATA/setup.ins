@@ -1,0 +1,353 @@
+; Copyright (c) uib gmbh (www.uib.de)
+; This sourcecode is owned by uib
+; and published under the Terms of the General Public License.
+; credits: http://www.opsi.org/credits/
+ 
+[Actions]
+requiredWinstVersion >= "4.10.8.6"
+ 
+DefVar $MsiId$
+DefVar $UninstallProgram$
+DefVar $LogDir$
+DefVar $ProductId$  
+DefVar $MinimumSpace$
+DefVar $InstallDir$
+DefVar $ExitCode$
+DefVar $LicenseAccepted$
+DefVar $INST_SystemType$
+Set $LicenseAccepted$ = GetProductProperty("LicenseAccepted","False") 
+Set $INST_SystemType$ = GetSystemType
+
+Set $LogDir$ = "%SystemDrive%\tmp"
+ 
+; ----------------------------------------------------------------
+; - Please edit the following values                             -
+; ----------------------------------------------------------------
+;$ProductId$ should be the name of the product in opsi
+; therefore please: only lower letters, no umlauts, 
+; no white space use '-' as a seperator
+Set $ProductId$       = "veracrypt-full-lihas"
+Set $MinimumSpace$    = "40 MB"
+; the path were we find the product after the installation
+Set $InstallDir$      = "%ProgramFilesSysNativeDir%\VeraCrypt"
+; ----------------------------------------------------------------
+
+if not($LicenseAccepted$ = "True")
+	LogError "License not accepted, exiting."
+	isFatalError
+endif 
+
+if not(HasMinimumSpace ("%SystemDrive%", $MinimumSpace$))
+	LogError "Not enough space on %SystemDrive%, " + $MinimumSpace$ + " on drive %SystemDrive% needed for " + $ProductId$
+	isFatalError
+	; Stop process and set installation status to failed
+else
+	comment "Show product picture"
+	ShowBitmap "%ScriptPath%\" + $ProductId$ + ".png" $ProductId$
+ 
+	Message "Installing " + $ProductId$ + " ..."
+ 
+ 
+	comment "Copy files"
+	Files_install /SysNative
+
+	comment "Change file names to match architecture"
+	DosInAnIcon_set_architecture /SysNative
+
+	comment "Install Driver"
+        if $INST_SystemType$ = "64 Bit System"
+		Files_driver_install_64 /64Bit
+	else
+		Files_driver_install_32 /32Bit
+	endif
+
+	comment "Patch Registry"
+	Registry_install_SN /SysNative
+	Registry_install_both /32Bit
+	Registry_install_32 /32Bit
+
+	comment "Patch Registry (additional patches for 64Bit)"
+        if $INST_SystemType$ = "64 Bit System"
+		Registry_install_both /64Bit
+	endif
+
+	comment "Install Service"
+	DosInAnIcon_install
+ 
+	comment "Create shortcuts"
+	LinkFolder_install
+ 
+endif
+
+[DosInAnIcon_set_architecture]
+@echo off
+cd /d "$InstallDir$"
+if "$INST_SystemType$" == "64 Bit System" (
+	if EXIST "VeraCrypt Format-x64.exe" (
+		echo "VeraCrypt Format-x64.exe" found.
+		if EXIST "VeraCrypt Format.exe" (
+			echo Moving "VeraCrypt Format.exe" to "VeraCrypt Format-x86.exe" ...
+			move "VeraCrypt Format.exe" "VeraCrypt Format-x86.exe" && echo move successful.
+		)
+		echo Moving "VeraCrypt Format-x64.exe" to "VeraCrypt Format.exe" ...
+		move "VeraCrypt Format-x64.exe" "VeraCrypt Format.exe" && echo move successful.
+	)
+	if EXIST "VeraCryptExpander-x64.exe" (
+		echo "VeraCryptExpander-x64.exe" found.
+		if EXIST "VeraCryptExpander.exe" (
+			echo Moving "VeraCryptExpander.exe" to "VeraCryptExpander-x86.exe" ...
+			move "VeraCryptExpander.exe" "VeraCryptExpander-x86.exe" && echo move successful.
+		)
+		echo Moving "VeraCryptExpander-x64.exe" to "VeraCryptExpander.exe" ...
+		move "VeraCryptExpander-x64.exe" "VeraCryptExpander.exe" && echo move successful.
+	)
+	if EXIST "VeraCrypt-x64.exe" (
+		echo "VeraCrypt-x64.exe" found.
+		if EXIST "VeraCrypt.exe" (
+			echo Moving "VeraCrypt.exe" to "VeraCrypt-x86.exe" ...
+			move "VeraCrypt.exe" "VeraCrypt-x86.exe" && echo move successful.
+		)
+		echo Moving "VeraCrypt-x64.exe" to "VeraCrypt.exe" ...
+		move "VeraCrypt-x64.exe" "VeraCrypt.exe" && echo move successful.
+	)
+) else (
+	if EXIST "VeraCrypt Format-x86.exe" (
+		echo "VeraCrypt Format.exe" found.
+		if EXIST "VeraCrypt Format.exe" (
+			echo Moving "VeraCrypt Format.exe" to "VeraCrypt Format-x64.exe" ...
+			move "VeraCrypt Format.exe" "VeraCrypt Format-x64.exe" && echo move successful.
+		)
+		echo Moving "VeraCrypt Format-x86.exe" to "VeraCrypt Format.exe" ..
+		move "VeraCrypt Format-x86.exe" "VeraCrypt Format.exe" && echo move successful.
+	)
+	if EXIST "VeraCryptExpander-x86.exe" (
+		echo "VeraCryptExpander-x86.exe" found.
+		if EXIST "VeraCryptExpander.exe" (
+			echo Moving "VeraCryptExpander.exe" to "VeraCryptExpander-x64.exe" ...
+			move "VeraCryptExpander.exe" "VeraCryptExpander-x64.exe" && echo move successful.
+		)
+		echo Moving "VeraCryptExpander-x86.exe" to "VeraCryptExpander.exe" ..
+		move "VeraCryptExpander-x86.exe" "VeraCryptExpander.exe" && echo move successful.
+	)
+	if EXIST "VeraCrypt-x86.exe" (
+		echo "VeraCrypt-x86.exe" found.
+		if EXIST "VeraCrypt.exe" (
+			echo Moving "VeraCrypt.exe" to "VeraCrypt-x64.exe" ...
+			move "VeraCrypt.exe" "VeraCrypt-x64.exe" && echo move successful.
+		)
+		echo Moving "VeraCrypt-x86.exe" to "VeraCrypt.exe" ...
+		move "VeraCrypt-x86.exe" "VeraCrypt.exe" && echo move successful.
+	)
+)
+
+[Files_install]
+copy -s "%ScriptPath%\files\*.*" "$InstallDir$"
+
+[Files_driver_install_32]
+copy "%ScriptPath%\files\veracrypt.sys" "%System%\Drivers\"
+
+[Files_driver_install_64]
+copy "%ScriptPath%\files\veracrypt-x64.sys" "%System%\Drivers\"
+move "%System%\Drivers\veracrypt-x64.sys" "%System%\Drivers\veracrypt.sys"
+
+[Registry_install_SN]
+openkey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\.hc]
+set "" = "VeraCryptVolume"
+
+openkey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\VeraCrypt]
+set "" = "VeraCrypt class"
+
+openkey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\VeraCrypt\CLSID]
+set "" = "{FE8B3B95-C80C-41f7-830F-FBA271C26F7E}"
+
+openkey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\VeraCrypt\CurVer]
+set "" = "VeraCrypt.1"
+
+openkey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\VeraCrypt.1]
+set "" = "VeraCrypt class"
+
+openkey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\VeraCrypt.1\CLSID]
+set "" = "{FE8B3B95-C80C-41f7-830F-FBA271C26F7E}"
+
+openkey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\VeraCryptFormat]
+set "" = "VeraCryptFormat class"
+
+openkey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\VeraCryptFormat\CLSID]
+set "" = "{A96D3797-9F31-49f4-A0CE-9657392CF789}"
+
+openkey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\VeraCryptFormat\CurVer]
+set "" = "VeraCryptFormat.1"
+
+openkey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\VeraCryptFormat.1]
+set "" = "VeraCryptFormat class"
+
+openkey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\VeraCryptFormat.1\CLSID]
+set "" = "{A96D3797-9F31-49f4-A0CE-9657392CF789}"
+
+openkey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\VeraCryptVolume]
+set "" = "VeraCrypt Volume"
+set "AppUserModelID" = "IDRIX.VeraCrypt"
+
+openkey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\VeraCryptVolume\DefaultIcon]
+set "" = "$InstallDir$\VeraCrypt.exe,1"
+
+openkey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\VeraCryptVolume\Shell]
+
+openkey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\VeraCryptVolume\Shell\open]
+
+openkey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\VeraCryptVolume\Shell\open\command]
+set "" = REG_SZ:'"$InstallDir$\VeraCrypt.exe\" /v \"%1"'
+
+openkey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\AppID\VeraCrypt Format.exe]
+set "AppId" = "{A96D3797-9F31-49f4-A0CE-9657392CF789}"
+
+openkey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\AppID\VeraCrypt.exe]
+set "AppId" = "{FE8B3B95-C80C-41f7-830F-FBA271C26F7E}"
+
+openkey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\AppID\{A96D3797-9F31-49f4-A0CE-9657392CF789}]
+set "" = "VeraCryptFormat class"
+set "AccessPermission" = REG_BINARY:01 00 04 80 30 00 00 00 40 00 00 00 00 00 00 00 14 00 00 00 02 00 1c 00 01 00 00 00 00 00 14 00 07 00 00 00 01 01 00 00 00 00 00 05 04 00 00 00 01 02 00 00 00 00 00 05 20 00 00 00 20 02 00 00 01 02 00 00 00 00 00 05 20 00 00 00 20 02 00 00
+
+openkey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\AppID\{FE8B3B95-C80C-41f7-830F-FBA271C26F7E}]
+set "" = "VeraCrypt class"
+set "AccessPermission" = REG_BINARY:01 00 04 80 30 00 00 00 40 00 00 00 00 00 00 00 14 00 00 00 02 00 1c 00 01 00 00 00 00 00 14 00 07 00 00 00 01 01 00 00 00 00 00 05 04 00 00 00 01 02 00 00 00 00 00 05 20 00 00 00 20 02 00 00 01 02 00 00 00 00 00 05 20 00 00 00 20 02 00 00
+
+openkey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\TypeLib\{56327DDA-F1A7-4E13-B128-520D129BDEF6}]
+
+openkey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\TypeLib\{56327DDA-F1A7-4E13-B128-520D129BDEF6}\2.4]
+set "" = "VeraCrypt Format UAC Support Library"
+
+openkey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\TypeLib\{56327DDA-F1A7-4E13-B128-520D129BDEF6}\2.4\0]
+
+openkey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\TypeLib\{56327DDA-F1A7-4E13-B128-520D129BDEF6}\2.4\0\win64]
+set "" = "$InstallDir$\VeraCrypt Format.exe"
+
+openkey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\TypeLib\{56327DDA-F1A7-4E13-B128-520D129BDEF6}\2.4\FLAGS]
+set "" = "0"
+
+openkey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\TypeLib\{56327DDA-F1A7-4E13-B128-520D129BDEF6}\2.4\HELPDIR]
+set "" = "$InstallDir$"
+
+openkey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\TypeLib\{9ACF6176-5FC4-4690-A025-B3306A50EB6A}]
+
+openkey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\TypeLib\{9ACF6176-5FC4-4690-A025-B3306A50EB6A}\2.7]
+set "" = "VeraCrypt Main UAC Support Library"
+
+openkey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\TypeLib\{9ACF6176-5FC4-4690-A025-B3306A50EB6A}\2.7\0]
+
+openkey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\TypeLib\{9ACF6176-5FC4-4690-A025-B3306A50EB6A}\2.7\0\win64]
+set "" = "$InstallDir$\VeraCrypt.exe"
+
+openkey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\TypeLib\{9ACF6176-5FC4-4690-A025-B3306A50EB6A}\2.7\FLAGS]
+set "" = "0"
+
+openkey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\TypeLib\{9ACF6176-5FC4-4690-A025-B3306A50EB6A}\2.7\HELPDIR]
+set "" = "$InstallDir$"
+
+[Registry_install_both]
+openkey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Interface\{7AB357D9-A17F-466E-BCD6-F49E97C218D8}]
+set "" = "ITrueCryptFormatCom"
+
+openkey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Interface\{7AB357D9-A17F-466E-BCD6-F49E97C218D8}\ProxyStubClsid32]
+set "" = "{00020424-0000-0000-C000-000000000046}"
+
+openkey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Interface\{7AB357D9-A17F-466E-BCD6-F49E97C218D8}\TypeLib]
+set "" = "{56327DDA-F1A7-4E13-B128-520D129BDEF6}"
+set "Version" = "2.4"
+
+openkey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Interface\{C786E27C-2801-482C-B45D-D4357B270A29}]
+set "" = "ITrueCryptMainCom"
+
+openkey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Interface\{C786E27C-2801-482C-B45D-D4357B270A29}\ProxyStubClsid32]
+set "" = "{00020424-0000-0000-C000-000000000046}"
+
+openkey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Interface\{C786E27C-2801-482C-B45D-D4357B270A29}\TypeLib]
+set "" = "{9ACF6176-5FC4-4690-A025-B3306A50EB6A}"
+set "Version" = "2.7"
+
+
+[Registry_install_32]
+openkey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID\{A96D3797-9F31-49f4-A0CE-9657392CF789}]
+set "" = "VeraCryptFormat class"
+set "AppId" = "{A96D3797-9F31-49f4-A0CE-9657392CF789}"
+set "LocalizedString" = "@$InstallDir$\VeraCrypt Format.exe,-112"
+
+openkey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID\{A96D3797-9F31-49f4-A0CE-9657392CF789}\Elevation]
+set "Enabled" = REG_DWORD:00000001
+set "IconReference" = "@$InstallDir$\VeraCrypt Format.exe,-501"
+
+openkey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID\{A96D3797-9F31-49f4-A0CE-9657392CF789}\LocalServer32]
+set "" = '"$InstallDir$\VeraCrypt Format.exe"'
+
+openkey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID\{A96D3797-9F31-49f4-A0CE-9657392CF789}\ProgID]
+set "" = "VeraCryptFormat.1"
+
+openkey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID\{A96D3797-9F31-49f4-A0CE-9657392CF789}\TypeLib]
+set "" = "{56327DDA-F1A7-4e13-B128-520D129BDEF6}"
+
+openkey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID\{A96D3797-9F31-49f4-A0CE-9657392CF789}\VersionIndependentProgID]
+set "" = "VeraCryptFormat"
+
+openkey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID\{FE8B3B95-C80C-41f7-830F-FBA271C26F7E}]
+set "" = "VeraCrypt class"
+set "AppId" = "{FE8B3B95-C80C-41f7-830F-FBA271C26F7E}"
+set "LocalizedString" = "@$InstallDir$\VeraCrypt.exe,-110"
+
+openkey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID\{FE8B3B95-C80C-41f7-830F-FBA271C26F7E}\Elevation]
+set "Enabled" = REG_DWORD:00000001
+set "IconReference" = "@$InstallDir$\VeraCrypt.exe,-501"
+
+openkey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID\{FE8B3B95-C80C-41f7-830F-FBA271C26F7E}\LocalServer32]
+set "" = '"$InstallDir$\VeraCrypt.exe"'
+
+openkey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID\{FE8B3B95-C80C-41f7-830F-FBA271C26F7E}\ProgID]
+set "" = "VeraCrypt.1"
+
+openkey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID\{FE8B3B95-C80C-41f7-830F-FBA271C26F7E}\TypeLib]
+set "" = "{9ACF6176-5FC4-4690-A025-B3306A50EB6A}"
+
+openkey [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID\{FE8B3B95-C80C-41f7-830F-FBA271C26F7E}\VersionIndependentProgID]
+set "" = "VeraCrypt"
+
+openkey [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\VeraCrypt]
+set "UninstallString" = '"$InstallDir$\VeraCrypt Setup.exe\" /u'
+set "ModifyPath" = '"$InstallDir$\VeraCrypt Setup.exe\" /c'
+set "DisplayIcon" = '"$InstallDir$\VeraCrypt Setup.exe"'
+set "DisplayVersion" = "1.16"
+set "DisplayName" = "VeraCrypt"
+set "Publisher" = "IDRIX"
+set "URLInfoAbout" = "http://www.idrix.fr/"
+
+[DosInAnIcon_install]
+@echo off
+"%WINDIR%\System32\sc.exe" create veracrypt type= kernel start= system error= normal binPath= "System32\Drivers\veracrypt.sys" DisplayName= veracrypt
+REM "%WINDIR%\System32\sc.exe" create veracrypt type= kernel start= boot error= normal binPath= "System32\Drivers\veracrypt.sys" DisplayName= veracrypt
+net start veracrypt
+
+[LinkFolder_install]
+; Create StartMenu Links
+set_basefolder common_programs
+set_subfolder VeraCrypt
+
+set_link
+        name: VeraCrypt
+        target: "$InstallDir$\VeraCrypt.exe"
+        parameters:
+        working_dir:
+end_link
+
+set_link
+	name: VeraCrypt Expander
+	target: "$InstallDir$\VeraCryptExpander.exe"
+	parameters:
+	working_dir:
+end_link
+
+; Create Desktop Icon
+set_basefolder common_desktopdirectory
+set_subfolder ""
+
+set_link
+	name: VeraCrypt
+	target: "$InstallDir$\VeraCrypt.exe"
+end_link
