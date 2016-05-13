@@ -1,5 +1,5 @@
 [Package]
-version: 1
+version: 2
 depends: 
 incremental: False
 
@@ -58,25 +58,14 @@ values: ["0", "1"]
 default: ["1"]
 
 [Changelog]
+autoupdate-config-lihas (1.0-2) testing; urgency=low
+
+  * Makefile updated to ask questions during package install
+
+ -- Stefan Baur <lihas@lihas.de>  Fri, 13 May 2016 22:32:00 +0000
+
 autoupdate-config-lihas (1.0-1) testing; urgency=low
 
   * Initial package
 
  -- Stefan Baur <lihas@lihas.de>  Fri, 27 Jun 2014 21:45:00 +0000
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

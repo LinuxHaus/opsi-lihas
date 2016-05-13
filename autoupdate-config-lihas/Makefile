@@ -2,7 +2,7 @@ WGET_COMMON_OPTIONS  = -q -N
 
 PACKAGE_NAME         = autoupdate-config-lihas
 VERSION              = 1.0
-OPSI_PACKAGE_VERSION = 1
+OPSI_PACKAGE_VERSION = 2
 
 TARGET               = $(PACKAGE_NAME)_$(VERSION)-$(OPSI_PACKAGE_VERSION).opsi
 
@@ -14,7 +14,7 @@ $(TARGET):
 build: $(TARGET)
 
 $(TARGET).uploaded:
-	opsi-package-manager -i $(TARGET)
+	opsi-package-manager -p ask -i $(TARGET)
 	touch $(TARGET).uploaded
 
 install: $(TARGET).uploaded
