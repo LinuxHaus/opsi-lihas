@@ -29,6 +29,6 @@ endif
 [DosInAnIcon_activatewin]
 @echo off
 cd /d "%ScriptDir%\files\$Model$"
-set /p PRODUCTKEY=<productkey.txt 2>NUL
+set /p PRODUCTKEY=<backup-key.txt 2>NUL
 start /wait "Install ProductKey" cscript %systemroot%\system32\slmgr.vbs /ipk %PRODUCTKEY%
-start /wait "Install License File" cscript %systemroot%\system32\slmgr.vbs /ilc cert.xrm-ms
+start /wait "Install License File" cscript %systemroot%\system32\slmgr.vbs /ilc backup-cert.xrm-ms
