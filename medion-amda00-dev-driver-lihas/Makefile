@@ -2,7 +2,7 @@ WGET_COMMON_OPTIONS  = -q -N
 
 PACKAGE_NAME         = medion-amda00-dev-driver-lihas
 VERSION              = 1.0
-OPSI_PACKAGE_VERSION = 2
+OPSI_PACKAGE_VERSION = 3
 
 DOWNLOAD_DIR         = ./CLIENT_DATA/files/
 DOWNLOAD_URLS        = http://dlcdnet.asus.com/pub/ASUS/mb/socket1150/Z97-WS/Driver/AMDA00_V1010.zip

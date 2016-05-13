@@ -1,5 +1,5 @@
 [Package]
-version: 2
+version: 3
 depends: 
 incremental: False
 
@@ -22,6 +22,12 @@ customScript:
 userLoginScript: 
 
 [Changelog]
+medion-amda00-dev-driver-lihas (1.0-3) testing; urgency=low
+
+  * Fixed detection routine
+
+ -- Stefan Baur <lihas@lihas.de>  Sat, 14 May 2016 00:35:00 +0000
+
 medion-amda00-dev-driver-lihas (1.0-2) testing; urgency=low
 
   * Now with driver download via Makefile
@@ -33,66 +39,4 @@ medion-amda00-dev-driver-lihas (1.0-1) testing; urgency=low
   * Initial package
 
  -- Stefan Baur <lihas@lihas.de>  Wed, 11 May 2016 17:17:00 +0000
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

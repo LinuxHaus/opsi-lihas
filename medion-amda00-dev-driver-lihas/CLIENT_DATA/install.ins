@@ -12,7 +12,9 @@ DefVar $INST_SystemType$
 DefVar $Bittyness$
 DefVar $NTVer$
 DefVar $WinVer$
+DefVar $MEDION$
 
+Set $MEDION$ = "Pentino_H-Series A_MT_B85-1"
 Set $INST_SystemType$ = GetSystemType
 Set $NTVer$ = GetMsVersionInfo
 
@@ -46,7 +48,7 @@ else
 	endif
 endif
 
-if NOT ( $Model$ = "NULL" )
+if ( $Model$ = $MEDION$ )
 	comment " Model found: " + $Model$
     if $INST_SystemType$ = "64 Bit System"
 		Set $Bittyness$ = "x64"
