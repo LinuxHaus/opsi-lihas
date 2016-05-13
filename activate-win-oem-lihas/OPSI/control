@@ -7,7 +7,7 @@ incremental: False
 type: localboot
 id: activate-win-oem-lihas
 name: activate-win-oem-lihas
-description: Batch Activation Tool for Windows OEM licenses - needs the *.xrm-ms as cert.xrm-ms and an oem product key in a file named productkey.txt
+description: Batch Activation Tool for Windows OEM licenses - needs the *.xrm-ms as backup-cert.xrm-ms and an oem product key in a file named backup-key.txt in a subdirectory matching the name of the mainboard model ("sysinfo.Product Name")
 advice: 
 version: 1.0
 priority: 0
@@ -27,62 +27,3 @@ activate-win-oem-lihas (1.0-1) testing; urgency=low
   * Initial package
 
  -- Stefan Baur <lihas@lihas.de>  Thu, 12 May 2016 14:28:00 +0000
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
