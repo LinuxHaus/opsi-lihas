@@ -1,0 +1,66 @@
+; Copyright (c) uib gmbh (www.uib.de)
+; This sourcecode is owned by uib
+; and published under the Terms of the General Public License.
+; credits: http://www.opsi.org/credits/
+
+
+[Actions]
+DefVar $ProductId$
+DefStringList $ResultList$
+DefVar $Model$
+DefVar $INST_SystemType$
+DefVar $Bittyness$
+DefVar $NTVer$
+DefVar $WinVer$
+
+Set $INST_SystemType$ = GetSystemType
+Set $NTVer$ = GetMsVersionInfo
+
+Set $ProductId$ = "medion-amda00-dev-driver-lihas"
+
+comment "Show product picture"
+ShowBitmap "%ScriptPath%\" + $ProductId$ + ".png" $ProductId$
+
+Set $ResultList$ = getHWBiosInfoMap
+Set $Model$ = getValue("sysinfo.Product Name",$ResultList$)
+
+;SetLogLevel = 9
+
+if CompareDotSeparatedNumbers($NTVer$,">=","10.0")
+	Set $WinVer$ = "Win10"
+else
+	if CompareDotSeparatedNumbers($NTVer$,">=","6.3")
+	    Set $WinVer$ = "Win8.1"
+	else
+		if CompareDotSeparatedNumbers($NTVer$,">=","6.2")
+	        Set $WinVer$ = "Win8"
+   	    else
+			if CompareDotSeparatedNumbers($NTVer$,">=","6.1")
+    	       	Set $WinVer$ = "Win7"
+        	else
+				comment "Unsupported Windows Version"
+				LogError "Unsupported Windows Version"
+				isFatalError
+    	    endif
+		endif
+	endif
+endif
+
+if NOT ( $Model$ = "NULL" )
+	comment " Model found: " + $Model$
+    if $INST_SystemType$ = "64 Bit System"
+		Set $Bittyness$ = "x64"
+    else
+		Set $Bittyness$ = "x86"
+    endif
+	DosInAnIcon_instdrvs winst /SysNative
+
+else
+    comment "Unknown Model."
+	LogError "Unknown Model."
+endif
+
+[DosInAnIcon_instdrvs]
+@echo off
+cd /d "%ScriptDir%\files\$Model$\$Bittyness$\$WinVer$"
+PnPutil.exe -i -a *.inf

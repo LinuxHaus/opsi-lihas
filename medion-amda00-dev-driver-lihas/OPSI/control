@@ -1,0 +1,98 @@
+[Package]
+version: 2
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: medion-amda00-dev-driver-lihas
+name: medion-amda00-dev-driver-lihas
+description: Installiert auf Medion-Pentino_H-Series A_MT_B85-1-Rechnern den Geraetetreiber fuer das AMDA00-Device - auf anderen Systemen tut es nichts.
+advice: 
+version: 1.0
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: install.ins
+uninstallScript: 
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[Changelog]
+medion-amda00-dev-driver-lihas (1.0-2) testing; urgency=low
+
+  * Now with driver download via Makefile
+
+ -- Stefan Baur <lihas@lihas.de>  Fri, 13 May 2016 11:15:00 +0000
+
+medion-amda00-dev-driver-lihas (1.0-1) testing; urgency=low
+
+  * Initial package
+
+ -- Stefan Baur <lihas@lihas.de>  Wed, 11 May 2016 17:17:00 +0000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
