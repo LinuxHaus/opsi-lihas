@@ -9,7 +9,7 @@ id: filezilla-lihas
 name: Filezilla x64 installer
 description: 
 advice: 
-version: 3.14.1
+version: 3.17.0.1
 priority: 0
 licenseRequired: False
 productClasses: 
@@ -22,6 +22,12 @@ customScript:
 userLoginScript: 
 
 [Changelog]
+filezilla-lihas (3.17.0.1-1) testing; urgency=low
+
+  * Updated FileZilla-Version
+
+-- Stefan Baur <lihas@lihas.de>  Fri, 20 May 2016 21:22:00 +0000
+
 filezilla-lihas (3.14.1-1) testing; urgency=low
 
   * Initial package

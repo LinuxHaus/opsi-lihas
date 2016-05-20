@@ -1,11 +1,11 @@
 WGET_COMMON_OPTIONS  = -q -N
 
 PACKAGE_NAME         = filezilla-lihas
-VERSION              = 3.14.1
+VERSION              = 3.17.0.1
 OPSI_PACKAGE_VERSION = 1
 
 DOWNLOAD_DIR         = ./CLIENT_DATA/files
-DOWNLOAD_URL         = http://sourceforge.net/projects/filezilla/files/FileZilla_Client/3.14.1/FileZilla_3.14.1_win64-setup.exe
+DOWNLOAD_URL         = http://sourceforge.net/projects/filezilla/files/FileZilla_Client/$(VERSION)/FileZilla_$(VERSION)_win64-setup.exe
 
 TARGET               = $(PACKAGE_NAME)_$(VERSION)-$(OPSI_PACKAGE_VERSION).opsi
 
