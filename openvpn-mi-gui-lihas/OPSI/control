@@ -9,7 +9,7 @@ id: openvpn-mi-gui-lihas
 name: OpenVPN MI GUI
 description: this removes the need for administrative rights to start/stop OpenVPN connections, add/delete routes, etc.
 advice: Read http://openvpn-mi-gui.inside-security.de/, section "Requirements", so you know what you have to add to your configuration files to make this package work!
-version: 20140918
+version: 20160308
 priority: 0
 licenseRequired: False
 productClasses: 
@@ -45,4 +45,6 @@ openvpn-mi-gui-lihas (20140918-1) testing; urgency=low
   * Initial package
 
 -- Stefan Baur <lihas@lihas.de>  Mon, 30 Nov 2015 14:51:00 +0000
+
+
 
