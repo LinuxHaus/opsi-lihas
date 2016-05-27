@@ -1,0 +1,61 @@
+[Package]
+version: 1
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: killcapslock-lihas
+name: killcapslock-lihas
+description: Aktiviert oder deaktiviert die CAPS-LOCK-Taste
+advice: 
+version: 1.0
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: activate.ins
+uninstallScript: deactivate.ins
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[Changelog]
+killcapslock-lihas (1.0-1) testing; urgency=low
+
+* Initial package
+
+-- Stefan Baur <lihas@lihas.de>  Fri, 27 Mayl 2016 09:18:00 +0000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

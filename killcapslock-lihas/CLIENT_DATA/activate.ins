@@ -1,0 +1,14 @@
+[Initial]
+Message=CapsLock Disable
+SetLogLevel=10
+ExitOnError=false
+ScriptErrorMessages=true
+TraceMode=off
+
+[Actions] 
+Registry_install /SysNative
+
+[Registry_install]
+openkey [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout]
+set "Scancode Map" = REG_BINARY: 00 00 00 00 00 00 00 00 02 00 00 00 00 00 3a 00 00 00 00 00
+

@@ -1,0 +1,12 @@
+[Initial]
+Message=CapsLock Enable
+SetLogLevel=6
+ExitOnError=false
+ScriptErrorMessages=true
+TraceMode=off
+
+[Actions] 
+Registry_uninstall /SysNative
+
+[Registry_uninstall]
+deletekey [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout\ Scancode Map]
