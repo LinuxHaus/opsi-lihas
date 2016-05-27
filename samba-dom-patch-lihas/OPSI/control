@@ -27,5 +27,3 @@ samba-dom-patch-lihas (1.0-1) testing; urgency=low
   * Initial package (based on samba-dom-patch)
 
  -- Stefan Baur <lihas@lihas.de>  Wed, 30 Dec 2015 11:100:00 +0000
-
-
