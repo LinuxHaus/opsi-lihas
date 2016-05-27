@@ -1,5 +1,5 @@
 [Package]
-version: 1
+version: 2
 depends: 
 incremental: False
 
@@ -22,40 +22,15 @@ customScript:
 userLoginScript: 
 
 [Changelog]
+killcapslock-lihas (1.0-2) testing; urgency=low
+
+* Now with Reboot after activation/deactivation
+
+-- Stefan Baur <lihas@lihas.de>  Fri, 27 May 2016 09:34:00 +0000
+
 killcapslock-lihas (1.0-1) testing; urgency=low
 
 * Initial package
 
--- Stefan Baur <lihas@lihas.de>  Fri, 27 Mayl 2016 09:18:00 +0000
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+-- Stefan Baur <lihas@lihas.de>  Fri, 27 May 2016 09:18:00 +0000
 
