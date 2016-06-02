@@ -1,0 +1,69 @@
+[Initial]
+Message=Adding IFA Links
+SetLogLevel = 10
+ScriptErrorMessages=true
+
+DefVar $serverandshare$
+Set $serverandshare$ = GetProductProperty("serverandshare","")
+
+[Actions] 
+LinkFolder_install
+
+[LinkFolder_install]
+set_basefolder common_desktopdirectory
+set_subfolder "IFA"
+
+set_link
+        name: Bapjahre
+        target: "$serverandshare$\Bapjahre\Bapjahre.exe"
+		working_dir: "$serverandshare$\Bapjahre"
+end_link
+
+set_link
+        name: Benzoljahre
+        target: "$serverandshare$\Benzoljahre\Benzoljahre.exe"
+		working_dir: "$serverandshare$\Benzoljahre"
+end_link
+
+set_link
+        name: Bklaerm
+        target: "$serverandshare$\BKLAERM\Bklaerm.exe"
+		working_dir: "$serverandshare$\BKLAERM"
+end_link
+
+set_link
+        name: CTS
+        target: "$serverandshare$\CTS\CTS.exe"
+		working_dir: "$serverandshare$\CTS"
+end_link
+
+set_link
+        name: FaserJahre
+        target: "$serverandshare$\Faserjahre\FaserJahre.exe"
+		working_dir: "$serverandshare$\Faserjahre"
+end_link
+
+set_link
+        name: HTP
+        target: "$serverandshare$\BK_2108\HTP.exe"
+		working_dir: "$serverandshare$\BK_2108"
+end_link
+
+set_link
+        name: KNP
+        target: "$serverandshare$\BKKN\KNP.exe"
+		working_dir: "$serverandshare$\BKKN"
+end_link
+
+set_link
+        name: Strahlen
+        target: "$serverandshare$\strahl\UVSBK.exe"
+		working_dir: "$serverandshare$\strahl"
+end_link
+
+set_link
+        name: Vibration
+        target: "$serverandshare$\Vibration\Vibration.exe"
+		working_dir: "$serverandshare$\Vibration"
+end_link
+

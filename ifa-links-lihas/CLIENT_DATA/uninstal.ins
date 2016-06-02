@@ -1,0 +1,27 @@
+[Initial]
+Message=Removing IFA Links
+ScriptErrorMessages=true
+
+DefVar $serverandshare$
+Set $serverandshare$ = GetProductProperty("serverandshare","")
+
+[Actions] 
+LinkFolder_uninstall
+WinBatch_RemoveEmptyFolder
+
+[LinkFolder_uninstall]
+set_basefolder common_desktopdirectory
+set_subfolder "IFA"
+
+delete_element "Bapjahre"
+delete_element "Benzoljahre"
+delete_element "Bklaerm"
+delete_element "CTS"
+delete_element "FaserJahre"
+delete_element "HTP"
+delete_element "KNP"
+delete_element "Strahlen"
+delete_element "Vibration"
+
+[WinBatch_RemoveEmptyFolder]
+cmd /c rmdir "%CommonDesktopDir%\IFA"

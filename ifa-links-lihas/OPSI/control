@@ -1,0 +1,40 @@
+[Package]
+version: 1
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: ifa-links-lihas
+name: IFA-Anwendungslinks
+description: Desktop-Verknuepfungen zu den IFA-Anwendungen
+advice: 
+version: 1.0
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: setup.ins
+uninstallScript: uninstal.ins
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[ProductProperty]
+type: unicode
+name: serverandshare
+multivalue: False
+editable: True
+description: Common UNC path shared by all applications goes here
+values: ["\\\\SERVER\\SHARE\\SUBFOLDER"]
+default: ["\\\\SERVER\\SHARE\\SUBFOLDER"]
+
+[Changelog]
+ifa-links-lihas (1.0-1) testing; urgency=low
+
+  * Initial package
+
+ -- Stefan Baur <lihas@lihas.de>  Thu, 02 Jun 2016 14:17:59 +0000
+
+
