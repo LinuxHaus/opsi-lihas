@@ -20,10 +20,10 @@ https://download.microsoft.com/download/6/2/F/62FA5A81-8D8B-43C4-B089-8FB88FF6F9
 
 To perform the slipstreaming operation, you need a Windows machine.
 
-Run each of those executables with command line parameter /extract:<somedir>-x[86|64]
+Run each of those executables with command line parameter /extract:\<somedir\>-x[86|64]
 
 After the extraction is complete, copy the contents of 
 
-<somedir>-x86 to CLIENT_DATA/files/de/x86/Updates 
+\<somedir\>-x86 to CLIENT_DATA/files/de/x86/Updates 
 
-<somedir>-x64 to CLIENT_DATA/files/de/x64/Updates 
+\<somedir\>-x64 to CLIENT_DATA/files/de/x64/Updates 
