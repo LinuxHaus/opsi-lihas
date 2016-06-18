@@ -2,7 +2,11 @@ This package is based on http://download.uib.de/opsi_stable/products/contribute/
 
 It fixes the issue with Office x64 not auto-activating, as well as some minor typos.
 
-This currently only installs the German ("de") edition of Office 2010, as we are lacking the checksums for other language.
+This currently only installs the German ("de") edition of Office 2010, as we are lacking the checksums for other languages.
+
+The content of the 32-bit installation DVD goes here: CLIENT_DATA/files/de/x86
+
+The content of the 64-bit installation DVD goes here: CLIENT_DATA/files/de/x64
 
 If your md5deep check fails, make sure you have slipstreamed Office 2010 Service Pack 2.
 
