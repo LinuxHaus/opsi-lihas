@@ -1,0 +1,173 @@
+; Copyright (c) uib gmbh (www.uib.de)
+; This sourcecode is owned by uib gmbh
+; and published under the Terms of the General Public License.
+; credits: http://www.opsi.org/credits/
+
+[Actions]
+requiredWinstVersion >= "4.10.5"
+
+DefVar $MsiId$
+DefVar $UninstallProgram$
+DefVar $LogDir$
+DefVar $ExitCode$
+DefVar $ProductId$
+;DefVar $InstallDir$
+DefVar $LicenseRequired$
+DefVar $LicensePool$
+DefVar $otherLicensePool$
+DefVar $TEMP$
+
+Set $LogDir$ = "%SystemDrive%\tmp"
+
+DefVar $ConfigurationProduct$
+DefVar $WordandExcelOnly$
+DefVar $lang2install$
+DefVar $activate$
+DefVar $uninstalloldversions$
+DefVar $rebootrequired$
+
+Set $TEMP$ = "%SystemDrive%\tmp"
+
+
+Set $ConfigurationProduct$ = GetProductProperty("configurationproduct","")
+Set $WordandExcelOnly$ = GetProductProperty("$wordandexcelonly$","")
+Set $activate$ = GetProductProperty("activate","")
+Set $uninstalloldversions$ = GetProductProperty("uninstalloldversions","")
+Set $lang2install$ = GetProductProperty("lang2install","de")
+
+
+; ----------------------------------------------------------------
+; - Please edit the following values                             -
+; ----------------------------------------------------------------
+Set $ProductId$       = "%installingProdName%"
+; the path were we find the product after the installation
+;Set $InstallDir$     - does not do any good here
+Set $LicenseRequired$ = "false"
+Set $LicensePool$     = "p_" + $ProductId$
+; ----------------------------------------------------------------
+
+
+comment "Show product picture"
+ShowBitmap "%ScriptPath%\" + "office.jpg" $ProductId$
+
+Message "Uninstalling " + $ProductId$ + " ..."
+
+if FileExists("%ScriptPath%\delsub.ins")
+	comment "Start uninstall sub section"
+	Sub "%ScriptPath%\delsub.ins"
+endif
+
+if $LicenseRequired$ = "true"
+	comment "Licensing required, free license used"
+	Sub_free_license
+endif
+
+comment "Setting dependend office_2010_hotfix to not_installed"
+
+DefVar $UninstallProductId$
+DefVar $InstallationStatus$
+DefVar $ActionRequest$
+DefVar $ClientId$
+DefVar $DnsDomainName$
+DefStringList $ServiceResult$
+
+Set $UninstallProductId$ = 'office_2010_hotfix'
+Set $InstallationStatus$ = 'not_installed'
+Set $ActionRequest$ = 'none'
+Set $ServiceResult$ = getReturnListFromSection('opsiServiceCall_getDomain')
+Set $DnsDomainName$ = takestring(0, $ServiceResult$)
+Set $ClientId$ = lower(EnvVar("COMPUTERNAME")) + "." + $DnsDomainName$
+
+opsiServiceCall_setProductInstallationStatus
+opsiServiceCall_setActionRequestStatus
+
+
+comment " check for other office 2010 installations "
+	
+	if ( $ProductId$ = "office2010proplus-lihas")
+		Set $UninstallProductId$ = "office2010standard"
+		Set $otherLicensePool$ = "p_" + $UninstallProductId$
+		
+		opsiServiceCall_setProductInstallationStatus
+		opsiServiceCall_setActionRequestStatus
+
+		if $LicenseRequired$ = "true"
+			comment "Licensing required, free license used"
+			Sub_free_license_other_product
+		endif
+		
+		else 
+		if ( $ProductId$ = "office2010standard")
+				Set $UninstallProductId$ = "office2010proplus-lihas"
+				Set $otherLicensePool$ = "p_" + $UninstallProductId$
+				
+				opsiServiceCall_setProductInstallationStatus
+				opsiServiceCall_setActionRequestStatus
+		
+				if $LicenseRequired$ = "true"
+					comment "Licensing required, free license used"
+					Sub_free_license_other_product
+				endif
+		endif
+	endif
+
+
+[Sub_free_license]
+if opsiLicenseManagementEnabled
+	comment "License management is enabled and will be used"
+
+	comment "Trying to free license used for the product"
+	DefVar $result$
+	Set $result$ = FreeLicense($LicensePool$)
+	; If there is an assignment of a license pool to the product, it is possible to use
+	; Set $result$ = FreeLicense("", $ProductId$)
+	;
+	; If there is an assignment of a license pool to a windows software id, it is possible to use
+	; DefVar $WindowsSoftwareId$
+	; $WindowsSoftwareId$ = "..."
+	; set $result$ = FreeLicense("", "", $WindowsSoftwareId$)
+else
+	LogError "Error: licensing required, but license management not enabled"
+	isFatalError
+endif
+
+
+[opsiServiceCall_getDomain]
+"method": "getDomain"
+"params": [
+          ]
+
+[opsiServiceCall_setProductInstallationStatus]
+"method": "setProductInstallationStatus"
+"params": [
+           "$UninstallProductId$",
+           "$ClientId$",
+           "$InstallationStatus$"
+          ]
+
+[opsiServiceCall_setActionRequestStatus]
+"method": "setProductActionRequest"
+"params": [
+           "$UninstallProductId$",
+           "$ClientId$",
+           "$ActionRequest$"
+          ]
+
+[Sub_free_license_other_product]
+if opsiLicenseManagementEnabled
+	comment "License management is enabled and will be used"
+
+	comment "Trying to free license used for the product"
+	DefVar $result$
+	Set $result$ = FreeLicense($otherLicensePool$)
+	; If there is an assignment of a license pool to the product, it is possible to use
+	; Set $result$ = FreeLicense("", $ConcurrentProductId$)
+	;
+	; If there is an assignment of a license pool to a windows software id, it is possible to use
+	; DefVar $WindowsSoftwareId$
+	; $WindowsSoftwareId$ = "..."
+	; set $result$ = FreeLicense("", "", $WindowsSoftwareId$)
+else
+	LogError "Error: licensing required, but license management not enabled"
+	isFatalError
+endif          

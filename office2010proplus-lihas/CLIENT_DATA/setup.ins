@@ -1,0 +1,846 @@
+; Copyright (c) uib gmbh (www.uib.de)
+; This sourcecode is owned by uib
+; and published under the Terms of the General Public License.
+; credits: http://www.opsi.org/credits/
+
+[Actions]
+requiredWinstVersion >= "4.10.5"
+; 
+; requires python-opsi >= (4.0.1.31-1)
+; office 2010 Productkey is case sensitive
+;
+DefVar $INST_SystemType$
+DefVar $MsVersion$
+DefVar $MsiId$
+DefVar $UninstallProgram$
+DefVar $ProductId$
+DefVar $MinimumSpace$
+DefVar $InstallDir$
+DefVar $ExitCode$
+DefVar $LicenseRequired$
+DefVar $LicenseKey$
+DefVar $LicensePool$
+DefVar $LogDir$
+DefVar $TEMP$
+DefVar $InstallCommand$
+DefVar $httpproxy$
+
+DefVar $otherLicensePool$
+DefVar $otherProductId$
+
+DefVar $UninstallProductId$
+DefVar $InstallationStatus$
+DefVar $ActionRequest$
+DefVar $ClientId$
+DefVar $DnsDomainName$
+DefStringList $ServiceResult$
+
+
+Set $LogDir$ = "%SystemDrive%\tmp"
+Set $TEMP$ = "%SystemDrive%\tmp"
+
+
+DefVar $ConfigurationProduct$
+DefVar $WordandExcelOnly$
+DefVar $activate$
+DefVar $uninstalloldversions$
+DefVar $lang2install$
+DefVar $username$
+DefVar $companyname$
+DefVar $adddesktopicons$
+DefVar $install_architecture$
+DefVar $architecture2use$
+
+DefVar $InterestingFile$
+DefVar $Linkname$
+DefVar $poolOrKey$ 
+DefVar $method$
+DefVar $installaccess$
+
+DefStringList $microsoftdefaultkmsclientkeylist$
+
+DefVar $rebootrequired$
+
+set $rebootrequired$ = "no"
+Set $installaccess$ = GetProductProperty("installaccess","False")
+
+Set $MsVersion$ = GetMsVersionInfo
+
+
+Set $ConfigurationProduct$ = GetProductProperty("configurationproduct","")
+Set $username$ = GetProductProperty("username","username")
+Set $companyname$ = GetProductProperty("companyname","companyname")
+Set $lang2install$ = GetProductProperty("lang2install","de")
+Set $install_architecture$ = GetProductProperty("install_architecture","x86")
+set $httpproxy$ = GetProductProperty("httpproxy","")
+Set $activate$ = GetProductProperty("activate","False")
+set $poolOrKey$ = GetProductProperty("Poolid-or-Licensekey","")
+set $method$ = GetProductProperty("method","licensekey from property")
+
+Set $INST_SystemType$ = GetSystemType
+
+; ----------------------------------------------------------------
+; - Please edit the following values                             -
+; ----------------------------------------------------------------
+Set $ProductId$       = "%installingProdName%"
+Set $MinimumSpace$    = "2 GB"
+; the path were we find the product after the installation
+; Set $InstallDir$    - must be set below, after arch/bittyness
+Set $LicenseRequired$ = "false"
+Set $LicensePool$     = "p_" + $ProductId$
+; ----------------------------------------------------------------
+
+if not(HasMinimumSpace ("%SystemDrive%", $MinimumSpace$))
+	LogError "Not enough space on %SystemDrive%, " + $MinimumSpace$ + " on drive %SystemDrive% needed for " + $ProductId$
+	isFatalError
+	; Stop process and set installation status to failed
+else
+	comment "Show product picture"
+	ShowBitmap "%ScriptPath%\" + "office.jpg" $ProductId$
+	
+	if FileExists("%ScriptPath%\delsub.ins")
+		comment "Start uninstall sub section"
+		Sub "%ScriptPath%\delsub.ins"
+	endif
+	
+	Message "Installing " + $ProductId$ + " ..."
+	
+	if not ( $httpproxy$ = "" )
+		if ($MsVersion$ < "6")
+			comment " Windows XP "
+			comment "enable HTTP proxy, required for auto-activating"
+			; TODO: store current settings and restore after installing
+			Registry_HKCU_Enable_Proxy
+			Registry_HKLM_Enable_Proxy
+			
+		else
+			comment " Windows Vista  Windows 7 "
+			comment "enable HTTP proxy, required for auto-activating"
+			DosInAnIcon_setproxy_win7 winst /sysnative
+		endif
+
+	endif
+	
+	
+	set $poolOrKey$ = GetProductProperty("Poolid-or-Licensekey","")
+	
+	If ( $method$ = "KMS" ) OR ( $method$ = "KMS opsi License management" )
+	
+		; we need for Installation the default Microsoft kmsclientkeys
+		; see section 		[kmsklientkeys]
+		; respectively http://technet.microsoft.com/de-de/library/ee624355.aspx#section2-3
+		; respectively some PIDKEY Value in some xml-File on the Installmedium, for instance
+		;  grep -i "pidkey value" `find . -iname \*xml`
+		; ./de/x64/ProPlus.WW/setup.xml:	<PIDKEY Value="VYBBJ-TRJPB-QFQRF-QFT4D-H3GVB"/>
+		; ./de/x86/ProPlus.WW/setup.xml:	<PIDKEY Value="VYBBJ-TRJPB-QFQRF-QFT4D-H3GVB"/>
+		; values: ["ProPlus", "ProPlusr", "SingleImage", "Standard"]
+	
+		Set $microsoftdefaultkmsclientkeylist$ = addtolist($microsoftdefaultkmsclientkeylist$,"ProPlus=VYBBJTRJPBQFQRFQFT4DH3GVB")
+		Set $microsoftdefaultkmsclientkeylist$ = addtolist($microsoftdefaultkmsclientkeylist$,"Standard=V7QKV4XVVRXYV4DF7DFM8R6BM")
+		Set $microsoftdefaultkmsclientkeylist$ = addtolist($microsoftdefaultkmsclientkeylist$,"Outlook=7YDC2CWM8MRRTJC8MDVCX3DWQ")
+		Set $LicenseKey$ = getValue($ConfigurationProduct$,$microsoftdefaultkmsclientkeylist$)
+		
+		If ( $method$ = "KMS opsi License management" )
+				comment "Licensing required, reserve license and get license key"
+				Set $LicenseRequired$ = "true"
+				Set $LicensePool$     = $poolOrKey$
+				Sub_get_licensekey
+		endif
+		
+		else
+			if $method$ = "licensekey from property"
+				Set $LicenseKey$ = $poolOrKey$
+		
+				else 
+					comment "Licensing required, reserve license and get license key"
+					Set $LicenseRequired$ = "true"
+					Set $LicensePool$     = $poolOrKey$
+					Sub_get_licensekey
+					
+			endif
+
+					
+	endif
+
+	
+	comment "Prepare config.xml"
+	Files_copyConfigxml
+	PatchTextFile_patchconfigxml $TEMP$ + "\config.xml"
+	
+	PatchTextFile_patchremovesharepoint  $TEMP$ + "\config.xml"
+
+	
+	; http://msdn.microsoft.com/en-us/library/ee691831.aspx#odc_office2010_Compatibility32bit64bit_FrequentlyAskedQuestions
+	;       Can I install 64-bit and 32-bit versions of Microsoft Office side-by-side?
+	; 	No. 
+	;
+
+	Set $architecture2use$ = "x86"
+	if ($INST_SystemType$ = "64 Bit System") and ($install_architecture$ = "64 bit") 
+		Set $architecture2use$ = "x64"
+		Set $InstallDir$ = "%ProgramFiles64Dir%\Microsoft Office\Office14"
+	else
+		Set $InstallDir$ = "%ProgramFiles32Dir%\Microsoft Office\Office14"
+    endif
+	
+	Set $InstallCommand$ = "%SCRIPTPATH%\files\" + $lang2install$ + "\" + $architecture2use$ + "\Setup.exe " + "/config " +  "%SystemDrive%\tmp\config.xml"
+
+	comment "Start setup program"
+	Winbatch_install
+	Sub_check_exitcode
+
+	if ($rebootrequired$ = "yes")
+			comment "ERROR_SUCCESS_REBOOT_REQUIRED	3010	A restart is required to complete the install. This message is indicative of a success."
+			
+			ExitWindows /Reboot
+	endif
+
+	
+	comment "Check activation status ....."
+	DosInAnIcon_restartOfficeProtectionPlatform
+	
+	DosInAnIcon_Officestatus
+	
+	if ( $activate$ = "True")
+		DosInAnIcon_activate
+		DosInAnIcon_Officestatus
+	endif
+
+	
+	comment "Cleaning ....."
+	Files_delete
+
+        if ( $ConfigurationProduct$ = "ProPlus" )
+        
+        	comment "After installing SP1, Sharepoint workspace gets installed."
+        	comment "    This removes it again," 
+        	comment "    see http://support.microsoft.com/kb/2612800/en-us" 
+        
+        	comment "Workaround: uninstall Sharepoint Workspace"
+        	Set $InstallCommand$ = "%SCRIPTPATH%\files\" + $lang2install$ + "\" + $architecture2use$ + "\Setup.exe "+ " /modify ProPlus /config " +  "%SystemDrive%\tmp\config-uninstall_sharepoint_workspace.xml"
+        	Winbatch_modify
+        	Sub_check_exitcode
+        	if ( $installaccess$ = "false")
+        		Set $InstallCommand$ = "%SCRIPTPATH%\files\" + $lang2install$ + "\" + $architecture2use$ + "\Setup.exe "+ " /modify ProPlus /config " +  "%SystemDrive%\tmp\config-uninstall_access.xml"
+        		Winbatch_modify
+        		Sub_check_exitcode
+		endif
+        endif
+        
+       	comment "Patch Registry"
+       	if ( $architecture2use$ = "x86" )
+        	Registry_install_hkcu /AllNTUserDats /32Bit
+        else 
+        	Registry_install_hkcu /AllNTUserDats /64Bit
+        endif
+
+        
+        comment "housekeeping for previous office-Installations"
+        
+        comment " first check on Compatibility Pack für 2007 Office System	12.0.6612.1000	x86	{90120000-0020-0407-0000-0000000ff1ce}"
+        Set $MsiId$ = '{90120000-0020-0407-0000-0000000FF1CE}'
+
+	if not (GetRegistryStringValue32("[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\" + $MsiId$ + "] DisplayName") = "")
+		comment "MSI id " + $MsiId$ + " found in registry, starting msiexec to uninstall"
+		Winbatch_uninstall_msi
+		sub_check_exitcode_inform
+	endif
+
+        
+        Set $InstallationStatus$ = 'not_installed'
+	Set $ActionRequest$ = 'none'
+	Set $ServiceResult$ = getReturnListFromSection('opsiServiceCall_getDomain')
+	Set $DnsDomainName$ = takestring(0, $ServiceResult$)
+	Set $ClientId$ = lower(EnvVar("COMPUTERNAME")) + "." + $DnsDomainName$
+        
+   
+	comment " set off03_std notinstalled"
+	Set $UninstallProductId$ = 'off03_std'
+	    
+	opsiServiceCall_setProductInstallationStatus
+	opsiServiceCall_setActionRequestStatus
+   
+	comment " set officecompatibilitypack notinstalled"
+	Set $UninstallProductId$ = 'officecompatibilitypack'
+	    
+	opsiServiceCall_setProductInstallationStatus
+	opsiServiceCall_setActionRequestStatus
+
+
+	comment " check for other office 2010 installations "
+	
+	if ( $ProductId$ = "office2010proplus-lihas")
+		Set $UninstallProductId$ = "office2010standard"
+		Set $otherLicensePool$ = "p_" + $UninstallProductId$
+		
+		opsiServiceCall_setProductInstallationStatus
+		opsiServiceCall_setActionRequestStatus
+
+		if $LicenseRequired$ = "true"
+			comment "Licensing required, free license used"
+			Sub_free_license_other_product
+		endif
+		
+		else 
+		if ( $ProductId$ = "office2010standard")
+				Set $UninstallProductId$ = "office2010proplus-lihas"
+				Set $otherLicensePool$ = "p_" + $UninstallProductId$
+				
+				opsiServiceCall_setProductInstallationStatus
+				opsiServiceCall_setActionRequestStatus
+		
+				if $LicenseRequired$ = "true"
+					comment "Licensing required, free license used"
+					Sub_free_license_other_product
+				endif
+		endif
+	endif
+		
+endif
+
+
+[Files_copyConfigxml]
+copy "%SCRIPTPATH%\config.xml" "$TEMP$\"
+copy "%SCRIPTPATH%\config-uninstall_sharepoint_workspace.xml" "$TEMP$\"
+copy "%SCRIPTPATH%\config-uninstall_access.xml" "$TEMP$\"
+
+[PatchTextFile_patchconfigxml]
+GoToTop
+FindLine_Containing '<PIDKEY Value="XXXXXXXXXXXXXXXXXXXXXXXXX" />'
+DeleteTheLine
+InsertLine '	<PIDKEY Value="$LicenseKey$" />'
+GoToTop
+FindLine_Containing '<Configuration Product='
+DeleteTheLine
+GoToTop
+InsertLine '<Configuration Product="$ConfigurationProduct$">'
+GoToTop
+FindLine_Containing '<Logging Type='
+DeleteTheLine
+InsertLine '	<Logging Type="standard" Path="$Logdir$" Template="$ProductId$ Setup(*).txt" />'
+GoToTop
+FindLine_Containing '<COMPANYNAME Value='
+DeleteTheLine
+InsertLine '	<COMPANYNAME Value="$companyname$" />'
+GoToTop
+FindLine_Containing '<USERNAME Value='
+DeleteTheLine
+InsertLine '	<USERNAME Value="$username$"  />'
+
+[PatchTextFile_patchremovesharepoint]
+;http://technet.microsoft.com/de-de/library/cc179006.aspx
+FindLine_Containing '</Configuration>'
+InsertLine '     <OptionState Id="GrooveFiles" State="absent" Children="force" />	// Microsoft Groove Server 2010'
+
+
+[PatchTextFile_RemoveAccessconfigxml]
+FindLine_Containing '</Configuration>'
+InsertLine '     <OptionState Id="ACCESSFiles" State="absent" Children="force" />	// access'
+
+[PatchTextFile_patchexcelwordonlyconfigxml]
+;http://technet.microsoft.com/de-de/library/cc179006.aspx
+FindLine_Containing '</Configuration>'
+InsertLine '     <OptionState Id="ACCESSFiles" State="absent" Children="force" />	// access'
+InsertLine '     <OptionState Id="GrooveFiles" State="absent" Children="force" />	// Microsoft Groove Server 2010'
+InsertLine '     <OptionState Id="PPTFiles" State="absent" Children="force" />		// Microsoft Powerpoint'
+InsertLine '     <OptionState Id="PubPrimary" State="absent" Children="force" />	// publisher'
+InsertLine '     <OptionState Id="OneNoteFiles" State="absent" Children="force" />	// Microsoft OneNote'
+InsertLine '     <OptionState Id="OUTLOOKFiles" State="absent" Children="force" />	// outlook'
+InsertLine '     <OptionState Id="XDOCSFiles" State="absent" Children="force" />	//infopath'
+InsertLine '     <OptionState Id="VisioPreviewerFiles" State="absent" Children="force" />	//visio viewer'
+
+
+[Files_delete]
+delete "$TEMP$\config.xml"
+
+
+[Winbatch_install]
+$InstallCommand$
+
+[Winbatch_modify]
+$InstallCommand$
+
+[Winbatch_activate]
+cscript.exe "$InstallDir$\OSPP.vbs" /act
+
+
+[Registry_install_hkcu]
+; Example of setting some values of an registry key:
+;http://www.appdeploy.com/packages/detail.asp?id=1802S
+;[HKEY_CURRENT_USER\Software\Microsoft\Office\14.0\Common\General]
+;"ShownFirstRunOptin"=dword:00000001
+ openkey [Software\Microsoft\Office\14.0\Common\General]
+set "ShownFirstRunOptin" = REG_DWORD:0001
+; set "name3" = REG_BINARY:00 af 99 cd
+
+[Sub_get_licensekey]
+if opsiLicenseManagementEnabled
+	comment "License management is enabled and will be used"
+
+	comment "Trying to get a license key"
+	Set $LicenseKey$ = demandLicenseKey ($LicensePool$)
+	; If there is an assignment of exactly one licensepool to the product the following call is possible:
+	; Set $LicenseKey$ = demandLicenseKey ("", $ProductId$)
+	;
+	; If there is an assignment of a license pool to a windows software id, it is possible to use:
+	; DefVar $WindowsSoftwareId$
+	; $WindowsSoftwareId$ = "..."
+	; Set $LicenseKey$ = demandLicenseKey ("", "", $WindowsSoftwareId$)
+	
+	DefVar $ServiceErrorClass$
+	set $ServiceErrorClass$ = getLastServiceErrorClass
+	comment "Error class: " + $ServiceErrorClass$
+	
+	if $ServiceErrorClass$ = "None"
+		comment "Everything fine, we got the license key '" + $LicenseKey$ + "'"
+	else
+		if $ServiceErrorClass$ = "LicenseConfigurationError"
+			LogError "Fatal: license configuration must be corrected"
+			LogError getLastServiceErrorMessage
+			isFatalError
+		else 
+			if $ServiceErrorClass$ = "LicenseMissingError"
+				LogError "Fatal: required license is not supplied"
+				isFatalError
+			endif
+		endif
+	endif
+else
+	LogError "Fatal: license required, but license management not enabled"
+	isFatalError
+endif
+
+
+[DosInAnIcon_activate]
+cscript.exe "$InstallDir$\OSPP.vbs" /act
+
+[DosInAnIcon_restartOfficeProtectionPlatform]
+cscript.exe "$InstallDir$\OSPP.vbs" /osppsvcrestart
+
+[DosInAnIcon_Officestatus]
+cscript.exe "$InstallDir$\OSPP.vbs" /dstatus
+
+[DosInAnIcon_Officestatusall]
+cscript.exe "$InstallDir$\OSPP.vbs" /dstatusall
+
+[XMLPatch_config.xml]
+OpenNodeSet
+  - error_when_no_node_existing false
+  - warning_when_no_node_existing true
+  - error_when_nodecount_greater_1 false
+  - warning_when_nodecount_greater_1 true
+  - create_when_node_not_existing true
+  - attributes_strict false
+ 
+  
+  documentroot
+	all_childelements_with:
+		elementname: "COMPANYNAME"
+		attribute:"Value"  value="$companyname$"
+end
+OpenNodeSet
+  - error_when_no_node_existing false
+  - warning_when_no_node_existing true
+  - error_when_nodecount_greater_1 false
+  - warning_when_nodecount_greater_1 true
+  - create_when_node_not_existing true
+  - attributes_strict false
+ 
+  
+  documentroot
+	all_childelements_with:
+		elementname: "USERNAME"
+		attribute:"Value"  value="$username$"
+end
+
+[XMLPatch_AccessOFF.xml]
+OpenNodeSet
+  - error_when_no_node_existing false
+  - warning_when_no_node_existing true
+  - error_when_nodecount_greater_1 false
+  - warning_when_nodecount_greater_1 true
+  - create_when_node_not_existing true
+  - attributes_strict false
+ 
+  
+  documentroot
+	all_childelements_with:
+		elementname: "OptionState"
+		attribute:"Id"  value="ACCESSFiles"
+		attribute: "State"  value="absent"
+		attribute: "Children"  value="force"
+end
+
+[XMLPatch_configACCESSON.xml]
+OpenNodeSet
+  - error_when_no_node_existing false
+  - warning_when_no_node_existing true
+  - error_when_nodecount_greater_1 false
+  - warning_when_nodecount_greater_1 true
+  - create_when_node_not_existing true
+  - attributes_strict false
+ 
+  
+  documentroot
+	all_childelements_with:
+		elementname: "OptionState"
+		attribute:"Id"  value="ACCESSFiles"
+		attribute: "State"  value="local"
+		attribute: "Children"  value="force"
+end
+
+[XMLPatch_AccessOFF.xml]
+OpenNodeSet
+  - error_when_no_node_existing false
+  - warning_when_no_node_existing true
+  - error_when_nodecount_greater_1 false
+  - warning_when_nodecount_greater_1 true
+  - create_when_node_not_existing true
+  - attributes_strict false
+ 
+  
+  documentroot
+	all_childelements_with:
+		elementname: "OptionState"
+		attribute:"Id"  value="ACCESSFiles"
+		attribute: "State"  value="absent"
+		attribute: "Children"  value="force"
+end
+
+[XMLPatch_configExcelWordOnly.xml]
+OpenNodeSet
+  - error_when_no_node_existing false
+  - warning_when_no_node_existing true
+  - error_when_nodecount_greater_1 false
+  - warning_when_nodecount_greater_1 true
+  - create_when_node_not_existing true
+  - attributes_strict false
+ 
+  
+  documentroot
+	all_childelements_with:
+		elementname: "OptionState"
+		attribute:"Id"  value="ACCESSFiles"
+		attribute: "State"  value="local"
+		attribute: "Children"  value="force"
+end
+OpenNodeSet
+  - error_when_no_node_existing false
+  - warning_when_no_node_existing true
+  - error_when_nodecount_greater_1 false
+  - warning_when_nodecount_greater_1 true
+  - create_when_node_not_existing true
+  - attributes_strict false
+ 
+  
+  documentroot
+	all_childelements_with:
+		elementname: "OptionState"
+		attribute:"Id"  value="GrooveFiles"
+		attribute: "State"  value="local"
+		attribute: "Children"  value="force"
+end
+OpenNodeSet
+  - error_when_no_node_existing false
+  - warning_when_no_node_existing true
+  - error_when_nodecount_greater_1 false
+  - warning_when_nodecount_greater_1 true
+  - create_when_node_not_existing true
+  - attributes_strict false
+ 
+  
+  documentroot
+	all_childelements_with:
+		elementname: "OptionState"
+		attribute:"Id"  value="OUTLOOKFiles"
+		attribute: "State"  value="local"
+		attribute: "Children"  value="force"
+end
+OpenNodeSet
+  - error_when_no_node_existing false
+  - warning_when_no_node_existing true
+  - error_when_nodecount_greater_1 false
+  - warning_when_nodecount_greater_1 true
+  - create_when_node_not_existing true
+  - attributes_strict false
+ 
+  
+  documentroot
+	all_childelements_with:
+		elementname: "OptionState"
+		attribute:"Id"  value="PPTFiles"
+		attribute: "State"  value="local"
+		attribute: "Children"  value="force"
+end
+OpenNodeSet
+  - error_when_no_node_existing false
+  - warning_when_no_node_existing true
+  - error_when_nodecount_greater_1 false
+  - warning_when_nodecount_greater_1 true
+  - create_when_node_not_existing true
+  - attributes_strict false
+ 
+  
+  documentroot
+	all_childelements_with:
+		elementname: "OptionState"
+		attribute:"Id"  value="PROJECTFiles"
+		attribute: "State"  value="local"
+		attribute: "Children"  value="force"
+end
+OpenNodeSet
+  - error_when_no_node_existing false
+  - warning_when_no_node_existing true
+  - error_when_nodecount_greater_1 false
+  - warning_when_nodecount_greater_1 true
+  - create_when_node_not_existing true
+  - attributes_strict false
+ 
+  
+  documentroot
+	all_childelements_with:
+		elementname: "OptionState"
+		attribute:"Id"  value="XDOCSFiles"
+		attribute: "State"  value="local"
+		attribute: "Children"  value="force"
+end
+OpenNodeSet
+  - error_when_no_node_existing false
+  - warning_when_no_node_existing true
+  - error_when_nodecount_greater_1 false
+  - warning_when_nodecount_greater_1 true
+  - create_when_node_not_existing true
+  - attributes_strict false
+ 
+  
+  documentroot
+	all_childelements_with:
+		elementname: "OptionState"
+		attribute:"Id"  value="OneNoteFiles"
+		attribute: "State"  value="local"
+		attribute: "Children"  value="force"
+end
+OpenNodeSet
+  - error_when_no_node_existing false
+  - warning_when_no_node_existing true
+  - error_when_nodecount_greater_1 false
+  - warning_when_nodecount_greater_1 true
+  - create_when_node_not_existing true
+  - attributes_strict false
+ 
+  
+  documentroot
+	all_childelements_with:
+		elementname: "OptionState"
+		attribute:"Id"  value="PubPrimary"
+		attribute: "State"  value="local"
+		attribute: "Children"  value="force"
+end
+OpenNodeSet
+  - error_when_no_node_existing false
+  - warning_when_no_node_existing true
+  - error_when_nodecount_greater_1 false
+  - warning_when_nodecount_greater_1 true
+  - create_when_node_not_existing true
+  - attributes_strict false
+ 
+  
+  documentroot
+	all_childelements_with:
+		elementname: "OptionState"
+		attribute:"Id"  value="QueryFiles"
+		attribute: "State"  value="local"
+		attribute: "Children"  value="force"
+end
+OpenNodeSet
+  - error_when_no_node_existing false
+  - warning_when_no_node_existing true
+  - error_when_nodecount_greater_1 false
+  - warning_when_nodecount_greater_1 true
+  - create_when_node_not_existing true
+  - attributes_strict false
+ 
+  
+  documentroot
+	all_childelements_with:
+		elementname: "OptionState"
+		attribute:"Id"  value="VISIOFiles"
+		attribute: "State"  value="local"
+		attribute: "Children"  value="force"
+end
+
+[opsiServiceCall_getDomain]
+"method": "getDomain"
+"params": [
+          ]
+
+[opsiServiceCall_setProductInstallationStatus]
+"method": "setProductInstallationStatus"
+"params": [
+           "$UninstallProductId$",
+           "$ClientId$",
+           "$InstallationStatus$"
+          ]
+
+[opsiServiceCall_setActionRequestStatus]
+"method": "setProductActionRequest"
+"params": [
+           "$UninstallProductId$",
+           "$ClientId$",
+           "$ActionRequest$"
+          ]
+
+[Sub_free_license_other_product]
+if opsiLicenseManagementEnabled
+	comment "License management is enabled and will be used"
+
+	comment "Trying to free license used for the product"
+	DefVar $result$
+	Set $result$ = FreeLicense($otherLicensePool$)
+	; If there is an assignment of a license pool to the product, it is possible to use
+	; Set $result$ = FreeLicense("", $ConcurrentProductId$)
+	;
+	; If there is an assignment of a license pool to a windows software id, it is possible to use
+	; DefVar $WindowsSoftwareId$
+	; $WindowsSoftwareId$ = "..."
+	; set $result$ = FreeLicense("", "", $WindowsSoftwareId$)
+else
+	LogError "Error: licensing required, but license management not enabled"
+	isFatalError
+endif
+
+[Sub_check_exitcode]
+comment "Test for installation success via exit code"
+set $ExitCode$ = getLastExitCode
+; informations to exit codes see
+; http://msdn.microsoft.com/en-us/library/aa372835(VS.85).aspx
+; http://msdn.microsoft.com/en-us/library/aa368542.aspx
+if ($ExitCode$ = "0")
+	comment "Looks good: setup program gives exitcode zero"
+else
+	comment "Setup program gives a exitcode unequal zero: " + $ExitCode$
+	if ($ExitCode$ = "1605")
+		comment "ERROR_UNKNOWN_PRODUCT	1605	This action is only valid for products that are currently installed."
+		comment "Uninstall of a not installed product failed - no problem"
+	else
+		if ($ExitCode$ = "1641")
+			comment "looks good: setup program gives exitcode 1641"
+			comment "ERROR_SUCCESS_REBOOT_INITIATED	1641	The installer has initiated a restart. This message is indicative of a success."
+		else
+			if ($ExitCode$ = "3010")
+				comment "looks good: setup program gives exitcode 3010"
+				comment "ERROR_SUCCESS_REBOOT_REQUIRED	3010	A restart is required to complete the install. This message is indicative of a success."
+				set $rebootrequired$ = "yes"
+			else
+				logError "Fatal: Setup program gives an unknown exitcode unequal zero: " + $ExitCode$
+				isFatalError
+			endif
+		endif
+	endif
+endif
+
+[LinkFolder_install]
+; Example of creating an shortcut to the installed exe on AllUsers desktop:
+;
+set_basefolder common_desktopdirectory
+set_subfolder ""
+
+set_link
+ 	name: $Linkname$
+ 	target: $InterestingFile$
+ 	parameters: 
+ 	working_dir: $InstallDir$
+ 	icon_file: 
+ 	icon_index:
+ end_link
+ 
+[Winbatch_uninstall_msi]
+msiexec /x $MsiId$ /qb! REBOOT=ReallySuppress
+
+[sub_check_exitcode_inform]
+comment "Test for installation success via exit code"
+set $ExitCode$ = getLastExitCode
+; informations to exit codes see
+; http://msdn.microsoft.com/en-us/library/aa372835(VS.85).aspx
+; http://msdn.microsoft.com/en-us/library/aa368542.aspx
+if ($ExitCode$ = "0")
+	comment "Looks good: setup program gives exitcode zero"
+else
+	comment "Setup program gives a exitcode unequal zero: " + $ExitCode$
+	if ($ExitCode$ = "1605")
+		comment "ERROR_UNKNOWN_PRODUCT	1605	This action is only valid for products that are currently installed."
+		comment "Uninstall of a not installed product failed - no problem"
+	else
+		if ($ExitCode$ = "1641")
+			comment "looks good: setup program gives exitcode 1641"
+			comment "ERROR_SUCCESS_REBOOT_INITIATED	1641	The installer has initiated a restart. This message is indicative of a success."
+		else
+			if ($ExitCode$ = "3010")
+				comment "looks good: setup program gives exitcode 3010"
+				comment "ERROR_SUCCESS_REBOOT_REQUIRED	3010	A restart is required to complete the install. This message is indicative of a success."
+			else
+				comment "Fatal: Setup program gives an unknown exitcode unequal zero: " + $ExitCode$
+				
+			endif
+		endif
+	endif
+endif
+
+[DosInAnIcon_setproxy_win7]
+;netsh.exe winhttp set proxy proxy:3128 "<local>;*.mynet.local"
+netsh.exe winhttp set proxy $httpproxy$
+
+[Registry_HKCU_Enable_Proxy]
+openKey [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings]
+set "MigrateProxy"=REG_dword:00000001
+set "ProxyEnable"=REG_dword:00000001
+set "ProxyHttp1.1"=REG_dword:00000000
+set "ProxyServer"="$http_proxy$"
+set "ProxyOverride"="*.exdomain;*.intern.exampledomain.de;<local>"
+
+openKey [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Connections]
+; proxy.exdomain:3128
+;set "DefaultConnectionSettings"=REG_BINARY:46 00 00 00 02 00 00 00 03 00 00 00 19 00 00 00 68 74 74 70 3a 2f 2f 70 72 6f 78 79 2e 64 61 73 73 2d 69 74 3a 33 31 32 38 07 00 00 00 3c 6c 6f 63 61 6c 3e 00 00 00 00 04 00 00 00 00 00 00 00 c0 e6 b0 0e 28 8f cc 01 00 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 02 00 00 00 0a 14 5b 8d 00 00 00 00 00 00 00 00 6b 75 6d 65 6e 74 65 20 75 6e 64 20 45 69 6e 73 74 65 6c 6c 75 6e 67 65 6e 00 4e 00 03 00 04 00 ef be 00 00 00 00 00 00 00 00 14 00 00 00 44 00 6f 00 6b 00 75 00 6d 00 65 00 6e 00 74 00 65 00 20 00 75 00 6e 00 64 00 20 00 45 00 69 00 6e 00 73 00 74 00 65 00 6c 00 6c 00 75 00 6e 00 67 00 65 00 6e 00 00 00 2a 00 00 00 00 00 00 00 00 00
+; proxy2.intern.exampledomain.de:8080
+;set "DefaultConnectionSettings"=REG_BINARY:46 00 00 00 04 00 00 00 03 00 00 00 1f 00 00 00 70 72 6f 78 79 32 2e 69 6e 74 65 72 6e 2e 64 65 67 69 6e 76 65 73 74 2e 64 65 3a 38 30 38 30 07 00 00 00 3c 6c 6f 63 61 6c 3e 00 00 00 00 00 00 00 00 00 00 00 00 50 42 76 ea 4f 8a cc 01 00 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 02 00 00 00 0a b2 07 88 00 00 00 00 00 00 00 00 60 94 00 68 38 96 00 68 22 9a 00 68 24 ba 00 68 8a bf 00 68 8e 6c 00 68 00 71 00 68 ba 74 00 68 56 7e 00 68 a0 7f 00 68 d1 82 00 68 22 da 00 68 0a df 00 68 a7 d7 00 68 62 95 00 68 6d 9e 00 68 9c 9f 00 68 6f a5 00 68 91 c8 00 68 00 00 00 00 ae aa 00 68 2e 85 00 68 00 00 00 00 00 00 00 68 74 d4 4d e3 00 00 00 00 01 00 00 00 00 00 00 00
+set "DefaultConnectionSettings"=REG_BINARY:46 00 00 00 05 00 00 00 03 00 00 00 1f 00 00 00 70 72 6f 78 79 32 2e 69 6e 74 65 72 6e 2e 64 65 67 69 6e 76 65 73 74 2e 64 65 3a 38 30 38 30 1d 00 00 00 2a 2e 69 6e 74 65 72 6e 2e 64 65 67 69 6e 76 65 73 74 2e 64 65 3b 3c 6c 6f 63 61 6c 3e 00 00 00 00 00 00 00 00 00 00 00 00 00 2b bf 75 c8 9f cc 01 00 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 02 00 00 00 0a b2 07 8e 00 00 00 00 00 00 00 00 61 00 6d 00 6d 00 65 00 5c 00 6f 00 70 00 65 00 6e 00 73 00 73 00 6c 00 5c 00 62 00 69 00 6e 00 5c 00 6f 00 70 00 65 00 6e 00 73 00 73 00 6c 00 2e 00 63 00 66 00 67 00 00 00 45 00 3b 00 2e 00 57 00 53 00 46 00 3b 00 2e 00 57 00 53 00 48 00 00 00 79 00 73 00 74 00 65 00 6d 00 33 00 32 00 5c 00 57 00 62 00 65 00 6d 00 00 00 00 00 00 00
+
+
+
+
+[Registry_HKLM_Enable_Proxy]
+openKey [HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Internet Settings]
+set "MigrateProxy"=REG_dword:00000001
+set "ProxyEnable"=REG_dword:00000001
+set "ProxyHttp1.1"=REG_dword:00000000
+set "ProxyServer"="$http_proxy$"
+set "ProxyOverride"="<local>"
+
+openKey [HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Connections]
+; proxy.exdomain:3128
+;set "DefaultConnectionSettings"=REG_BINARY:46 00 SOME BINARY 00 00 03 00 00 00 19 00 00 00 68 74 74 70 3a 2f 2f 70 72 6f 78 79 2e 64 61 73 73 2d 69 74 3a 33 31 32 38 07 00 00 00 3c 6c 6f 63 61 6c 3e 00 00 00 00 04 00 00 00 00 00 00 00 c0 e6 b0 0e 28 8f cc 01 00 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 02 00 00 00 0a 14 5b 8d 00 00 00 00 00 00 00 00 6b 75 6d 65 6e 74 65 20 75 6e 64 20 45 69 6e 73 74 65 6c 6c 75 6e 67 65 6e 00 4e 00 03 00 04 00 ef be 00 00 00 00 00 00 00 00 14 00 00 00 44 00 6f 00 6b 00 75 00 6d 00 65 00 6e 00 74 00 65 00 20 00 75 00 6e 00 64 00 20 00 45 00 69 00 6e 00 73 00 74 00 65 00 6c 00 6c 00 75 00 6e 00 67 00 65 00 6e 00 00 00 2a 00 00 00 00 00 00 00 00 00
+; proxy2.intern.exampledomain.de:8080
+set "DefaultConnectionSettings"=REG_BINARY:46 00 00 SOME BINARY 00 03 00 00 00 1f 00 00 00 70 72 6f 78 79 32 2e 69 6e 74 65 72 6e 2e 64 65 67 69 6e 76 65 73 74 2e 64 65 3a 38 30 38 30 07 00 00 00 3c 6c 6f 63 61 6c 3e 00 00 00 00 00 00 00 00 00 00 00 00 50 42 76 ea 4f 8a cc 01 00 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 02 00 00 00 0a b2 07 88 00 00 00 00 00 00 00 00 60 94 00 68 38 96 00 68 22 9a 00 68 24 ba 00 68 8a bf 00 68 8e 6c 00 68 00 71 00 68 ba 74 00 68 56 7e 00 68 a0 7f 00 68 d1 82 00 68 22 da 00 68 0a df 00 68 a7 d7 00 68 62 95 00 68 6d 9e 00 68 9c 9f 00 68 6f a5 00 68 91 c8 00 68 00 00 00 00 ae aa 00 68 2e 85 00 68 00 00 00 00 00 00 00 68 74 d4 4d e3 00 00 00 00 01 00 00 00 00 00 00 00
+
+ 
+[kmsklientkeys]
+http://technet.microsoft.com/de-de/library/ee624355.aspx#section2-3
+Suiten
+Office Professional Plus 2010 VYBBJ-TRJPB-QFQRF-QFT4D-H3GVB
+Office Standard 2010 V7QKV-4XVVR-XYV4D-F7DFM-8R6BM
+Office Home and Business 2010 D6QFG-VBYP2-XQHM7-J97RH-VVRCK
+Access 2010 V7Y44-9T38C-R2VJK-666HK-T7DDX
+Excel 2010 H62QG-HXVKF-PP4HP-66KMR-CW9BM
+SharePoint Workspace 2010 QYYW6-QP4CB-MBV6G-HYMCJ-4T3J4
+InfoPath 2010 K96W8-67RPQ-62T9Y-J8FQJ-BT37T
+OneNote 2010 Q4Y4M-RHWJM-PY37F-MTKWH-D3XHX
+Outlook 2010 7YDC2-CWM8M-RRTJC-8MDVC-X3DWQ
+PowerPoint 2010 RC8FX-88JRY-3PF7C-X8P67-P4VTT
+Project Professional 2010 YGX6F-PGV49-PGW3J-9BTGG-VHKC6
+Project Standard 2010 4HP3K-88W3F-W2K3D-6677X-F9PGB
+Publisher 2010 BFK7F-9MYHM-V68C7-DRQ66-83YTP
+Word 2010 HVHB3-C6FV7-KQX9W-YQG79-CRY7T
+Visio Premium 2010 D9DWC-HPYVV-JGF4P-BTWQB-WX8BJ
+Visio Professional 2010 7MCW8-VRQVK-G677T-PDJCM-Q8TCP
+Visio Standard 2010 767HD-QGMWX-8QTDB-9G3R2-KHFGJ
+

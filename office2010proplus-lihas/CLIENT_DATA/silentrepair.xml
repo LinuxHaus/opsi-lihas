@@ -1,0 +1,9 @@
+<Configuration Product="ProPlus">
+
+<Display Level="basic" CompletionNotice="no" SuppressModal="no" AcceptEula="yes" />
+
+<Setting Id="SETUP_REBOOT" Value="Never" />
+	
+<Logging Type="standard" Path="c:\tmp" Template="Microsoft Office Silent Repair(*).txt" /> 
+
+</Configuration>

@@ -1,0 +1,13 @@
+<!-- 
+    After installing SP1, Sharepoint workspace gets installed.
+    This removes it again, 
+    see http://support.microsoft.com/kb/2612800/en-us 
+-->
+<Configuration Product="ProPlus">
+  <Display Level="Basic" CompletionNotice="no" SuppressModal="yes" AcceptEula="yes" />
+ <Logging Type="standard" Path="c:\tmp" Template="Microsoft Office Modify  Groove (*).txt" />
+  <OptionState Id="GrooveFiles" State="absent" Children="force" />
+  <Setting Id="SETUP_REBOOT" Value="Never" />
+</Configuration>
+
+

@@ -1,0 +1,26 @@
+<Configuration Product="SingleImage">
+
+	<Display Level="basic" CompletionNotice="no" SuppressModal="no" AcceptEula="yes" /> 
+	
+	<Setting Id="SETUP_REBOOT" Value="Never" />
+	
+	<Logging Type="standard" Path="c:\tmp" Template="Microsoft Office Single Image Setup(*).txt" /> 
+ 	<PIDKEY Value="XXXXXXXXXXXXXXXXXXXXXXXXX" />	
+	<!-- <USERNAME Value="Customer" /> -->
+	<!-- <COMPANYNAME Value="MyCompany" /> -->
+	
+	<!-- <INSTALLLOCATION Value="%programfiles%\Microsoft Office" /> -->
+	
+	<!-- <LIS CACHEACTION="CacheOnly" /> -->
+	
+	<!-- <LIS SOURCELIST="\\server1\share\Office;\\server2\share\Office" /> -->
+	
+	<!-- <DistributionPoint Location="\\server\share\Office" /> -->
+	
+	<!-- <OptionState Id="OptionID" State="absent" Children="force" /> -->
+	
+	<!-- <Setting Id="Reboot" Value="IfNeeded" /> -->
+	
+	<!-- <Command Path="%windir%\system32\msiexec.exe" Args="/i \\server\share\my.msi" QuietArg="/q" ChainPosition="after" Execute="install" /> -->
+
+</Configuration>
