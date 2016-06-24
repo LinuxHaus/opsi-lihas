@@ -9,7 +9,7 @@ id: pidgin-lihas
 name: pidgin-lihas
 description: Multiprotocol Instant Messenger
 advice: 
-version: 2.10.9
+version: 2.11.0
 priority: 0
 licenseRequired: False
 productClasses: 
@@ -20,6 +20,13 @@ alwaysScript:
 onceScript: 
 customScript: 
 userLoginScript: 
+
+[Changelog]
+pidgin (2.11.0-1) testing; urgency=low
+
+  * Update to 2.11.0
+
+ -- Juri Grabowski <fai-support@lihas.de>  Fri, 24 Jun 2016 12:38:00 +0000
 
 [Changelog]
 pidgin (2.10.9-1) testing; urgency=low

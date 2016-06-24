@@ -1,7 +1,7 @@
 WGET_COMMON_OPTIONS  = -q -N
 
 PACKAGE_NAME         = pidgin-lihas
-VERSION              = 2.10.9
+VERSION              = 2.11.0
 OPSI_PACKAGE_VERSION = 1
 
 DOWNLOAD_DIR         = ./CLIENT_DATA/files
