@@ -61,6 +61,7 @@ endif
 @echo off
 cd /d %ScriptPath%
 for /R %ScriptPath% %%f in (*.crt) do (certutil -addstore "Root" %%f)
+for /R %ScriptPath% %%f in (*.cer) do (certutil -addstore "Root" %%f)
 
 [Sub_check_exitcode]
 comment "Test for installation success via exit code"
