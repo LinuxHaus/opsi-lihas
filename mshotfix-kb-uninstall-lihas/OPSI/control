@@ -1,0 +1,38 @@
+[Package]
+version: 1
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: mshotfix-kb-uninstall-lihas
+name: mshotfix-kb-uninstall-lihas
+description: mshotfix-kb-uninstall-lihas
+advice: 
+version: 1.0
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: removepatch.ins
+uninstallScript: 
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[ProductProperty]
+type: unicode
+name: kb
+multivalue: False
+editable: True
+description: KB-Number WITHOUT leading "KB" (e.g. 3167679 for KB3167679)
+values: [""]
+default: [""]
+
+[Changelog]
+mshotfix-kb-uninstall-lihas (1.0-1) testing; urgency=low
+
+  * Initial package
+
+ -- Uwe Burger <ubu@lihas.de>  Tue, 19 Jan 2016 08:57:37 +0000

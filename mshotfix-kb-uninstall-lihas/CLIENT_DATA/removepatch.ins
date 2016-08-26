@@ -1,0 +1,47 @@
+; Copyright (c) uib gmbh (www.uib.de)
+; This sourcecode is owned by uib
+; and published under the Terms of the General Public License.
+; credits: http://www.opsi.org/credits/
+
+[Actions]
+requiredWinstVersion >= "4.10.8.6"
+
+DefVar $LogDir$
+DefVar $ProductId$
+DefVar $ExitCode$
+DefVar $kb$
+DefVar $INST_SystemType$
+DefVar $bittyness$
+DefVar $hotfixpath$
+
+Set $kb$ = GetProductProperty("kb","0")
+Set $INST_SystemType$ = GetSystemType
+Set $LogDir$ = "%SystemDrive%\tmp"
+
+; ----------------------------------------------------------------
+; - Please edit the following values                             -
+; ----------------------------------------------------------------
+;$ProductId$ should be the name of the product in opsi
+; therefore please: only lower letters, no umlauts,
+; no white space use '-' as a seperator
+Set $ProductId$       = "mshotfix-kb-uninstall-lihas"
+; the path were we find the product after the installation
+; ----------------------------------------------------------------
+
+Message "Installing " + $ProductId$ + " ..."
+
+
+comment "Uninstall Updates"
+if $INST_SystemType$ = "64 Bit System"
+	Set $bittyness$="x64"
+	Set $hotfixpath$="..\mshotfix-win7-win2008r2-x64-glb\w61\x64\glb"
+else
+	Set $bittyness$="x64"
+	Set $hotfixpath$="..\mshotfix-win7-x86-glb\w61\x68\glb"
+endif
+Winbatch_kb /SysNative
+ExitWindows /Reboot
+
+[Winbatch_kb]
+@echo off
+dism /online /remove-package /norestart /packagepath:%ScriptDir%\$hotfixpath$\windows6.1-kb$kb$-$bittyness$.cab
