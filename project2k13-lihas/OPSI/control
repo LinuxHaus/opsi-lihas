@@ -1,0 +1,94 @@
+[Package]
+version: 1
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: project2k13-lihas
+name: Project 2013
+description: Project 2013
+advice: 
+version: 1.0
+priority: 0
+licenseRequired: True
+productClasses: 
+setupScript: setup.ins
+uninstallScript: uninstall.ins
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[ProductDependency]
+action: setup
+requiredProduct: office_2016_hotfix
+requiredAction: setup
+requirementType: after
+
+[ProductProperty]
+type: unicode
+name: install_architecture
+multivalue: False
+editable: False
+description: which Office Version (32/64 bit) is to be installed
+values: ["32 bit", "64 bit"]
+default: ["32 bit"]
+
+[ProductProperty]
+type: unicode
+name: username
+multivalue: False
+editable: True
+description: Username for config.xml
+default: ["USER"]
+
+[ProductProperty]
+type: unicode
+name: companyname
+multivalue: False
+editable: True
+description: COMPANYNAME for config.xml
+default: ["COMPANY"]
+
+[ProductProperty]
+type: unicode
+name: poolid-or-licensekey
+multivalue: False
+editable: True
+description: id from opsi-license-management-pool or license key without dashes
+
+[ProductProperty]
+type: unicode
+name: method
+multivalue: False
+editable: False
+description: What should we do:
+ "opsi License management": need the poolid from property 'poolid-or-licensekey'
+ "KMS opsi License management": need the poolid from property 'poolid-or-licensekey'
+ "licensekey from property": get licensekey from property 'poolid-or-licensekey'
+ "KMS": need the poolid from property 'poolid-or-licensekey'
+values: ["KMS", "KMS opsi License management", "licensekey from property", "opsi License management"]
+default: ["licensekey from property"]
+
+[ProductProperty]
+type: bool
+name: activate
+description: Activate Office after Install
+default: True
+
+[ProductProperty]
+type: unicode
+name: httpproxy
+multivalue: False
+editable: True
+description: httpproxy needed for activation proxy.mycompany.com:3218
+default: [""]
+
+[Changelog]
+project2k13-lihas (1.0-1) testing; urgency=low
+
+  * Initial package
+
+ -- Stefan Baur <lihas@lihas.de>  Fri, 29 Jul 2016 09:20:00 +0000

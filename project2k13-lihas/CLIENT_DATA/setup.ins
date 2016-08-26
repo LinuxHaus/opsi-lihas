@@ -1,0 +1,318 @@
+
+
+; Author Jens Eppler, based on Office 2010 Code by Soren Birk
+ 
+[Actions]
+requiredWinstVersion >= "4.11.3.5"
+ 
+DefVar $INST_SystemType$
+DefVar $UninstallProgram$
+DefVar $LogDir$
+DefVar $ProductId$  
+DefVar $MinimumSpace$
+DefVar $InstallDir$
+DefVar $ExitCode$
+DefVar $LicenseRequired$
+DefVar $LicenseKey$
+DefVar $LicensePool$
+DefVar $UninstCmd$
+DefVar $TempDir$ 
+DefVar $exitcodeActivation$
+DefVar $username$
+DefVar $companyname$
+DefVar $InstallCommand$
+DefVar $httpproxy$
+DefVar $activate$
+DefVar $poolOrKey$ 
+DefVar $method$
+DefVar $MsVersion$
+DefVar $lang2install$
+DefVar $install_architecture$
+DefVar $architecture2use$
+
+Set $MsVersion$ = GetMsVersionInfo
+Set $username$ = GetProductProperty("username","username")
+Set $companyname$ = GetProductProperty("companyname","companyname")
+Set $lang2install$ = GetProductProperty("lang2install","de")
+Set $install_architecture$ = GetProductProperty("install_architecture","32 Bit")
+set $httpproxy$ = GetProductProperty("httpproxy","")
+Set $activate$ = GetProductProperty("activate","False")
+set $poolOrKey$ = GetProductProperty("Poolid-or-Licensekey","")
+set $method$ = GetProductProperty("method","licensekey from property")
+
+Set $INST_SystemType$ = GetSystemType
+ 
+; ----------------------------------------------------------------
+; - Please edit the following values                             -
+; ----------------------------------------------------------------
+Set $LogDir$          = "%SystemDrive%\tmp"
+Set $ProductId$       = "peoject2k13"
+Set $MinimumSpace$    = "1700 MB"
+; Set $InstallDir$    - must be set below, after arch/bittyness
+; Set $InstallDir$      = "%ProgramFiles32Dir%\Microsoft Office\Office16"
+Set $LicenseKey$      = GetProductProperty("LicenseKey","")
+Set $TempDir$         = "%SystemDrive%\opsi.org\tmp\"
+; ----------------------------------------------------------------
+;
+ 
+if not(HasMinimumSpace ("%SystemDrive%", $MinimumSpace$))
+	LogError "Not enough space on %SystemDrive%, " + $MinimumSpace$ + " on drive %SystemDrive% is needed for " + $ProductId$
+	isFatalError "Not enough space"
+else
+	comment "Display product logo"
+	ShowBitmap "%ScriptPath%\" + $ProductId$ + ".png" $ProductId$
+ 
+	if FileExists("%ScriptPath%\delsub.ins")
+		comment "Start uninstall sub section"
+		Sub "%ScriptPath%\delsub.ins"
+	endif
+ 
+	Message "Installing " + $ProductId$ + " ..."
+
+	if not ( $httpproxy$ = "" )
+        if ($MsVersion$ < "6")
+            comment " Windows XP "
+            comment "enable HTTP proxy, required for auto-activating"
+            ; TODO: store current settings and restore after installing
+            Registry_HKCU_Enable_Proxy
+            Registry_HKLM_Enable_Proxy
+
+        else
+            comment " Windows Vista  Windows 7 "
+            comment "enable HTTP proxy, required for auto-activating"
+            DosInAnIcon_setproxy_win7 winst /sysnative
+        endif
+
+    endif
+
+    set $poolOrKey$ = GetProductProperty("Poolid-or-Licensekey","")
+
+    If ( $method$ = "KMS" ) OR ( $method$ = "KMS opsi License management" )
+
+        ; we need for Installation the default Microsoft kmsclientkeys
+        ; see section       [kmsklientkeys]
+        ; respectively http://technet.microsoft.com/de-de/library/ee624355.aspx#section2-3
+        ; respectively some PIDKEY Value in some xml-File on the Installmedium, for instance
+        ;  grep -i "pidkey value" `find . -iname \*xml`
+        ; ./de/x64/ProPlus.WW/setup.xml:    <PIDKEY Value="VYBBJ-TRJPB-QFQRF-QFT4D-H3GVB"/>
+        ; ./de/x86/ProPlus.WW/setup.xml:    <PIDKEY Value="VYBBJ-TRJPB-QFQRF-QFT4D-H3GVB"/>
+        ; values: ["ProPlus", "ProPlusr", "SingleImage", "Standard"]
+
+        Set $microsoftdefaultkmsclientkeylist$ = addtolist($microsoftdefaultkmsclientkeylist$,"ProPlus=VYBBJTRJPBQFQRFQFT4DH3GVB")
+        Set $microsoftdefaultkmsclientkeylist$ = addtolist($microsoftdefaultkmsclientkeylist$,"Standard=V7QKV4XVVRXYV4DF7DFM8R6BM")
+        Set $microsoftdefaultkmsclientkeylist$ = addtolist($microsoftdefaultkmsclientkeylist$,"Outlook=7YDC2CWM8MRRTJC8MDVCX3DWQ")
+        Set $LicenseKey$ = getValue($ConfigurationProduct$,$microsoftdefaultkmsclientkeylist$)
+
+        If ( $method$ = "KMS opsi License management" )
+                comment "Licensing required, reserve license and get license key"
+                Set $LicenseRequired$ = "true"
+                Set $LicensePool$     = $poolOrKey$
+                Sub_get_licensekey
+        endif
+
+        else
+            if $method$ = "licensekey from property"
+                Set $LicenseKey$ = $poolOrKey$
+
+                else
+                    comment "Licensing required, reserve license and get license key"
+                    Set $LicenseRequired$ = "true"
+                    Set $LicensePool$     = $poolOrKey$
+                    Sub_get_licensekey
+
+            endif
+
+
+    endif
+
+
+	comment "Copying empty config.xml to $TempDir$"
+	Files_copy_patchtextfile
+ 
+	comment "Patching config.xml"
+	PatchTextFile_config_xml $TempDir$ + "config.xml"
+ 
+	comment "Start setup program"
+    ; http://msdn.microsoft.com/en-us/library/ee691831.aspx#odc_office2010_Compatibility32bit64bit_FrequentlyAskedQuestions
+    ;       Can I install 64-bit and 32-bit versions of Microsoft Office side-by-side?
+    ;   No.
+    ;
+
+    Set $architecture2use$ = "x86"
+    if ($INST_SystemType$ = "64 Bit System") and ($install_architecture$ = "64 bit")
+        Set $architecture2use$ = "x64"
+        Set $InstallDir$ = "%ProgramFiles64Dir%\Microsoft Office\Office15"
+    else
+        Set $InstallDir$ = "%ProgramFiles32Dir%\Microsoft Office\Office15"
+    endif
+
+    Set $InstallCommand$ = "%SCRIPTPATH%\files\" + $lang2install$ + "\" + $architecture2use$ + "\Setup.exe " + "/config " + $TempDir$ + "config.xml"
+	ChangeDirectory "%SCRIPTPATH%"
+	Winbatch_install
+	Sub_check_exitcode
+
+    comment "Check activation status ....."
+    DosInAnIcon_restartOfficeProtectionPlatform
+
+    DosInAnIcon_Officestatus
+
+    if ( $activate$ = "True")
+        DosInAnIcon_activate
+        DosInAnIcon_Officestatus
+    endif
+
+ 
+	if not ($LicenseKey$ = "")
+		comment "Set License Key"
+		DosInAnIcon_set_key
+		set $exitcodeActivation$ = getLastExitCode
+ 
+		if not ($exitcodeActivation$ = "0")
+			LogError "Exitcode unequal zero: "+$exitcodeActivation$+" Activation seems to be failed !"
+			isFatalError "activation failed"
+		else
+			comment "Activation seems to be successful: exit code = 0"
+		endif
+	endif
+ 
+endif
+ 
+[Files_copy_patchtextfile]
+copy "%ScriptPath%\config.xml" $TempDir$
+ 
+[PatchTextFile_config_xml]
+GoToTop
+FindLine_Containing '<PIDKEY Value='
+FindLine_Containing '<PIDKEY Value="XXXXXXXXXXXXXXXXXXXXXXXXX" />'
+DeleteTheLine
+InsertLine '<PIDKEY Value="$LicenseKey$" />'
+GoToTop
+FindLine "</Configuration>"
+InsertLine '<OptionState Id="PROJECTFiles" State="local" Children="force" />'
+InsertLine '<COMPANYNAME Value="$companyname$" />'
+InsertLine '<USERNAME Value="$username$"  />'
+
+[Winbatch_install]
+;"%ScriptPath%\files\visio2k16\setup.exe" /config "$TempDir$\config.xml"
+$InstallCommand$
+ 
+[DosInAnIcon_set_key]	
+cscript "$InstallDir$\OSPP.VBS" /inpkey:$LicenseKey$
+exit %ERRORLEVEL%
+ 
+[Sub_check_exitcode]
+comment "Test for installation success via exit code"
+set $ExitCode$ = getLastExitCode
+; informations to exit codes see
+; http://msdn.microsoft.com/en-us/library/aa372835(VS.85).aspx
+; http://msdn.microsoft.com/en-us/library/aa368542.aspx
+if ($ExitCode$ = "0")
+	comment "Looks good: setup program gives exitcode zero"
+else
+	comment "Setup program gives a exitcode unequal zero: " + $ExitCode$
+	if ($ExitCode$ = "1605")
+		comment "ERROR_UNKNOWN_PRODUCT	1605	This action is only valid for products that are currently installed."
+		comment "Uninstall of a not installed product failed - no problem"
+	else
+		if ($ExitCode$ = "1641")
+			comment "looks good: setup program gives exitcode 1641"
+			comment "ERROR_SUCCESS_REBOOT_INITIATED	1641	The installer has initiated a restart. This message is indicative of a success."
+		else
+			if ($ExitCode$ = "3010")
+				comment "looks good: setup program gives exitcode 3010"
+				comment "ERROR_SUCCESS_REBOOT_REQUIRED	3010	A restart is required to complete the install. This message is indicative of a success."
+			else
+				logError "Fatal: Setup program gives an unknown exitcode unequal zero: " + $ExitCode$
+				isFatalError
+			endif
+		endif
+	endif
+endif
+
+[DosInAnIcon_setproxy_win7]
+;netsh.exe winhttp set proxy proxy:3128 "<local>;*.mynet.local"
+netsh.exe winhttp set proxy $httpproxy$
+
+[Registry_HKCU_Enable_Proxy]
+openKey [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings]
+set "MigrateProxy"=REG_dword:00000001
+set "ProxyEnable"=REG_dword:00000001
+set "ProxyHttp1.1"=REG_dword:00000000
+set "ProxyServer"="$http_proxy$"
+set "ProxyOverride"="*.exdomain;*.intern.exampledomain.de;<local>"
+
+openKey [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Connections]
+; proxy.exdomain:3128
+;set "DefaultConnectionSettings"=REG_BINARY:46 00 00 00 02 00 00 00 03 00 00 00 19 00 00 00 68 74 74 70 3a 2f 2f 70 72 6f 78 79 2e 64 61 73 73 2d 69 74 3a 33 31 32 38 07 00 00 00 3c 6c 6f 63 61 6c 3e 00 00 00 00 04 00 00 00 00 00 00 00 c0 e6 b0 0e 28 8f cc 01 00 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 02 00 00 00 0a 14 5b 8d 00 00 00 00 00 00 00 00 6b 75 6d 65 6e 74 65 20 75 6e 64 20 45 69 6e 73 74 65 6c 6c 75 6e 67 65 6e 00 4e 00 03 00 04 00 ef be 00 00 00 00 00 00 00 00 14 00 00 00 44 00 6f 00 6b 00 75 00 6d 00 65 00 6e 00 74 00 65 00 20 00 75 00 6e 00 64 00 20 00 45 00 69 00 6e 00 73 00 74 00 65 00 6c 00 6c 00 75 00 6e 00 67 00 65 00 6e 00 00 00 2a 00 00 00 00 00 00 00 00 00
+; proxy2.intern.exampledomain.de:8080
+;set "DefaultConnectionSettings"=REG_BINARY:46 00 00 00 04 00 00 00 03 00 00 00 1f 00 00 00 70 72 6f 78 79 32 2e 69 6e 74 65 72 6e 2e 64 65 67 69 6e 76 65 73 74 2e 64 65 3a 38 30 38 30 07 00 00 00 3c 6c 6f 63 61 6c 3e 00 00 00 00 00 00 00 00 00 00 00 00 50 42 76 ea 4f 8a cc 01 00 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 02 00 00 00 0a b2 07 88 00 00 00 00 00 00 00 00 60 94 00 68 38 96 00 68 22 9a 00 68 24 ba 00 68 8a bf 00 68 8e 6c 00 68 00 71 00 68 ba 74 00 68 56 7e 00 68 a0 7f 00 68 d1 82 00 68 22 da 00 68 0a df 00 68 a7 d7 00 68 62 95 00 68 6d 9e 00 68 9c 9f 00 68 6f a5 00 68 91 c8 00 68 00 00 00 00 ae aa 00 68 2e 85 00 68 00 00 00 00 00 00 00 68 74 d4 4d e3 00 00 00 00 01 00 00 00 00 00 00 00
+set "DefaultConnectionSettings"=REG_BINARY:46 00 00 00 05 00 00 00 03 00 00 00 1f 00 00 00 70 72 6f 78 79 32 2e 69 6e 74 65 72 6e 2e 64 65 67 69 6e 76 65 73 74 2e 64 65 3a 38 30 38 30 1d 00 00 00 2a 2e 69 6e 74 65 72 6e 2e 64 65 67 69 6e 76 65 73 74 2e 64 65 3b 3c 6c 6f 63 61 6c 3e 00 00 00 00 00 00 00 00 00 00 00 00 00 2b bf 75 c8 9f cc 01 00 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 02 00 00 00 0a b2 07 8e 00 00 00 00 00 00 00 00 61 00 6d 00 6d 00 65 00 5c 00 6f 00 70 00 65 00 6e 00 73 00 73 00 6c 00 5c 00 62 00 69 00 6e 00 5c 00 6f 00 70 00 65 00 6e 00 73 00 73 00 6c 00 2e 00 63 00 66 00 67 00 00 00 45 00 3b 00 2e 00 57 00 53 00 46 00 3b 00 2e 00 57 00 53 00 48 00 00 00 79 00 73 00 74 00 65 00 6d 00 33 00 32 00 5c 00 57 00 62 00 65 00 6d 00 00 00 00 00 00 00
+
+
+
+
+[Registry_HKLM_Enable_Proxy]
+openKey [HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Internet Settings]
+set "MigrateProxy"=REG_dword:00000001
+set "ProxyEnable"=REG_dword:00000001
+set "ProxyHttp1.1"=REG_dword:00000000
+set "ProxyServer"="$http_proxy$"
+set "ProxyOverride"="<local>"
+
+openKey [HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Connections]
+; proxy.exdomain:3128
+;set "DefaultConnectionSettings"=REG_BINARY:46 00 SOME BINARY 00 00 03 00 00 00 19 00 00 00 68 74 74 70 3a 2f 2f 70 72 6f 78 79 2e 64 61 73 73 2d 69 74 3a 33 31 32 38 07 00 00 00 3c 6c 6f 63 61 6c 3e 00 00 00 00 04 00 00 00 00 00 00 00 c0 e6 b0 0e 28 8f cc 01 00 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 02 00 00 00 0a 14 5b 8d 00 00 00 00 00 00 00 00 6b 75 6d 65 6e 74 65 20 75 6e 64 20 45 69 6e 73 74 65 6c 6c 75 6e 67 65 6e 00 4e 00 03 00 04 00 ef be 00 00 00 00 00 00 00 00 14 00 00 00 44 00 6f 00 6b 00 75 00 6d 00 65 00 6e 00 74 00 65 00 20 00 75 00 6e 00 64 00 20 00 45 00 69 00 6e 00 73 00 74 00 65 00 6c 00 6c 00 75 00 6e 00 67 00 65 00 6e 00 00 00 2a 00 00 00 00 00 00 00 00 00
+; proxy2.intern.exampledomain.de:8080
+set "DefaultConnectionSettings"=REG_BINARY:46 00 00 SOME BINARY 00 03 00 00 00 1f 00 00 00 70 72 6f 78 79 32 2e 69 6e 74 65 72 6e 2e 64 65 67 69 6e 76 65 73 74 2e 64 65 3a 38 30 38 30 07 00 00 00 3c 6c 6f 63 61 6c 3e 00 00 00 00 00 00 00 00 00 00 00 00 50 42 76 ea 4f 8a cc 01 00 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 02 00 00 00 0a b2 07 88 00 00 00 00 00 00 00 00 60 94 00 68 38 96 00 68 22 9a 00 68 24 ba 00 68 8a bf 00 68 8e 6c 00 68 00 71 00 68 ba 74 00 68 56 7e 00 68 a0 7f 00 68 d1 82 00 68 22 da 00 68 0a df 00 68 a7 d7 00 68 62 95 00 68 6d 9e 00 68 9c 9f 00 68 6f a5 00 68 91 c8 00 68 00 00 00 00 ae aa 00 68 2e 85 00 68 00 00 00 00 00 00 00 68 74 d4 4d e3 00 00 00 00 01 00 00 00 00 00 00 00
+
+ 
+
+[Sub_get_licensekey]
+if opsiLicenseManagementEnabled
+    comment "License management is enabled and will be used"
+
+    comment "Trying to get a license key"
+    Set $LicenseKey$ = demandLicenseKey ($LicensePool$)
+    ; If there is an assignment of exactly one licensepool to the product the following call is possible:
+    ; Set $LicenseKey$ = demandLicenseKey ("", $ProductId$)
+    ;
+    ; If there is an assignment of a license pool to a windows software id, it is possible to use:
+    ; DefVar $WindowsSoftwareId$
+    ; $WindowsSoftwareId$ = "..."
+    ; Set $LicenseKey$ = demandLicenseKey ("", "", $WindowsSoftwareId$)
+
+    DefVar $ServiceErrorClass$
+    set $ServiceErrorClass$ = getLastServiceErrorClass
+    comment "Error class: " + $ServiceErrorClass$
+
+    if $ServiceErrorClass$ = "None"
+        comment "Everything fine, we got the license key '" + $LicenseKey$ + "'"
+    else
+        if $ServiceErrorClass$ = "LicenseConfigurationError"
+            LogError "Fatal: license configuration must be corrected"
+            LogError getLastServiceErrorMessage
+            isFatalError
+        else
+            if $ServiceErrorClass$ = "LicenseMissingError"
+                LogError "Fatal: required license is not supplied"
+                isFatalError
+            endif
+        endif
+    endif
+else
+    LogError "Fatal: license required, but license management not enabled"
+    isFatalError
+endif
+
+[DosInAnIcon_activate]
+cscript.exe "$InstallDir$\OSPP.vbs" /act
+
+[DosInAnIcon_restartOfficeProtectionPlatform]
+cscript.exe "$InstallDir$\OSPP.vbs" /osppsvcrestart
+
+[DosInAnIcon_Officestatus]
+cscript.exe "$InstallDir$\OSPP.vbs" /dstatus
+
+[DosInAnIcon_Officestatusall]
+cscript.exe "$InstallDir$\OSPP.vbs" /dstatusall
+

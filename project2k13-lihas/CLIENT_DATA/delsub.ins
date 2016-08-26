@@ -1,0 +1,55 @@
+; Author Jens Eppler, based on Office 2010 Code by Soren Birk
+ 
+Set $UninstCmd$ = "/uninstall prjstd /config %ScriptPath%\uninstconfig.xml"
+ 
+Message "Uninstalling " + $ProductId$ + " ..."
+ 
+if FileExists("%ProgramFiles64Dir%\Microsoft Office\Office15\winproj.exe")
+	comment "The program seems to be installed, starting the uninstallation."
+	Winbatch_uninstall_64
+	sub_check_exitcode
+endif
+
+if FileExists("%ProgramFiles32Dir%\Microsoft Office\Office15\winproj.exe")
+	comment "The program seems to be installed, starting the uninstallation."
+	Winbatch_uninstall_32
+	sub_check_exitcode
+endif
+
+[Winbatch_uninstall_32]
+"%ScriptPath%\files\de\x86\setup.exe" $UninstCmd$
+ 
+[Winbatch_uninstall_64]
+"%ScriptPath%\files\de\x64\setup.exe" $UninstCmd$
+ 
+ 
+[Sub_check_exitcode]
+comment "Test for installation success via exit code"
+set $ExitCode$ = getLastExitCode
+; informations to exit codes see
+; http://msdn.microsoft.com/en-us/library/aa372835(VS.85).aspx
+; http://msdn.microsoft.com/en-us/library/aa368542.aspx
+if ($ExitCode$ = "0")
+	comment "Looks good: setup program gives exitcode zero"
+else
+	comment "Setup program gives a exitcode unequal zero: " + $ExitCode$
+	if ($ExitCode$ = "1605")
+		comment "ERROR_UNKNOWN_PRODUCT	1605	This action is only valid for products that are currently installed."
+		comment "Uninstall of a not installed product failed - no problem"
+	else
+		if ($ExitCode$ = "1641")
+			comment "looks good: setup program gives exitcode 1641"
+			comment "ERROR_SUCCESS_REBOOT_INITIATED	1641	The installer has initiated a restart. This message is indicative of a success."
+		else
+			if ($ExitCode$ = "3010")
+				comment "looks good: setup program gives exitcode 3010"
+				comment "ERROR_SUCCESS_REBOOT_REQUIRED	3010	A restart is required to complete the install. This message is indicative of a success."
+			else
+				logError "Fatal: Setup program gives an unknown exitcode unequal zero: " + $ExitCode$
+				isFatalError
+			endif
+		endif
+	endif
+endif
+
+

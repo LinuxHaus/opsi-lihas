@@ -1,0 +1,6 @@
+<Configuration Product="PrjStd">
+<PIDKEY Value="XXXXXXXXXXXXXXXXXXXXXXXXX" />
+<Display Level="none" CompletionNotice="no" SuppressModal="yes" AcceptEula="yes" />
+<Logging Type="standard" Path="C:\opsi.org\log" Template="Microsoft Office Professional Plus Setup(*).txt" />
+<Setting Id="SETUP_REBOOT" Value="Never" />
+</Configuration>
