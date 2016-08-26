@@ -1,0 +1,4 @@
+CLIENT_DATA/files/**/**
+CLIENT_DATA/files/**
+*.opsi
+*.opsi.uploaded

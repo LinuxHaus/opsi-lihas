@@ -1,0 +1,33 @@
+
+
+; Author Jens Eppler, based on Office 2010 Code by Soren Birk
+ 
+[Actions]
+requiredWinstVersion >= "4.11.2.6"
+ 
+DefVar $LogDir$
+DefVar $ExitCode$
+DefVar $ProductId$
+DefVar $InstallDir$
+DefVar $LicenseRequired$
+DefVar $LicensePool$
+DefVar $UninstCmd$
+ 
+Set $LogDir$ = "%SystemDrive%\tmp"
+ 
+; ----------------------------------------------------------------
+; - Please edit the following values                             -
+; ----------------------------------------------------------------
+Set $ProductId$       = "visio2k16"
+;Set $InstallDir$      = "%ProgramFiles32Dir%\Microsoft Office\Office16"
+; ----------------------------------------------------------------
+ 
+comment "Display product logo"
+ShowBitmap "%ScriptPath%\" + $ProductId$ + ".png" $ProductId$
+ 
+Message "Uninstalling " + $ProductId$ + " ..."
+ 
+if FileExists("%ScriptPath%\delsub.ins")
+	comment "Start uninstall sub section"
+	Sub "%ScriptPath%\delsub.ins"
+endif

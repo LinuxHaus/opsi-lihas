@@ -1,0 +1,6 @@
+<Configuration Product="vispro">
+<Display Level="basic" CompletionNotice="no" SuppressModal="yes" AcceptEula="yes" />
+<Logging Type="standard" Path="C:\opsi.org\log" Template="Microsoft Office Standard Setup(*).txt" />
+<Setting Id="SETUP_REBOOT" Value="Never" />
+</Configuration>
+

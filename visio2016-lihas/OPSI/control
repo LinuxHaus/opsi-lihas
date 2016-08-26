@@ -1,0 +1,118 @@
+[Package]
+version: 5
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: visio2k16pro-lihas
+name: Visio Pro 2016
+description: Visio Pro 2016
+advice: 
+version: 1.0
+priority: 0
+licenseRequired: True
+productClasses: 
+setupScript: setup.ins
+uninstallScript: uninstall.ins
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[ProductDependency]
+action: setup
+requiredProduct: office_2016_hotfix
+requiredAction: setup
+requirementType: after
+
+[ProductProperty]
+type: unicode
+name: install_architecture
+multivalue: False
+editable: False
+description: which Office Version (32/64 bit) is to be installed
+values: ["32 bit", "64 bit"]
+default: ["32 bit"]
+
+[ProductProperty]
+type: unicode
+name: username
+multivalue: False
+editable: True
+description: Username for config.xml
+default: ["USER"]
+
+[ProductProperty]
+type: unicode
+name: companyname
+multivalue: False
+editable: True
+description: COMPANYNAME for config.xml
+default: ["COMPANY"]
+
+[ProductProperty]
+type: unicode
+name: poolid-or-licensekey
+multivalue: False
+editable: True
+description: id from opsi-license-management-pool or license key without dashes
+
+[ProductProperty]
+type: unicode
+name: method
+multivalue: False
+editable: False
+description: What should we do:
+ "opsi License management": need the poolid from property 'poolid-or-licensekey'
+ "KMS opsi License management": need the poolid from property 'poolid-or-licensekey'
+ "licensekey from property": get licensekey from property 'poolid-or-licensekey'
+ "KMS": need the poolid from property 'poolid-or-licensekey'
+values: ["KMS", "KMS opsi License management", "licensekey from property", "opsi License management"]
+default: ["licensekey from property"]
+
+[ProductProperty]
+type: bool
+name: activate
+description: Activate Office after Install
+default: True
+
+[ProductProperty]
+type: unicode
+name: httpproxy
+multivalue: False
+editable: True
+description: httpproxy needed for activation proxy.mycompany.com:3218
+default: [""]
+
+[Changelog]
+visio2k16pro-lihas (1.0-5) testing; urgency=low
+
+  * uninstall fixed so it works with x86 and x64
+
+ -- Stefan Baur <lihas@lihas.de>  Thu, 28 Jul 2016 19:36:00 +0000
+
+visio2k16pro-lihas (1.0-4) testing; urgency=low
+
+  * added x64 support
+
+ -- Stefan Baur <lihas@lihas.de>  Thu, 28 Jul 2016 16:47:00 +0000
+
+visio2k16pro-lihas (1.0-3) testing; urgency=low
+
+  * preparation for x64 and multilang support
+
+ -- Stefan Baur <lihas@lihas.de>  Thu, 28 Jul 2016 14:12:00 +0000
+
+visio2k16pro-lihas (1.0-2) testing; urgency=low
+
+  * activation routines from O2K10 package
+
+ -- Stefan Baur <lihas@lihas.de>  Thu, 30 Jun 2016 23:15:00 +0000
+
+visio2k16pro-lihas (1.0-1) testing; urgency=low
+
+  * Initial package
+
+ -- Stefan Baur <lihas@lihas.de>  Thu, 30 Jun 2016 21:30:00 +0000
