@@ -65,10 +65,11 @@ for CERTDIR in $CERTDIRS ; do
 	cp -a ./templates/* "./packages/$CERTNAMETRIMMED"
 
 	# copy all the certificates into the output directory
-	cp -a ./certificates/$CERTDIR/*.crt ./packages/$CERTNAMETRIMMED/CLIENT_DATA/
+	cp -a ./certificates/$CERTDIR/*.c?? ./packages/$CERTNAMETRIMMED/CLIENT_DATA/
 
 	# make a list of all certificates included in this package
-	ALLCERTNAMES=$( find "./packages/$CERTNAMETRIMMED/CLIENT_DATA/" -name "*.crt" | xargs -n 1 basename | tr '\n' ' ' )
+	ALLCERTNAMES=$( find "./packages/$CERTNAMETRIMMED/CLIENT_DATA/" -name "*.crt" | xargs --no-run-if-empty -n 1 basename | tr '\n' ' ' )
+	ALLCERTNAMES="$ALLCERTNAMES $( find "./packages/$CERTNAMETRIMMED/CLIENT_DATA/" -name "*.cer" | xargs --no-run-if-empty -n 1 basename | tr '\n' ' ' )"
 
 	# record fingerprints of all certificates in this text file (required for uninstall routinea of package)
 	for SINGLECERTNAME in $ALLCERTNAMES ; do
@@ -105,6 +106,7 @@ for CERTDIR in $CERTDIRS ; do
 	# a "make clean" would have to remove the entire ./packages directory, and possibly
 	# ./certificates as well
 	rm ./CLIENT_DATA/*.crt
+	rm ./CLIENT_DATA/*.cer
 	rm ./CLIENT_DATA/certlist.txt
 	
 	# go back into our main directory for the next iteration of our loop
