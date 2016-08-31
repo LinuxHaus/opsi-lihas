@@ -1,0 +1,65 @@
+[Package]
+version: 1
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: firefox-config-lihas
+name: firefox-config-lihas
+description: Enforce certain Firefox settings as read-only values (lockPref)
+advice: 
+version: 1.0
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: enforce.ins
+uninstallScript: 
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[ProductDependency]
+action: setup
+requiredProduct: firefox
+requiredStatus: installed
+requirementType: before
+
+[ProductProperty]
+type: unicode
+name: setproxy
+multivalue: False
+editable: False
+description: sets proxy: off=do_nothing, direct=set no proxy, manual=set proxy, file=set by file, automatic= try to detect
+values: ["automatic", "direct", "file", "manual", "off", "system"]
+default: ["off"]
+
+[ProductProperty]
+type: unicode
+name: proxysetting
+multivalue: False
+editable: True
+description: manual: (Proxy ip-name:port or ip-number:port), file: path to proxyconf.pac
+
+[ProductProperty]
+type: unicode
+name: noproxy_hosts
+multivalue: False
+editable: True
+description: comma seperated list of hosts
+
+[ProductProperty]
+type: unicode
+name: startpage
+multivalue: False
+editable: True
+description: Browser Start Page, like http://www.google.com
+
+[Changelog]
+firefox-config-lihas (1.0-1) testing; urgency=low
+
+  * Initial package
+
+ -- Stefan Baur <lihas@lihas.de>  Wed, 31 Aug 2016 12:34:00 +0000

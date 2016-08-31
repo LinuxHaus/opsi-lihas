@@ -1,0 +1,174 @@
+; Copyright (c) uib gmbh (www.uib.de)
+; This sourcecode is owned by uib and LiHAS
+; and published under the Terms of the General Public License.
+; credits: http://www.opsi.org/credits/
+
+
+[Actions]
+DefVar $ProductId$
+DefVar $SETPROXY$
+DefVar $PRODUCTPATH$
+DefVar $PREF_FILE$
+DefVar $Proxysetting$
+DefVar $PROXY_HOSTNAME_OR_IP$
+DefVar $PROXY_PORT$
+DefVar $NOPROXY_HOSTS$
+DefVar $preftype$
+DefVar $StartPage$
+
+;setloglevel = 9
+
+;enforce settings - no override by user possible
+set $preftype$ ="lockPref"
+
+set $ProductId$ = "firefox-config-lihas"
+
+comment "Show product picture"
+ShowBitmap "%ScriptPath%\" + $ProductId$ + ".png" $ProductId$
+
+set $PRODUCTPATH$="%ProgramFiles32Dir%\Mozilla Firefox"
+set $PREF_FILE$ = "mozilla.cfg"
+set $SETPROXY$ = GetProductProperty("SetProxy","off")
+set $NOPROXY_HOSTS$ = GetProductProperty("noproxy_hosts","")
+set $Proxysetting$ = GetProductProperty("Proxysetting","")
+set $StartPage$ = GetProductProperty("StartPage","")
+
+if (not ($SETPROXY$ = "off") or ($SETPROXY$ = ""))
+
+	if ($SETPROXY$ = "direct")
+		PatchTextFile_profile_proxy_clearsettings $PRODUCTPATH$+"\"+$PREF_FILE$
+		PatchTextFile_profile_proxy_direct $PRODUCTPATH$+"\"+$PREF_FILE$
+	endif
+	if ($SETPROXY$ = "system")
+		PatchTextFile_profile_proxy_clearsettings $PRODUCTPATH$+"\"+$PREF_FILE$
+		PatchTextFile_profile_proxy_system $PRODUCTPATH$+"\"+$PREF_FILE$
+	endif
+	if ($SETPROXY$ = "manual")
+		set $PROXY_HOSTNAME_OR_IP$ = $Proxysetting$
+		set $PROXY_PORT$           = takeString(1,splitString($Proxysetting$,":"))
+		set $PROXY_HOSTNAME_OR_IP$ = takeString(0,splitString($Proxysetting$,":"))
+		PatchTextFile_profile_proxy_clearsettings $PRODUCTPATH$+"\"+$PREF_FILE$
+		PatchTextFile_profile_proxy_manual $PRODUCTPATH$+"\"+$PREF_FILE$
+	endif
+	if ($SETPROXY$ = "file")
+		set $PROXY_HOSTNAME_OR_IP$ = $Proxysetting$
+		if "" = takeString(0,splitString($Proxysetting$,"://"))
+			set $PROXY_HOSTNAME_OR_IP$ = "file:///"+$Proxysetting$
+		endif
+		PatchTextFile_profile_proxy_clearsettings $PRODUCTPATH$+"\"+$PREF_FILE$
+		PatchTextFile_profile_proxy_file $PRODUCTPATH$+"\"+$PREF_FILE$
+	endif
+	if ($SETPROXY$ = "automatic")
+		PatchTextFile_profile_proxy_clearsettings $PRODUCTPATH$+"\"+$PREF_FILE$
+		PatchTextFile_profile_proxy_automatic $PRODUCTPATH$+"\"+$PREF_FILE$
+	endif
+endif
+
+if (not ($StartPage$ = ""))
+	PatchTextFile_profile_startpage $PRODUCTPATH$+"\"+$PREF_FILE$
+endif
+
+[PatchTextFile_profile_proxy_system]
+FindLine_Containing "network.proxy.type"
+DeleteTheLine
+
+[PatchTextFile_profile_proxy_clearsettings]
+GoToTop
+FindLine_Containing "network.proxy.backup.ftp"
+DeleteTheLine
+GoToTop
+FindLine_Containing "network.proxy.backup.ftp_port"
+DeleteTheLine
+GoToTop
+FindLine_Containing "network.proxy.backup.gopher"
+DeleteTheLine
+GoToTop
+FindLine_Containing "network.proxy.backup.gopher_port"
+DeleteTheLine
+GoToTop
+FindLine_Containing "network.proxy.backup.socks"
+DeleteTheLine
+GoToTop
+FindLine_Containing "network.proxy.backup.socks_port"
+DeleteTheLine
+GoToTop
+FindLine_Containing "network.proxy.backup.ssl"
+DeleteTheLine
+GoToTop
+FindLine_Containing "network.proxy.backup.ssl_port"
+DeleteTheLine
+GoToTop
+FindLine_Containing "network.proxy.ftp"
+DeleteTheLine
+GoToTop
+FindLine_Containing "network.proxy.ftp_port"
+DeleteTheLine
+GoToTop
+FindLine_Containing "network.proxy.gopher"
+DeleteTheLine
+GoToTop
+FindLine_Containing "network.proxy.gopher_port"
+DeleteTheLine
+GoToTop
+FindLine_Containing "network.proxy.socks"
+DeleteTheLine
+GoToTop
+FindLine_Containing "network.proxy.socks_port"
+DeleteTheLine
+GoToTop
+FindLine_Containing "network.proxy.http"
+DeleteTheLine
+GoToTop
+FindLine_Containing "network.proxy.http_port"
+DeleteTheLine
+GoToTop
+FindLine_Containing "network.proxy.no_proxies_on"
+DeleteTheLine
+GoToTop
+FindLine_Containing "network.proxy.share_proxy_settings"
+DeleteTheLine
+GoToTop
+FindLine_Containing "network.proxy.ssl"
+DeleteTheLine
+GoToTop
+FindLine_Containing "network.proxy.ssl_port"
+DeleteTheLine
+GoToTop
+FindLine_containing "network.proxy.autoconfig_url"
+DeleteTheLine
+
+[PatchTextFile_profile_proxy_direct]
+Set_Mozilla_Pref ("$preftype$", "network.proxy.type", 0)
+
+[PatchTextFile_profile_proxy_automatic]
+Set_Mozilla_Pref ("$preftype$", "network.proxy.type", 4)
+
+[PatchTextFile_profile_proxy_manual]
+Set_Mozilla_Pref ("$preftype$", "network.proxy.type", 1)
+Set_Mozilla_Pref ("$preftype$", "network.proxy.backup.ftp", "$PROXY_HOSTNAME_OR_IP$")
+Set_Mozilla_Pref ("$preftype$", "network.proxy.backup.ftp_port", $PROXY_PORT$)
+Set_Mozilla_Pref ("$preftype$", "network.proxy.backup.gopher", "$PROXY_HOSTNAME_OR_IP$")
+Set_Mozilla_Pref ("$preftype$", "network.proxy.backup.gopher_port", $PROXY_PORT$)
+Set_Mozilla_Pref ("$preftype$", "network.proxy.backup.socks", "$PROXY_HOSTNAME_OR_IP$")
+Set_Mozilla_Pref ("$preftype$", "network.proxy.backup.socks_port", $PROXY_PORT$)
+Set_Mozilla_Pref ("$preftype$", "network.proxy.backup.ssl", "$PROXY_HOSTNAME_OR_IP$")
+Set_Mozilla_Pref ("$preftype$", "network.proxy.backup.ssl_port", $PROXY_PORT$)
+Set_Mozilla_Pref ("$preftype$", "network.proxy.ftp", "$PROXY_HOSTNAME_OR_IP$")
+Set_Mozilla_Pref ("$preftype$", "network.proxy.ftp_port", $PROXY_PORT$)
+Set_Mozilla_Pref ("$preftype$", "network.proxy.gopher", "$PROXY_HOSTNAME_OR_IP$")
+Set_Mozilla_Pref ("$preftype$", "network.proxy.gopher_port", $PROXY_PORT$)
+Set_Mozilla_Pref ("$preftype$", "network.proxy.socks", "$PROXY_HOSTNAME_OR_IP$")
+Set_Mozilla_Pref ("$preftype$", "network.proxy.socks_port", $PROXY_PORT$)
+Set_Mozilla_Pref ("$preftype$", "network.proxy.http", "$PROXY_HOSTNAME_OR_IP$")
+Set_Mozilla_Pref ("$preftype$", "network.proxy.http_port", $PROXY_PORT$)
+Set_Mozilla_Pref ("$preftype$", "network.proxy.no_proxies_on", "$NOPROXY_HOSTS$")
+Set_Mozilla_Pref ("$preftype$", "network.proxy.share_proxy_settings", true)
+Set_Mozilla_Pref ("$preftype$", "network.proxy.ssl", "$PROXY_HOSTNAME_OR_IP$")
+Set_Mozilla_Pref ("$preftype$", "network.proxy.ssl_port", $PROXY_PORT$)
+
+[PatchTextFile_profile_proxy_file]
+Set_Mozilla_Pref ("$preftype$", "network.proxy.type", 2)
+Set_Mozilla_Pref ("$preftype$", "network.proxy.autoconfig_url", "$PROXY_HOSTNAME_OR_IP$")
+
+[PatchTextFile_profile_startpage]
+Set_Mozilla_Pref ("$preftype$", "browser.startup.homepage", "$StartPage$")
