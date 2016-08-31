@@ -1,0 +1,1 @@
+2e5d3bc7986b8e353704f2878cc688d2  CLIENT_DATA/files/setup.exe

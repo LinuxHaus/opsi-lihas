@@ -1,0 +1,75 @@
+; Copyright (c) uib gmbh (www.uib.de)
+; This sourcecode is owned by uib
+; and published under the Terms of the General Public License.
+; credits: http://www.opsi.org/credits/
+ 
+[Actions]
+requiredWinstVersion >= "4.10.8.6"
+ 
+DefVar $MsiId$
+DefVar $UninstallProgram$
+DefVar $LogDir$
+DefVar $ProductId$  
+DefVar $MinimumSpace$
+DefVar $InstallDir$
+DefVar $ExitCode$
+DefVar $LicenseRequired$
+DefVar $LicenseKey$
+DefVar $LicensePool$
+DefStringList $ModelIDs$
+
+DefStringList $ResultList$
+DefVar $Model$
+
+Set $ResultList$ = getHWBiosInfoMap
+Set $Model$ = getValue("sysinfo.Product Name",$ResultList$)
+Set $ModelIDs$ = getProductPropertyList("ModelIDs","")
+
+Set $LogDir$ = "%SystemDrive%\tmp"
+ 
+; ----------------------------------------------------------------
+; - Please edit the following values                             -
+; ----------------------------------------------------------------
+;$ProductId$ should be the name of the product in opsi
+; therefore please: only lower letters, no umlauts, 
+; no white space use '-' as a seperator
+Set $ProductId$       = "lenovo-tseries-hotkeys-lihas"
+Set $MinimumSpace$    = "56 MB"
+; the path were we find the product after the installation
+Set $InstallDir$      = "%ProgramFilesSysNativeDir%\Lenovo\HOTKEY"
+Set $LicenseRequired$ = "false"
+Set $LicensePool$     = "p_" + $ProductId$
+; ----------------------------------------------------------------
+ 
+if not(HasMinimumSpace ("%SystemDrive%", $MinimumSpace$))
+	LogError "Not enough space on %SystemDrive%, " + $MinimumSpace$ + " on drive %SystemDrive% needed for " + $ProductId$
+	isFatalError
+	; Stop process and set installation status to failed
+else
+	comment "Show product picture"
+	ShowBitmap "%ScriptPath%\" + $ProductId$ + ".png" $ProductId$
+ 
+	if FileExists("%ScriptPath%\delsub.ins")
+		comment "Start uninstall sub section"
+		Sub "%ScriptPath%\delsub.ins"
+	endif
+ 
+	Message "Installing " + $ProductId$ + " ..."
+ 
+	comment "Start setup program"
+	if NOT ( $Model$ = "NULL" )
+	    comment " Model found: " + $Model$
+		if not ( "" = takeFirstStringContaining($ModelIDs$,$Model$))
+			Winbatch_install /SysNative
+			ExitWindows /Reboot
+		else
+			comment "No matching entry for $Model$ - not doing anything."
+		endif
+	else
+	    comment "Unknown Model - not doing anything."
+	endif
+
+endif
+
+[Winbatch_install]
+"%ScriptPath%\files\setup.exe" /SP- /VERYSILENT /NORESTART /SUPPRESSMSGBOXES
