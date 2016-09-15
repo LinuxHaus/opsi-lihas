@@ -1,6 +1,6 @@
 PACKAGE_NAME         = firefox-config-lihas
 VERSION              = 1.0
-OPSI_PACKAGE_VERSION = 1
+OPSI_PACKAGE_VERSION = 3
 
 TARGET               = $(PACKAGE_NAME)_$(VERSION)-$(OPSI_PACKAGE_VERSION).opsi
 

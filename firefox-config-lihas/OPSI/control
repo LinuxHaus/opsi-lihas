@@ -1,5 +1,5 @@
 [Package]
-version: 1
+version: 3
 depends: 
 incremental: False
 
@@ -7,7 +7,7 @@ incremental: False
 type: localboot
 id: firefox-config-lihas
 name: firefox-config-lihas
-description: Enforce certain Firefox settings as read-only values (lockPref)
+description: Enforce certain Firefox settings as default (defaultPref) or read-only values (lockPref)
 advice: 
 version: 1.0
 priority: 0
@@ -26,6 +26,42 @@ action: setup
 requiredProduct: firefox
 requiredStatus: installed
 requirementType: before
+
+[ProductProperty]
+type: unicode
+name: proxydefaultorlocked
+multivalue: False
+editable: False
+description: Set values as user-changeable defaults vs. enforced values
+values: ["defaultPref", "lockPref"]
+default: ["lockPref"]
+
+[ProductProperty]
+type: unicode
+name: whatsnew
+multivalue: False
+editable: False
+description: Show or hide the "What's New" Tab after upgrades / initial startup
+values: ["donttouchsetting", "hide", "show"]
+default: ["hide"]
+
+[ProductProperty]
+type: unicode
+name: rights
+multivalue: False
+editable: False
+description: Show or hide the "Know your Rights" Tab at initial startup
+values: ["donttouchsetting", "hide", "show"]
+default: ["hide"]
+
+[ProductProperty]
+type: unicode
+name: startpagedefaultorlocked
+multivalue: False
+editable: False
+description: Set values as user-changeable defaults vs. enforced values
+values: ["defaultPref", "lockPref"]
+default: ["lockPref"]
 
 [ProductProperty]
 type: unicode
@@ -58,8 +94,21 @@ editable: True
 description: Browser Start Page, like http://www.google.com
 
 [Changelog]
+firefox-config-lihas (1.0-3) testing; urgency=low
+
+* added required workaround for DefaultPref startup page setting
+* added params to suppress what's new and Know-Your-Rights tabs
+
+-- Stefan Baur <lihas@lihas.de>  Thu, 15 Sep 2016 17:18:00 +0000
+
+firefox-config-lihas (1.0-2) testing; urgency=low
+
+* allow user-changeable defaults instead of enforcement
+
+-- Stefan Baur <lihas@lihas.de>  Thu, 15 Sep 2016 15:25:00 +0000
+
 firefox-config-lihas (1.0-1) testing; urgency=low
 
-  * Initial package
+* Initial package
 
- -- Stefan Baur <lihas@lihas.de>  Wed, 31 Aug 2016 12:34:00 +0000
+-- Stefan Baur <lihas@lihas.de>  Wed, 31 Aug 2016 12:34:00 +0000

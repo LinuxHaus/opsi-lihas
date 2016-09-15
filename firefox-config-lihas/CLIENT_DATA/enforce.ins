@@ -13,13 +13,18 @@ DefVar $Proxysetting$
 DefVar $PROXY_HOSTNAME_OR_IP$
 DefVar $PROXY_PORT$
 DefVar $NOPROXY_HOSTS$
-DefVar $preftype$
+DefVar $proxypreftype$
+DefVar $startpagepreftype$
 DefVar $StartPage$
+DefVar $Rights$
+DefVar $WhatsNew$
 
 ;setloglevel = 9
 
-;enforce settings - no override by user possible
-set $preftype$ ="lockPref"
+;set user-changeable default vs. enforce settings
+set $proxypreftype$ = GetProductProperty("proxyDefaultOrLocked","lockPref")
+
+set $startpagepreftype$ = GetProductProperty("startpageDefaultOrLocked","lockPref")
 
 set $ProductId$ = "firefox-config-lihas"
 
@@ -32,6 +37,8 @@ set $SETPROXY$ = GetProductProperty("SetProxy","off")
 set $NOPROXY_HOSTS$ = GetProductProperty("noproxy_hosts","")
 set $Proxysetting$ = GetProductProperty("Proxysetting","")
 set $StartPage$ = GetProductProperty("StartPage","")
+set $Rights$ = GetProductProperty("Rights","donttouchsetting")
+set $WhatsNew$ = GetProductProperty("WhatsNew","donttouchsetting")
 
 if (not ($SETPROXY$ = "off") or ($SETPROXY$ = ""))
 
@@ -65,7 +72,26 @@ if (not ($SETPROXY$ = "off") or ($SETPROXY$ = ""))
 endif
 
 if (not ($StartPage$ = ""))
-	PatchTextFile_profile_startpage $PRODUCTPATH$+"\"+$PREF_FILE$
+	PatchTextFile_profile_startpage_clearsettings $PRODUCTPATH$+"\"+$PREF_FILE$
+	if ($startpagepreftype$ = "lockPref")
+		PatchTextFile_profile_startpage $PRODUCTPATH$+"\"+$PREF_FILE$
+	else
+		PatchTextFile_profile_startpage_defaultonly $PRODUCTPATH$+"\"+$PREF_FILE$
+	endif
+endif
+
+if (not ($Rights$ = "donttouchsetting"))
+	PatchTextFile_profile_hiderights_clearsettings $PRODUCTPATH$+"\"+$PREF_FILE$
+	if ($Rights$ = "hide")
+		PatchTextFile_profile_hiderights $PRODUCTPATH$+"\"+$PREF_FILE$
+	endif
+endif
+
+if (not ($WhatsNew$ = "donttouchsetting"))
+	PatchTextFile_profile_hidewhatsnew_clearsettings $PRODUCTPATH$+"\"+$PREF_FILE$
+	if ($WhatsNew$ = "hide")
+		PatchTextFile_profile_hidewhatsnew $PRODUCTPATH$+"\"+$PREF_FILE$
+	endif
 endif
 
 [PatchTextFile_profile_proxy_system]
@@ -138,37 +164,62 @@ FindLine_containing "network.proxy.autoconfig_url"
 DeleteTheLine
 
 [PatchTextFile_profile_proxy_direct]
-Set_Mozilla_Pref ("$preftype$", "network.proxy.type", 0)
+Set_Mozilla_Pref ("$proxypreftype$", "network.proxy.type", 0)
 
 [PatchTextFile_profile_proxy_automatic]
-Set_Mozilla_Pref ("$preftype$", "network.proxy.type", 4)
+Set_Mozilla_Pref ("$proxypreftype$", "network.proxy.type", 4)
 
 [PatchTextFile_profile_proxy_manual]
-Set_Mozilla_Pref ("$preftype$", "network.proxy.type", 1)
-Set_Mozilla_Pref ("$preftype$", "network.proxy.backup.ftp", "$PROXY_HOSTNAME_OR_IP$")
-Set_Mozilla_Pref ("$preftype$", "network.proxy.backup.ftp_port", $PROXY_PORT$)
-Set_Mozilla_Pref ("$preftype$", "network.proxy.backup.gopher", "$PROXY_HOSTNAME_OR_IP$")
-Set_Mozilla_Pref ("$preftype$", "network.proxy.backup.gopher_port", $PROXY_PORT$)
-Set_Mozilla_Pref ("$preftype$", "network.proxy.backup.socks", "$PROXY_HOSTNAME_OR_IP$")
-Set_Mozilla_Pref ("$preftype$", "network.proxy.backup.socks_port", $PROXY_PORT$)
-Set_Mozilla_Pref ("$preftype$", "network.proxy.backup.ssl", "$PROXY_HOSTNAME_OR_IP$")
-Set_Mozilla_Pref ("$preftype$", "network.proxy.backup.ssl_port", $PROXY_PORT$)
-Set_Mozilla_Pref ("$preftype$", "network.proxy.ftp", "$PROXY_HOSTNAME_OR_IP$")
-Set_Mozilla_Pref ("$preftype$", "network.proxy.ftp_port", $PROXY_PORT$)
-Set_Mozilla_Pref ("$preftype$", "network.proxy.gopher", "$PROXY_HOSTNAME_OR_IP$")
-Set_Mozilla_Pref ("$preftype$", "network.proxy.gopher_port", $PROXY_PORT$)
-Set_Mozilla_Pref ("$preftype$", "network.proxy.socks", "$PROXY_HOSTNAME_OR_IP$")
-Set_Mozilla_Pref ("$preftype$", "network.proxy.socks_port", $PROXY_PORT$)
-Set_Mozilla_Pref ("$preftype$", "network.proxy.http", "$PROXY_HOSTNAME_OR_IP$")
-Set_Mozilla_Pref ("$preftype$", "network.proxy.http_port", $PROXY_PORT$)
-Set_Mozilla_Pref ("$preftype$", "network.proxy.no_proxies_on", "$NOPROXY_HOSTS$")
-Set_Mozilla_Pref ("$preftype$", "network.proxy.share_proxy_settings", true)
-Set_Mozilla_Pref ("$preftype$", "network.proxy.ssl", "$PROXY_HOSTNAME_OR_IP$")
-Set_Mozilla_Pref ("$preftype$", "network.proxy.ssl_port", $PROXY_PORT$)
+Set_Mozilla_Pref ("$proxypreftype$", "network.proxy.type", 1)
+Set_Mozilla_Pref ("$proxypreftype$", "network.proxy.backup.ftp", "$PROXY_HOSTNAME_OR_IP$")
+Set_Mozilla_Pref ("$proxypreftype$", "network.proxy.backup.ftp_port", $PROXY_PORT$)
+Set_Mozilla_Pref ("$proxypreftype$", "network.proxy.backup.gopher", "$PROXY_HOSTNAME_OR_IP$")
+Set_Mozilla_Pref ("$proxypreftype$", "network.proxy.backup.gopher_port", $PROXY_PORT$)
+Set_Mozilla_Pref ("$proxypreftype$", "network.proxy.backup.socks", "$PROXY_HOSTNAME_OR_IP$")
+Set_Mozilla_Pref ("$proxypreftype$", "network.proxy.backup.socks_port", $PROXY_PORT$)
+Set_Mozilla_Pref ("$proxypreftype$", "network.proxy.backup.ssl", "$PROXY_HOSTNAME_OR_IP$")
+Set_Mozilla_Pref ("$proxypreftype$", "network.proxy.backup.ssl_port", $PROXY_PORT$)
+Set_Mozilla_Pref ("$proxypreftype$", "network.proxy.ftp", "$PROXY_HOSTNAME_OR_IP$")
+Set_Mozilla_Pref ("$proxypreftype$", "network.proxy.ftp_port", $PROXY_PORT$)
+Set_Mozilla_Pref ("$proxypreftype$", "network.proxy.gopher", "$PROXY_HOSTNAME_OR_IP$")
+Set_Mozilla_Pref ("$proxypreftype$", "network.proxy.gopher_port", $PROXY_PORT$)
+Set_Mozilla_Pref ("$proxypreftype$", "network.proxy.socks", "$PROXY_HOSTNAME_OR_IP$")
+Set_Mozilla_Pref ("$proxypreftype$", "network.proxy.socks_port", $PROXY_PORT$)
+Set_Mozilla_Pref ("$proxypreftype$", "network.proxy.http", "$PROXY_HOSTNAME_OR_IP$")
+Set_Mozilla_Pref ("$proxypreftype$", "network.proxy.http_port", $PROXY_PORT$)
+Set_Mozilla_Pref ("$proxypreftype$", "network.proxy.no_proxies_on", "$NOPROXY_HOSTS$")
+Set_Mozilla_Pref ("$proxypreftype$", "network.proxy.share_proxy_settings", true)
+Set_Mozilla_Pref ("$proxypreftype$", "network.proxy.ssl", "$PROXY_HOSTNAME_OR_IP$")
+Set_Mozilla_Pref ("$proxypreftype$", "network.proxy.ssl_port", $PROXY_PORT$)
 
 [PatchTextFile_profile_proxy_file]
-Set_Mozilla_Pref ("$preftype$", "network.proxy.type", 2)
-Set_Mozilla_Pref ("$preftype$", "network.proxy.autoconfig_url", "$PROXY_HOSTNAME_OR_IP$")
+Set_Mozilla_Pref ("$proxypreftype$", "network.proxy.type", 2)
+Set_Mozilla_Pref ("$proxypreftype$", "network.proxy.autoconfig_url", "$PROXY_HOSTNAME_OR_IP$")
+
+[PatchTextFile_profile_startpage_clearsettings]
+GoToTop
+FindLine_Containing "browser.startup.homepage"
+DeleteTheLine
 
 [PatchTextFile_profile_startpage]
-Set_Mozilla_Pref ("$preftype$", "browser.startup.homepage", "$StartPage$")
+Set_Mozilla_Pref ("$startpagepreftype$", "browser.startup.homepage", "$StartPage$")
+
+[PatchTextFile_profile_startpage_defaultonly]
+; Yes this looks strange, but it is the only way this works. Ask the lizard, not me.
+Set_Mozilla_Pref ("$startpagepreftype$", "browser.startup.homepage", "data:text/plain,browser.startup.homepage=$StartPage$")
+
+[PatchTextFile_profile_hidewhatsnew_clearsettings]
+GoToTop
+FindLine_Containing "browser.startup.homepage_override.mstone"
+DeleteTheLine
+
+[PatchTextFile_profile_hidewhatsnew]
+Set_Mozilla_Pref ("pref","browser.startup.homepage_override.mstone","ignore")
+
+[PatchTextFile_profile_hiderights_clearsettings]
+GoToTop
+FindLine_Containing "browser.rights.3.shown"
+DeleteTheLine
+
+[PatchTextFile_profile_hiderights]
+Set_Mozilla_Pref ("pref","browser.rights.3.shown", true)
