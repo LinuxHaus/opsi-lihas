@@ -1,0 +1,38 @@
+[Package]
+version: 1
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: lenovo-tseries-hotkeys-lihas
+name: OnScreen Hotkey Feedback for Lenovo T-Series
+description: 
+advice: 
+version: 8.80.10
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: setup.ins
+uninstallScript: uninstall.ins
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[ProductProperty]
+type: unicode
+name: modelids
+multivalue: True
+editable: True
+description: List of HW-specific model IDs on which this package should be installed
+values: ["20BXS05R00", "20FAS3K300"]
+default: ["20BXS05R00", "20FAS3K300"]
+
+[Changelog]
+lenovo-tseries-hotkeys-lihas (8.80.10-1) testing; urgency=low
+
+  * Initial package
+
+-- Stefan Baur <lihas@lihas.de>  Fri, 12 Aug 2016 10:28:00 +0000
