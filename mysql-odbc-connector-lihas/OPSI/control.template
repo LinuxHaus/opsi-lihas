@@ -26,7 +26,7 @@ type: unicode
 name: bittyness
 multivalue: False
 editable: False
-description: Select bittyness here - 32, sysnative or dependsonoffice (dependsonoffice will default to sysnative if no O2K10 is detected)
+description: Select bittyness here - 32, sysnative or dependsonoffice (dependsonoffice will default to sysnative if no MS Office is detected)
 values: ["32", "sysnative", "dependsonoffice"]
 default: ["dependsonoffice"]
 
@@ -43,7 +43,7 @@ type: unicode
 name: officemsiid
 multivalue: False
 editable: True
-description: Enter Office MSI ID here
+description: Which Office MSI ID should this package look for
 values: ["90140000-0011-0000-1000-0000000ff1ce"]
 default: ["90140000-0011-0000-1000-0000000ff1ce"]
 
