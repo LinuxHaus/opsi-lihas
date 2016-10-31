@@ -6,6 +6,8 @@ OPSI_PACKAGE_VERSION = 1
 DOWNLOAD_DIR         = ./CLIENT_DATA/files
 DOWNLOAD_URLS        = https://dev.mysql.com/get/Downloads/Connector-ODBC/5.1/mysql-connector-odbc-5.1.13-win32.msi \
                        https://dev.mysql.com/get/Downloads/Connector-ODBC/5.1/mysql-connector-odbc-5.1.13-winx64.msi \
+					   https://dev.mysql.com/get/Downloads/Connector-ODBC/5.2/mysql-connector-odbc-5.2.7-win32.msi \
+					   https://dev.mysql.com/get/Downloads/Connector-ODBC/5.2/mysql-connector-odbc-5.2.7-winx64.msi \
 					   https://dev.mysql.com/get/Downloads/Connector-ODBC/5.3/mysql-connector-odbc-5.3.6-win32.msi \
 					   https://dev.mysql.com/get/Downloads/Connector-ODBC/5.3/mysql-connector-odbc-5.3.6-winx64.msi
 DOWNLOAD_FILES       = $(foreach url,$(DOWNLOAD_URLS),$(subst $(dir $(url)),,$(url)))
