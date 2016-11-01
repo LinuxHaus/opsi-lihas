@@ -1,6 +1,6 @@
 WGET_COMMON_OPTIONS  = -q -N
 
-PACKAGE_NAME         = mysql-odbc-connector-lihas
+PACKAGE_NAME         = mysql-odbc-connector-legacy-lihas
 VERSION              = legacy
 OPSI_PACKAGE_VERSION = 1
 DOWNLOAD_DIR         = ./CLIENT_DATA/files

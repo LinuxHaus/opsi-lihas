@@ -40,7 +40,7 @@ Set $LogDir$ = "%SystemDrive%\tmp"
 ;$ProductId$ should be the name of the product in opsi
 ; therefore please: only lower letters, no umlauts, 
 ; no white space use '-' as a seperator
-Set $ProductId$       = "mysql-odbc-connector-lihas"
+Set $ProductId$       = "mysql-odbc-connector-legacy-lihas"
 Set $MinimumSpace$    = "100 MB"
 ; the path were we find the product after the installation
 ; ----------------------------------------------------------------
