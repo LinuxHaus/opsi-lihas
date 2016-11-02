@@ -1,0 +1,32 @@
+; Copyright (c) uib gmbh (www.uib.de)
+; This sourcecode is owned by uib gmbh
+; and published under the Terms of the General Public License.
+; credits: http://www.opsi.org/credits/
+ 
+[Actions]
+requiredWinstVersion >= "4.10.8.6"
+ 
+DefVar $UninstallProgram$
+DefVar $LogDir$
+DefVar $ExitCode$
+DefVar $ProductId$
+DefVar $VersionMajorMinor$
+ 
+Set $LogDir$ = "%SystemDrive%\tmp"
+ 
+; ----------------------------------------------------------------
+; - Please edit the following values                             -
+; ----------------------------------------------------------------
+Set $ProductId$       = "mysql-odbc-connector-x64-lihas"
+; ----------------------------------------------------------------
+ 
+ 
+comment "Show product picture"
+ShowBitmap "%ScriptPath%\" + $ProductId$ + ".png" $ProductId$
+ 
+Message "Uninstalling " + $ProductId$ + " ..."
+ 
+if FileExists("%ScriptPath%\delsub.ins")
+	comment "Start uninstall sub section"
+	Sub "%ScriptPath%\delsub.ins"
+endif
