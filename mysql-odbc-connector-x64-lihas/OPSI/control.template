@@ -49,6 +49,19 @@ default: ["90140000-0011-0000-1000-0000000ff1ce"]
 
 [ProductDependency]
 action: setup
+requiredProduct: vcrun2010sp1kb2565063x86-lihas
+requiredStatus: installed
+requirementType: before
+
+[ProductDependency]
+action: setup
+requiredProduct: vcrun2013x86-lihas
+requiredStatus: installed
+requirementType: before
+
+[Changelog]
+[ProductDependency]
+action: setup
 requiredProduct: vcrun2010sp1kb2565063x64-lihas
 requiredStatus: installed
 requirementType: before
