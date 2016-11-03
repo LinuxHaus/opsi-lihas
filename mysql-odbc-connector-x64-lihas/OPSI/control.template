@@ -1,5 +1,5 @@
 [Package]
-version: 1
+version: 2
 depends: 
 incremental: False
 
@@ -73,6 +73,11 @@ requiredStatus: installed
 requirementType: before
 
 [Changelog]
+mysql-odbc-connector-x64-lihas (latestorlegacy-2) testing; urgency=low
+
+  * added x86 prereqs
+
+-- Stefan Baur <lihas@lihas.de>  Thu, 03 Nov 2016 16:19:00 +0000
 mysql-odbc-connector-x64-lihas (latestorlegacy-1) testing; urgency=low
 
   * Initial package
