@@ -2,7 +2,7 @@ WGET_COMMON_OPTIONS  = -q -N
 
 PACKAGE_NAME         = mysql-odbc-connector-x64-lihas
 VERSION              = latestorlegacy
-OPSI_PACKAGE_VERSION = 1
+OPSI_PACKAGE_VERSION = 2
 DOWNLOAD_DIR         = ./CLIENT_DATA/files
 DOWNLOAD_URLS        = https://dev.mysql.com/get/Downloads/Connector-ODBC/5.1/mysql-connector-odbc-5.1.13-win32.msi \
                        https://dev.mysql.com/get/Downloads/Connector-ODBC/5.1/mysql-connector-odbc-5.1.13-winx64.msi \
