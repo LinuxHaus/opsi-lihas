@@ -1,0 +1,29 @@
+[Package]
+version: 1
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: vcrun2013x86-lihas
+name: Visual C Redistributable Files
+description: 
+advice: 
+version: 2013
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: setup32.ins
+uninstallScript: unins32.ins
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[Changelog]
+vcrun2013x86-lihas (2013-1) testing; urgency=low
+
+  * Initial package
+
+-- Stefan Baur <lihas@lihas.de>  Tue, 25 Oct 2016 15:36:00 +0000
