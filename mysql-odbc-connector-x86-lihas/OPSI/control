@@ -1,0 +1,50 @@
+[Package]
+version: 1
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: mysql-odbc-connector-x86-lihas
+name: MySQL ODBC Connector - this package is for x86 Windows only - not recommended on x64
+description: 
+advice: 
+version: latestorlegacy
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: setup.ins
+uninstallScript: unins.ins
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[ProductDependency]
+action: setup
+requiredProduct: vcrun2010sp1kb2565063x86-lihas
+requiredStatus: installed
+requirementType: before
+
+[ProductDependency]
+action: setup
+requiredProduct: vcrun2013x86-lihas
+requiredStatus: installed
+requirementType: before
+
+[ProductProperty]
+type: unicode
+name: connectorversion
+multivalue: False
+editable: False
+description: Select version number here
+values: ["5.1.13", "5.2.7", "5.3.6", "Latest"]
+default: ["Latest"]
+
+[Changelog]
+mysql-odbc-connector-x86-lihas (latestorlegacy-1) testing; urgency=low
+
+  * Initial package
+
+-- Stefan Baur <lihas@lihas.de>  Thu, 03 Nov 2016 11:32:00 +0000
