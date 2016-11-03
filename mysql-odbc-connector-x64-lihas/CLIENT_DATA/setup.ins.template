@@ -44,40 +44,48 @@ Set $ProductId$       = "mysql-odbc-connector-x64-lihas"
 Set $MinimumSpace$    = "100 MB"
 ; the path were we find the product after the installation
 ; ----------------------------------------------------------------
- 
-if not(HasMinimumSpace ("%SystemDrive%", $MinimumSpace$))
-	LogError "Not enough space on %SystemDrive%, " + $MinimumSpace$ + " on drive %SystemDrive% needed for " + $ProductId$
+
+if not($INST_SystemType$ = "64 Bit System")
+	LogError "Wrong OS Architecture (x64 required) for " + $ProductId$
 	isFatalError
 	; Stop process and set installation status to failed
+
 else
-	comment "Show product picture"
-	ShowBitmap "%ScriptPath%\" + $ProductId$ + ".png" $ProductId$
  
-	if FileExists("%ScriptPath%\delsub.ins")
-		comment "Start uninstall sub section"
-		Sub "%ScriptPath%\delsub.ins"
-	endif
- 
-	Message "Installing " + $ProductId$ + " ..."
- 
-	comment "Start setup program"
-	if ($Bittyness$ ="dependsonoffice" and GetRegistryStringValue64("[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\" + $OfficeMsiId$ + "] DisplayName") = "" and GetRegistryStringValue32("[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\" + $OfficeMsiId$ + "] DisplayName") = "")
-		; No office found
-		Set $Bittyness$ = "sysnative"
-	endif
-
-    if (($INST_SystemType$ = "64 Bit System" and $Bittyness$ ="sysnative") or ($INST_SystemType$ = "64 Bit System" and $Bittyness$ ="dependsonoffice" and not(GetRegistryStringValue64("[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\" + $OfficeMsiId$ + "] DisplayName") = "")))
-		Set $Bittyness$ = "x64"
-		Set $InstallDir$      = "%ProgramFiles64Dir%\MySQL\Connector ODBC " + $VersionMajorMinor$
-		Winbatch_install /64Bit
+	if not(HasMinimumSpace ("%SystemDrive%", $MinimumSpace$))
+		LogError "Not enough space on %SystemDrive%, " + $MinimumSpace$ + " on drive %SystemDrive% needed for " + $ProductId$
+		isFatalError
+		; Stop process and set installation status to failed
 	else
-		Set $Bittyness$ = "32"
-		Set $InstallDir$      = "%ProgramFiles32Dir%\MySQL\Connector ODBC " + $VersionMajorMinor$
-		Winbatch_install /32Bit
-	endif
-	ExitWindows /Reboot
-	Sub_check_exitcode
+		comment "Show product picture"
+		ShowBitmap "%ScriptPath%\" + $ProductId$ + ".png" $ProductId$
+	 
+		if FileExists("%ScriptPath%\delsub.ins")
+			comment "Start uninstall sub section"
+			Sub "%ScriptPath%\delsub.ins"
+		endif
+	 
+		Message "Installing " + $ProductId$ + " ..."
+	 
+		comment "Start setup program"
+		if ($Bittyness$ ="dependsonoffice" and GetRegistryStringValue64("[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\" + $OfficeMsiId$ + "] DisplayName") = "" and GetRegistryStringValue32("[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\" + $OfficeMsiId$ + "] DisplayName") = "")
+			; No office found
+			Set $Bittyness$ = "sysnative"
+		endif
 
+	    if (($INST_SystemType$ = "64 Bit System" and $Bittyness$ ="sysnative") or ($INST_SystemType$ = "64 Bit System" and $Bittyness$ ="dependsonoffice" and not(GetRegistryStringValue64("[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\" + $OfficeMsiId$ + "] DisplayName") = "")))
+			Set $Bittyness$ = "x64"
+			Set $InstallDir$      = "%ProgramFiles64Dir%\MySQL\Connector ODBC " + $VersionMajorMinor$
+			Winbatch_install /64Bit
+		else
+			Set $Bittyness$ = "32"
+			Set $InstallDir$      = "%ProgramFiles32Dir%\MySQL\Connector ODBC " + $VersionMajorMinor$
+			Winbatch_install /32Bit
+		endif
+		ExitWindows /Reboot
+		Sub_check_exitcode
+
+	endif
 endif
 
 [Winbatch_install]
